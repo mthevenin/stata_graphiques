@@ -1,0 +1,20 @@
+name: ""
+navbar:
+  title: "Graphiques"
+  type: inverse
+  left:
+    - text: "Retour Stata Ined"
+      href: https://mthevenin.github.io/stata_fr/index.html
+    - text: "Contact"
+      icon: fa-envelope-o
+      href: mailto:marc.thevenin@ined.fr                  
+    - text: "GitHub"
+      icon: fa-github
+      href: https://github.com/mthevenin
+
+output:
+  rmdformats::downcute:
+    self_contained: true
+    default_style: "light"
+    downcute_theme: "default"
+    number_sections: yes
