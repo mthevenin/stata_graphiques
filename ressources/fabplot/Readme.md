@@ -96,6 +96,7 @@ ytitle("")  ylabel(0(20000)100000, labsize(*.8) glw(*.5))
 <img src="g2.png" width=641 height=466>
 
 
+[**Programme .do**](https://github.com/mthevenin/stata_graphiques/blob/main/ressources/fabplot/prog_fabplot.do) 
 
 
 
