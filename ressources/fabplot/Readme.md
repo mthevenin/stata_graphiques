@@ -18,10 +18,49 @@ ssc install fabplot
 
 ## `fabplot2`
 
-J'ai juste ajouté l'option **`backopts`**. Même principe que l'option **`frontopts`** qui modifie l'objet au premier plan
+J'ai juste ajouté l'option **`backopts`**. Même principe que l'option **`frontopts`** qui modifie l'objet au premier plan.
 
 ```{}
 net install fabplot2, from("https://mthevenin.github.io/stata_graphiques/ressources/fabplot/") replace
 ```
 
 ## Exemple
+
+
+> **Note** J'utilise systématiquement un thème  que je génère avec le paquet **`grstyle`** de B.Jann.  
+
+
+Je reprends le même exemple que pour la formation, avec la base babynames.  
+Ouverture de de la base:  
+```{}
+webuse set https://github.com/mthevenin/stata_graphiques/tree/main/ressources/fabplot
+use babynames, replace
+webuse set
+```
+### Empilement des 9 courbes
+
+..... C'est illisible
+
+```{}
+* thème avec grstyle
+grstyle init 
+grstyle set mesh
+grstyle set color tableau, n(9)
+
+* Graphique
+levelsof name, local(name)
+local i = 1
+foreach nom of local name  {
+local j = `i++'	
+local line `line' line n year if name=="`nom'" ||		
+local leg `leg'  `j' "`nom'"
+}
+
+tw `line' , legend(order(`leg') row(2) size(*.8)  region(color(%0)) pos(11)) ytitle("") ylabel(0(20000)100000, angle(0)) ///
+title("Popularité des prénoms")
+```
+
+
+
+
+
