@@ -93,6 +93,7 @@ ytitle("")  ylabel(0(20000)100000, labsize(*.8) glw(*.5))
 #delimit cr
 ```
 
+<img src="g2.png" width=641 height=466>
 
 
 
