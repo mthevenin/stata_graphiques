@@ -7,7 +7,7 @@
 
     
     
-    <title>index.knit</title>
+    <title> Graphiques</title>
 
         <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
         <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
@@ -137,7 +137,7 @@
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
               <li>
-        <a href="https://mthevenin.github.io/stata_fr/index.html">Retour Stata Ined</a>
+        <a href="https://mthevenin.github.io/stata_fr/index.html">Stata Ined</a>
       </li>
       <li>
         <a href="mailto:marc.thevenin@ined.fr">
@@ -161,6 +161,7 @@
         </div><!--/.container -->
       </div><!--/.navbar -->
         
+      <h1 class="title"><br>Graphiques</h1>
       
       <p class="authors">
               
@@ -170,12 +171,29 @@
    
 <!-- Don't indent these lines or it will mess pre blocks indentation --> 
 <div class="page-content has-page-title">
-<p><br><br><br></p>
-<p><strong>20 Juin 2022: mise en place du support</strong></p>
+<p><strong>20 Juin 2022: mise en place du support</strong><br />
+Lien vers le nouveau support de formation [chapitre 1 à 3]: <a href="v2_2022_chap123.pdf"><strong>lien</strong></a>. La version html sera mise à disposition ultérieurement, chapitre par chapitre et après relecture, afin d’éviter les allers-retours avec l’édition en markdown/html.</p>
+<br> <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:1em;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M104 224H24c-13.255 0-24 10.745-24 24v240c0 13.255 10.745 24 24 24h80c13.255 0 24-10.745 24-24V248c0-13.255-10.745-24-24-24zM64 472c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zM384 81.452c0 42.416-25.97 66.208-33.277 94.548h101.723c33.397 0 59.397 27.746 59.553 58.098.084 17.938-7.546 37.249-19.439 49.197l-.11.11c9.836 23.337 8.237 56.037-9.308 79.469 8.681 25.895-.069 57.704-16.382 74.757 4.298 17.598 2.244 32.575-6.148 44.632C440.202 511.587 389.616 512 346.839 512l-2.845-.001c-48.287-.017-87.806-17.598-119.56-31.725-15.957-7.099-36.821-15.887-52.651-16.178-6.54-.12-11.783-5.457-11.783-11.998v-213.77c0-3.2 1.282-6.271 3.558-8.521 39.614-39.144 56.648-80.587 89.117-113.111 14.804-14.832 20.188-37.236 25.393-58.902C282.515 39.293 291.817 0 312 0c24 0 72 8 72 81.452z"/></svg><strong><code>fabplot</code> [Nj.Cox - 2021]</strong><br />
+
+<div class="alert alert-info">
 <ul>
-<li>Lien vers le nouveau support de formation [chapitre 1 à 3]: <a href="v2_2022_chap123.pdf">lien</a></li>
-<li>Rapidement présentation de la commande <strong><code>fabplot</code></strong> et <strong><code>fabplot2</code></strong> qui assouplit les options imposées par NJ.Cox. Cette commande permet d’obtenir une visualisation qui contrôle les effets spaghetti (ou paella pour les nuages de point)…. très intéressant d’autant que pour la première version de la formation mon programme était particulièrement lourd.</li>
+<li>Contrôle des effets <em>spaghetti</em> (courbes) et <em>paella</em> (nuage de points)</li>
+<li>Commande externe <strong><code>fabplot</code></strong> programmée en 2021 par Nj.Cox</li>
+<li>J’ai ajouté une option pour modifier les courbes au second plan, NJ.Cox ayant toujours tendance à bloquer l’habillage de ces commandes graphiques. La commande a été renommée <strong><code>fabplot2</code></strong> et s’installe via github.</li>
+<li>Exemple avec à gauche un graphique, peu lisible, qui empile 9 courbes (effet spaghetti); et à droite un graphique <em>small-multiple</em> qui contrôle cet effet.</li>
 </ul>
+<table>
+<tr>
+<td>
+<img src=ressources/fabplot/g1.png>
+</td>
+<td>
+<img src=ressources/fabplot/g2.png>
+</td>
+<tr>
+</table>
+<p><a href="https://journals.sagepub.com/doi/full/10.1177/1536867X211025838"><strong>Article Stata Journal</strong></a><br />
+<a href="https://github.com/mthevenin/stata_graphiques/blob/main/ressources/fabplot/Readme.md"><strong>Tutoriel MT</strong></a> </span></p>
 </div>
 
    
