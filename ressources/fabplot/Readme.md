@@ -72,7 +72,7 @@ Avec un graphique de type statique, une solution à priviliégier serait un grap
 
 * `fabplot[2]`: `fabplot` ou `fabplot2`
 * `command`: **line** ou **scatter**
-* `by(byvar [,opts)]: indiquer à minima la variable catégorielle qui produira chaque sous graphique. Beaucoup d'options du graphique entre sans cette option, comme les titres ou la couleur du background
+* `by(byvar [,opts)]`: indiquer à minima la variable catégorielle qui produira chaque sous graphique. Beaucoup d'options du graphique entre sans cette option, comme les titres ou la couleur du background
 * `frontopts`: les options de l'objet graphique en relief, comme la couleur et l'épaisseur de la courbe ou des marqueurs
 * `backopts`: avec `fabplot2` seulement, les options de l'objet graphique en arrière plan.
 
