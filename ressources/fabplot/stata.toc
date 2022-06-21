@@ -1,0 +1,8 @@
+d 2022-06-21
+d commande      : fabplot2 
+d auteur        : NJ.Cox + Marc Thevenin
+d affiliation   : MT: ined-sms
+d support       : MT: marc.thevenin@ined.fr
+d               : MT: https://mthevenin.github.io/stata_fr/
+
+p fabplot2      : ajout d'une option à la commande fabplot de NJ.COX
