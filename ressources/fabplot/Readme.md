@@ -60,6 +60,41 @@ tw `line' , legend(order(`leg') row(2) size(*.8)  region(color(%0)) pos(11)) yti
 title("Popularité des prénoms")
 ```
 
+<img src="g1.png" width=641 height=466>
+
+# Small-Multiple avec fabplot
+
+Avec un graphique de type statique, une solution à priviliégier serait un graphique de type ***small-multiple*** en conservant les autres courbes en arrière plan. Avec Stata, ce type de graphique est exécuté avec l'option **`by()`**. 
+
+## Syntaxe allégée
+
+**`fabplot[2] command yvar xvar [if] [in], by(byvar [,byopts]) [frontopts() backopts()] ....`**
+
+* `fabplot[2]`: `fabplot` ou `fabplot2`
+* `command`: **line** ou **scatter**
+* `by(byvar [,opts)]: indiquer à minima la variable catégorielle qui produira chaque sous graphique. Beaucoup d'options du graphique entre sans cette option, comme les titres ou la couleur du background
+* `frontopts`: les options de l'objet graphique en relief, comme la couleur et l'épaisseur de la courbe ou des marqueurs
+* `backopts`: avec `fabplot2` seulement, les options de l'objet graphique en arrière plan.
+
+## Application
+
+```{}
+#delimit ;
+
+fabplot2 line n year, 
+by(name, title("Popularité des prénoms", pos(11))) 
+
+frontopts(lw(*2) lc("45 178 125")) 
+backopts(lw(*.5) lc(gs9)) 
+
+ytitle("")  ylabel(0(20000)100000, labsize(*.8) glw(*.5))
+; 
+
+#delimit cr
+```
+
+
+
 
 
 
