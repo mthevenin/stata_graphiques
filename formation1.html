@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="pandoc" />
+
+    
+    
+    <title> Générer et éditer un graphique</title>
+
+        <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+        <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="site_libs/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+        <script src="site_libs/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+        <script src="site_libs/navigation-1.1/tabsets.js"></script>
+        <link href="site_libs/downcute-0.1/downcute.css" rel="stylesheet" />
+        <link href="site_libs/downcute-0.1/downcute_fonts_embed.css" rel="stylesheet" />
+        <link href="site_libs/downcute-0.1/downcute_chaos.css" rel="stylesheet" />
+        <script src="site_libs/downcute-0.1/downcute_styles.js"></script>
+        <script src="site_libs/downcute-0.1/downcute.js"></script>
+        <script src="site_libs/prism-1.22/prism.js"></script>
+        <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+        <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+    
+    
+    
+    
+    <!-- tabsets -->
+    <script>
+      $(document).ready(function () {
+	  window.buildTabsets("toc");
+      });
+      $(document).ready(function () {
+	  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+	      $(this).parent().toggleClass('nav-tabs-open')
+	  });
+      });
+    </script>
+
+    <!-- code folding -->
+    
+    <!-- code download -->
+    
+    <!-- tabsets dropdown -->
+
+    <style type="text/css">
+      .tabset-dropdown > .nav-tabs {
+	  display: inline-table;
+	  max-height: 500px;
+	  min-height: 44px;
+	  overflow-y: auto;
+	  background: white;
+	  border: 1px solid #ddd;
+	  border-radius: 4px;
+      }
+      
+      .tabset-dropdown > .nav-tabs > li.active:before {
+	  content: "";
+	  font-family: 'Glyphicons Halflings';
+	  display: inline-block;
+	  padding: 10px;
+	  border-right: 1px solid #ddd;
+      }
+      
+      .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+	  content: "&#xe258;";
+	  border: none;
+      }
+      
+      .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+	  content: "";
+	  font-family: 'Glyphicons Halflings';
+	  display: inline-block;
+	  padding: 10px;
+	  border-right: 1px solid #ddd;
+      }
+      
+      .tabset-dropdown > .nav-tabs > li.active {
+	  display: block;
+      }
+
+      .tabset-dropdown > .nav-tabs > li.active a {
+  	  padding: 0 15px !important;
+      }
+
+      .tabset-dropdown > .nav-tabs > li > a,
+      .tabset-dropdown > .nav-tabs > li > a:focus,
+      .tabset-dropdown > .nav-tabs > li > a:hover {
+	  border: none;
+	  display: inline-block;
+	  border-radius: 4px;
+	  background-color: transparent;
+      }
+      
+      .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+	  display: block;
+	  float: none;
+      }
+      
+      .tabset-dropdown > .nav-tabs > li {
+	  display: none;
+	  margin-left: 0 !important;
+      }
+    </style>
+    
+</head>
+
+<body class="preload">
+
+   	
+               <!-- downcute start -->   
+   <div id="docute" class="Root theme-chaos">
+     <div class="Page layout-narrow">
+      <div class="Wrap">
+        <div class="Sidebar">
+          <div class="SidebarItems" id="toc">
+            <ul>
+            <li><a href="#eléments-de-syntaxe"><span class="toc-section-number">1</span> <strong>Eléments de syntaxe</strong></a>
+            <ul>
+            <li><a href="#types-de-graphique"><span class="toc-section-number">1.1</span> <strong>Types de graphique</strong></a></li>
+            <li><a href="#choix-du-délimiteur"><span class="toc-section-number">1.2</span> <strong>Choix du délimiteur</strong></a></li>
+            <li><a href="#eléments-de-syntaxe-1"><span class="toc-section-number">1.3</span> <strong>Eléments de syntaxe</strong></a></li>
+            </ul></li>
+            </ul>
+          </div>
+          <div data-position="sidebar:post-end" class="InjectedComponents"><div class="dark-theme-toggler"><div class="toggle "><div class="toggle-track"><div class="toggle-track-check"><img  src="data:image/png;base64,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" role="presentation" style="pointer-events: none;" width="16" height="16"></div> <div class="toggle-track-x"><img src="data:image/png;base64,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" role="presentation" style="pointer-events: none;" width="16" height="16"></div></div> <div class="toggle-thumb"></div></div> <input type="checkbox" aria-label="Switch between Dark and Default theme" class="toggler-screen-reader-only"></div></div>
+        </div>
+        <div class="Main">
+          <div class="Content" id="content"> 
+   
+   
+      
+      <div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Graphiques</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li>
+        <a href="https://mthevenin.github.io/stata_fr/index.html">Retour Stata-Ined</a>
+      </li>
+      <li>
+        <a href="formation.html">Formation</a>
+      </li>
+      <li>
+        <a href="mailto:marc.thevenin@ined.fr">
+          <span class="fa fa-envelope-o"></span>
+           
+          Contact
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/mthevenin">
+          <span class="fa fa-github"></span>
+           
+          GitHub
+        </a>
+      </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container -->
+      </div><!--/.navbar -->
+        
+      <h1 class="title"><br>Générer et éditer un graphique</h1>
+      
+      <p class="authors">
+              
+
+   
+      
+   
+<!-- Don't indent these lines or it will mess pre blocks indentation --> 
+<div class="page-content has-page-title">
+<div id="eléments-de-syntaxe" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> <strong>Eléments de syntaxe</strong></h1>
+<div id="types-de-graphique" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> <strong>Types de graphique</strong></h2>
+<p>On peut identifier deux types de graphiques avec Stata.</p>
+<ul>
+<li>Les <strong><em>graphiques de type one-way</em></strong> : coordonnées sur un seul axe avec ou non, un axe discret. Ils peuvent être préfixés ou non par <code>graph</code>: <strong><code>graph box</code></strong>, <strong><code>graph bar</code></strong>, <strong><code>histogram</code></strong> …..<br />
+</li>
+<li>Les <strong><em>graphiques de type two-way</em></strong> : coordonnées sur deux axes, optionnellement selon le type de graphique un troisième axe peut être renseigné. Ils sont préfixés ou non par <code>tw</code> (twoway) : <code>tw scatter</code>, <code>tw line</code>, …</li>
+</ul>
+<p>Certains types de graphiques sont de type oneway ou twoway. C’est le cas des histogrammes avec une commande <code>histogram</code> et une commande <code>tw histogram</code>.<br />
+<br> Les coordonnées sont généralement renseignées par des noms de variables. Pour certaines commandes graphiques, les valeurs sont directement renseignées: <code>tw scatteri</code> pour un nuage ou <code>tw pci</code> pour des segments [ici 4 coordonnées : (ymin, xmin) et (ymax, xmax)].<br />
+Un graphique peut être aussi généré par une fonction : <code>tw function y = f(x)</code>.</p>
+<p>On peut obtenir la liste et aides des commandes graphiques officielles avec <strong><code>help graph</code></strong>.</p>
+</div>
+<div id="choix-du-délimiteur" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> <strong>Choix du délimiteur</strong></h2>
+<p>Un graphique peut devenir assez gourmand en options. Par défaut avec Stata l’exécution est faite ligne par ligne avec l’option par défaut <code>#delimit cr</code>. Pour exécuter une commande sur plusieurs lignes, il est d’usage d’utiliser un triple slash <strong><code>///</code></strong>. Pour les graphiques, cette option manque de souplesse et peut provoquer des messages d’erreur lorsque <strong><code>///</code></strong> est attaché par inadvertance au dernier caractère d’une ligne.<br />
+Lorsque le nombre de lignes devient assez conséquent, il est préférable d’utiliser <strong><code>;</code></strong> comme délimiteur. Le changement de délimiteur se fait avec <strong><code>#delimit ;</code></strong> et on indique la fin de l’exécution avec <code>;</code>. On retourne au délimiteur par défaut avec <strong><code>#delimit cr</code></strong>.</p>
+<pre><code>#delimit ;
+tw scatter y x,
+[option1]
+[option2]
+[option3]
+.
+.
+[option n]
+;
+
+#delimit cr
+* Suite du programm</code></pre>
+</div>
+<div id="eléments-de-syntaxe-1" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> <strong>Eléments de syntaxe</strong></h2>
+<p>Pour des raisons de vocabulaire, nous allons utiliser le terme de géométrie utilisée par l’incontournable librairie <strong>ggplot2</strong> de <strong>R</strong> pour identifier un type de graphique comme scatter, line…. Mais pas seulement. en fin de document je traite de l’utilisation de la librairie <strong>Python</strong> <strong><code>plotnine</code></strong>, qui est un wrapper relativement complet de ggplot2, directement exécutable dans un éditeur .do ou .ado. depuis la version 16 de Stata.<br />
+En première approche, la syntaxe d’un graphique avec Stata est particulièrement simple :</p>
+<pre><code>[tw/graph] type_géométrie coordonnées [if/in] [weight], [options géométrie] [,[options du graphique]]</code></pre>
+<p><br></p>
+<div id="un-bloc-dobjets-graphiques-même-type" class="section level3" number="1.3.1">
+<h3><span class="header-section-number">1.3.1</span> <strong>Un bloc d’objets graphiques (même type)</strong></h3>
+<p>Un graphique comportant plusieurs géométries de même type peut être exécuté avec un seul bloc de coordonnées renseigné par des variables pour l’axe des ordonnées. Ces différentes coordonnées peuvent être des variables correspondant à plusieurs valeurs d’une variable additionnelle, souvent de type catégoriel [voir la commande separate plus bas].</p>
+<pre><code>[tw/graph] type_géométrie Y1 Y2 Y3.... [X] [, option1(Y1 Y2 Y3...)..options_du graphique]</code></pre>
+<p>Les options de la géométrie (plusieurs coordonnées pour Y) comme les couleurs ou les tailles/épaisseurs sont indiquées à la suite dans l’option choisie. Si on veut changer les couleurs de plusieurs courbes associées aux variable y1,y2 et y3: <code>color(couleurY1 couleurY2 couleurY3)</code>.</p>
+<p><strong><em>Exemple</em></strong></p>
+<p>Graphique de type <code>line</code>, reportant les espérances de vie aux USA de 1900 à 2000. Le premier graphique est sans option, le second en comporte.</p>
+<p><img src="imgp1/g1.png" style="width:50.0%" /></p>
+<p><em>Premier graphique (haut)</em></p>
+<pre><code>sysuse lifeexp, clear
+tw line le_male le_female year </code></pre>
+<p><em>Second graphique (bas)</em></p>
+<pre><code>sysuse lifeexp, clear
+
+#delimit ;
+tw line  le_male le_female year, 
+                                         
+  lc(*.8 *1.2)                                                        
+  lw(*4 *4)
+                                                               
+  title(&quot;Espérance de vie aux USA&quot;, pos(11))                                  
+  legend(order(1 &quot;Hommes&quot; 2 &quot;Femmes&quot;) pos(4) col(1) ring(0))             
+  ylabel(35(5)80, angle(0))  
+  xtitle(&quot;Année&quot;)   
+  graphr(color(white)) plotr(color(white))
+;</code></pre>
+<div class="alert alert-warning">
+<p><svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:1em;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M104 224H24c-13.255 0-24 10.745-24 24v240c0 13.255 10.745 24 24 24h80c13.255 0 24-10.745 24-24V248c0-13.255-10.745-24-24-24zM64 472c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zM384 81.452c0 42.416-25.97 66.208-33.277 94.548h101.723c33.397 0 59.397 27.746 59.553 58.098.084 17.938-7.546 37.249-19.439 49.197l-.11.11c9.836 23.337 8.237 56.037-9.308 79.469 8.681 25.895-.069 57.704-16.382 74.757 4.298 17.598 2.244 32.575-6.148 44.632C440.202 511.587 389.616 512 346.839 512l-2.845-.001c-48.287-.017-87.806-17.598-119.56-31.725-15.957-7.099-36.821-15.887-52.651-16.178-6.54-.12-11.783-5.457-11.783-11.998v-213.77c0-3.2 1.282-6.271 3.558-8.521 39.614-39.144 56.648-80.587 89.117-113.111 14.804-14.832 20.188-37.236 25.393-58.902C282.515 39.293 291.817 0 312 0c24 0 72 8 72 81.452z"/></svg> Avec le changement de délimiteur, il est plus facile de distinguer les différents éléments du graphique, comme les options qui affectent directement les courbes (couleur, épaisseur) et les options générales du graphique (titre, légende, labels de y à l’horizontal, titre de x, couleur de fond).</p>
+</div>
+<p><strong><em>Options des courbes</em></strong>:</p>
+<ul>
+<li><code>lc(...)</code>: je baisse la saturation de la courbe des hommes de 20% (plus claire) et j’augmente celle des femmes de 20% (plus foncée). Les couleurs par défaut sont conservées (palette Stata s2color).</li>
+<li><code>lw(...)</code>: j’augmente fortement l’épaisseur des courbes (*4). Stata dispose de plusieurs unités pour altérer les tailles et épaisseurs, celle utilisée par défaut est une unité de type relative (voir la section dédiées plus bas).</li>
+</ul>
+<p><strong><em>Options du graphique</em></strong>:</p>
+<ul>
+<li>J’ajoute un titre avec l’option <code>title(…)</code> que je positionne à 11 heures à l’extérieur avec l’argument <code>pos(11)</code>.</li>
+<li>Je change les labels de la légende dans l’option <code>legend(...)</code> avec l’argument <code>order(...)</code>. Je change la position de la légende en a mettant dans la zône du graphique avec <code>ring(0)</code> et à 4 heures avec <code>pos(4)</code>. Les labels sont reportés sur une colonne avec l’argument <code>col(1)</code>.</li>
+<li>Je modifie les labels des ordonnées avec l’option <code>ylabel(...)</code>, en changeant le delta des coordonnées reportées et en mettant les labels à l’horizontal avec l’argument <code>angle(0)</code>.</li>
+<li>Je modifie le titre des abscisses avec l’option <code>xtitle(...)</code>.</li>
+<li>Je modifie les couleurs de fonds du graphique qui est composée de deux zônes: la zône où est réellement tracé le graphique avec l’option <code>plotr()</code> [ou <code>plotregion(...)</code>] et la zône externe avec <code>graphr(...)</code> [ou <code>graphregion(...)</code>] où se trouve reporté par défaut les titres et les légendes. Pour changer la couleur de fond, on utilise l’argument <code>color(...)</code>.</li>
+</ul>
+</div>
+<div id="plusieurs-blocs-dobjets-graphiques" class="section level3" number="1.3.2">
+<h3><span class="header-section-number">1.3.2</span> <strong>Plusieurs blocs d’objets graphiques</strong></h3>
+<p>Dans l’exemple précédent on avait deux variables, mais il est plus standard que les bases donnent des observations à partir d’une variable qui peut être croisées avec d’autres informations regroupées avec une variable discrète. Par rapport à d’autres langages graphiques, on pense bien évidemment à R avec ggplot, les choses se gâtent un peu du côté de Stata car plusieurs graphiques doivent être exécutés séparément dans la même commande. On donnera plus loin un moyen via les macros et les boucles d’automatiser cette exécution. Cela ne concerne que les éléments surperposés, Stata possédant en revanche une option pour générer des sous graphiques de type facettes ou small-multiple (voir section sur les graphiques combinés).<br />
+Chaque sous graphique a son propre jeu d’options et ont doit bien indiquer leur séparation, soit avec des parenthèses soit avec des doubles barres horizontales.</p>
+<pre><code>(graph 1, options graph1) (graph2, options graph2)… (graph n, option graph n) , options graphiques</code></pre>
+<p>ou</p>
+<pre><code>graph 1, options graph1 || graph2, options graph2 ||…. || graph n, option graph n || , options graphiques</code></pre>
+<p>Ma préférence va plutôt à la deuxième solution pour éviter une surabondance de parenthèses déjà très présentes, et souvent imbriquées dans les options. Par ailleurs il me semble qu’on visualise mieux la séparation entre les différents éléments graphiques.</p>
+<p>Principe de la syntaxe avec <code>;</code> comme délimiteur</p>
+<p><em>Graphiques séparés par ()</em></p>
+<pre><code>#delimit ;
+[tw/graph] 
+(type_géométrie1 Y1 [X1] [Y2] [X2] [Z] [in if] [weight]
+[, options(1)]) 
+  
+(type_géométrie2 Y2 [X1] [Y2] [X2] [Z] [in if] [weight]
+[, options(2)])
+...)
+                                    
+[, options_graphiques] 
+; </code></pre>
+<p><em>Graphiques séparés par ||</em></p>
+<pre><code>#delimit ;
+[tw/graph] 
+   type_géométrie1 Y1 [X1] [Y2] [X2] [Z] [in if] [weight]
+[, options(1)] 
+  
+|| type_géométrie2 Y2 [X1] [Y2] [X2] [Z] [in if] [weight]
+[, options(2)]) 
+
+...                                    
+|| [, options_graphiques] 
+;  </code></pre>
+<p><strong><em>Exemple</em></strong></p>
+<p>Comme dans le premier graphique, celui du haut est sans option et celui du bas avec. On va afficher un nuage de point avec la base auto, entre les variables price et mpg (consommation d’essence en gallon) selon l’origine de la voiture (US ou autres pays).</p>
+<p><img src="imgp1/g2.png" style="width:50.0%" /></p>
+<p><em>Premier graphique</em></p>
+<pre><code>sysuse auto, clear
+
+#delimit
+tw 
+    scatter price mpg if !foreign
+||  scatter price mpg if  foreign
+
+||, legend(order(1 &quot;US&quot; 2 &quot;Autres&quot;))
+;</code></pre>
+<div class="alert alert-info">
+<p><svg aria-hidden="true" role="img" viewBox="0 0 192 512" style="height:1em;width:0.38em;vertical-align:-0.125em;margin-left:auto;margin-right:1em;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M20 424.229h20V279.771H20c-11.046 0-20-8.954-20-20V212c0-11.046 8.954-20 20-20h112c11.046 0 20 8.954 20 20v212.229h20c11.046 0 20 8.954 20 20V492c0 11.046-8.954 20-20 20H20c-11.046 0-20-8.954-20-20v-47.771c0-11.046 8.954-20 20-20zM96 0C56.235 0 24 32.235 24 72s32.235 72 72 72 72-32.235 72-72S135.764 0 96 0z"/></svg> Lorsqu’on superpose les sous graphiques de cette manière, Stata ne reconnait pas par défaut les labels à affecter à la légende, et affiche deux fois le label price pour chaque origine. On doit renseigner manuellement cette information. Petite astuce pas forcément connue de toutes et tous. Lorsqu’une variable est de type indicatrice {0,1} il n’est pas nécessaire de préciser sa valeur:</p>
+<ul>
+<li><code>!foreign</code> est identique à <code>foreign==0</code></li>
+<li><code>foreign</code> est identique à <code>foreign==1</code></li>
+</ul>
+</div>
+<p><em>Second graphique</em></p>
+<pre><code>#delimit ;
+tw 
+   scatter price mpg if !foreign, 
+   mc(&quot;31 161 135%60&quot;) msize(*1.5) mlc(black) mlw(.3) jitter(1)
+|| scatter price mpg if foreign, 
+   mc(&quot;207 225 28%60&quot;) msize(*1.5) mlc(black) mlw(.3) jitter(1) 
+
+||, title(&quot;{bf: Prix et consommation selon l&#39;origine}&quot;, pos(11))   
+    legend(order(1 &quot;US&quot; 2 &quot;Autres&quot;))
+    ylabel(5000 “5k” 10000 “10k” 15000 “15k”, angle(0)) 
+    xtitle(&quot;Consommation (miles par gallon)&quot;) 
+    ytitle(&quot;Prix&quot;)
+    graphr(color(white)) plotr(color(white))
+;</code></pre>
+<p><strong><em>Options des nuages</em></strong></p>
+<ul>
+<li><code>mc(...)</code> modifie la couleur des bulles. On verra par la suite plus en détail les altérations des couleurs, mais ici on a manuellement changé leur couleur avec un code RGB sur lequel on a réduit l’opacité à 60% (ou mis 40% de transparence).</li>
+<li><code>mlc(...)</code> modifie la couleur du contour des bulles, ici en noir. Par défaut la couleur du contour est identique à la couleur de remplissage de la bulle.</li>
+<li><code>msize()</code> modifie la taille de la bulle.</li>
+<li><code>mlw()</code> modifie l’épaisseur du contour de la bulle.</li>
+<li><code>jitter()</code> : très à la mode, les jitters sont des nuages dont les coordonnées ont été perturbées aléatoirement pour réduire les effets de superposition, ici liés à la variable mpg. A utiliser avec prudence, et éviter de trop modifier les coordonnées lorsque les coordonnées représentent des valeurs continues.</li>
+</ul>
+<p><strong><em>Options du graphique</em></strong></p>
+<ul>
+<li>Le titre a été mis en gras avec une balise SMCL (Stata Markup Control Langage) : <code>"{bf :texte}"</code>.</li>
+<li>Les valeurs des prix reportés sur l’axe des ordonnées à été modifié manuellement avec des unités k (1k = 1000).</li>
+<li>Le reste des options sont de même nature que celles relative au graphique précédent sur les espérances de vie.</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+   
+   
+              </div>
+  </div>
+  </div>
+  </div>
+   
+      
+
+  <script>
+    $(document).ready(function () {
+
+		// add bootstrap table styles to pandoc tables
+	$('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+		
+ 		
+	    });
+  </script>
+
+
+
+    <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+	var script = document.createElement("script");
+	script.type = "text/javascript";
+	script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+	document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+  
+</body>
+</html>
