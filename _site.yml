@@ -1,10 +1,13 @@
 name: "Stata Graphiques"
+title: "Test"
 navbar:
   title: "Graphiques"
   type: inverse
   left:
-    - text: "Retour Stata Ined"
+    - text: "Retour Stata-Ined"
       href: https://mthevenin.github.io/stata_fr/index.html
+    - text: "Formation"
+      href: formation.html
     - text: "Contact"
       icon: fa-envelope-o
       href: mailto:marc.thevenin@ined.fr                  
@@ -18,3 +21,4 @@ output:
     default_style: "light"
     downcute_theme: "default"
     number_sections: yes
+
