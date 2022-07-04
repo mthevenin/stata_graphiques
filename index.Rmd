@@ -1,0 +1,47 @@
+---
+title: "<br>Graphiques"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(knitr)
+library (shiny)
+library (rsconnect)
+library(haven)
+library(pander)
+library(memisc)
+library(fontawesome)
+```
+
+
+> `r fa("link", fill = "steelblue", height = "1em", margin_right="1em")`**04 Juillet 2022**: Chapitre 1 en ligne et ajout du support de Bénédicte Garnier "Introduction à la sémiologie graphique". **Aller à l'onglet formation dans la barre de navigation**. 
+
+> `r fa("book", fill = "steelblue", height = "1em", margin_right="1em")`**23 Juin 2022**: Formation chapitres 1 à 3.   
+**Lien vers le nouveau support de formation** [chapitre 1 à 3]: [`r fa("link", fill = "steelblue", height = "1em", margin_right="1em")`](v2_2022_chap123.pdf)  
+
+---
+
+`r fa("thumbs-up", fill = "steelblue", height = "1em", margin_right="1em")`**`fabplot` [Nj.Cox - 2021]**  
+<div class="alert alert-info">
+* Contrôle des effets *spaghetti* (courbes) et *paella* (nuage de points)
+* Commande externe **`fabplot`** programmée en 2021 par Nj.Cox
+* J'ai ajouté une option pour modifier les courbes au second plan, NJ.Cox ayant toujours tendance à bloquer l'habillage de ces commandes graphiques. La commande a été renommée **`fabplot2`** et s'installe via github.
+* Exemple avec à gauche un graphique, peu lisible, qui empile 9 courbes (effet spaghetti); et à droite un graphique *small-multiple* qui contrôle plutôt bien cet effet indésirable.
+
+<table><tr>
+<td><img src=ressources/fabplot/g1.png></td>
+<td><img src=ressources/fabplot/g2.png></td>
+<tr></table>
+
+[**Article Stata Journal**](https://journals.sagepub.com/doi/full/10.1177/1536867X211025838)  
+[**Tutoriel MT**](https://github.com/mthevenin/stata_graphiques/blob/main/ressources/fabplot/Readme.md)
+</div>
+
+
+
+
+
+
+
+
