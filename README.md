@@ -1,5 +1,10 @@
+---
+title: Graphiques avancés avec Stata
+author: Marc Thevenin (Ined)
+---
 
-**2022**
+
+**MAJ 2022**
 | Date | Description |
 | --- | --- |
 | 06-07: | Mise en ligne des chapitres 2 et 3  |
