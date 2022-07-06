@@ -1,0 +1,1244 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="generator" content="pandoc" />
+
+    
+    
+    <title> Chap2: Utilisation des macros</title>
+
+        <script src="site_libs/header-attrs-2.14/header-attrs.js"></script>
+        <script src="site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link href="site_libs/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+        <script src="site_libs/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+        <script src="site_libs/navigation-1.1/tabsets.js"></script>
+        <link href="site_libs/downcute-0.1/downcute.css" rel="stylesheet" />
+        <link href="site_libs/downcute-0.1/downcute_fonts_embed.css" rel="stylesheet" />
+        <link href="site_libs/downcute-0.1/downcute_chaos.css" rel="stylesheet" />
+        <script src="site_libs/downcute-0.1/downcute_styles.js"></script>
+        <script src="site_libs/downcute-0.1/downcute.js"></script>
+        <script src="site_libs/prism-1.22/prism.js"></script>
+        <link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+        <link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+    
+    
+    
+    
+    <!-- tabsets -->
+    <script>
+      $(document).ready(function () {
+	  window.buildTabsets("toc");
+      });
+      $(document).ready(function () {
+	  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+	      $(this).parent().toggleClass('nav-tabs-open')
+	  });
+      });
+    </script>
+
+    <!-- code folding -->
+    
+    <!-- code download -->
+    
+    <!-- tabsets dropdown -->
+
+    <style type="text/css">
+      .tabset-dropdown > .nav-tabs {
+	  display: inline-table;
+	  max-height: 500px;
+	  min-height: 44px;
+	  overflow-y: auto;
+	  background: white;
+	  border: 1px solid #ddd;
+	  border-radius: 4px;
+      }
+      
+      .tabset-dropdown > .nav-tabs > li.active:before {
+	  content: "";
+	  font-family: 'Glyphicons Halflings';
+	  display: inline-block;
+	  padding: 10px;
+	  border-right: 1px solid #ddd;
+      }
+      
+      .tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+	  content: "&#xe258;";
+	  border: none;
+      }
+      
+      .tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+	  content: "";
+	  font-family: 'Glyphicons Halflings';
+	  display: inline-block;
+	  padding: 10px;
+	  border-right: 1px solid #ddd;
+      }
+      
+      .tabset-dropdown > .nav-tabs > li.active {
+	  display: block;
+      }
+
+      .tabset-dropdown > .nav-tabs > li.active a {
+  	  padding: 0 15px !important;
+      }
+
+      .tabset-dropdown > .nav-tabs > li > a,
+      .tabset-dropdown > .nav-tabs > li > a:focus,
+      .tabset-dropdown > .nav-tabs > li > a:hover {
+	  border: none;
+	  display: inline-block;
+	  border-radius: 4px;
+	  background-color: transparent;
+      }
+      
+      .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+	  display: block;
+	  float: none;
+      }
+      
+      .tabset-dropdown > .nav-tabs > li {
+	  display: none;
+	  margin-left: 0 !important;
+      }
+    </style>
+    
+</head>
+
+<body class="preload">
+
+   	
+               <!-- downcute start -->   
+   <div id="docute" class="Root theme-chaos">
+     <div class="Page layout-narrow">
+      <div class="Wrap">
+        <div class="Sidebar">
+          <div class="SidebarItems" id="toc">
+            <ul>
+            <li><a href="#rappels-sur-les-macros"><span class="toc-section-number">1</span> <strong>Rappels sur les macros</strong></a>
+            <ul>
+            <li><a href="#local---global"><span class="toc-section-number">1.1</span> <strong>local - global</strong></a></li>
+            <li><a href="#la-commande-levelsof"><span class="toc-section-number">1.2</span> <strong>La commande levelsof</strong></a></li>
+            <li><a href="#quelques-fonctions-associées-à-une-macro"><span class="toc-section-number">1.3</span> <strong>Quelques fonctions associées à une macro</strong></a></li>
+            <li><a href="#return-et-ereturn"><span class="toc-section-number">1.4</span> <strong>return et ereturn</strong></a></li>
+            <li><a href="#compteurs-i"><span class="toc-section-number">1.5</span> <strong>Compteurs i++</strong></a></li>
+            <li><a href="#autres-objets-macro-token-tempvar"><span class="toc-section-number">1.6</span> <strong>Autres objets macro: token, tempvar</strong></a></li>
+            </ul></li>
+            <li><a href="#alléger-la-syntaxe"><span class="toc-section-number">2</span> <strong>Alléger la syntaxe</strong></a></li>
+            <li><a href="#automatiser-la-programmation"><span class="toc-section-number">3</span> <strong>Automatiser la programmation</strong></a>
+            <ul>
+            <li><a href="#macros-empilées"><span class="toc-section-number">3.1</span> <strong>Macros empilées</strong></a></li>
+            <li><a href="#routine-.ado"><span class="toc-section-number">3.2</span> <strong>Routine (.ado)</strong></a></li>
+            </ul></li>
+            </ul>
+          </div>
+          <div data-position="sidebar:post-end" class="InjectedComponents"><div class="dark-theme-toggler"><div class="toggle "><div class="toggle-track"><div class="toggle-track-check"><img  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAAlwSFlzAAALEwAACxMBAJqcGAAAAVlpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IlhNUCBDb3JlIDUuNC4wIj4KICAgPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICAgICAgPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIKICAgICAgICAgICAgeG1sbnM6dGlmZj0iaHR0cDovL25zLmFkb2JlLmNvbS90aWZmLzEuMC8iPgogICAgICAgICA8dGlmZjpPcmllbnRhdGlvbj4xPC90aWZmOk9yaWVudGF0aW9uPgogICAgICA8L3JkZjpEZXNjcmlwdGlvbj4KICAgPC9yZGY6UkRGPgo8L3g6eG1wbWV0YT4KTMInWQAABlJJREFUWAm1V3tsFEUcntnXvXu0tBWo1ZZHihBjCEWqkHiNaMLDRKOtQSKaiCFKQtS/SbxiFCHGCIkmkBSMwZhQNTFoQZD0DFiwtCDFAkdDqBBBKFj63rvdnfH7zfVo5aFBj0l2Z/dm5vd98/0es8dYjlpr62azufnDQNZcU1PciMfjWvb9rvZSMk4Ayfb36pLH13189GC8LAtIRLLPt+pzwrCuLq4ISEv/gHmitrAwfPbEkXc/ad4dL6iujrvyX0jcitgd/yZlZqftP6995Mr5TVLa22Tn8XVX2g/XLSRjUu7Q79jonS7I7hS7/0oOb5VyqF52n98oj7esXX07EjlxwXWisRmSnm3b29TTM8iYrjmFBWExubxwY/uhNas4r/WySl1fc5cetDMd7ydl+lMJJRw5WC8ud62Xx5rfepzwxgZmbhUYNS5Stvsj4yo2GXJEFBVHWDBkfdbR9HpYBaaUajDnBLKKpl1xRKYcgGtMCqEzTaSnThk/SQT0uJqTqFNBmXMCsZE48DzRZRMBRjv1GHNdk3HBImF9ZUvTyxM40pMKVc4JZBXQOLOFoDeKSxdp6HIQcO4rjYT9fn0pjbz9GLt7BAAODmjSVReXUMFzNW5x5vfxp2mIxZjIuQKJxAmFa+is2DQJJQ0JyBVExNOYcJnPxx/6/utnijmP555ALEagKAGGnGn64QORBjARcIA/yJk7JMJBLRrNtybTvH88KGjCf2jK86bhzmMcwDKFZEQvbIhxFYhChoMWMzU2iWznlIBEVJOsP+1bdX/ALx9l7jApADeDAEcMkE90JnUmmGl4USKQ0xhoW3JB5XY0YrxYWhLwMZZypUyjDGH35AbNwgUGiFBPpuGbHCpAOV1ZGXf2f/taftAv31DyeymN2d1IhAFAwTOmnzF/kKcdh3me7CYCOVNgycju84u8DeVlwfFq9/ZlTfldYrMUjOlrkjkD+rU+WzCROkcEchIDHR011syZW9JHD7y07N6JvhWMpz3pugaTkB6lWFVCKkhck0zzeMp2utq+uHrmfxOgoCO/Z8CXPlEQ1bdH8wgvhSIkEG0ICcQeExIFGdimjvKka7btJFZuaXOammIGKUCFQ53j9EN1dYKWqHf0t2w407W2tgs6h89ZnImjB55flh81tt9XirjjDuSl+oIPRQ0iWPgNZ5GqTqbBe3vSzEl5n5PhWKwocyR2HlqYN61qV18WjYjE8JLARZPQsUSim8foIRYTlGr02Ly7piASFRtKJ4VfieYhxdS2JcDVMN6xVOKZyrCGm8b108lrLRVzvptLH7IoEFLFANes6KnDi+uxfmvFnF17oALq5u1agu3/YfHkcSFzeSggV5eXRfIB7CHNcO5SUI+Ih5Ir7f4MAV9IqdFzdZgNpZw1Gcs1mNvgGbTbqQ9/cz7ZuuhgyYRQ49ljTyWHhr2DwpNHHFf+5gnWZ3Bharo+0TD5dNMw5vv9RlVpSRDHK4TlnoukhtYApuOHejSZQuo5g/A9BysdKRCyLl6062fN37OXMDlvUJtUrtmxo0avrW3wTrYs3jJ9RvRVChrmSmanPMpX2OXMsmDGh6AiEIwBAlvkOqIdBy+8JyAz8pz7QxiDth4KDy5uAlwzrWTnwC8Vc4KVAMZ3YUZ+IqoIjP3h5KFFX1ZMy3uW+7RhEDHgTi0zC9rS7uhPCDiNrGFyqBeERtKN/B0YlyFCkw0NJ5C0Ojv7zvT1a1WV1TuvZDdL4NTgB7CASYpsen6gqvG5jmTf5qHedADgkBl3D0nkSgNhZACDyi0FUKZRr3IdRjgN4WPPoFMIIegIK3mqd38fS80mcJKelM4szNyzZtQbkchGePuBRS8Eg9pHU8ojRQpSqs+ajAIwTjjUMQ/nvTNM0kicwYxZIYMh/891DYi+fvedB+c1xsm4lDU6ya+Axtz+RiAzEVYbajQOpq17F0R9QevNcEhfcU+xvyQQUalGJBSesqOkgPQ4YNyUZL9fSvUPDjoNAwN8/dwFjaczNkc3ptaMud1EIDtGcmXTcefO2cGSvKIFfp/2JIJxlq7xEl3nVPM4fDeIbPkD16/ptNc0bDu7qxbsu0R2JGywWMIjF2ft3tjfloAyQAGXiOn8hrqwbVvMXzaO+QeHXP6nF0wvX74Hf4NGG5GPjSlYoyM3P/0FbCT6zvM/yYoAAAAASUVORK5CYII=" role="presentation" style="pointer-events: none;" width="16" height="16"></div> <div class="toggle-track-x"><img src="data:image/png;base64,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" role="presentation" style="pointer-events: none;" width="16" height="16"></div></div> <div class="toggle-thumb"></div></div> <input type="checkbox" aria-label="Switch between Dark and Default theme" class="toggler-screen-reader-only"></div></div>
+        </div>
+        <div class="Main">
+          <div class="Content" id="content"> 
+   
+   
+      
+      <div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+        <div class="container">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-bs-toggle="collapse" data-target="#navbar" data-bs-target="#navbar">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="index.html">Graphiques</a>
+          </div>
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li>
+        <a href="https://mthevenin.github.io/stata_fr/index.html">Retour Stata-Ined</a>
+      </li>
+      <li>
+        <a href="formation.html">Formation</a>
+      </li>
+      <li>
+        <a href="mailto:marc.thevenin@ined.fr">
+          <span class="fa fa-envelope-o"></span>
+           
+          Contact
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/mthevenin">
+          <span class="fa fa-github"></span>
+           
+          GitHub
+        </a>
+      </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div><!--/.container -->
+      </div><!--/.navbar -->
+        
+      <h1 class="title"><br>Chap2: Utilisation des macros</h1>
+      
+      <p class="authors">
+              
+
+   
+      
+   
+<!-- Don't indent these lines or it will mess pre blocks indentation --> 
+<div class="page-content has-page-title">
+<p><br> Les programmes de ce chapitre sont disponibles à l’adresse :<br />
+<strong><a href="https://github.com/mthevenin/stata_graphiques/blob/main/programmes/chapitre2.do" class="uri">https://github.com/mthevenin/stata_graphiques/blob/main/programmes/chapitre2.do</a></strong></p>
+<div id="rappels-sur-les-macros" class="section level1" number="1">
+<h1><span class="header-section-number">1</span> <strong>Rappels sur les macros</strong></h1>
+<p><br></p>
+<div id="local---global" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> <strong>local - global</strong></h2>
+<p>Les macros sont des objets qui enregistre une valeur ou une expression. On peut les utiliser une ou plusieurs fois dans un programme, et permettent de générer des blocs de programme en boucle.<br />
+Leur utilisation est essentielle pour les graphiques Stata et faciliter leur réutilisation. Elles permettent entre autres:</p>
+<ul>
+<li>d’alléger la syntaxe de l’habillage.</li>
+<li>de reporter automatiquement des valeurs (moyenne, minimum, maximum…) dans un graphique, générer automatiquement une légende ou une série de labels qui sera reporté sur un axe discret.</li>
+<li>de produire des graphiques complexes, en particulier en générant des <strong>macros empilées</strong>.</li>
+</ul>
+<div class="alert alert-warning">
+<p>Penser à tester/visualiser le contenu de la macro, avec <code>display</code> (<code>di</code>) ou <code>macro list</code> (<code>mac list</code>). - <code>mac list</code> renvoie la valeur ou l’expression qui a été réellement enregistré. <strong><em>A privilégier pour les macros qui renvoient une chaîne de caractère</em></strong>.<br />
+- <code>display</code> (di) peut être privilégier pour visualiser ce qui sera affiché dans la fenêtre de l’output, ou pour les macros qui renvoient une valeur. à la fin de la session.</p>
+</div>
+<p><strong>Macro temporaire: local</strong></p>
+<p><br> Les macros de type temporaire (<strong><code>local</code></strong>) sont conservées en mémoire seulement le temps de l’exécution. Cependant en exécutant Stata avec <em><strong>Notebook Jupyter</strong> (librairie <code>Stata Kernel</code> – </em>Kyle barron*), ce type de macro vont rester en mémoire d’une exécution à une autre, ce qui peut présenter des avantages, en particulier pour les graphiques. Les macros seront effacées à la fin de la session. Voir la section dédiée à Python.</p>
+<p><strong><em>Syntaxe</em></strong></p>
+<pre><code>local nom [=] expression/opération
+
+local nom [=] “expression”
+
+local nom [=] `““expression””&#39; 
+
+local nom : fonction_macro           </code></pre>
+<p><strong><em>Appel de l’expression dans un programme</em></strong></p>
+<pre><code>`nom&#39; 
+
+“`nom&#39;”</code></pre>
+<p><strong><em>Test/visualisation de l’expression</em></strong></p>
+<pre><code>mac list _nom
+
+di `nom&#39;  
+
+di “`nom&#39;”</code></pre>
+<p><br></p>
+<style>div.blue pre { background-color:#4682B4 ; }</style>
+<strong><em>Exemple 1</em></strong>: on veut enregistrer le résultat de l’opération 1 + 1
+<div class="blue">
+<pre><code>local  x  1 + 1
+
+mac list _x
+_x:  1 + 1
+
+
+di `x&#39;
+2</code></pre>
+</div>
+<p><code>mac list</code> ne renvoie pas le résultat de l’opération, alors qu’il a été bien généré. On doit utiliser l’opérateur d’affectation = .</p>
+<div class="blue">
+<pre><code>local x = 1 + 1
+
+mac list _x
+_x: 2
+
+di `x&#39;
+2</code></pre>
+</div>
+<strong><em>Exemple 2</em></strong>: on veut enregistrer l’expression ABC<br />
+
+<div class="blue">
+<pre><code>local x &quot;ABC&quot; // ou
+local x ABC
+
+mac list _x
+_x: ABC
+
+di `x&#39;
+ABC not found
+
+di &quot;`x&#39;&quot;
+ABC</code></pre>
+</div>
+<strong><em>Exemple 3</em></strong> : On veut enregistrer l’expression ABC avec les doubles quotes apparentes: “ABC”<br />
+
+<div class="blue">
+<pre><code>local x &quot;A&quot; &quot;B&quot; &quot;C&quot;
+
+mac list _x
+_x: A&quot; &quot;B&quot; &quot;C
+
+di &quot;`x&#39;&quot;
+ABC</code></pre>
+</div>
+La solution précédente ne fonctionne pas.<br />
+
+<div class="blue">
+<pre><code>local x `&quot;&quot;A&quot; &quot;B&quot; &quot;C&quot;&quot;&#39;
+
+mac list _x
+_x: &quot;A&quot; &quot;B&quot; &quot;C&quot;
+
+di &quot;`x&#39;&quot;
+A&quot; &quot;B&quot; &quot;C&quot; &quot; invalid name</code></pre>
+</div>
+<p><code>di</code> renvoie de nouveau un message d’erreur alors que la macro est correctement assignée.</p>
+<strong><em>Exemple 4</em></strong>: On alterne valeur numérique et du texte en conservant les doubles quotes.<br />
+
+<div class="blue">
+<pre><code>local no 0 &quot;Non&quot; 1 &quot;Oui&quot;
+
+mac list _no
+_no:     0 &quot;Non&quot; 1 &quot;Oui&quot;
+
+di &quot;`no&#39;&quot;
+0 Non&quot; 1 &quot;Oui&quot;&quot; invalid name</code></pre>
+</div>
+<p>Remarque: de nouveau <code>di</code> renvoie un message d’erreur alors que la macro est correctement assignée.</p>
+<div class="blue">
+<pre><code>local no 0 &quot;Non&quot; 1 &quot;Oui&quot;
+
+mac list _no
+_no:     0 &quot;Non&quot; 1 &quot;Oui&quot;
+
+di &quot;`no&#39;&quot;
+0 Non&quot; 1 &quot;Oui&quot;&quot; invalid name</code></pre>
+</div>
+<p><strong>Macro en dur: global</strong></p>
+<p>Les macros de type <code>global</code> sont enregistrées en dur, et conservées en mémoire d’une exécution à une autre et d’une session à une autre. Elles sont appelées avec <strong><code>$</code></strong> et, avec <code>mac list</code>, le nom de la macro n’est pas précédé d’un underscore.</p>
+<p><strong><em>Test/visualisation de l’expression</em></strong></p>
+<pre><code>mac list nom
+
+di $nom  
+di &quot;$nom&quot;</code></pre>
+</div>
+<div id="la-commande-levelsof" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> <strong>La commande levelsof</strong></h2>
+<p>Cette commande particulièrement utile, pour ne pas dire incontournable, récupère les valeurs d’une variable et les enregistre dans une macro temporaire. <strong><code>levelsof</code></strong> précède régulièrement l’utilisation d’une boucle de type <code>foreach</code>.</p>
+<p><strong>Syntaxe</strong>: <strong><code>levelsof nom_var [if/in], local(nom_macro)</code></strong></p>
+<p><strong><em>Exemple</em></strong></p>
+<pre><code>sysuse auto, clear
+label list origin
+origin:
+           0 Domestic
+           1 Foreign
+
+levelsof foreign, local(f)
+mac list _f
+_f: 0 1</code></pre>
+<p><em>Warning</em>: si la variable est de type string, l’ordre des expressions enregistrées dans la macro suivra l’ordre alphabétique ce qui ne correspondra pas forcément à ce qui est recherché.</p>
+</div>
+<div id="quelques-fonctions-associées-à-une-macro" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> <strong>Quelques fonctions associées à une macro</strong></h2>
+<p>Il ne s’agit ici que de quelques fonctions utiles pour produire des graphiques et faciliter leur automatisation. L’ensemble des fonctions associées à une macro sont disponible dans l’aide (<code>help macro</code>).</p>
+<p><br> <strong>word count</strong><br />
+Permet de compter le nombre de termes contenus dans une expression enregistrée sous forme de macro. Utile pour compter le nombre de boucles à effectuer avec <code>forvalue</code>.</p>
+<p><strong>Syntaxe</strong>: <strong><code>Local/global : word count(nom_macro)</code></strong></p>
+<p><strong><em>Exemple</em></strong></p>
+<pre><code>levelsof rep78, local(r)
+1 2 3 4 5
+
+local nombre: word count(`r&#39;)
+
+mac list _nombre
+_nombre:  5</code></pre>
+<p><br> <strong>value label</strong><br />
+Récupère le nom d’un label affecté aux modalités d’une variable. Le nom de la variable peut-être enregistré en amont sous forme de macro.</p>
+<p><strong>Syntaxe</strong>: <strong><code>local/global nom_macro : value label nom_variable/nom_macro</code></strong></p>
+<pre><code>local varname foreign
+local labn : value label `varname&#39;
+
+mac list _labn
+_labn : origin</code></pre>
+<p><br> <strong>label</strong><br />
+Récupère l’expression de la modalité associée à une valeur d’un nom de label. Le nom du label peut avoir été enregistré en amont dans une macro (avec par exemple la fonction <code>value label</code>).</p>
+<p><strong>Syntaxe</strong>: <strong><code>local/global nom_macro : label nom_label valeur</code></strong></p>
+<strong><em>Exemple</em></strong>:
+<div class="blue">
+<pre><code>local lab0 : label origin 0
+local lab1 : label origin 0
+
+mac list _lab0
+lab0 : Domestic
+
+mac list _lab1
+lab1 : Foreign</code></pre>
+</div>
+En récupérant en amont le nom du label (origin).<br />
+
+<div class="blue">
+<pre><code>local labn: value label foreign
+local lab0: label `labn&#39; 0
+local lab1: label `labn&#39; 1
+
+mac list _lab0 _lab1
+_lab0 : Domestic
+_lab1 : Foreign</code></pre>
+</div>
+<p>En récupérant les valeurs de la variable avec levelsof, la modalité de chaque valeur peut-être récupérée dans une boucle <code>foreach</code>.</p>
+<div class="blue">
+<pre><code>levelsof foreign, local(v)
+local labn: value label foreign
+
+foreach val of local v {
+local lab`val&#39;: label `labn&#39; `val&#39;
+
+mac list _lab`val&#39; 
+}
+
+_lab0 : Domestic
+_lab1 : Foreign</code></pre>
+</div>
+<p>En mettant dès le début une macro sur le nom de la variable, on automatise les modifications. Il est même possible de mettre dans la macro plusieurs variables, et effectuer l’opération dans une boucle principale.</p>
+<div class="blue">
+<pre><code>local X foreign
+
+levelsof `X&#39;, local(v)
+local labn: value label `X&#39;
+
+foreach val of local v {
+local lab`val&#39;: label `labn&#39; `val&#39;
+mac list _lab`val&#39; 
+}
+
+_lab0 : Domestic
+_lab1 : Foreign</code></pre>
+</div>
+<p><strong><em>Graphique</em></strong></p>
+<p>On va récupérer automatiquement les modalités d’une variable pour renseigner la légende.</p>
+<ul>
+<li>La variable rep78 est regroupée en 2 modalités.</li>
+<li>Les modalités de la légende sont automatiquement insérées dans l’expression <code>legend(order(…)...)</code>.</li>
+<li>Pour utiliser une autre variable que rep, il suffit de modifier le nom de la variable dans la première macro (X).</li>
+</ul>
+<pre><code>sysuse auto, clear
+gen rep= rep78&lt;4
+label define rep 0 &quot;rep&lt;4&quot; 1 &quot;rep&gt;=4&quot;, modify
+label value rep rep
+
+*Récupération des modalités
+local X rep
+local labn: value label `X&#39;
+levelsof `X&#39;, local(l)
+foreach l2 of local l {
+local lab`l2&#39;: label `labn&#39; `l2&#39;
+}
+
+
+*Graphique
+#delimit ;
+tw scatter price mpg if `X&#39;, 
+   mc(&quot;237 248 177&quot;)   mlc(black) mlw(*.3)  msiz(*1.5) jitter(2)     
+|| scatter price mpg if !`X&#39;, 
+   mc(&quot;65 182 196&quot;)    mlc(black) mlw(*.3) msiz(*1.5) jitter(2)  
+   
+|| , legend(order(1 &quot;`lab0&#39;&quot; 2 &quot;`lab1&#39;&quot;) pos(11) region(color(%0)))         
+     title(&quot;Variable `X&#39;&quot;) 
+;
+#delimit cr</code></pre>
+<p><img src="imgp2/g1a.png" style="width:60.0%" /></p>
+<p>Il suffit de modifier la première ligne qui enregistre le nom de la variable pour faire le même graphique avec la variable <em>foreign</em>: local X foreign.</p>
+<p><img src="imgp2/g1b.png" style="width:60.0%" /></p>
+<p><strong><em>Exercice</em></strong><br />
+A partir du programme faire un graphique combiné des deux graphiques précédents en automatisant au maximum la sélection des variables <em>rep</em> et <em>foreign</em>. Il y a très peu d’ajouts ou de modifications à faire.</p>
+<p><img src="imgp2/g1c.png" style="width:80.0%" /></p>
+<p><strong>variable label</strong><br />
+Récupère le label d’une variable sous forme du macro. Utile pour gérer une modification du titre des axes passer par les lignes de programme d’un graphique, et plus généralement pour donner de l’information sur variable de type continu ou de comptage sans label affecté au valeurs.</p>
+<p><strong>Syntaxe</strong>: <strong><code>local/global nom_macro : variable label variable/macro</code></strong></p>
+<pre><code>local labv:  variable label foreign
+mac list _labv
+
+_labv : car type</code></pre>
+<p><strong><em>Modification du format d’une valeur numérique</em></strong> (changement du nombre de décimale)<br />
+Dans la section suivante, on va utiliser utiliser des objets de type macro qui sont générés après avoir exécuté une commande. Lorsque ces objets sont des valeurs statistiques comme des moyennes, estimateurs de regression etc., leur format enregistré comporte généralement un nombre important de décimales. Il est possible de modifier/réduire ce nombre de décimales avec la fonction <code>di</code>.</p>
+<p><strong>Syntaxe</strong>: <strong><code>local/global nom_macro : di format valeur/macro</code></strong></p>
+<pre><code>local dec: di %6.2f 0.123456789
+
+di `dec&#39;
+.12</code></pre>
+</div>
+<div id="return-et-ereturn" class="section level2" number="1.4">
+<h2><span class="header-section-number">1.4</span> <strong>return et ereturn</strong></h2>
+<p>Après l’exécution d’une commande, un certain nombre d’objets sont conservés en mémoire jusqu’à l’exécution de la commande suivante. Leur liste est indiquée en bas du fichier d’aide.</p>
+<ul>
+<li><p>objets return: <code>r(nom_objet)</code></p></li>
+<li><p>Affichage de la liste: <code>return list</code></p></li>
+<li><p>objets ereturn: <code>e(nom_objet)</code></p></li>
+<li><p>Affichage liste: <code>ereturn list</code></p></li>
+</ul>
+<pre><code>sum price, d
+                            Price
+-------------------------------------------------------------
+      Percentiles      Smallest
+ 1%         3291           3291
+ 5%         3748           3299
+10%         3895           3667       Obs                  74
+25%         4195           3748       Sum of Wgt.          74
+
+50%       5006.5                      Mean           6165.257
+                        Largest       Std. Dev.      2949.496
+75%         6342          13466
+90%        11385          13594       Variance        8699526
+95%        13466          14500       Skewness       1.653434
+99%        15906          15906       Kurtosis       4.819188
+
+return list
+scalars:
+                  r(N) =  74
+              r(sum_w) =  74
+               r(mean) =  6165.256756756757
+                r(Var) =  8699525.97426879
+                 r(sd) =  2949.495884768919
+           r(skewness) =  1.653433511704859
+           r(kurtosis) =  4.819187528464004
+                r(sum) =  456229
+                r(min) =  3291
+                r(max) =  15906
+                 r(p1) =  3291
+                 r(p5) =  3748
+                r(p10) =  3895
+                r(p25) =  4195
+                r(p50) =  5006.5
+                r(p75) =  6342
+                r(p90) =  11385
+                r(p95) =  13466
+                r(p99) =  15906</code></pre>
+<div class = "blue">
+<pre><code>qui sum, d
+
+di r(mean)
+.54054054
+di `r(mean)&#39;
+.54054054
+
+local mean r(mean)
+di `mean&#39;
+.54054054
+mac list _mean
+.5405405405405406
+
+local mean : di %6.2f `r(mean)&#39;
+di `mean&#39;
+0.54
+mac list _mean
+_mean : 0.54</code></pre>
+<p>Au niveau d’un graphique ces objets permettent:</p>
+<ul>
+<li>D’afficher des valeurs dans un graphique.</li>
+<li>De générer automatiquement des éléments de type <code>xline</code> <code>yline</code>.</li>
+<li>De générer des graphiques de type scatteri ou pci qui entrent directement les coordonnées au lieu des variables.</li>
+</ul>
+<p><strong><em>Graphique</em></strong></p>
+<p>On va tracer une droite sur chaque axe qui reporte les moyennes des variables price et mpg, les valeurs de ces moyennes sont reportés en bas du graphique en tant que note</p>
+<ul>
+<li>Récupération des moyennes de <em>price</em> et <em>mpg</em></li>
+<li>les noms des macros seront <em>mprice</em> et * mpg*</li>
+</ul>
+<pre><code>local varlist price mpg
+foreach v of local varlist {
+qui sum `v&#39;
+local  m`v&#39; : di %6.2f `r(mean)&#39;
+}
+
+* Récupération des labels de la variable foreign
+local X foreign
+local labn: value label `X&#39;
+levelsof `X&#39;, local(l)
+foreach l2 of local l {
+local lab`l2&#39;: label `labn&#39;  `l2&#39;
+}
+
+* Graphique
+#delimit ; 
+tw scatter price mpg if !foreign, 
+   mlc(black) mlw(*.3) mc(&quot;254 196 79&quot;) msiz(*1.5)  jitter(2) 
+|| scatter price mpg if foreign,
+   mlc(black) mlw(*.3) mc(&quot;153 52 4&quot;)   msiz(*1.5)  jitter(2) 
+
+|| , legend(order(1 &quot;`lab0&#39;&quot; 2 &quot;`lab1&#39;&quot;) pos(11) region(color(%0))) 
+     yline(`mprice&#39;, lc(&quot;236 112 20&quot;) lw(*1.5)) 
+     xline(`mmpg&#39;  , lc(&quot;236 112 20&quot;) lw(*1.5))
+     note(&quot;{bf:Moyenne Price = `mprice&#39;}&quot; 
+        &quot;{bf:Moyenne Mpg   = `mmpg&#39;}&quot;)
+;
+#delimit cr</code></pre>
+<p><img src="imgp2/g2.png" style="width:60.0%" /></p>
+</div>
+<div id="compteurs-i" class="section level2" number="1.5">
+<h2><span class="header-section-number">1.5</span> <strong>Compteurs i++</strong></h2>
+<p>Les compteurs vont s’avérer très utiles dans les expressions en boucle pour générer une valeur incrémentale de type macro. C’est sur ce principe que fonctionne les boucles de type <code>forvalue</code>, mais il est possible de les générer dans une boucle de type <code>foreach</code>.</p>
+<p><strong><em>Exemple1</em></strong>: on initialise un compteur <code>i</code>. Dans une boucle <code>forvalue</code> dont l’incrément va de 10 à 15 (<span class="math inline">\(\delta=+1\)</span>), on génère à chaque boucle une valeur allant de 1 à 6 avec la macro `<code>i++'</code>.</p>
+<pre><code>local i = 1
+
+forvalue k = 10/15 {
+di &quot;k=`k&#39; =&gt; i=`i++&#39;&quot;   
+}
+
+/*
+k=10 =&gt; i=1
+k=11 =&gt; i=2
+k=12 =&gt; i=3
+k=13 =&gt; i=4
+k=14 =&gt; i=5
+k=15 =&gt; i=6
+*/</code></pre>
+<p><strong><em>Exemple 2</em></strong>: on va afficher les noms d’une liste de variable en noms génériques dans une boucle <code>foreach</code>.</p>
+<pre><code>local i=1
+local varlist price mpg turn length
+
+foreach v of local varlist  {
+di &quot;variable`i++&#39; = `v&#39;&quot;        
+}
+
+variable1 = price
+variable2 = mpg
+variable3 = turn
+variable4 = length</code></pre>
+<br> <strong>Point de vigilance</strong>
+<div class="alert alert-warning">
+<p>Appels multiples d’un compteur dans une boucle. Dans les exemples précédents, le compteur n’a été utilisé qu’une fois dans une itération. Il est important de noter que le compteur peut continuer à incrémenter lorsqu’il est appelé plusieurs fois dans une itération. Nous allons présenter les différents comportements du compteur, et le moyen de fixer sa valeur dans une itération avec des appels multiples.</p>
+</div>
+<p><strong><em>Situation1</em></strong>: Un seul appel du compteur (cas standard)</p>
+<pre><code>forv i=1/5 {
+  di &quot;iteration `i&#39;: i++ =&quot;  `i++&#39; 
+   }
+
+/*
+iteration 1: i++ =1
+iteration 2: i++ =2
+iteration 3: i++ =3
+iteration 4: i++ =4
+iteration 5: i++ =5
+*/</code></pre>
+<p><strong><em>Situation2</em></strong>: Plusieurs appels dans une itération dans une boucle standard : la valeur du compteur est fixe dans chaque itération, mais pour la première et la dernière, le second appel est ignoré.</p>
+<pre><code>forv i=1/5 {
+di &quot;iteration `i&#39;: i++ =&quot;  `i++&#39; 
+di &quot;iteration `i&#39;: i++ =&quot;  `i++&#39; 
+  }
+
+/*
+iteration 1: i++ =1
+
+iteration 2: i++ =2
+iteration 2: i++ =2
+
+iteration 3: i++ =3
+iteration 3: i++ =3
+
+iteration 4: i++ =4
+iteration 4: i++ =4
+
+iteration 5: i++ =5
+iteration 5: i++ =5
+
+iteration 6: i++ =6
+*/</code></pre>
+<p><strong><em>Situation3</em></strong>: On initialise le compteur en amont (<strong>k</strong>*), il continue d’incrémenter dans chaque itération.</p>
+<pre><code>local k=1
+forv i=1/5 {
+  di &quot;iteration `i&#39;: &quot;  `k++&#39;
+  di &quot;iteration `i&#39;: &quot;  `k++&#39;
+  }
+
+/*
+iteration 1: 1
+iteration 1: 2
+
+iteration 2: 3
+iteration 2: 4
+
+iteration 3: 5
+iteration 3: 6
+
+iteration 4: 7
+iteration 4: 8
+iteration 5: 9
+
+iteration 5: 10
+*/</code></pre>
+<p><strong><em>Situation4</em></strong>: le compteur est appelé plusieurs fois. On veut fixer sa valeur pour qu’elle soit égale à la valeur de l’itération, sans rencontrer le problème de la situation2 avec un appel simple à la première et dernière itération. On va devoir initialiser un nouveau compteur à l’intérieur de la boucle, à chaque itération (compteur <strong><em>j</em></strong>).</p>
+<pre><code>local k=1
+forv i=1/5 {
+ local j = `k++&#39;
+ di &quot;iteration `i&#39;: &quot;  `j&#39;
+ di &quot;iteration `i&#39;: &quot;  `j&#39;
+  }
+
+iteration 1: 1
+iteration 1: 1
+
+iteration 2: 2
+iteration 2: 2
+
+iteration 3: 3
+iteration 3: 3
+
+iteration 4: 4
+iteration 4: 4
+
+iteration 5: 5
+iteration 5: 5</code></pre>
+<p>Si le compteur est utilisé plusieurs dans une itération et que sa valeur y doit être fixe, on devra donc utiliser cette dernière expression.</p>
+<p><strong>Graphique</strong></p>
+<p>Le graphique suivant donne la distribution de la variable displacement selon le nombre de réparation (variable <strong>rep78</strong>). Pour chaque valeur de <strong><em>rep78</em></strong>, la moyenne de displacement est reportée. Ces moyennes sont connectées à la moyenne calculée sur l’ensemble des voitures. On retrouve le principe d’un graphique de type « <strong>lollipop</strong> ».</p>
+<pre><code>local i=1
+levelsof rep78, local(l)
+foreach v of local l {
+qui sum displacement  if rep78==`v&#39;
+local m`i++&#39; = `r(mean)&#39;
+}
+
+qui sum displacement 
+local mean `r(mean)&#39;
+
+#delimit ;
+tw  scatteri 2 `m1&#39;,  msymbol(|) mc(&quot;210 50 0&quot;) msize(*5) mlw(*3)
+||  scatteri 3 `m2&#39;,  msymbol(|) mc(&quot;210 50 0&quot;) msize(*5) mlw(*3)
+||  scatteri 4 `m3&#39;,  msymbol(|) mc(&quot;210 50 0&quot;) msize(*5) mlw(*3)
+||  scatteri 5 `m4&#39;,  msymbol(|) mc(&quot;210 50 0&quot;) msize(*5) mlw(*3)
+
+|| pci 2 `mean&#39; 5 `mean&#39;, lw(*2.5) lc(&quot;210 50 0&quot;)
+|| pci 2 `mean&#39; 2 `m1&#39;  , lw(*2.5) lc(&quot;210 50 0&quot;)
+|| pci 3 `mean&#39; 3 `m2&#39;  , lw(*2.5) lc(&quot;210 50 0&quot;)
+|| pci 4 `mean&#39; 4 `m3&#39;  , lw(*2.5) lc(&quot;210 50 0&quot;)
+|| pci 5 `mean&#39; 5 `m4&#39;  , lw(*2.5) lc(&quot;255 50 0&quot;)
+
+||  scatter rep78 displacement,  mc(&quot;255 117 0%70&quot;) mlc(210 50 0) mlw(*.5) msize(*1) jitter(5) || , 
+
+xlabel(,glw(*1.2)) ylabel(,glw(*.5) angle(0)) yscale(range(1.8, 5.2))
+legend(off)
+title(&quot;Averages of displacement&quot;) ytitle(&quot;Number of repairs&quot;)</code></pre>
+<p><img src="imgp2/g3.png" style="width:60.0%" /></p>
+<p><strong><em>Pas à pas du programme</em></strong></p>
+<pre><code>recode rep78 (1=2)
+
+local i=1
+levelsof rep78, local(l)
+foreach v of local l {
+qui sum displacement  if rep78==`v&#39;
+local m`i++&#39; = `r(mean)&#39;
+}
+
+qui sum displacement 
+local mean `r(mean)&#39;</code></pre>
+<ul>
+<li>On regroupe les deux premières valeurs de <strong><em>rep78</em></strong> (peu d’observations).</li>
+<li>On initialise le compteur qui sera utilisé dans une boucle <code>foreach</code>.</li>
+<li>On récupère les valeurs de la variable <strong><em>rep78</em></strong> avec <code>levelsof</code>.</li>
+<li>Dans la boucle on récupère les valeurs des moyennes de <strong><em>displacement</em></strong> pour chaque valeur de <code>rep78</code>. Elles sont enregistrées dans les expressions macro <strong><em>m1</em></strong> à <strong><em>m4</em></strong>. Les valeurs 1 à 4 sont générées par le compteur <code>i++</code>.</li>
+<li>On récupère la moyenne pour l’ensemble des voitures. Elle est enregistrée dans la macro <strong><em>mean</em></strong>.</li>
+</ul>
+<pre><code>#delimit ;
+tw  scatteri 2 `m1&#39;,  msymbol(|) mc(&quot;210 50 0&quot;) msize(*5) mlw(*3)
+||  scatteri 3 `m2&#39;,  msymbol(|) mc(&quot;210 50 0&quot;) msize(*5) mlw(*3)
+||  scatteri 4 `m3&#39;,  msymbol(|) mc(&quot;210 50 0&quot;) msize(*5) mlw(*3)
+||  scatteri 5 `m4&#39;,  msymbol(|) mc(&quot;210 50 0&quot;) msize(*5) mlw(*3)
+
+|| pci 2 `mean&#39; 5 `mean&#39;, lw(*2.5) lc(&quot;210 50 0&quot;)
+
+|| pci 2 `mean&#39; 2 `m1&#39;  , lw(*2.5) lc(&quot;210 50 0&quot;)
+|| pci 3 `mean&#39; 3 `m2&#39;  , lw(*2.5) lc(&quot;210 50 0&quot;)
+|| pci 4 `mean&#39; 4 `m3&#39;  , lw(*2.5) lc(&quot;210 50 0&quot;)
+|| pci 5 `mean&#39; 5 `m4&#39;  , lw(*2.5) lc(&quot;255 50 0&quot;)
+
+|| scatter rep78 displacement, mc(&quot;255 117 0%70&quot;) mlc(210 50 0) mlw(*.5)
+   msize(*1) jitter(5)
+
+|| , xlabel(,glw(*1.2)) ylabel(,glw(*.5) angle(0)) yscale(range(1.8, 5.2))
+     legend(off)
+     title(&quot;Averages of displacement&quot;) ytitle(&quot;Number of repairs&quot;);
+
+#delimit cr</code></pre>
+<ul>
+<li>Pour faciliter l’écriture et la lecture du programme on change de type de délimiteur.</li>
+<li>Les moyennes par niveau de réparation seront en arrière plan pour visualiser les valeurs de toutes les voitures.</li>
+<li>On utilise <strong><em><code>scatteri</code></em></strong> pour générer le nuage des moyennes pour chaque niveau de réparation. Les valeurs de ces dernières sont connues (de 2 à 5) et les moyennes de displacement on été enregistrées dans les macros m1 à m4. Pour le premier niveau de réparation le nuage est donc généré par **scatteri 2 <code>m1'** [</code>scatteri valeur_Y valeur_X<code>]. On a utilisé un symbole de type ***pipe*** au lieu d’une bulle [</code>msymbol(|)`].</li>
+<li>On trace une droite verticale avec la fonction <code>pci</code> pour indiquer la moyenne de displacement pour l’ensemble des voitures. La valeur de cette moyenne (X) a été calculée en amont (macro <strong><em>mean</em></strong>) et on connait les valeurs de Y. La droite est donc générée par pci 2 <code>mean' 5</code>mean’ [<code>pci min_Y min_X max_Y max_X</code>].</li>
+<li>On va connecter la valeur des moyennes pour chaque niveau de réparation avec la moyenne d’ensemble. On va ici tracer des droites horizontale, dont les coordonnées Y seront cette fois ci fixe, et le minimum de X toujours égal à la moyenne d’ensemble. Pour le premier niveau de réparation : <strong>pci 2 <code>mean' 2</code>m1’</strong>.</li>
+</ul>
+<p><strong><em>Remarque</em></strong>: on pourrait améliorer le rendu de l’angle pour la connection des moyennes en modifiant légèrement les valeurs de Y_min et Y_max pour la droite verticale, avec par exemple : <strong><em>pci 1.985 <code>mean' 5.015</code>mean’, lw(</em>2.5) lc(“210 50 0”)</strong>*.</p>
+</div>
+<div id="autres-objets-macro-token-tempvar" class="section level2" number="1.6">
+<h2><span class="header-section-number">1.6</span> <strong>Autres objets macro: token, tempvar</strong></h2>
+<div id="token" class="section level3" number="1.6.1">
+<h3><span class="header-section-number">1.6.1</span> <strong>Token</strong></h3>
+<p>Les tokens sont régulièrement utilisés dans la programmation de routines (<strong><em>.ado</em></strong>), mais peuvent dans un programme courant s’avérer utile pour transformer les noms variables en macros. Le token est une macro qui prend comme expression une liste de numéros : <code>1',</code>2’, <code>3'…… On transforme une expression en token avec la commande **</code>tokenize`**.</p>
+<pre><code>tokenize price mpg
+sum `1&#39; `2&#39;
+/*
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+       price |         74    6165.257    2949.496       3291      15906
+         mpg |         74     21.2973    5.785503         12         41
+*/</code></pre>
+<p>Ou avec une expression sous forme de macro:</p>
+<pre><code>local varlist price mpg
+tokenize `varlist&#39;
+sum `1&#39; `2&#39;</code></pre>
+<p>Application pour un graphique:</p>
+<pre><code>local varlist price mpg foreign 
+tokenize `varlist&#39;
+tw scatter `1&#39; `2&#39; if !`3&#39;
+|| scatter `1&#39; `2&#39; if  `3&#39;</code></pre>
+</div>
+<div id="variables-temporaires" class="section level3" number="1.6.2">
+<h3><span class="header-section-number">1.6.2</span> <strong>Variables temporaires</strong></h3>
+<p>Variables, fichiers… peuvent être créés de manière temporaire. On regardera seulement les variables temporaires générées avec la fonction <strong><code>tempvar nom_variable</code></strong>, elles sont appelées sous forme de macro temporaire : <code>command</code>nom_variable’`. Principalement, elles permettent de générer des variables dont le nom n’entre pas en conflit avec des variables existantes, le nom enregistré étant de la forme** _00000#**, tout en n’alourdissanrpas artificiellement le contenu de la base.</p>
+<pre><code>
+set obs 100
+number of observations (_N) was 0, now 100
+
+tempvar x
+gen `x&#39; = runiform() 
+des
+/*
+----------------------------------------------------------------------------------
+              storage   display    value
+variable name   type    format     label      variable label
+----------------------------------------------------------------------------------
+__000000        float   %9.0g 
+----------------------------------------------------------------------------------       
+*/
+
+sum `x&#39;
+/*
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+    __000000 |        100    .5253147    .2740814   .0073346   .9979447
+*/
+
+
+tempvar x
+gen `x&#39; = runiform()
+des
+/*
+----------------------------------------------------------------------------------
+              storage   display    value
+variable name   type    format     label      variable label
+----------------------------------------------------------------------------------
+__000000        float   %9.0g                 
+__000001        float   %9.0g                 
+----------------------------------------------------------------------------------
+*/
+
+/*
+sum `x&#39;
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+    __000001 |        100     .471744    .2926945   .0028599   .9711645
+*/    </code></pre>
+<p><strong><em>Graphique</em></strong></p>
+<p>On va de nouveau représenter un nuage de points, entre la variable <strong><em>price</em></strong> et la variable <strong><em>displacement</em></strong>. La couleur des bulles représente l’appartenance à un quartile de la variable displacement.</p>
+<pre><code>sysuse auto, clear
+tempvar qdisp
+local varlist price displacement `qdisp&#39;
+tokenize `varlist&#39;
+qui xtile `qdisp&#39; = `2&#39;, n(4)
+qui sum `2&#39;, d
+
+#delimit ;
+tw scatter `1&#39; `2&#39; if `3&#39;==1,
+   mlc(black) mlw(*.5) mc(&quot;68 1 84%60&quot;)    msiz(*1.5) jitter(1)
+|| scatter `1&#39; `2&#39; if `3&#39;==2,
+   mlc(black) mlw(*.5) mc(&quot;49 104 142%60&quot;) msiz(*1.5) jitter(1)
+|| scatter `1&#39; `2&#39; if `3&#39;==4,
+   mlc(black) mlw(*.5) mc(&quot;53 183 121%60&quot;) msiz(*1.5) jitter(1)
+|| scatter `1&#39; `2&#39; if `3&#39;==3,
+   mlc(black) mlw(*.5) mc(&quot;253 231 37%60&quot;) msiz(*1.5) jitter(1)
+
+||, legend(off) 
+    xlabel(`r(p25)&#39; &quot;`r(p25)&#39;&quot; `r(p50)&#39; &quot;`r(p50)&#39;&quot; `r(p75)&#39; &quot;`r(p75)&#39;&quot;)
+;</code></pre>
+<p><img src="imgp2/g4.png" style="width:60.0%" /></p>
+</div>
+</div>
+</div>
+<div id="alléger-la-syntaxe" class="section level1" number="2">
+<h1><span class="header-section-number">2</span> <strong>Alléger la syntaxe</strong></h1>
+<p>… et surtout faciliter les changements d’options.<br />
+On le voit, les d’options sont répétées d’un objet graphique à un autre, et souvent en grand nombre. Les modifications de l’habillage du graphique avec les couleurs, les tailles/épaisseurs, peuvent alors s’avérer laborieuse.<br />
+De manière très simple, les options communes à plusieurs objets ou éléments du graphique peuvent être renseignées en amont, sous forme de macros. Cela facilite grandement la modification des options.<br />
+Prenons le graphique suivant avec un habillage assez poussé qui modifie les couleurs par défauts des titres et couleurs de fonds. Pour chaque nuage la taille de la bulle, la couleur et l’épaisseur du contour sont identiques, les titres partagent les mêmes couleurs, ainsi que les deux éléments du background.</p>
+<pre><code>graph set window fontface Magneto
+
+tempvar rep
+gen    `rep&#39; = rep78
+recode `rep&#39; (1=2)  
+
+#delimit ;
+tw scatter price mpg if `rep&#39;==2, mc(&quot;145 50 5&quot;)    mlw(*.5) mlc(black)  msiz(*1.5)  
+|| scatter price mpg if `rep&#39;==3, mc(&quot;221 95 11&quot;)   mlw(*.5) mlc(black)  msiz(*1.5)  
+|| scatter price mpg if `rep&#39;==4, mc(&quot;254 162 50&quot;)  mlw(*.5) mlc(black)  msiz(*1.5)  
+|| scatter price mpg if `rep&#39;==5, mc(&quot;254 211 112&quot;) mlw(*.5) mlc(black)  msiz(*1.5)    
+
+|| , legend(off)                                                                           
+                              
+ylabel(, labc(&quot;254 211 112&quot;) glc(&quot;254 211 112&quot;) glw(*.2) angle(0))                                
+xlabel(, labc(&quot;254 211 112&quot;) glc(&quot;254 211 112&quot;) glw(*.2)) 
+                               
+ytitle(, color(&quot;254 211 112&quot;)) 
+xtitle(, color(&quot;254 211 112&quot;))                               
+title(&quot;Price versus Mpg&quot;, color(&quot;254 211 112&quot;) pos(11)) 
+
+graphr(color(&quot;102 37 6*4&quot;))  plotr(color(&quot;102 37 6*4&quot;))      
+;</code></pre>
+<p><img src="imgp2/g5a.png" style="width:70.0%" /></p>
+<p>En mettant les options sous forme de macro et en les appelant dans la commande graphique, visuellement la syntaxe du graphique est nettement allégée :</p>
+<pre><code>tempvar rep
+gen    `rep&#39; = rep78
+recode `rep&#39; (1=2)  
+
+local mopt &quot;mlw(*.5) mlc(black) msiz(*1.5)&quot;
+local col1 &quot;254 211 112&quot;
+local col2 &quot;102 37 6*4&quot;
+
+#delimit ;
+tw scatter price mpg if `rep&#39;==2, mc(&quot;145 50 5&quot;)    `mopt&#39;   
+|| scatter price mpg if `rep&#39;==3, mc(&quot;221 95 11&quot;)   `mopt&#39; 
+|| scatter price mpg if `rep&#39;==4, mc(&quot;254 162 50&quot;)  `mopt&#39;
+|| scatter price mpg if `rep&#39;==5, mc(&quot;254 211 112&quot;) `mopt&#39;   
+
+|| , legend(off)                                                                                                     
+     ylabel(, labc(`col1&#39;) glc(`col1&#39;) glw(*.2) angle(0))                                
+     xlabel(, labc(`col1&#39;) glc(`col1&#39;) glw(*.2)) 
+     ytitle(, color(`col1&#39;)) xtitle(, color(`col1&#39;))                               
+     title(&quot;Price versus Mpg&quot;, color(`col1&#39;) pos(11)) 
+     graphr(color(`col2&#39;))     plotr(color(`col2&#39;))      
+;</code></pre>
+<p><img src="imgp2/g5b.png" style="width:70.0%" /></p>
+<p>La modification des options est réalisée une seule fois en modifiant l’expression des macros.<br />
+Par exemple, en changeant quelques couleurs (coutours et titres) et en ajoutant un jitter:</p>
+<pre><code>local mopt &quot;mlw(*.5) mlc(white) m()  msiz(*1.5) jitter(2)&quot;
+local col1 white
+local col2 black
+
+#delimit ;
+tw scatter price mpg if `rep&#39;==2, mc(&quot;145 50 5&quot;)    `mopt&#39;   
+|| scatter price mpg if `rep&#39;==3, mc(&quot;221 95 11&quot;)   `mopt&#39; 
+|| scatter price mpg if `rep&#39;==4, mc(&quot;254 162 50&quot;)  `mopt&#39;
+|| scatter price mpg if `rep&#39;==5, mc(&quot;254 211 112&quot;) `mopt&#39;   
+
+|| , legend(off)                                                                           
+     ylabel(, labc(`col1&#39;) glc(`col1&#39;) glw(*.2) angle(0))                                
+     xlabel(, labc(`col1&#39;) glc(`col1&#39;) glw(*.2)) 
+     ytitle(, color(`col1&#39;)) xtitle(, color(`col1&#39;))                               
+     title(&quot;Price versus Mpg&quot;, color(`col1&#39;) pos(11)) 
+     graphr(color(`col2&#39;))  plotr(color(`col2&#39;))      
+;</code></pre>
+<p><img src="imgp2/g5c.png" style="width:70.0%" /></p>
+</div>
+<div id="automatiser-la-programmation" class="section level1" number="3">
+<h1><span class="header-section-number">3</span> <strong>Automatiser la programmation</strong></h1>
+<div class="alert alert-warning">
+<p>Les informations qui vont suivre demande un minimum de pratique avec la manipulation des macros Stata.</p>
+</div>
+<div id="macros-empilées" class="section level2" number="3.1">
+<h2><span class="header-section-number">3.1</span> <strong>Macros empilées</strong></h2>
+<p>Le principe est plutôt simple, il s’agit lors d’une expression en boucle de conserver et empiler les expressions générées à chaque itération, et les enregistrer dans une macro.</p>
+<p>Exemple : On veut obtenir la chaîne de caractère «A B C » à partir des trois éléments distincts « A », « B » et « C ».</p>
+<p>Avec une macro standard:</p>
+<pre><code>local expression A B C 
+foreach e of local expression {
+  mac list _ms
+  }
+/*  
+_ms : A
+_ms : B
+_ms : C
+*/
+
+
+mac list _ms
+* _ms: C</code></pre>
+<p>Dans chaque itération, chaque expression a bien été enregistrée, mais elle est écrasée à l’itération suivante. On pourrait à chaque itération enregistrer chaque macro et les empiler à l’extérieur de la boucle, mais il est possible de le faire automatiquement avec une macro dite « empilée ».<br />
+<br> La syntaxe est simple, on appelle la macro dans l’expression qui la génère, ce qui permet de la garder en mémoire à chaque boucle.</p>
+<p>Syntaxe:</p>
+<pre><code>local nom_macro  `nom_macro&#39;    expression
+global nom_macro  $nom_macro    expression </code></pre>
+<p>Avec une macro empilée:</p>
+<pre><code>local expression A B C 
+
+foreach e of local expression {
+
+local me `me&#39; `ms&#39;
+mac list _me
+}
+
+/*A chaque itération
+_me:            A
+_me:            A B
+_me:            A B C
+*/
+
+*Expression finale enregistrée 
+mac list _me
+* _me:            A B C
+</code></pre>
+<div id="automatiser-la-création-du-graphique" class="section level3" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> <strong>Automatiser la création du graphique</strong></h3>
+<p>Pour un graphique, une application évidente est d’alléger et automatiser une syntaxe qui empile plusieurs objets graphiques de même nature. Si on reprend un type de nuage de points déjà exécuté de nombreuses fois dans ce document:</p>
+<pre><code>tw scatter price mpg if rep78==1
+|| scatter price mpg if rep78==2
+|| scatter price mpg if rep78==3
+|| scatter price mpg if rep78==4
+|| scatter price mpg if rep78==5</code></pre>
+<p>Avec une macro empilée:</p>
+<pre><code>* On génère la syntaxe
+levelsof rep78, local(l)
+foreach v of local l {
+local scat `scat&#39; scatter price mpg if rep78==`v&#39; ||
+}
+
+* Exécution du graphique
+tw `scat&#39; , legend(off)</code></pre>
+<p>Ce qui est généré par la macro à chaque itération :</p>
+Itération 1:
+<div class="blue">
+<pre><code>scatter price mpg if rep78==1 ||</code></pre>
+</div>
+Itération 2:
+<div class="blue">
+<pre><code>scatter price mpg if rep78==1 || scatter price mpg if rep78==2 ||</code></pre>
+</div>
+Itération 3:
+<div class="blue">
+<pre><code>scatter price mpg if rep78==1 || scatter price mpg if rep78==2 || 
+scatter price mpg if rep78==3 ||</code></pre>
+</div>
+Itération 4
+<div class="blue">
+<pre><code>scatter price mpg if rep78==1 || scatter price mpg if rep78==2 || 
+scatter price mpg if rep78==3 || scatter price mpg if rep78==4 ||</code></pre>
+</div>
+Itération 5
+<div class="blue">
+<pre><code>scatter price mpg if rep78==1 || scatter price mpg if rep78==2 || 
+scatter price mpg if rep78==3 || scatter price mpg if rep78==4 || 
+scatter price mpg if rep78==5 ||</code></pre>
+</div>
+<p>C’est la dernière qui est finalement enregistrée et il ne manque plus qu’à l’appeler après <code>tw</code>. Au-delà de l’allègement de la syntaxe du grap recode rep78 (1=2) hique cette manière de procéder automatise des modifications faites en amont, par exemple ici un regroupement de modalités de la variable <strong><em>rep78</em></strong>.</p>
+<pre><code>*Il n’est pas nécessaire de modifier le graphique
+
+levelsof rep78, local(l)
+foreach v of local l {
+local scat `scat&#39; scatter price mpg if rep78==`v&#39; ||
+}
+tw `scat&#39; , legend(off)</code></pre>
+<p><br></p>
+</div>
+<div id="générer-une-légende" class="section level3" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> <strong>Générer une légende</strong></h3>
+<p>Sur le même principe, on peut générer automatiquement une légende. <strong><em>L’opération peut néanmoins s’avérer un peu plus délicate</em></strong>, en raison du contrôle des doubles quotes pour les labels.<br />
+Dans un premier temps on ne va pas utiliser les fonctions macro qui permettent de récupérer automatiquement les noms et le contenu des labels.</p>
+<p><strong>Sans les fonctions macro</strong>:</p>
+<pre><code>local l1 `&quot;&quot;Domestic&quot;&quot;&#39;
+local l2 `&quot;&quot;Foreign&quot;&quot;&#39;
+forvalue i=1/2 {
+local ord `ord&#39; `i&#39; `l`i&#39;&#39;
+}
+
+macro list _ord
+* _ord: 1 &quot;Domestic&quot; 2 &quot;Foreign&quot;
+
+#delimit ; 
+tw scatter price mpg if !foreign
+|| scatter price mpg if  foreign
+||, legend(order(`ord&#39;))
+;</code></pre>
+<p><strong><em>Rappel</em></strong>: pour la légende on doit explicitement récupérer les doubles quotes pour les expressions qui seront affichées dans la légende: <strong>local nom_macro `““expression”“’</strong></p>
+<p><strong>Avec les fonctions macro</strong>:<br />
+Les fonctions utilisées sont <code>value label</code> pour récupérer le nom du label et <code>lab</code> pour récupérer l’expression affectée à la modalité. Comme les expressions de la légende vont être récupérées via des macros on va accroître le nombre de quotes, ce qui peut s’avérer fastidieux pour lire le programme et éventuellement le modifier. Dans le programme qui suit on va générer automatiquement la syntaxe principale du graphique avec une macro empilée, comme expliqué précédemment. Les noms des variables seront également transformés en <em>token</em>. Pour anticiper un changement de variable de stratification, ici <em>foreign</em>, on va utiliser un compteur pour automatiser le nombre d’éléments contenu dans la légende.</p>
+<pre><code>local varlist price weight foreign
+tokenize `varlist&#39;
+
+* Légende
+local labn: value label `3&#39; // on récupère le nom du label
+levelsof `3&#39;, local(l)
+local i=1
+foreach l2 of local l {
+local lab`l2&#39;: label `labn&#39; `l2&#39; // on récupère l’expressions pour chaque valeur
+local lab`l2&#39; `&quot;&quot;`lab`l2&#39;&#39;&quot;&quot;&#39;    // on transforme l’expressions en macro     
+local ord `ord&#39; `i++&#39; `lab`l2&#39;&#39;  // on génère la syntaxe de la légende
+}
+
+* Graphique
+local ops mlc(black) mlw(vthin)
+foreach i of local l {
+local scat `scat&#39; scatter `1&#39; `2&#39; if `3&#39;==`i&#39;, `ops&#39; ||
+}
+
+tw `scat&#39;, legend(order(`ord&#39;))</code></pre>
+</div>
+</div>
+<div id="routine-.ado" class="section level2" number="3.2">
+<h2><span class="header-section-number">3.2</span> <strong>Routine (.ado)</strong></h2>
+<ul>
+<li><p>Manuel d’aide Stata [entrée syntax] <a href="https://www.stata.com/manuals/p.pdf#ppProgramming" class="uri">https://www.stata.com/manuals/p.pdf#ppProgramming</a></p></li>
+<li><p>Principe des programmes qui exécutent des commandes (.ado)</p></li>
+<li><p>La routine/commande peut être programmée dans un programme principal (.do) ou sauvegardé comme .ado dans le répertoire où sont enregistrées les commandes externes (répertoire ado). Il est conseillé de sauvegarder ses propres commandes dans un sous répertoire personal, et de créer des sous répertoire par lettre de l’alphabet. Le nom du fichier .ado doit être identique au nom de la commande programmée.</p></li>
+</ul>
+<p>Nous allons décrire seulement quelques principes qui utilisent les éléments vus dans ce chapitre. Il est difficilement envisageable de s’engager dans la programmation d’une commande sans utiliser le manuel d’aide officiel.</p>
+<p>Syntaxe générique</p>
+<pre><code>capture program drop nom_commande // jusqu’à la validation du programme
+program define nom_routine [options]
+
+syntax [arguments] 
+
+* ....programme de la routine... 
+end</code></pre>
+<p>La première ligne est nécessaire tant que la commande est exécutée dans l’éditeur de programme. Elle peut être supprimée lorsque le programme est enregistré dans un sous répertoire du répertoire <em>personal</em>.</p>
+<p><strong><em>Exemple: une simple division</em></strong></p>
+<p>Programmation de la routine:</p>
+<pre><code>capture program drop division
+program define division
+
+syntax anything
+ 
+tokenize `anything&#39; 
+di &quot;&quot;
+di as result &quot;Le résultat de la division est: &quot; `1&#39; / `2&#39; 
+
+end </code></pre>
+Exécution et résultat:
+<div class="blue">
+<pre><code>division 1245 722
+
+* Le résultat de la division est: 1.7243767</code></pre>
+</div>
+<p><strong>Application pour un graphique</strong><br />
+On va automatiser l’exécution du nuage de points avec une stratification, ici la variable <em>foreign</em>.</p>
+<p><strong><em>Programme</em></strong></p>
+<pre><code>capture program drop sgraph 
+program define sgraph
+
+syntax varlist(min=3 max=3),  [gops(string)]
+
+tokenize `varlist&#39;
+
+* Légende
+qui levelsof `3&#39;, local(l)
+local i=1
+local labn: value label `3&#39;
+foreach l2 of local l {
+local lab`l2&#39;: label `labn&#39; `l2&#39;
+local lab`l2&#39; `&quot;&quot;`lab`l2&#39;&#39;&quot;&quot;&#39; 
+local ord `ord&#39; `i++&#39; `lab`l2&#39;&#39;
+}
+
+* Syntaxe graphique
+foreach l2 of local l{
+local ops &quot;mlc(black) mlw(*.3) jitter(3) mc(%80) msiz(*1) mlc(`mlc&#39;)&quot; 
+local scat `scat&#39; scatter `1&#39; `2&#39; if `3&#39;==`l2&#39;, `ops&#39; ||
+}
+
+* Exécution du graphique
+tw `scat&#39;, legend(order(`ord&#39;) rows(1) pos(6) region(color(%0))) `title&#39; `gops&#39;
+
+end</code></pre>
+<strong><em>Exécution de la commande sgraph</em></strong>
+<div class="blue">
+<pre><code>sgraph price mpg foreign, gops(ylabel(,labs(*.6)) title(&quot;mpg&quot;) name(mpg, replace))</code></pre>
+</div>
+<p><img src="imgp2/g6a.png" style="width:70.0%" /></p>
+<p><strong><em>Programme pas à pas</em></strong></p>
+<div class="blue">
+<pre><code>capture program drop sgraph 
+program define sgraph
+
+syntax varlist(min=3 max=3),  [gops(string)]
+
+tokenize `varlist&#39;</code></pre>
+</div>
+<ul>
+<li>La commande s’appelle <code>sgraph</code>.</li>
+<li>Pour être exécutée, elle demande 3 arguments de type <em>variable</em>. On fixe un nombre obligatoire de variable égale à 3 : axe Y, axe X et la variable de stratification.</li>
+<li>La commande a un argument optionnel . Comme pour les fichiers d’aide, le caractère optionnel est indiqué par [nom_option].</li>
+<li>Le nom de l’option est précisé: elle permet de passer des options générales d’un graphique (<code>gops()</code>). On indique son format attendu, ici une chaîne de caractères.</li>
+</ul>
+<div class="blue">
+<pre><code>* Légende
+qui levelsof `3&#39;, local(l)
+local i=1
+local labn: value label `3&#39;
+foreach l2 of local l {
+local lab`l2&#39;: label `labn&#39; `l2&#39;
+local lab`l2&#39; `&quot;&quot;`lab`l2&#39;&#39;&quot;&quot;&#39; 
+local ord `ord&#39; `i++&#39; `lab`l2&#39;&#39;
+}
+
+* Syntaxe graphique
+foreach l2 of local l{
+local ops &quot;mlc(black) mlw(*.3) jitter(3) mc(%80) msiz(*1) mlc(`mlc&#39;)&quot; 
+local scat `scat&#39; scatter `1&#39; `2&#39; if `3&#39;==`l2&#39;, `ops&#39; ||
+}</code></pre>
+<p>La légende et la syntaxe du graphique combiné sont générés avec une macro empilée</p>
+<div class="blue">
+<pre><code>* Exécution du graphique
+tw `scat&#39;, legend(order(`ord&#39;) pos(6) region(color(%0))) `title&#39; `gops&#39;
+
+end</code></pre>
+</div>
+<p>Le graphique est exécuté, l’option qui a été définie est entrées sous forme de macro.<br />
+Le programme du graphique indique déjà des éléments optionnels liés à la légende, comme la position et l’absence de contour. Il est possible d’écraser ces arguments « par défaut » dans l’option <code>gopts</code>.</p>
+<p><strong><em>Exemple : générer rapidement un graphique qui combine le prix à plusieurs variables avec la commande <code>sgraph</code></em></strong></p>
+<pre><code>foreach X of varlist mpg trunk weight length {
+
+#delimit ;
+sgraph price `X&#39; foreign,
+       gops(  title(&quot;`X&#39;&quot;)
+              ylabel(, labs(*.6))  
+              name(`X&#39;, replace)) nodraw
+;
+
+#delimit cr
+
+local g `g&#39; `X&#39; //macro empilée pour lister les graphiques combinés
+}
+
+grc1leg `g&#39;, legendfrom(mpg) pos(11) title(&quot;Variables combinées avec&quot; &quot;la variable price&quot;)</code></pre>
+<p><img src="imgp2/g6b.png" style="width:70.0%" /></p>
+</div>
+</div>
+</div>
+
+   
+   
+              </div>
+  </div>
+  </div>
+  </div>
+   
+      
+
+  <script>
+    $(document).ready(function () {
+
+		// add bootstrap table styles to pandoc tables
+	$('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+		
+ 		
+	    });
+  </script>
+
+
+
+    <!-- dynamically load mathjax for compatibility with self-contained -->
+  <script>
+    (function () {
+	var script = document.createElement("script");
+	script.type = "text/javascript";
+	script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+	document.getElementsByTagName("head")[0].appendChild(script);
+    })();
+  </script>
+  
+</body>
+</html>
