@@ -2,7 +2,7 @@
 # Liste Bases
 
 * [rbnb_paris](https://github.com/mthevenin/stata_graphiques/blob/main/bases/Readme.md#rbnb_parisdta)
-* pingouin
+* [pingouin](https://github.com/mthevenin/stata_graphiques/edit/main/bases/Readme.md#pingouinsdta)
 
 
 # Descriptif bases
