@@ -1,7 +1,7 @@
 
 # Liste Bases
 
-* rbnb_paris
+* [rbnb_paris](https://github.com/mthevenin/stata_graphiques/blob/main/bases/Readme.md#rbnb_parisdta)
 * pingouin
 
 
