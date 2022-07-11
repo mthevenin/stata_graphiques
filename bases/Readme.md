@@ -1,8 +1,38 @@
 
-# Bases
+# Liste Bases
 
+* rbnb_paris
+* pingouin
+
+
+# Descriptif bases
 
 ## rbnb_paris.dta
+
+```{
+Contains data from rbnb_paris.dta
+ Observations:        56,914                  
+    Variables:             3                  11 Jul 2022 12:46
+-------------------------------------------------------------------
+Variable      Storage   Display    Value
+    name         type    format    label      Variable label
+-------------------------------------------------------------------
+zone            long    %19.0g     zone       
+type            float   %15.0g     type       
+-------------------------------------------------------------------
+```
+
+```{}
+     +------------------------------------------+
+     | price                  zone         type |
+     |------------------------------------------|
+  1. |     .                     .       autres |
+  2. |    59       Buttes-Chaumont   apt/maison |
+  3. |    30               Reuilly   apt/maison |
+  4. |    53          Ménilmontant   apt/maison |
+  5. |   500   Batignolles-Monceau   apt/maison |
+     +------------------------------------------+
+```
 
 Ouverture:
 ```{}
