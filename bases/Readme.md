@@ -1,6 +1,16 @@
 
 # Bases
 
+
+## rbnb_paris.dta
+
+Ouverture:
+```{}
+webuse set https://github.com/mthevenin/stata_graphiques/tree/main/bases
+use rbnb_paris, replace
+webuse set
+```
+
 ## pingouins.dta
 
 ```{}
@@ -30,12 +40,6 @@ espèce          long    %9.0g      espèce     species
   3. |  Adelie   Torgersen       40.3         18        195       3250   female   2007   Adelie |
   4. |  Adelie   Torgersen          .          .          .          .            2007   Adelie |
   5. |  Adelie   Torgersen       36.7       19.3        193       3450   female   2007   Adelie |
-     |------------------------------------------------------------------------------------------|
-  6. |  Adelie   Torgersen       39.3       20.6        190       3650     male   2007   Adelie |
-  7. |  Adelie   Torgersen       38.9       17.8        181       3625   female   2007   Adelie |
-  8. |  Adelie   Torgersen       39.2       19.6        195       4675     male   2007   Adelie |
-  9. |  Adelie   Torgersen       34.1       18.1        193       3475            2007   Adelie |
- 10. |  Adelie   Torgersen         42       20.2        190       4250            2007   Adelie |
      +------------------------------------------------------------------------------------------+
 ```
 
