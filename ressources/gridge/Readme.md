@@ -41,16 +41,22 @@ Entre parenthèse le type d'argument, suivi si nécessaire de la valeur par déf
 
 ***Ouverture de la base***
 ````{}
-webuse set  "//github.com/mthevenin/stata_graphiques/tree/main/ressources/fabplot"
+webuse set  "https://raw.githubusercontent.com//mthevenin/stata_graphiques/master/ressources/gridge"
 webuse "probability.dta", clear
 webuse set
 ```
   
+***Graphique***
+```{}
+#delimit ;
+gridge p , over(proba) 
+bw(2) range(0 100) super(0) 
+palette(icefire) colrev  op(90)
+gopts(title("Probabilités assignées", pos(11)) caption("Source: Reddit", size(*.5)) xtitle("probabilités (%)")) 
+;
+```
 
-gridge p , over(proba) bw(2) range(0 100) super(0) gopts(title("Probabilités assignées", pos(11)) caption("Source: Reddit", size(*.5)) xtitle("probabilités (%)")) palette(icefire) colrev  op(90)
-
-
-
+<img src="g1.png" width=641 height=466>
 
   
 
