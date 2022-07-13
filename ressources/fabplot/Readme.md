@@ -34,7 +34,7 @@ Je reprends le même exemple que pour la formation, avec la base babynames.
 Ouverture de de la base:  
 ```{}
 webuse set https://github.com/mthevenin/stata_graphiques/tree/main/ressources/fabplot
-use babynames, replace
+use babynames, clear
 webuse set
 ```
 ### Empilement des 9 courbes
