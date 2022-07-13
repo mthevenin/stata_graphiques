@@ -18,7 +18,7 @@ net install gridge, from("https://mthevenin.github.io/stata_graphiques/ressource
 # Syntaxe
 
 ```{}
-syntax variable [if], over(variable)  super(numeric 1.8) sort(string)  sortrev(string) bw(real 1.5) paLette(string) colrev opac(integer 80) range(value1 value2) 
+syntax variable [if], over(variable)  super(numeric 1.8) sort(string)  sortrev(string) bw(real>0 1.5) palette(string) colrev opac(integer 80) range(value1 value2) 
 lc(integer 2)] lw(numeric .5)] gopts(string)]              
 ```
 Entre parenthèse le type d'argument, suivi si nécessaire de la valeur par défaut. E
@@ -28,12 +28,16 @@ Entre parenthèse le type d'argument, suivi si nécessaire de la valeur par déf
 - `over(variable)`: variable de stratification. De type numérique avec ou non un label
 - `super(numeric 1.8)`: degré de superposition des densités. Positif de préférence.
 - `sort(string)`: **mean**, **median**, **sd**, **iqr**, **mode** (ou autre fonction statistique compatible avec `egen`)
-- `sortrev(string)` `sortr(string)`: idem mais les valeurs de la variable `over()` seront affichées en ordre décroissant
-- 
+- `sortrev(string)` - `sortr(string)`: idem mais les valeurs de la variable `over()` seront affichées en ordre décroissant
+- `bw(real>0 1.5)`: largeur de la fenêtre de lissage.
+- `palette(string)`  `pal(string)`: nom d'une palette du package `colorpalette`. Ce dernier sera installé comme dépendance si nécessaire. L'ordre des couleurs sera inversé par rapport à palette sélectionnée. 
+- `colrev`: permet d'inverser l'ordre des couleurs de la palette. Perme de retrouve l'ordre de la palette d'origine de `colorpalette`
+- `opac(integer 80)`: % d'opacité des couleurs. Valeur max = 100
+- `range(value1 value2)`: permet de borner les valeurs de l'axe continue x. value1<value2
+- `lc(integer 2)`: échelle de gris du contour des densités (palette **gs**). Valeurs comprise entre 1 (noir) et 15 (blanc)
+                                                                                          
+                                                                                          
 
-
-
-<ul>ffffffff</ul>
 
 
 
