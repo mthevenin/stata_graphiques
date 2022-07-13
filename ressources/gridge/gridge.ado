@@ -110,25 +110,25 @@ local c=1
 * Syntaxe du graphique
 
 foreach j of local l {
-gen y0_`j' = `i--'
-qui kdensity `varname' if `over2'==`j' & `touse', kernel(gauss) n(200) gen(x_`j' d_`j') bw(`bw') nograph
-qui gen y1_`j' = y0_`j' + d_`j'*`iscale'*`super' if `touse'
+gen _y0_`j' = `i--'
+qui kdensity `varname' if `over2'==`j' & `touse', kernel(gauss) n(200) gen(_x_`j' _d_`j') bw(`bw') nograph
+qui gen _y1_`j' = _y0_`j' + _d_`j'*`iscale'*`super' if `touse'
 
 colorpalette `pal', nograph n(`wc') opacity(`opac') 
 
 if "`range'" =="" {
-local graph `graph' rarea y0_`j' y1_`j' x_`j'  ,                           ///
+local graph `graph' rarea _y0_`j' _y1_`j' _x_`j'  ,                           ///
                     lw(0) fc("`r(p`c++')'")  ||                            ///
-                    rline  y0_`j' y1_`j' x_`j' , lw(*`lw') lc(gs`lc') ||				
+                    rline  _y0_`j' _y1_`j' _x_`j' , lw(*`lw') lc(gs`lc') ||				
 
 				
 					
 }
 
 if "`range'" !="" {
-local graph `graph' rarea y0_`j' y1_`j' x_`j' if x_`j'>=`rmin' & x_`j'<=`rmax'  ,                      ///
+local graph `graph' rarea _y0_`j' _y1_`j' _x_`j' if _x_`j'>=`rmin' & _x_`j'<=`rmax'  ,                      ///
                     lw(0) fc("`r(p`c++')'")  ||                                                        ///
-                    rline  y0_`j' y1_`j' x_`j' if x_`j'>=`rmin' & x_`j'<=`rmax' , lw(*`lw') lc(gs`lc') ||				
+                    rline  _y0_`j' _y1_`j' _x_`j' if _x_`j'>=`rmin' & _x_`j'<=`rmax' , lw(*`lw') lc(gs`lc') ||				
 					}				
 							
 }
@@ -146,7 +146,7 @@ local ylab `ylab' `i--' "`ylab`l2''"
 * Exécution du graphique
 tw `graph',  legend(off) ylabel(`ylab', glw(0) labs(2) angle(0))  `gopts'
 
-drop x* d* y* 
+drop _x_* _d_* _y0_* _y1_* 
 
 end
 
