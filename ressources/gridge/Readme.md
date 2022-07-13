@@ -35,12 +35,12 @@ Entre parenthèse le type d'argument, suivi si nécessaire de la valeur par déf
 - `range(value1 value2)`: permet de borner les valeurs de l'axe continue x. value1<value2
 - `lc(integer 2)`: échelle de gris du contour des densités (palette **gs**). Valeurs comprise entre 1 (noir) et 15 (blanc)
 - `lw(real .5)`: épaisseur du contour des densités en valeur relative. Valeur minimum 0
-- `gopts(string)`: autres options des graphique de type `tw`: titre, xlabel, plotr, graphr.... Ne pas utiliser l'option `ylabel` (option spécifique à venir).                                                                                       
+- `gopts(string)`: autres options des graphique de type `tw`: titre, xlabel, plotr, graphr.... Ne pas utiliser l option `ylabel` (option spécifique à venir).                                                                                       
                                                                                           
 # Exemple
 
 ***Ouverture de la base***
-````{}
+```{}
 webuse set  "https://raw.githubusercontent.com//mthevenin/stata_graphiques/master/ressources/gridge"
 webuse "probability.dta", clear
 webuse set
