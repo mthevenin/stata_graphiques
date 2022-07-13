@@ -1,0 +1,8 @@
+d 2022-07-13
+d commande      : gridge
+d auteur        : Marc Thevenin
+d affiliation   : MT: ined-sms
+d support       : MT: marc.thevenin@ined.fr
+d               : MT: https://mthevenin.github.io/stata_fr/
+
+p gridge        : alternatives aux fonctions joyplot et joy_plot
