@@ -19,7 +19,7 @@ net install gridge, from("https://mthevenin.github.io/stata_graphiques/ressource
 
 ```{}
 syntax variable [if], over(variable)  super(numeric 1.8) sort(string)  sortrev(string) bw(real>0 1.5) palette(string) colrev opac(integer 80) range(value1 value2) 
-lc(integer 2)] lw(numeric .5)] gopts(string)]              
+lc(integer 2)] lw(real .5)] gopts(string)]              
 ```
 Entre parenthèse le type d'argument, suivi si nécessaire de la valeur par défaut. E
 
@@ -35,7 +35,8 @@ Entre parenthèse le type d'argument, suivi si nécessaire de la valeur par déf
 - `opac(integer 80)`: % d'opacité des couleurs. Valeur max = 100
 - `range(value1 value2)`: permet de borner les valeurs de l'axe continue x. value1<value2
 - `lc(integer 2)`: échelle de gris du contour des densités (palette **gs**). Valeurs comprise entre 1 (noir) et 15 (blanc)
-                                                                                          
+- `lw(real .5)`: épaisseur du contour des densités en valeur relative. Valeur minimum 0
+- `gopts(string)`: autres options des graphique de type `tw`: titre, xlabel, plotr, graphr.... Ne pas utiliser l'option `ylabel`.                                                                                       
                                                                                           
 
 
