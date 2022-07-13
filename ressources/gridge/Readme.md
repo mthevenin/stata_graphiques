@@ -5,7 +5,6 @@ author: Marc Thevenin (Ined)
 
 <img src="g1.png" width=300 height=200>
 
-**EN COURS**
 
 # `gridge` [M.Thevenin]
 
@@ -38,11 +37,22 @@ Entre parenthèse le type d'argument, suivi si nécessaire de la valeur par déf
 - `lw(real .5)`: épaisseur du contour des densités en valeur relative. Valeur minimum 0
 - `gopts(string)`: autres options des graphique de type `tw`: titre, xlabel, plotr, graphr.... Ne pas utiliser l'option `ylabel` (option spécifique à venir).                                                                                       
                                                                                           
+# Exemple
+
+***Ouverture de la base***
+````{}
+webuse set  "//github.com/mthevenin/stata_graphiques/tree/main/ressources/fabplot"
+webuse "probability.dta", clear
+webuse set
+```
+  
+
+gridge p , over(proba) bw(2) range(0 100) super(0) gopts(title("Probabilités assignées", pos(11)) caption("Source: Reddit", size(*.5)) xtitle("probabilités (%)")) palette(icefire) colrev  op(90)
 
 
 
 
-
+  
 
 
 
