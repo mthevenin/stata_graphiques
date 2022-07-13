@@ -32,11 +32,13 @@ net install fabplot2, from("https://mthevenin.github.io/stata_graphiques/ressour
 
 Je reprends le même exemple que pour la formation, avec la base babynames.  
 Ouverture de de la base:  
+
 ```{}
-webuse set https://github.com/mthevenin/stata_graphiques/tree/main/ressources/fabplot
+webuse set "https://raw.githubusercontent.com//mthevenin/stata_graphiques/master/ressources/fabplot"
 use babynames, clear
 webuse set
 ```
+
 ### Empilement des 9 courbes
 
 ..... C'est illisible
