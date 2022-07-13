@@ -10,11 +10,12 @@
 
 Ne pas encore chercher à installer
 ```{}
-net install fabplot2, from("https://mthevenin.github.io/stata_graphiques/ressources/fabplot/") replace
+net install gridge, from("https://mthevenin.github.io/stata_graphiques/ressources/gridge/") replace
 ```
 
 
 # Syntaxe
+
 
 
 
