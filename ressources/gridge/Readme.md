@@ -71,27 +71,32 @@ webuse set https://github.com/mthevenin/stata_graphiques/tree/main/bases
 use rbnb_paris, replace
 webuse set
 ```
+
+***Graphique 1***
+```{}
+gridge price if price<=300, over(zone) bw(4) gopts(title("Prix location Rbnb à Paris", pos(11))) range(0 300)
+```
+<img src="g2.png" width=641 height=466> 
+
 ***Graphique 2***
 ```{}
 #delimit ;
 gridge price, 
-over(zone)  super(2) palette(HCL heat2) bw(4) lc(2) lw(.8) sort(median)
+over(zone)  super(2) palette(HCL heat2) bw(4) lc(2) lw(.8) sort(mean)
 gopts(title("Prix location Rbnb à Paris", pos(11))) range(0 300) op(100)
 ;
 ```
-
 <img src="g3.png" width=641 height=466> 
 
 ***Graphique 3***
 ```{}
 #delimit ;
 gridge price, 
-over(zone)  super(2) palette(HCL heat2) bw(4) lc(2) lw(.8) sortrev(median) colrev
+over(zone)  super(2) palette(HCL heat2) bw(4) lc(2) lw(.8) sortrev(mean) colrev
 gopts(title("Prix location Rbnb à Paris", pos(11)))
 ;
 ```
 
 <img src="g4.png" width=641 height=466> 
-
 
 
