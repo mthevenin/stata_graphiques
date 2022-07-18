@@ -37,7 +37,7 @@ Entre parenthèse le type d'argument, suivi si nécessaire de la valeur par déf
 - `lw(real .5)`: épaisseur du contour des densités en valeur relative. Valeur minimum 0
 - `gopts(string)`: autres options des graphique de type `tw`: titre, xlabel, plotr, graphr.... Ne pas utiliser l'option `ylabel` (option spécifique à venir).                                                                                       
                                                                                           
-# Exemple
+# Exemple 1
 
 ***Ouverture de la base***
 ```{}
@@ -57,11 +57,18 @@ gopts(title("Probabilités assignées", pos(11))
 caption("Source: Reddit", size(*.5)) 
 xtitle("probabilités (%)")) 
 ;
-
 ```
 
 <img src="g1.png" width=641 height=466>
 
+# Exemple 2
+
+Dans le premier exemple, les modalités de l'axe discret était ordonnée. Avec cet exemple, Le premier graphique représente la série de distributions suivant l'ordre des valeurs par défaut de la variable *zône*. Le second graphique avec l'option `sort(median)` trie de manière croissante les secteurs selon la valeur médiane du prix de la location, enfin le troisième applique un tri décroissant avec l'option `sortrev(median)`.  
+
+  ```{}
+  gridge price if price<=300, over(zone) bw(4) gopts(title("Prix location Rbnb à Paris", pos(11))) range(0 300)
+  ```
+  
   
 
 
