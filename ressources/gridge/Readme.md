@@ -65,11 +65,33 @@ xtitle("probabilités (%)"))
 
 Dans le premier exemple, les modalités de l'axe discret était ordonnée. Avec cet exemple, Le premier graphique représente la série de distributions suivant l'ordre des valeurs par défaut de la variable *zône*. Le second graphique avec l'option `sort(median)` trie de manière croissante les secteurs selon la valeur médiane du prix de la location, enfin le troisième applique un tri décroissant avec l'option `sortrev(median)`.  
 
-  ```{}
-  gridge price if price<=300, over(zone) bw(4) gopts(title("Prix location Rbnb à Paris", pos(11))) range(0 300)
-  ```
-  
-  
+***Ouverture de la base***
+```{}
+webuse set https://github.com/mthevenin/stata_graphiques/tree/main/bases
+use rbnb_paris, replace
+webuse set
+```
+***Graphique 2***
+```{}
+#delimit ;
+gridge price, 
+over(zone)  super(2) palette(HCL heat2) bw(4) lc(2) lw(.8) sort(median)
+gopts(title("Prix location Rbnb à Paris", pos(11))) range(0 300) op(100)
+;
+```
+
+<img src="g3.png" width=641 height=466> 
+
+***Graphique 3***
+```{}
+#delimit ;
+gridge price, 
+over(zone)  super(2) palette(HCL heat2) bw(4) lc(2) lw(.8) sortrev(median) colrev
+gopts(title("Prix location Rbnb à Paris", pos(11)))
+;
+```
+
+<img src="g4.png" width=641 height=466> 
 
 
 
