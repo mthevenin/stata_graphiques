@@ -41,7 +41,7 @@ Entre parenthèse le type d'argument, suivi si nécessaire de la valeur par déf
 
 - Pour la variable de l'argument `over()`, chaque valeur doivent avoir au moins 10 observations. Si ce n'est pas le cas, la commande n'exécutera pas le graphique mais affichera les valeurs dont le nombre d'observation est insuffisant.
 - Toujours pour la variable de l'argument `over()`, j'ai pour l'instant limité le format de la variable à un format numérique, avec ou sans labels affectés aux valeurs.
-- Ce type de visualisation est également utilisée pour représenter comparer l'évolution dans le temps d'une variable quantitative, par exemple des pays (très à la mode avec le COVID)[exemple](https://www.ined.fr/fichier/rte/166/Page%20accueil/SDR_plot_all_countries_fr.jpg). Cela permet d'offrir un certain contrôle des effets dits "spaghetti", mais je préfère dans ce cadre les approches *small-multiple*. Par ailleurs, dans l'esprit des courbes de Ridge, l'axe Y est plutôt de type ordonné. Cette option est offerte dans la fonction `joyplot` (A.Navqui).
+- Ce type de visualisation est également utilisée pour représenter comparer l'évolution dans le temps d'une variable quantitative, par exemple entre pays (très à la mode avec le COVID)[exemple](https://www.ined.fr/fichier/rte/166/Page%20accueil/SDR_plot_all_countries_fr.jpg). Cela permet d'offrir un certain contrôle des effets dits "spaghetti", mais je préfère dans ce cadre les approches de type *small-multiple*. Par ailleurs, dans l'esprit des courbes de Ridge, l'axe Y est plutôt de type ordonné. Cette option est offerte dans la fonction `joyplot` (A.Navqui).
 
                                                                                           
 # Exemple 1
