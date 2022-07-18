@@ -15,8 +15,12 @@ syntax varlist(min=1 max=1) [if], over(string)    ///
 			         [lw(real .5)]                ///
 					 [gopts(string)]              
 
+				 
+					 
 local varname `varlist'
 
+marksample touse      
+markin if `touse'
 	
 if "`range'"!="" {	
 tokenize `range'
@@ -25,7 +29,27 @@ local rmax = `2'
 }	
 
 
-	
+** Check si nombre suffisant d'observation pour estimer les densités					 
+** min = 10
+qui levelsof `over' if `touse', local(o)
+
+foreach o2 of local o {
+qui sum `varname'  if `over'==`o2'
+if `r(N)'<10 {
+ di as error "`over'=`o2': " as text "nombre d'observations insuffisant pour estimer les densités"		
+}	
+}
+
+foreach o2 of local o {
+qui sum `varname' if `over'==`o2'
+if `r(N)'<10 {
+di as error " Exit: nombre d'observations minimum = 10"
+exit		
+}	
+}
+
+
+*** installation dépendance si nécessaire	
 local packg colorpalette grstyle gtools
 foreach p of local packg {
 capture which `p'
@@ -34,8 +58,19 @@ if _rc==111 di "Installation de  `p'"
 } 
 
 
-marksample touse      
-markin if `touse'
+** Variable over numérique sans label aux valeurs
+local lab:  value label `over'
+
+if "`lab'"=="" {
+qui levelsof `over', local(lv)
+
+foreach lv2 of local lv {
+local labdef `labdef' `lv2' "`lv2'"	
+}
+label define label `labdef'
+label value `over'  label
+}
+
 
 
 if "`sort'"!="" {
@@ -68,7 +103,6 @@ qui replace `rank'=0 if `rank'==.
 qui bysort `over': egen `rank2' = total(`rank')
 qui egen `over2'   = axis(`rank2' `over') , label(`over')	
 }
-
 
 
 if "`sort'"=="" & "`sortrev'"=="" {
@@ -120,8 +154,6 @@ if "`range'" =="" {
 local graph `graph' rarea _y0_`j' _y1_`j' _x_`j'  ,                           ///
                     lw(0) fc("`r(p`c++')'")  ||                            ///
                     rline  _y0_`j' _y1_`j' _x_`j' , lw(*`lw') lc(gs`lc') ||				
-
-				
 					
 }
 
@@ -147,6 +179,12 @@ local ylab `ylab' `i--' "`ylab`l2''"
 tw `graph',  legend(off) ylabel(`ylab', glw(0) labs(2) angle(0))  `gopts'
 
 drop _x_* _d_* _y0_* _y1_* 
+
+if "`lab'"=="" {
+label drop label
+label value `over'
+}
+
 
 end
 
