@@ -48,12 +48,16 @@ webuse set
   
 ***Graphique***
 ```{}
-#delimit ;
+#delimit;
 gridge p , over(proba) 
-bw(2) range(0 100) super(0) 
-palette(icefire) colrev  op(90)
-gopts(title("Probabilités assignées", pos(11)) caption("Source: Reddit", size(*.5)) xtitle("probabilités (%)")) 
+range(0 100) bw(2) 
+palette(flare) op(90)
+
+gopts(title("Probabilités assignées", pos(11))
+caption("Source: Reddit", size(*.5)) 
+xtitle("probabilités (%)")) 
 ;
+
 ```
 
 <img src="g1.png" width=641 height=466>
