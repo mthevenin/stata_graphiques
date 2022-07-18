@@ -106,4 +106,41 @@ gopts(title("Prix location Rbnb à Paris", pos(11)))
 
 <img src="g4.png" width=641 height=466> 
 
+# Nombre d'observations insuffisantes pour estimer les densités
+
+Le seuil à été fixé à 10 observations. Si ce n'est pas le cas, le graphique n'est pas exécuté mais les informations sur les valeurs de y qui manquent d'informations sont indiquées
+
+```{}
+webuse nhanes2, clear
+
+gen bmi2 = round(bmi)
+gridge bpsystol, over(bmi2)
+
+/*
+bmi2=12: nombre d'observations insuffisant pour estimer les densités
+bmi2=14: nombre d'observations insuffisant pour estimer les densités
+bmi2=15: nombre d'observations insuffisant pour estimer les densités
+bmi2=46: nombre d'observations insuffisant pour estimer les densités
+bmi2=47: nombre d'observations insuffisant pour estimer les densités
+bmi2=48: nombre d'observations insuffisant pour estimer les densités
+bmi2=49: nombre d'observations insuffisant pour estimer les densités
+bmi2=51: nombre d'observations insuffisant pour estimer les densités
+bmi2=52: nombre d'observations insuffisant pour estimer les densités
+bmi2=53: nombre d'observations insuffisant pour estimer les densités
+bmi2=54: nombre d'observations insuffisant pour estimer les densités
+bmi2=55: nombre d'observations insuffisant pour estimer les densités
+bmi2=57: nombre d'observations insuffisant pour estimer les densités
+bmi2=61: nombre d'observations insuffisant pour estimer les densités
+ Exit: nombre d'observations minimum = 10
+ */
+```
+
+
+
+
+
+
+
+
+
 
