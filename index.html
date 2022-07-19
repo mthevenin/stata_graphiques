@@ -178,6 +178,11 @@
    
 <!-- Don't indent these lines or it will mess pre blocks indentation --> 
 <div class="page-content has-page-title">
+<style>
+pre {
+  font-size: 10px;
+}
+</style>
 <blockquote>
 <p><svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:1em;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg><strong>07 Juillet 2022</strong>: <strong>Chapitres 1 à 3 en ligne</strong>. Aller à l’onglet formation dans la barre de navigation.</p>
 </blockquote>
@@ -187,10 +192,33 @@
 </blockquote>
 <p><strong><em>Suivi des mises à jour</em></strong>: <a href="https://github.com/mthevenin/stata_graphiques#readme" class="uri">https://github.com/mthevenin/stata_graphiques#readme</a></p>
 <hr />
+<strong><code>gridge</code></strong><br />
+
+<div class="alert alert-info">
+<p>Depuis 2020, des programmes permettent de générer ce type de graphiques: <code>joyplot</code> (A.Naqvi) et <code>joy_plot</code> (F.Rios-Avila). La première commande, malgré une maj récente, présente toujours des problèmes concernant le report des informations sur l’axe discret, triées en sens inverse chez moi.<br />
+A partir d’un programme écrit à l’automne 2020, et en restant au plus près de la fonction <code>ggride</code> de R, j’ai également programmé une commande: <strong><code>gridge</code></strong>. Elle permet, entre autres, de paramétrer le tri les modalités de l’axe discret à partir d’une fonction autorisée avec <code>egen</code> (<em>mean</em>, <em>median</em>, <em>sd</em>….), de choisir librement un intervalle de report des courbes sur y. Egalement, comme les courbes représentent des estimations de densités, le nombre d’observations minimales a été fixé à 10. Si ce critère n’est pas respecté, les valeurs de la variable y sont affichés pour faciliter un éventuel regroupement.</p>
+<table>
+<tr>
+<td>
+<pre><code>#delimit;
+gridge p , over(proba) 
+range(0 100) bw(2) 
+palette(flare) op(90)
+gopts(title(&quot;Probabilités assignées&quot;, pos(11))
+caption(&quot;Source: Reddit&quot;, size(*.5)) 
+xtitle(&quot;probabilités (%)&quot;)) ;</code></pre>
+</td>
+<td>
+<img src="ressources/gridge/g1.png" />
+</td>
+</tr>
+</table>
+<p><a href="https://github.com/mthevenin/stata_graphiques/blob/main/ressources/gridge/Readme.md"><strong>Aide &amp; Tutoriel MT</strong></a></p>
+</div>
 <strong>Lolliplot et haltère: pourquoi faire compliquer lorsque…..</strong><br />
 
 <div class="alert alert-info">
-<p>J’étais complétement passé à côte de la fonction <strong><code>axis</code></strong> du package <strong>egenmore</strong> de Nj.Cox. Elle permet de construire un axe discret ordonné en récupérant automatiquement les labels d’une variable. Du coup, les programmes pour construire des graphiques de types <strong>lollipop</strong> ou <strong>haltères</strong> qui étaient particulierement complexes et long se retouvent, et pas qu’un peu, simplifié:</p>
+<p>J’étais complétement passé à côte de la fonction <strong><code>axis</code></strong> du package <strong>egenmore</strong> de Nj.Cox. Elle permet de construire un axe discret ordonné en récupérant automatiquement les labels d’une variable. Les programmes de la v1 pour générer des graphiques de types <strong>lollipop</strong> ou <strong>haltères</strong> qui étaient particulièrement complexes et long se retouvent, et pas qu’un peu, simplifiés:</p>
 <p><strong><em>Exemple</em></strong></p>
 <pre><code>sysuse nlsw88, clear
 drop if inlist(occupation,9,10,12) 
@@ -215,15 +243,15 @@ twoway scatter occ mwage ///
 <table>
 <tr>
 <td>
-<img src=ressources/fabplot/g1.png>
+<img src="ressources/fabplot/g1.png" />&gt;
 </td>
 <td>
-<img src=ressources/fabplot/g2.png>
+<img src="ressources/fabplot/g2.png" />&gt;
 </td>
-<tr>
+</tr>
 </table>
-<a href="https://journals.sagepub.com/doi/full/10.1177/1536867X211025838"><strong>Article Stata Journal</strong></a><br />
-<a href="https://github.com/mthevenin/stata_graphiques/blob/main/ressources/fabplot/Readme.md"><strong>Tutoriel MT</strong></a>
+<p><a href="https://journals.sagepub.com/doi/full/10.1177/1536867X211025838"><strong>Article Stata Journal</strong></a><br />
+<a href="https://github.com/mthevenin/stata_graphiques/blob/main/ressources/fabplot/Readme.md"><strong>Tutoriel MT</strong></a></p>
 </div>
 <p><br> <a href="https://rmarkdown.rstudio.com/"><img src="https://img.shields.io/badge/Made%20with-Markdown-1f425f.svg" alt="made-with-RMarkdown" /></a> <a href="https://www.stata.com/"><img src="https://img.shields.io/badge/%3CStata%20SE%3E-%3Cv17%3E-%3CCOLOR%3E.svg" alt="Generic badge" /></a><br />
 <a href="https://creativecommons.org/licenses/by-nd/4.0"><img src="https://img.shields.io/badge/License-CC--0-blue.svg" alt="CC-0 license" /></a></p>
