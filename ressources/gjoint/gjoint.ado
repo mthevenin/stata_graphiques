@@ -10,6 +10,15 @@ syntax varlist(min=2 max=2) [if],             ///
 							[PALette(string)] ///
 							[title(string)]
 
+*** Installation dépendance si nécessaire	
+local packg colorpalette grstyle gtools heatplot
+foreach p of local packg {
+capture which `p'
+if _rc==111 ssc install `p'
+if _rc==111 di "Installation de  `p'"
+} 
+	
+
 tokenize `varlist'
 
 
