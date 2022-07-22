@@ -20,7 +20,7 @@ author: Marc Thevenin (Ined-Sms)
 ***Ouverture de la base***
 ```{}
 webuse set  "https://raw.githubusercontent.com//mthevenin/stata_graphiques/master/ressources/gjoint"
-webuse "probability.dta", clear
+webuse "logement.dta", clear
 webuse set
 ```
 
