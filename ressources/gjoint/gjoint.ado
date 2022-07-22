@@ -23,7 +23,7 @@ tokenize `varlist'
 
 
 *** Legende
-hexplot  `varlist', color(`palette')                        ///
+hexplot  `varlist', color(`palette') `hopts'                ///
 ylab(,nogrid) xlab(,nogrid)                                 ///
 xtitle("") ytitle("") yscale(off noline) xscale(off noline) ///
 nodraw                                                      ///
