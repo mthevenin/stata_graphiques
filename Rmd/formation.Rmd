@@ -1,0 +1,92 @@
+---
+title: "<br>Formation graphiques avancés"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(knitr)
+library(rsconnect)
+library(haven)
+library(pander)
+library(memisc)
+library(fontawesome)
+```
+
+<style>
+.column-left{
+  float: left;
+  width: 50%;
+  text-align: left;
+}
+.column-center{
+  float: left;
+  width: 50%;
+  text-align: left;
+}
+</style>
+
+
+* Introduction/présentation - remerciements [à faire]
+* Liens externes principaux [à faire]
+
+
+[**Version pdf de la formation**](v2_2022_chap123.pdf) 
+
+<table><tr><td>
+<div class="column-left">
+
+**[Chapitre I: Générer et éditer un graphique](formation1.html)**  
+
+* [**Eléments de syntaxe**](formation1.html#eléments-de-syntaxe)
+* [**Options**](formation1.html#options)
+* [**Combiner des graphiques**](formation1.html#combiner-des-graphiques) 
+
+
+**[Chapitre II: Utilisation des macros](formation2.html)**  
+
+* [**Rappels sur les macros**](formation2.html#rappels-sur-les-macros)
+* [**Alléger la syntaxe**](formation2.html#alléger-la-syntaxe)
+* [**Automatiser la programmation**](formation2.html#automatiser-la-programmation)
+
+
+**[Chapitre III: Palettes de couleurs et styles](formation3.html)**  
+
+* [**Couleurs et palettes de couleurs**](formation3.html#couleurs-et-palettes-de-couleurs)
+* [**Styles**](formation3.html#styles-thèmes)
+<br>
+
+</div>
+
+<div class="column-center">
+
+**Chapitre IV: Visualisation des données**  
+
+* Histogramme et densité
+* Boxplot, violin et courbes de Ridge
+* Nuages, densités 2d et bubble plot
+* Courbes et graphiques associés
+* Barres, lollipop, haltères et coordonnées parallèles
+* Graphiques pour variables catégorielles
+* Graphiques pour résultats de régression  
+
+
+**Chapitre V: compléments**  
+
+* Graphiques animés [*sous réserve*]
+* Graphiques Python sous Stata
+
+</div>
+</td></tr></table>
+
+
+
+**INTRODUCTION A LA SEMIOLOGIE GRAPHIQUE (Bénédicte Garnier)**  
+
+Lien vers le document: [`r fa("file-pdf", fill = "steelblue", margin_right="1em")`](https://github.com/mthevenin/stata_fr/blob/master/semio_bene/2020.09.14.BGIntro_ppt.pdff)
+
+<iframe src="BGIntro_ppt.pdf" height="500" width="1000" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay"></iframe>
+
+
+
+
