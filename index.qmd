@@ -1,0 +1,135 @@
+---
+title: "Graphiques"
+
+format:
+  html:
+    code-fold: false
+    code-tools: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+options(Encoding="UTF-8")
+
+library(knitr)
+library (shiny)
+library (rsconnect)
+library(haven)
+library(pander)
+library(memisc)
+library(fontawesome)
+```
+
+
+> `r fa("link", fill = "steelblue", height = "1em", margin_right="1em")`**07 Juillet 2022**: **Chapitres 1 à 3 en ligne**. 
+
+> `r fa("book", fill = "steelblue", height = "1em", margin_right="1em")`**06 Juillet 2022**: Formation chapitres 1 à 3.   
+**Lien vers le nouveau support de formation en format pdf** [chapitre 1 à 3]: [`r fa("link", fill = "steelblue", height = "1em", margin_right="1em")`](v2_2022_chap123.pdf)  
+
+***Suivi des mises à jour***: <https://github.com/mthevenin/stata_graphiques#readme>
+
+---
+
+<div class="alert alert-info">
+**gjoint**  
+Petite commande graphique en version alpha: **`gjoint`**. Permet de visualiser la distribution croisée de deux variables quantitatives avec la commande **`hexplot`** de Ben Jann, en reportant également les distributions marginales sour forme d'histogrammes.  
+Pas de gros changement à prévoir, si ce n'est ajouter la possibilité de sélectionner des observation avec [if/else]. C'est le minimum.  
+
+![](ressources/gjoint/g1.png){width=40%}
+
+[**Aide & Tutoriel MT**](<https://github.com/mthevenin/stata_graphiques/blob/main/ressources/gjoint/Readme.md>)
+</div>
+
+ 
+<div class="alert alert-info">
+**gridge**     
+Depuis 2020, des programmes permettent de générer ce type de graphiques: `joyplot` (A.Naqvi) et `joy_plot` (F.Rios-Avila). La première commande, malgré une maj récente, présente toujours des problèmes concernant le report des informations sur l'axe discret, triées en sens inverse chez moi.   
+A partir d'un programme écrit à l'automne 2020, et en restant au plus près de la fonction `ggride` de R, j'ai également programmé une commande: **`gridge`**. Elle permet, entre autres, de paramétrer le tri les modalités de l'axe discret à partir d'une fonction autorisée avec `egen` (*mean*, *median*, *sd*....), de choisir librement un intervalle sur x pour éviter le report de valeurs sortant de borne acceptables (probabilité négatives ou supérieure à 1 par exemple). Comme  on estime des densités, le nombre d'observations minimales a été fixé à 10. Si ce critère n'est pas respecté, les valeurs de y qui ne respectent pas cette contrainte sont affichées.
+
+
+```{r eval=FALSE}
+#delimit;
+gridge p , over(proba) 
+range(0 100) bw(2) 
+palette(flare) op(90)
+gopts(title("Probabilités assignées", pos(11))
+caption("Source: Reddit", size(*.5)) 
+xtitle("probabilités (%)")) ;
+```
+
+<td>![](ressources/gridge/g1.png){width=40%}</td>
+
+
+
+[**Aide & Tutoriel MT**](https://github.com/mthevenin/stata_graphiques/blob/main/ressources/gridge/Readme.md)
+</div>
+
+
+<div class="alert alert-info"> 
+**Lolliplot et haltère: pourquoi faire compliquer lorsque.....**     
+J'étais complétement passé à côte de la fonction **`axis`** du package **egenmore** de Nj.Cox. Elle permet de construire un axe discret ordonné en récupérant automatiquement les labels d'une variable. Les programmes de la v1 pour générer des
+graphiques de types **lollipop** ou **haltères** qui étaient particulièrement complexes et long se retouvent, et pas qu'un peu, simplifiés:  
+
+***Exemple***
+```{r eval=FALSE}
+sysuse nlsw88, clear
+drop if inlist(occupation,9,10,12) 
+
+egen mwage = mean(wage), by(occupation)
+egen occ   = axis(mwage occupation) , label(occupation)
+
+twoway scatter occ mwage ///
+|| dropline mwage occ, horizontal ///
+|| , ylab(1/10, valuelabel) legend(off)
+```
+
+Je découvre également l'option **`labelvalue`** pour `x/ylabel()` qui permet d'affecter directement les labels d'une variable catégorielles sur un axe. 
+</div>
+
+**Lolliplot et haltère: pourquoi faire compliquer lorsque.....**  
+<div class="alert alert-info">
+J'étais complétement passé à côte de la fonction **`axis`** du package **egenmore** de Nj.Cox. Elle permet de construire un axe discret ordonné en récupérant automatiquement les labels d'une variable. Les programmes de la v1 pour générer des
+graphiques de types **lollipop** ou **haltères** qui étaient particulièrement complexes et long se retouvent, et pas qu'un peu, simplifiés:  
+
+***Exemple***
+```{}
+sysuse nlsw88, clear
+drop if inlist(occupation,9,10,12) 
+
+egen mwage = mean(wage), by(occupation)
+egen occ   = axis(mwage occupation) , label(occupation)
+
+twoway scatter occ mwage ///
+|| dropline mwage occ, horizontal ///
+|| , ylab(1/10, valuelabel) legend(off)
+```
+
+Je découvre également l'option **`labelvalue`** pour `x/ylabel()` qui permet d'affecter directement les labels d'une variable catégorielles sur un axe. 
+</div>
+
+
+ 
+<div class="alert alert-info">
+`r fa("thumbs-up", fill = "steelblue", height = "1em", margin_right="1em")`**`fabplot` [Nj.Cox - 2021]**  
+
+* Contrôle des effets *spaghetti* (courbes) et *paella* (nuage de points)
+* Commande externe **`fabplot`** programmée en 2021 par Nj.Cox
+* J'ai ajouté une option pour modifier les courbes au second plan, NJ.Cox ayant toujours tendance à bloquer l'habillage de ces commandes graphiques. La commande a été renommée **`fabplot2`** et s'installe via github.
+* Exemple avec à gauche un graphique, peu lisible, qui empile 9 courbes (effet spaghetti); et à droite un graphique *small-multiple* qui contrôle plutôt bien cet effet indésirable.
+
+<table><tr><td>![](ressources/fabplot/g1.png)></td><td>![](ressources/fabplot/g2.png)></td></tr></table>  
+
+[**Article Stata Journal**](https://journals.sagepub.com/doi/full/10.1177/1536867X211025838)  
+[**Tutoriel MT**](https://github.com/mthevenin/stata_graphiques/blob/main/ressources/fabplot/Readme.md)
+</div>
+
+
+<br>  
+
+*   `r fa("r-project", fill = "steelblue")` Support réalisé avec [Rstudio](href:https://www.rstudio.com) - [Quarto](https://quarto.org).
+*   `r fa("code", fill = "steelblue")` Version Stata: [17-SE](https://www.stata.com/)
+
+
+
+
+

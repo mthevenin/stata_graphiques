@@ -1,0 +1,62 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  search: 
+    location: sidebar
+  page-navigation: true
+  reader-mode: true
+  page-footer: 
+    center: "Marc Thévenin - Ined-Sms - Août 2022" 
+    background: dark
+  navbar:
+    collapse-below: lg
+    left:
+      - href: index.qmd
+        text: "Graphiques"
+      - icon: github
+        href: https://github.com/mthevenin/ 
+      - href: https://mthevenin.github.io/stata_graphiques/
+        text: "Retour Stata-Ined"     
+      - href: https://mthevenin.github.io/stata_fr/
+        text: "Programmation [A venir]"   
+
+  sidebar:
+    style: "docked"
+    align: left
+    background: "#6B92B2"
+    contents:
+      - section: "Formation"
+        contents:
+          - formation.qmd
+          - section: "Chapitre 1: syntaxe"
+            contents:
+            - formation11.qmd
+            - formation12.qmd
+            - formation13.qmd
+            - formation14.qmd
+          - section: "Chapitre 2: macros"
+            contents:
+            - formation21.qmd
+            - formation22.qmd
+            - formation23.qmd
+          - section: "Chapitre 3: palettes et styles"
+            contents:
+            - formation31.qmd
+            - formation32.qmd
+          - section: "Chapitre 4: [A venir]"
+          - section: "Chapitre 5: [A venir]"
+
+format:
+  html:
+    theme:  
+      light: [superhero,theme-dark.scss]
+      dark:  [superhero, theme-light.scss]
+    code-background: true
+    code-copy: true
+    toc: true
+    toc-depth: 3
+    toc-title: Sections
+    highlight-style: monochrome
+
