@@ -96,11 +96,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="dark">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -147,16 +147,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <a class="nav-link" href="https://mthevenin.github.io/stata_fr/">Retour Stata-Ined</a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://mthevenin.github.io/formation_stata">Programmation [en cours: renvoi formation stata]</a>
+    <a class="nav-link" href="https://mthevenin.github.io/formation_stata">[en cours: programmation]</a>
   </li>  
 </ul>
               <div class="quarto-toggle-container">
                   <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-                  <a href="" class="quarto-reader-toggle nav-link" onclick="window.quartoToggleReader(); return false;" title="Toggle reader mode">
-  <div class="quarto-reader-toggle-btn">
-  <i class="bi"></i>
-  </div>
-</a>
               </div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
@@ -286,9 +281,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Sections</h2>
    
   <ul>
-  <li><a href="#types-de-graphique-syntaxe" id="toc-types-de-graphique-syntaxe" class="nav-link active" data-scroll-target="#types-de-graphique-syntaxe"><strong>Types de graphique syntaxe</strong></a>
+  <li><a href="#types-de-graphique" id="toc-types-de-graphique" class="nav-link active" data-scroll-target="#types-de-graphique"><strong>Types de graphique</strong></a>
   <ul class="collapse">
-  <li><a href="#types-de-graphique" id="toc-types-de-graphique" class="nav-link" data-scroll-target="#types-de-graphique"><strong>Types de graphique</strong></a></li>
+  <li><a href="#oneway-et-twoway" id="toc-oneway-et-twoway" class="nav-link" data-scroll-target="#oneway-et-twoway">Oneway et twoway</a></li>
   <li><a href="#choix-du-délimiteur" id="toc-choix-du-délimiteur" class="nav-link" data-scroll-target="#choix-du-délimiteur"><strong>Choix du délimiteur</strong></a></li>
   <li><a href="#eléments-de-syntaxe" id="toc-eléments-de-syntaxe" class="nav-link" data-scroll-target="#eléments-de-syntaxe"><strong>Eléments de syntaxe</strong></a>
   <ul class="collapse">
@@ -318,11 +313,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="types-de-graphique-syntaxe" class="level1">
-<h1><strong>Types de graphique syntaxe</strong></h1>
-<section id="types-de-graphique" class="level2">
-<h2 class="anchored" data-anchor-id="types-de-graphique"><strong>Types de graphique</strong></h2>
+<section id="types-de-graphique" class="level1">
+<h1><strong>Types de graphique</strong></h1>
 <p>On peut identifier deux types de graphiques avec Stata.</p>
+<section id="oneway-et-twoway" class="level2">
+<h2 class="anchored" data-anchor-id="oneway-et-twoway">Oneway et twoway</h2>
 <ul>
 <li>Les <strong><em>graphiques de type one-way</em></strong> : coordonnées sur un seul axe avec ou non, un axe discret. Ils peuvent être préfixés ou non par <code>graph</code>: <strong><code>graph box</code></strong>, <strong><code>graph bar</code></strong>, <strong><code>histogram</code></strong> …..<br>
 </li>
@@ -632,7 +627,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  let localAlternateSentinel = 'alternate';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
