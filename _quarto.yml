@@ -15,8 +15,6 @@ website:
     left:
       - href: index.qmd
         text: "Graphiques"
-      - icon: github
-        href: https://github.com/mthevenin/ 
       - href: https://mthevenin.github.io/stata_fr/
         text: "Retour Stata-Ined"     
       - href: https://mthevenin.github.io/formation_stata
