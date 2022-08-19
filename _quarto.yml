@@ -2,6 +2,7 @@ project:
   type: website
   output-dir: _site
 
+
 website:
   search: 
     location: sidebar
@@ -17,8 +18,8 @@ website:
         text: "Graphiques"
       - href: https://mthevenin.github.io/stata_fr/
         text: "Retour Stata-Ined"     
-      - href: https://mthevenin.github.io/formation_stata
-        text: "[en cours: programmation]" 
+      - href: https://mthevenin.github.io/stata_programmation
+        text: "Programmation" 
     right:
       - icon: github
         href: https://github.com/mthevenin 
