@@ -7,6 +7,7 @@ author: Marc Thevenin (Ined)
 **MAJ 2022**
 | Date | Description |
 | --- | --- |
+| 01-08: | Commande `gjoin`  (MT)  |
 | 18-07: | Commande `gridge` (MT)  |
 | 11-07: | Grosse simplification de la programmation des graphiques de type **lollipop** ou **haltère**. Merci à la fonction `axis` de **NJ.Cox**  |
 | 06-07: | Mise en ligne des chapitres 2 et 3  |
