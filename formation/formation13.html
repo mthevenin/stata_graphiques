@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.0.38">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Options: légende, titre…</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../formation/formation14.html" rel="next">
+<link href="../formation/formation12.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.html">Graphiques</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://mthevenin.github.io/stata_fr/">Retour Stata-Ined</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://mthevenin.github.io/stata_programmation">Programmation</a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/mthevenin"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:marc.thevenin@ined.fr"><i class="bi bi-envelope" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html">A propos</a>
+  </li>  
+</ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+              </div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Options: légende, titre…</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Formation</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../formation/formation.html" class="sidebar-item-text sidebar-link">Introduction</a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Chapitre 1: syntaxe</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../formation/formation11.html" class="sidebar-item-text sidebar-link">Types et syntaxe</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../formation/formation12.html" class="sidebar-item-text sidebar-link">Options: couleur, épaisseur</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../formation/formation13.html" class="sidebar-item-text sidebar-link active">Options: légende, titre…</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../formation/formation14.html" class="sidebar-item-text sidebar-link">Combiner des graphiques</a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">Chapitre 2: macros</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../formation/formation21.html" class="sidebar-item-text sidebar-link">Rappels sur les macros</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../formation/formation22.html" class="sidebar-item-text sidebar-link">Alleger la syntaxe</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../formation/formation23.html" class="sidebar-item-text sidebar-link">Automatiser la programmation</a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">Chapitre 3: palettes et styles</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../formation/formation31.html" class="sidebar-item-text sidebar-link">Palettes de couleurs</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../formation/formation32.html" class="sidebar-item-text sidebar-link">Styles-thèmes</a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">Chapitre 4: [A venir]</span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">Chapitre 5: [A venir]</span>
+  </li>
+          <li class="sidebar-item">
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">Ressources graphiques</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Stata.html" class="sidebar-item-text sidebar-link">Graphiques Stata</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  Python.qmd
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Sections</h2>
+   
+  <ul>
+  <li><a href="#options-pour-la-légende" id="toc-options-pour-la-légende" class="nav-link active" data-scroll-target="#options-pour-la-légende"><strong>Options pour la légende</strong></a></li>
+  <li><a href="#options-pour-les-titres-notes-texte-libre" id="toc-options-pour-les-titres-notes-texte-libre" class="nav-link" data-scroll-target="#options-pour-les-titres-notes-texte-libre"><strong>Options pour les titres, notes, texte libre</strong></a></li>
+  <li><a href="#autres-options" id="toc-autres-options" class="nav-link" data-scroll-target="#autres-options"><strong>Autres options</strong></a>
+  <ul class="collapse">
+  <li><a href="#changer-la-police-par-défaut" id="toc-changer-la-police-par-défaut" class="nav-link" data-scroll-target="#changer-la-police-par-défaut"><strong>Changer la police par défaut</strong></a></li>
+  <li><a href="#taille-du-graphique" id="toc-taille-du-graphique" class="nav-link" data-scroll-target="#taille-du-graphique"><strong>Taille du graphique</strong></a></li>
+  <li><a href="#modifier-automatiquement-la-taille-du-texte-et-des-symboles" id="toc-modifier-automatiquement-la-taille-du-texte-et-des-symboles" class="nav-link" data-scroll-target="#modifier-automatiquement-la-taille-du-texte-et-des-symboles"><strong>Modifier automatiquement la taille du texte et des symboles</strong></a></li>
+  <li><a href="#options-daffichage-et-denregistrement" id="toc-options-daffichage-et-denregistrement" class="nav-link" data-scroll-target="#options-daffichage-et-denregistrement"><strong>Options d’affichage et d’enregistrement</strong></a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Options: légende, titre…</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<section id="options-pour-la-légende" class="level1">
+<h1><strong>Options pour la légende</strong></h1>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(), <span class="fu">clegend</span>(), plegend<span class="sc">:</span> <span class="fu">legend</span>(contenu [options])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Les options <strong><code>clegend()</code></strong> et <strong><code>plegend()</code></strong> sont réservées aux graphiques de type courbes de niveau avec une troisième dimension (hauteur, densité…): <code>clegend()</code> pour <code>tw contour</code> et <code>plegend()</code> pour <code>tw contourline</code>. Ces options ont des arguments spécifiques que je ne décrirais pas ici.</p>
+<p>Stata utilise par défaut le label de la variable y pour alimenter le contenu de la légende, ce qui peut conduire à un rendu inadapté qu’il faudra corriger manuellement ou à l’aide de macros et fonctions macro (voir chapitre2).</p>
+<ul>
+<li>Ne pas afficher une légende: <strong><code>legend(off)</code></strong>.</li>
+<li>Position par défaut: 6 heures (Sud) – à l’extérieur. Modifiable avec <code>pos(#)</code> et <code>ring(0 ou 1)</code>.</li>
+<li>Pour modifier le nombre de lignes et de colonnes: <code>row(#)</code> et <code>col(#)</code>.</li>
+<li>Pour modifier les labels de la légende:</li>
+<li><strong><code>order(...)</code></strong> : <code>order( 1 "label1" 2 "label2" .....)</code> ou</li>
+<li><strong><code>lab(...)</code></strong> : <code>lab(1 "label1") lab(2 "label2") ...)</code></li>
+</ul>
+<p>J’utilise de préférence order plus parcimonieux en parenthèses. L’apparence (gras, italique…) des labels est modifiable avec des balises smcl ; les tailles et couleurs sont également modifiables avec des options pour les textes.</p>
+<ul>
+<li>Les labels peuvent être reportés sous les symboles avec l’option <strong><code>stack</code></strong>.</li>
+<li>On peut modifier l’aspect de la zône (couleur du fond, contour…) avec la sous option **<code>region(...)</code> ou <code>r(...)</code>.</li>
+</ul>
+<p><strong>Le smcl</strong> ::: {.callout-note} <strong>Le smcl</strong><br>
+Le Smcl « <strong>Stata Markup Control Langage</strong> » est le langage d’édition de Stata, il faut le reconnaître un peu préhistorique (ce n’est pas du Markup pour rien). Pour les graphiques, il permet de modifier les textes des titres, labels des axes, contenu des légendes : gras, italique… changement de police, ajout de formules.<br>
+Balise smcl : <code>"{type_option: texte}"</code></p>
+<p>Quelques options/modifications de base :</p>
+<ul>
+<li><p>Gras : <code>"{bf: texte}"</code></p></li>
+<li><p>Italique : <code>"{it: texte}"</code></p></li>
+<li><p>Gras et italique : <code>"{bf:{it :texte}}"</code><br>
+</p></li>
+<li><p>Le choix des polices dépend du système d’exploitation. Elles sont sélectionnées par leur type : <code>"{stSans : texte}"</code> pour type sans serif, <code>"{stSerif : texte}"</code> pour type serif, <code>"{stMono: texte}"</code> pour type mono, et <code>"{stSymbol : texte}"</code> pour les lettres grecques ou les symboles mathématiques. Exemples de polices avec windows : <em>arial</em> (sans serif), <em>times new roman</em> (serif), <em>courrier new</em> ou <em>consolas</em> (mono) et <em>symbol</em> (symbol). On peut également utiliser toutes les typographies disponibles en les sélectionnant en amont, avec la commande <code>graph set</code>.</p></li>
+</ul>
+<p><img src="imgp1/g14.png" class="img-fluid" style="width:60.0%"></p>
+<p>Options de la légende :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="fu">order</span>(<span class="dv">1</span> <span class="st">"{bf:Domestic}"</span> <span class="dv">2</span> <span class="st">"{bf:Foreign}"</span>) <span class="fu">pos</span>(<span class="dv">1</span>) <span class="fu">ring</span>(<span class="dv">0</span>) <span class="fu">col</span>(<span class="dv">1</span>) <span class="fu">region</span>(<span class="fu">lw</span>(<span class="sc">*</span>.<span class="dv">1</span>)) stack )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>Le texte de labels a été mis en gras avec une balise Smcl.</li>
+<li>La légende a été positionnée à l’intérieur du graphique avec <code>ring(0)</code> et à 1 heure avec <code>pos(1)</code>.</li>
+<li>La légende est reportée sous forme de colonne avec <code>col(1)</code>.</li>
+<li>L’épaisseur du contour de la zône a été fortement réduit avec <code>r(lw(*.1))</code>.</li>
+<li>Le texte est positionné sous le symbole avec l’option <code>stack</code>.</li>
+</ul>
+</section>
+<section id="options-pour-les-titres-notes-texte-libre" class="level1">
+<h1><strong>Options pour les titres, notes, texte libre</strong></h1>
+<p>La majeure partie des options sont déjà précisées plus haut pour les titres des axes. Les titres et les notes sont comme les légendes positionnés par rapport à des valeurs de l’horloge (de 1 à 12). Pour le texte libre on renseigne directement les coordonnées.</p>
+<p><strong><code>title()</code></strong> – <strong><code>subtitle()</code></strong><br>
+Il y a également des options pour des titres qui sont positionnés à gauche, à droite, au dessus (mais en dessous du titre principal) ou en bas du graphique :<code>l1title()</code> et <code>l2title()</code> pour un titre à gauche (l pour left), <code>r1title()</code> et <code>r2title()</code> à droite (r pour right), <code>t1title()</code> et <code>t2title()</code> pour un titre au dessus (t pour top) et ,enfin, <code>b1title()</code> et <code>b2title()</code> pour un titre en bas (b pour bottom) .<br>
+Par défaut le titre principal est positionné à 12 heures. Le sous titre est positionné en dessous du titre principal.</p>
+<p><strong><code>note()</code></strong> – <strong><code>caption()</code></strong><br>
+<code>note()</code> est positionné par défaut à 6 heures, <code>caption()</code> en dessous de note(). Ces options permettent de faire des notes de lecture ou de préciser une ou plusieurs sources au graphique.</p>
+<p>**<code>text(coordonnées "texte" [,options])</code><br>
+Cette option permet d’afficher un texte dans la zône du graphique en entrant directement les coordonnées (y,x). Les sous options relatives à l’alignement peuvent être assez utiles si on ne veut pas tâtonner avec les coordonnées [on peut passer par les macros pour générer les coordonnées, voir le chapitre dédié].</p>
+<p>Le graphique suivant présente les options par défaut (position, taille, couleur) des titres, dont le titre des axes, ainsi qu’un texte libre positionné aux coordonnées (1,1).</p>
+<p><img src="imgp1/g15.png" class="img-fluid" style="width:60.0%"></p>
+</section>
+<section id="autres-options" class="level1">
+<h1><strong>Autres options</strong></h1>
+<section id="changer-la-police-par-défaut" class="level2">
+<h2 class="anchored" data-anchor-id="changer-la-police-par-défaut"><strong>Changer la police par défaut</strong></h2>
+<p>On peut paramétrer en amont la typographie utiliser par les graphiques avec la commande <code>graph set</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span> pour OS windows</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>graph set window fontface[type_police] <span class="st">"nom_police"</span> </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Le type de police est: <em>sans</em>, <em>serif</em>, <em>mono</em>, <em>symbol</em>.</p>
+<p>Par défaut:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>   window           current</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>   setting          default          choices</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>   <span class="sc">----------------------------------------------------------------</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>   fontface         Arial             font name</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>   fontfacesans     Arial             font name</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>   fontfaceserif    Times New Roman   font name</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>   fontfacemono     Courier New       font name</span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>   fontfacesymbol   Symbol            font name</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>   <span class="sc">---------------------------------------------------</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Exemple: avec Trebuchet MS pour fontface et consolas pour mono</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>graph set window fontface<span class="st">"trebuchet MS"</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>graph set window fontfacemono <span class="st">"consolas"</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="sc">/</span><span class="er">*</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>   window           current</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>   setting          default          choices</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>   <span class="sc">------------------------------------------------------------------------</span></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>   fontface         trebuchet MS      font name</span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>   fontfacesans     Arial             font name</span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>   fontfaceserif    Minion Pro        font name</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>   fontfacemono     consolas          font name</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>   fontfacesymbol   Symbol            font name</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>   <span class="sc">------------------------------------------------------------------------</span></span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a><span class="er">*/</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="taille-du-graphique" class="level2">
+<h2 class="anchored" data-anchor-id="taille-du-graphique"><strong>Taille du graphique</strong></h2>
+<p>Ces options sont particulièrement utiles pour les graphiques combinés lorsque l’empilement de plusieurs graphiques provoque un effet d’écrasement des axes (axes x plus court si plusieurs colonnes par exemple).</p>
+<ul>
+<li><strong><code>xsize(#)</code></strong> - <strong><code>ysize(#)</code></strong> : en pouce (max=20). Peut s’appliquer à un graphique individuel, ou plus souvent à la commande <code>graph combine</code> pour retrouver un bon ratio x/y pour les sous graphiques.</li>
+<li><strong><code>fxize(#)</code></strong> – <strong><code>fysize(#)</code></strong> : # en %. A utiliser seulement pour combiner des graphiques. Avant la combinaison on peut appliquer ces options aux graphiques individuels pour contrôler les ratios x/y. Cela permet plus de liberté dans les compositions des graphiques combinés.</li>
+</ul>
+<p>Une application est donnée plus loin dans la section dédiée aux graphiques combinés.</p>
+<p><br></p>
+</section>
+<section id="modifier-automatiquement-la-taille-du-texte-et-des-symboles" class="level2">
+<h2 class="anchored" data-anchor-id="modifier-automatiquement-la-taille-du-texte-et-des-symboles"><strong>Modifier automatiquement la taille du texte et des symboles</strong></h2>
+<p><strong><code>scale(#)</code></strong> – **<code>iscale(#)</code>*<br>
+Permet de modifier la taille des éléments types texte et symboles générés par un graphique. Utile lorsque le texte d’une légende sort du contour. Valeur de référence=1.<br>
+Pour la commande <code>graph combine</code>, on utilise l’option <code>iscale()</code> qui appliquera la modification à tous les sous graphiques.</p>
+<p><br></p>
+</section>
+<section id="options-daffichage-et-denregistrement" class="level2">
+<h2 class="anchored" data-anchor-id="options-daffichage-et-denregistrement"><strong>Options d’affichage et d’enregistrement</strong></h2>
+<ul>
+<li><p><strong><code>nodraw</code></strong><br>
+Equivalent de <code>quietly</code> pour les graphiques, il permet de ne pas afficher le graphique dans l’éditeur. Plutôt à utiliser pour les sous-graphiques qui seront combiner ou associer à l’option <code>saving()</code>. Cela permet de gagner un temps d’exécution non négligeabe.</p></li>
+<li><p><strong><code>name()</code></strong>: <code>name(nom_graph [,replace])</code><br>
+Permet de sauvegarder temporairement le graphique sur la session. On peut privilégier cette option pour combiner des graphiques ultérieurement.<br>
+Utiliser de préférence l’option <code>replace</code> pour écraser un graphique déjà en mémoire et avec un même nom, à défaut de quoi il faut supprimer le ou les graphiques en mémoire avec <code>graph drop noms_graphs</code> ou <code>graph drop _all</code> en amont.</p></li>
+<li><p><strong><code>graph display [nom_graph]</code></strong><br>
+Permet d’afficher un graphique en mémoire (non sauvegardé en dur). Si le nom du graphique n’est pas précisé, le dernier graphique généré est ouvert dans l’éditeur de graphique.</p></li>
+</ul>
+<p>Exemple:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a> graph display g1</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><p><strong><code>saving("path/nom"[, replace])</code></strong><br>
+Même principe que <code>name()</code>, mais sauvegarde en dur sur le disque.</p></li>
+<li><p><strong><code>graph use "nom_graph"</code></strong><br>
+Permet d’afficher un graphique enregistré.</p></li>
+<li><p><strong>Exporter un graphique</strong><br>
+<code>export nom_graph.format [, replace name(nom du graphique ouvert dans l’éditeur)]</code>. Stata peut convertir un graphique en plusieurs format : jpeg, png, gif (seulement mac), svg…. On peut le faire directement dans l’éditeur de graphique ou passer par la ligne de commande export. Pour utiliser cette commande, le graphique doit être ouvert dans l’éditeur. Les formats d’exportation on des options propres.</p></li>
+</ul>
+<p>Exemples:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>tw line y x</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>graph export graphpng.png</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>tw line y x, <span class="fu">name</span>(g1,replace)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>graph export graphpng.png, replace <span class="fu">name</span>(g1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'alternate';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } 
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../formation/formation12.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Options: couleur, épaisseur</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../formation/formation14.html" class="pagination-link">
+        <span class="nav-page-text">Combiner des graphiques</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+      <div class="nav-footer-center">Marc Thévenin - Ined-Sms - Août 2022</div>
+  </div>
+</footer>
+
+
+
+</body></html>
