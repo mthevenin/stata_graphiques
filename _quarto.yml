@@ -36,22 +36,22 @@ website:
     contents:
       - section: "Formation"
         contents:
-          - formation.qmd
+          - formation/formation.qmd
           - section: "Chapitre 1: syntaxe"
             contents:
-            - formation11.qmd
-            - formation12.qmd
-            - formation13.qmd
-            - formation14.qmd
+            - formation/formation11.qmd
+            - formation/formation12.qmd
+            - formation/formation13.qmd
+            - formation/formation14.qmd
           - section: "Chapitre 2: macros"
             contents:
-            - formation21.qmd
-            - formation22.qmd
-            - formation23.qmd
+            - formation/formation21.qmd
+            - formation/formation22.qmd
+            - formation/formation23.qmd
           - section: "Chapitre 3: palettes et styles"
             contents:
-            - formation31.qmd
-            - formation32.qmd
+            - formation/formation31.qmd
+            - formation/formation32.qmd
           - section: "Chapitre 4: [A venir]"
           - section: "Chapitre 5: [A venir]"
           - text: "  "  
