@@ -319,7 +319,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#la-commande-levelsof" id="toc-la-commande-levelsof" class="nav-link" data-scroll-target="#la-commande-levelsof"><strong>La commande levelsof</strong></a></li>
   <li><a href="#quelques-fonctions-associées-à-une-macro" id="toc-quelques-fonctions-associées-à-une-macro" class="nav-link" data-scroll-target="#quelques-fonctions-associées-à-une-macro"><strong>Quelques fonctions associées à une macro</strong></a>
   <ul class="collapse">
-  <li><a href="#variable-label" id="toc-variable-label" class="nav-link" data-scroll-target="#variable-label"><strong>variable label</strong></a></li>
+  <li><a href="#word-count" id="toc-word-count" class="nav-link" data-scroll-target="#word-count">word count</a></li>
+  <li><a href="#value-label" id="toc-value-label" class="nav-link" data-scroll-target="#value-label">value label</a></li>
+  <li><a href="#label" id="toc-label" class="nav-link" data-scroll-target="#label">label</a></li>
+  <li><a href="#variable-label" id="toc-variable-label" class="nav-link" data-scroll-target="#variable-label">variable label</a></li>
   </ul></li>
   <li><a href="#return-et-ereturn" id="toc-return-et-ereturn" class="nav-link" data-scroll-target="#return-et-ereturn"><strong>return et ereturn</strong></a></li>
   <li><a href="#compteurs-i" id="toc-compteurs-i" class="nav-link" data-scroll-target="#compteurs-i"><strong>Compteurs i++</strong></a></li>
@@ -485,10 +488,12 @@ Important
 <h2 class="anchored" data-anchor-id="macro-en-dur-global"><strong>Macro en dur: global</strong></h2>
 <p>Les macros de type <code>global</code> sont enregistrées en dur, et conservées en mémoire d’une exécution à une autre et d’une session à une autre. Elles sont appelées avec <strong><code>$</code></strong> et, avec <code>mac list</code>, le nom de la macro n’est pas précédé d’un underscore.</p>
 <p><strong><em>Test/visualisation de l’expression</em></strong></p>
-<pre><code>mac list nom
-
-di $nom  
-di "$nom"</code></pre>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>mac list nom</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>di <span class="sc">$</span>nom  </span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>di <span class="st">"$nom"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="la-commande-levelsof" class="level2">
 <h2 class="anchored" data-anchor-id="la-commande-levelsof"><strong>La commande levelsof</strong></h2>
@@ -506,13 +511,31 @@ di "$nom"</code></pre>
 <span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>mac list _f</span>
 <span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>_f<span class="sc">:</span> <span class="dv">0</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><em>Warning</em>: si la variable est de type string, l’ordre des expressions enregistrées dans la macro suivra l’ordre alphabétique ce qui ne correspondra pas forcément à ce qui est recherché.</p>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+glevelsof
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Pour des grosses volumétries (&gt;1M) il est conseillé d’utiliser la commande <strong><code>glevelsof</code></strong> de <em>M.Caceres</em> (package <code>glevelsof</code>):</p>
+<ul>
+<li><a href="https://gtools.readthedocs.io/en/latest/">gtools</a></li>
+<li><a href="https://mthevenin.github.io/stata_programmation/speedup/gtools.html#glevelsof">glevelsof</a></li>
+</ul>
+</div>
+</div>
 </section>
 <section id="quelques-fonctions-associées-à-une-macro" class="level2">
 <h2 class="anchored" data-anchor-id="quelques-fonctions-associées-à-une-macro"><strong>Quelques fonctions associées à une macro</strong></h2>
 <p>Il ne s’agit ici que de quelques fonctions utiles pour produire des graphiques et faciliter leur automatisation. L’ensemble des fonctions associées à une macro sont disponible dans l’aide (<code>help macro</code>).</p>
-<p><br> ### <strong>word count</strong><br>
-Permet de compter le nombre de termes contenus dans une expression enregistrée sous forme de macro. Utile pour compter le nombre de boucles à effectuer avec <code>forvalue</code>.</p>
+<p><br></p>
+<section id="word-count" class="level3">
+<h3 class="anchored" data-anchor-id="word-count">word count</h3>
+<p>Permet de compter le nombre de termes contenus dans une expression enregistrée sous forme de macro. Utile pour compter le nombre de boucles à effectuer avec <code>forvalue</code>.</p>
 <p><strong>Syntaxe</strong>: <strong><code>Local/global : word count(nom_macro)</code></strong></p>
 <p><strong><em>Exemple</em></strong></p>
 <div class="cell">
@@ -524,8 +547,11 @@ Permet de compter le nombre de termes contenus dans une expression enregistrée 
 <span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="at">mac list _nombre</span></span>
 <span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="at">_nombre:  5</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><br> ### <strong>value label</strong><br>
-Récupère le nom d’un label affecté aux modalités d’une variable. Le nom de la variable peut-être enregistré en amont sous forme de macro.</p>
+<p><br></p>
+</section>
+<section id="value-label" class="level3">
+<h3 class="anchored" data-anchor-id="value-label">value label</h3>
+<p>Récupère le nom d’un label affecté aux modalités d’une variable. Le nom de la variable peut-être enregistré en amont sous forme de macro.</p>
 <p><strong>Syntaxe</strong>: <strong><code>local/global nom_macro : value label nom_variable/nom_macro</code></strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>local varname foreign</span>
@@ -534,11 +560,13 @@ Récupère le nom d’un label affecté aux modalités d’une variable. Le nom 
 <span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="at">mac list _labn</span></span>
 <span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="at">_labn : origin</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><br> ### <strong>label</strong><br>
-Récupère l’expression de la modalité associée à une valeur d’un nom de label. Le nom du label peut avoir été enregistré en amont dans une macro (avec par exemple la fonction <code>value label</code>).</p>
+<p><br></p>
+</section>
+<section id="label" class="level3">
+<h3 class="anchored" data-anchor-id="label">label</h3>
+<p>Récupère l’expression de la modalité associée à une valeur d’un nom de label. Le nom du label peut avoir été enregistré en amont dans une macro (avec par exemple la fonction <code>value label</code>).</p>
 <p><strong>Syntaxe</strong>: <strong><code>local/global nom_macro : label nom_label valeur</code></strong></p>
-<strong><em>Exemple</em></strong>:
-<div class="blue">
+<p><strong><em>Exemple</em></strong>:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>local lab0 <span class="sc">:</span> label origin <span class="dv">0</span></span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>local lab1 <span class="sc">:</span> label origin <span class="dv">0</span></span>
@@ -549,10 +577,7 @@ Récupère l’expression de la modalité associée à une valeur d’un nom de 
 <span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>mac list _lab1</span>
 <span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>lab1 <span class="sc">:</span> Foreign</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
-En récupérant en amont le nom du label (origin).<br>
-
-<div class="blue">
+<p>En récupérant en amont le nom du label (origin).</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>local labn<span class="sc">:</span> value label foreign</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>local lab0<span class="sc">:</span> label <span class="st">`</span><span class="at">labn' 0</span></span>
@@ -562,9 +587,7 @@ En récupérant en amont le nom du label (origin).<br>
 <span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a><span class="st">_lab0 : Domestic</span></span>
 <span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a><span class="st">_lab1 : Foreign</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
 <p>En récupérant les valeurs de la variable avec levelsof, la modalité de chaque valeur peut-être récupérée dans une boucle <code>foreach</code>.</p>
-<div class="blue">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>levelsof foreign, <span class="fu">local</span>(v)</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>local labn<span class="sc">:</span> value label foreign</span>
@@ -578,9 +601,7 @@ En récupérant en amont le nom du label (origin).<br>
 <span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a><span class="at">_lab0 : Domestic</span></span>
 <span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a><span class="at">_lab1 : Foreign</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</div>
 <p>En mettant dès le début une macro sur le nom de la variable, on automatise les modifications. Il est même possible de mettre dans la macro plusieurs variables, et effectuer l’opération dans une boucle principale.</p>
-<div class="blue">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>local X foreign</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -594,7 +615,6 @@ En récupérant en amont le nom du label (origin).<br>
 <span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a>_lab0 <span class="sc">:</span> Domestic</span>
 <span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a>_lab1 <span class="sc">:</span> Foreign</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
 </div>
 <p><strong><em>Graphique</em></strong></p>
 <p>On va récupérer automatiquement les modalités d’une variable pour renseigner la légende.</p>
@@ -636,8 +656,9 @@ En récupérant en amont le nom du label (origin).<br>
 <p><strong><em>Exercice</em></strong><br>
 A partir du programme faire un graphique combiné des deux graphiques précédents en automatisant au maximum la sélection des variables <em>rep</em> et <em>foreign</em>. Il y a très peu d’ajouts ou de modifications à faire.</p>
 <p><img src="imgp2/g1c.png" class="img-fluid" style="width:80.0%"></p>
+</section>
 <section id="variable-label" class="level3">
-<h3 class="anchored" data-anchor-id="variable-label"><strong>variable label</strong></h3>
+<h3 class="anchored" data-anchor-id="variable-label">variable label</h3>
 <p>Récupère le label d’une variable sous forme du macro. Utile pour gérer une modification du titre des axes passer par les lignes de programme d’un graphique, et plus généralement pour donner de l’information sur variable de type continu ou de comptage sans label affecté au valeurs.</p>
 <p><strong>Syntaxe</strong>: <strong><code>local/global nom_macro : variable label variable/macro</code></strong></p>
 <div class="cell">
