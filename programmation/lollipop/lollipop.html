@@ -194,7 +194,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../formation.html" class="sidebar-item-text sidebar-link">Introduction</a>
+  <a href="../../formation/formation.html" class="sidebar-item-text sidebar-link">Introduction</a>
   </div>
 </li>
           <li class="sidebar-item sidebar-item-section">
@@ -207,22 +207,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../formation11.html" class="sidebar-item-text sidebar-link">Types et syntaxe</a>
+  <a href="../../formation/formation11.html" class="sidebar-item-text sidebar-link">Types et syntaxe</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../formation12.html" class="sidebar-item-text sidebar-link">Options: couleur, épaisseur</a>
+  <a href="../../formation/formation12.html" class="sidebar-item-text sidebar-link">Options: couleur, épaisseur</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../formation13.html" class="sidebar-item-text sidebar-link">Options: légende, titre…</a>
+  <a href="../../formation/formation13.html" class="sidebar-item-text sidebar-link">Options: légende, titre…</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../formation14.html" class="sidebar-item-text sidebar-link">Combiner des graphiques</a>
+  <a href="../../formation/formation14.html" class="sidebar-item-text sidebar-link">Combiner des graphiques</a>
   </div>
 </li>
       </ul>
@@ -237,17 +237,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../formation21.html" class="sidebar-item-text sidebar-link">Rappels sur les macros</a>
+  <a href="../../formation/formation21.html" class="sidebar-item-text sidebar-link">Rappels sur les macros</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../formation22.html" class="sidebar-item-text sidebar-link">Alleger la syntaxe</a>
+  <a href="../../formation/formation22.html" class="sidebar-item-text sidebar-link">Alleger la syntaxe</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../formation23.html" class="sidebar-item-text sidebar-link">Automatiser la programmation</a>
+  <a href="../../formation/formation23.html" class="sidebar-item-text sidebar-link">Automatiser la programmation</a>
   </div>
 </li>
       </ul>
@@ -262,12 +262,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../formation31.html" class="sidebar-item-text sidebar-link">Palettes de couleurs</a>
+  <a href="../../formation/formation31.html" class="sidebar-item-text sidebar-link">Palettes de couleurs</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../formation32.html" class="sidebar-item-text sidebar-link">Styles-thèmes</a>
+  <a href="../../formation/formation32.html" class="sidebar-item-text sidebar-link">Styles-thèmes</a>
   </div>
 </li>
       </ul>
@@ -327,14 +327,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </header>
 
 <p><strong>Lolliplot et haltère: pourquoi faire compliquer lorsque…..</strong><br>
-J’étais complétement passé à côte de la fonction <strong><code>axis</code></strong> du package <strong><code>egenmore</code></strong> de Nj.Cox. Elle permet de construire un axe discret ordonné en récupérant automatiquement les labels d’une variable. Les programmes de la version 2000 pour générer des graphiques de types <strong>lollipop</strong> ou <strong>haltères</strong>, qui étaient particulièrement complexes et long, se retouvent et pas qu’un peu simplifiés:</p>
+J’étais complétement passé à côte de la fonction <strong><code>axis</code></strong> du package <strong><code>egenmore</code></strong> de Nj.Cox. Elle permet de construire un axe discret ordonné en récupérant automatiquement les labels d’une variable. Les programmes de la version 2000 pour générer des graphiques de types <strong>lollipop</strong> ou <strong>haltères</strong>, qui étaient particulièrement complexes et long se retouvent, et pas qu’un peu, extrêmement simplifiés:</p>
 <p><img src="g1.png" class="img-fluid" style="width:70.0%"></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>tw dropline mwage occ, horizontal <span class="fu">mlc</span>(black) <span class="fu">mlw</span>(<span class="sc">*</span>.<span class="dv">2</span>)  <span class="sc">/</span><span class="er">//</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="er">||</span> , <span class="fu">ylab</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">10</span>, valuelabel <span class="fu">angle</span>(<span class="dv">0</span>)) <span class="fu">legend</span>(off)  <span class="fu">title</span>(<span class="st">"Lollipop"</span>, <span class="fu">pos</span>(<span class="dv">11</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span> ssc install egenmore</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>sysuse nlsw88, clear</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>drop <span class="cf">if</span> <span class="fu">inlist</span>(occupation,<span class="dv">9</span>,<span class="dv">10</span>,<span class="dv">12</span>) </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>egen mwage <span class="ot">=</span> <span class="fu">mean</span>(wage), <span class="fu">by</span>(occupation)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>egen occ   <span class="ot">=</span> <span class="fu">axis</span>(mwage occupation) , <span class="fu">label</span>(occupation)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>twoway scatter occ mwage <span class="sc">/</span><span class="er">//</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="er">||</span> dropline mwage occ, horizontal <span class="sc">/</span><span class="er">//</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="er">||</span> , <span class="fu">ylab</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">10</span>, valuelabel <span class="fu">angle</span>(<span class="dv">0</span>)) <span class="fu">legend</span>(off) </span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>drop mwage occ <span class="sc">/</span><span class="er">/</span> utiliser des variables temporaires si possible</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>J’en ai profité pour découvrir l’option <strong><code>labelvalue</code></strong> de <code>x/ylabel()</code> qui permet d’affecter directement les labels d’une variable catégorielles sur un axe.</p>
-<p>Si on souhaite mettre comme valeur de base la moyenne des salaires moyen par secteur professionnel:</p>
+<p><strong>Commande <code>axis</code> (NJ.Cox)</strong></p>
+<ul>
+<li>Comme la fonction <code>group</code> (egen), elle va créer une variable ordinale <em>occ</em> à partir des valeurs prises par une variable, ici <em>mwage</em>.</li>
+<li>Elle va affecter les labels de la variable <em>occupation</em> à la variable ordinale.</li>
+</ul>
+<p>J’en ai profité pour découvrir l’option <strong><code>labelvalue</code></strong> de <code>x/ylabel()</code> qui permet d’affecter directement les labels d’une variable catégorielle sur un axe [A documenter dans la formation].</p>
+<p>Si on souhaite mettre comme valeur de base la moyenne des salaires moyens selon le groupe professionnel, on utilise simple l’option <code>base()</code> à laquelle on affecte la valeur moyenne des salaires récupérée en amont dans une macro:</p>
 <p><img src="g2.png" class="img-fluid" style="width:70.0%"></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>qui sum mwage, d</span>
@@ -344,7 +360,7 @@ J’étais complétement passé à côte de la fonction <strong><code>axis</code
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="st">xline(`b'</span>, noext <span class="fu">lc</span>(black)<span class="er">)</span> <span class="fu">title</span>(<span class="st">"Lollipop"</span>, <span class="fu">pos</span>(<span class="dv">11</span>))           <span class="sc">/</span><span class="er">//</span></span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">xtitle</span>(<span class="st">"Salaire moyen"</span>) <span class="fu">ytitle</span>(<span class="st">"Emploi"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong><em>[A venir]</em></strong>: les graphiques de type haltère. Il faudra passer un par <code>collapse</code>, mais le gain reste également non négligeable</p>
+<p><strong><em>[A venir]</em></strong>: les graphiques de type haltère. Il faudra passer par un <code>collapse</code>, mais le gain en terme de programmation est également non négligeable.</p>
 
 
 
