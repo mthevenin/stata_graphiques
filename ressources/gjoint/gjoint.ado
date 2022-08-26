@@ -7,10 +7,10 @@ capture program drop gjoint
 program define gjoint
 syntax varlist(min=2 max=2) [if],             ///
                             [hopts(string)]   ///
-							[PALette(string)] ///
-							[title(string)]
+			    [PALette(string)] ///
+			    [title(string)]
 
-*** Installation dépendance si nécessaire	
+*** Installation dépendances si nécessaire	
 local packg colorpalette grstyle gtools heatplot
 foreach p of local packg {
 capture which `p'
