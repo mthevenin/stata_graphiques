@@ -3,6 +3,8 @@ title: Graphiques avancés avec Stata
 author: Marc Thevenin (Ined)
 ---
 
+Lien vers le support: https://mthevenin.github.io/stata_graphiques/
+
 
 **MAJ 2022**
 | Date | Description |
