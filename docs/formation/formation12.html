@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.96">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Options: couleur, épaisseur</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../formation/formation13.html" rel="next">
+<link href="../formation/formation11.html" rel="prev">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="dark">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar docked nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="https://mthevenin.github.io/stata_fr/">Stata Ined</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://mthevenin.github.io/stata_graphiques/">Graphiques</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="https://mthevenin.github.io/stata_programmation">Programmation</a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/mthevenin"><i class="bi bi-github" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="mailto:marc.thevenin@ined.fr"><i class="bi bi-envelope" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html">A propos</a>
+  </li>  
+</ul>
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+              </div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title">Options: couleur, épaisseur</h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Formation</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../formation/formation.html" class="sidebar-item-text sidebar-link">Introduction</a>
+  </div>
+</li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">Chapitre 1: syntaxe</a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../formation/formation11.html" class="sidebar-item-text sidebar-link">Types et syntaxe</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../formation/formation12.html" class="sidebar-item-text sidebar-link active">Options: couleur, épaisseur</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../formation/formation13.html" class="sidebar-item-text sidebar-link">Options: légende, titre…</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../formation/formation14.html" class="sidebar-item-text sidebar-link">Combiner des graphiques</a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">Chapitre 2: macros</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../formation/formation21.html" class="sidebar-item-text sidebar-link">Rappels sur les macros</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../formation/formation22.html" class="sidebar-item-text sidebar-link">Alleger la syntaxe</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../formation/formation23.html" class="sidebar-item-text sidebar-link">Automatiser la programmation</a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">Chapitre 3: palettes et styles</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../formation/formation31.html" class="sidebar-item-text sidebar-link">Palettes de couleurs</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../formation/formation32.html" class="sidebar-item-text sidebar-link">Styles-thèmes</a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">Chapitre 4: [A venir]</span>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <span class="sidebar-item-text sidebar-link text-start">Chapitre 5: [A venir]</span>
+  </li>
+          <li class="sidebar-item">
+  </li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">Ressources graphiques</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../Stata.html" class="sidebar-item-text sidebar-link">Graphiques Stata</a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  Python.qmd
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Sections</h2>
+   
+  <ul>
+  <li><a href="#couleurs" id="toc-couleurs" class="nav-link active" data-scroll-target="#couleurs"><strong>Couleurs</strong></a></li>
+  <li><a href="#taillesépaisseurs" id="toc-taillesépaisseurs" class="nav-link" data-scroll-target="#taillesépaisseurs"><strong>Tailles/épaisseurs</strong></a></li>
+  <li><a href="#exercice" id="toc-exercice" class="nav-link" data-scroll-target="#exercice"><strong>Exercice</strong></a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block">Options: couleur, épaisseur</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p>Il s’agit ici d’un tour d’horizon forcément incomplet des options qui vont permettre de modifier et d’habiller les graphiques, afin d’en améliorer la visibilité. On va regarder principalement les options liées aux couleurs, tailles/épaisseurs dans cette section; ainsi que quelques paramètres de bases pour les axes, légendes, titres. L’idée est de ne traiter que des options qui sont utilisées au moins une fois dans le document.</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Un très bon cheatsheet:<br>
+* <a href="https://geocenter.github.io/StataTraining/pdf/StataCheatSheet_visualization15_Syntax_2016_June-REV.pdf" class="uri">https://geocenter.github.io/StataTraining/pdf/StataCheatSheet_visualization15_Syntax_2016_June-REV.pdf</a> * <a href="https://geocenter.github.io/StataTraining/pdf/StataCheatSheet_visualization15_Plots_2016_June-REV.pdf" class="uri">https://geocenter.github.io/StataTraining/pdf/StataCheatSheet_visualization15_Plots_2016_June-REV.pdf</a></p>
+</div>
+</div>
+<section id="couleurs" class="level1">
+<h1><strong>Couleurs</strong></h1>
+<p><strong><em>Se reporter au chapitre 3, pour un tour d’horizon plus complet sur les couleurs et les palettes de couleurs [mettre lien]</em></strong></p>
+<p>3 Eléments entrent dans les options relatives aux couleurs.</p>
+<p><strong>Nom - code couleur</strong> Un nom de couleur prédéfini ou un code couleur numérique : la couleur <code>navy</code> (première couleur de la palette Stata <em>s2</em>) a pour code RGB [Red-Green-Blue] <code>"26 71 11"</code>.<br>
+Pour un élément de type ligne, courbe… : <strong><code>lc(navy)</code></strong> = <strong><code>lc("26 71 11")</code></strong></p>
+<p><strong>Saturation/intensité</strong> On peut modifier la saturation : clair (blanc) &lt;=&gt; foncé (noir). Une couleur par défaut ou renseignée manuellement a une intensité de 1. On tire vers le blanc en réduisant cette saturation, vers le noir en l’augmentant. Après le nom ou le code couleur, l’intensité est modifiée par <strong><code>*#</code></strong> avec # supérieur ou égal à 0 (0=blanc).<br>
+Pour un élément de type barre, l’option pour modifier une couleur est donnée par <code>fc()</code> (f pour fill, c pour color tronqué) : <code>fc(*.5)</code> réduit la saturation de 50% de la couleur par défaut, <code>fc("26 71 11*1.2")</code> augmente de 20% la saturation de la couleur navy, ici renseignée par son code RGB.</p>
+<p><strong>Transparence</strong> En retard sur ce point jusqu’à la version 15 de Stata, on peut maintenant modifier l’opacité (transparence) des couleurs. La transparence permet de gérer les effets de superposition, mais on doit se méfier des effets de flou qui peuvent se révéler assez désagréable, en particulier pour les nuages en l’absence de contour sur les bulles. L’argument de l’option exprime un pourcentage d’opacité avec comme valeur minimale 0 et une valeur maximale 100 (100 = valeur par défaut). Après le nom ou le code de la couleur, l’opacité est réduite par %#. On peut utiliser une transparence totale (%0) pour cacher des éléments d’un graphique.</p>
+<p>Pour un élément de type bulle : <code>mc(%50)</code> réduit de moitié l’opacité de la couleur par défaut, <code>mc("26 71 11%70")</code> applique 70% de transparence à la couleur navy.</p>
+<p>Comme on le voit dans le second graphique ci-dessous, il n’y a pas trop de sens à baisser simultanément la saturation et l’opacité, une couleur plus transparente étant plus claire. On peut à l’inverse augmenter la saturation et baisser l’opacité.</p>
+<p><img src="imgp1/g3.png" class="img-fluid" style="width:50.0%"></p>
+<p><img src="imgp1/g4.png" class="img-fluid" style="width:50.0%"></p>
+<p><img src="imgp1/g5.png" class="img-fluid" style="width:50.0%"></p>
+</section>
+<section id="taillesépaisseurs" class="level1">
+<h1><strong>Tailles/épaisseurs</strong></h1>
+<p>On peut altérer les tailles et épaisseurs d’éléments composants le graphiques en s’appuyant soit sur des arguments prédéfinis, soit en jouant sur les valeurs de plusieurs types d’unités, absolues (cm, point, pouce) ou relatives. Certaines ont été implémentées à la version 16 de Stata. Lorsqu’elles sont prédéfinies, leur mémorisation peut s’avérer un peu laborieuse avec une liste qui diffère selon le type d’objet. On peut donc privilégier la modification directe des valeurs en choissisant des unités absolues (pouces, cm) ou relative. Dans mes graphiques, je priviliégie sauf exception l’utilisation de valeurs relatives.</p>
+<p><strong><em>Tailles prédéfinies</em></strong></p>
+<p><img src="imgp1/g6.png" class="img-fluid" style="width:50.0%"></p>
+<p><br> <img src="imgp1/g7.png" class="img-fluid" style="width:50.0%"></p>
+<p><br> <img src="imgp1/g8.png" class="img-fluid" style="width:50.0%"></p>
+<p><strong><em>Tailles reposant sur des valeurs</em></strong></p>
+<p>Pour modifier directement les valeurs des tailles et épaisseurs Stata propose 6 unités : 3 absolues et 3 relatives. Ces dernières sont un peu obscures au niveau de la définition de la valeur de référence. <code>#</code> donne la valeur de la modification.</p>
+<p>Absolues (par ordre décroissant) : le pouce (<code>#in</code>), le centimètre (<code>#cm</code>), et le point (<code>#pt</code>).<br>
+<br> Relatives:</p>
+<ul>
+<li><p><code>option(#rs)</code>: valeur relative par rapport au minimum de la longueur et de la largeur du graphique (=100). Si option(.5rs) et que le graphique fait 10 de largeur et 20 de longueur, la référence est associée à la largeur et est égale à 100. La taille ou l’épaisseur de l’élément fera alors .5% de cette référence. L’aide de Stata ne s’attarde pas sur ce type de modification, pas forcément très claire.</p></li>
+<li><p><code>option(#)</code> : également une valeur par rapport au minimum de la largeur et de la longueur, mais on garde cette valeur comme référence. Avec option(.5) et que le minimum est toujours égal à 10 (largeur), la taille ou l’épaisseur de l’élément est égale à .5% de 10.</p></li>
+<li><p><code>option(*#)</code> : coefficient multiplicateur d’une taille ou épaisseur par défaut définie par le style (thème) du graphique. Je privilégie ce type de paramétrisation. Sauf exception, j’utilise cette option.</p></li>
+</ul>
+<p><img src="imgp1/g9.png" class="img-fluid" style="width:50.0%"></p>
+</section>
+<section id="exercice" class="level1">
+<h1><strong>Exercice</strong></h1>
+<p>Reproduire les deux graphiques ci-dessous avec la base auto: <code>sysuse auto.dta</code>.</p>
+<p>Solution : <a href="https://github.com/mthevenin/stata_fr/blob/master/exercices/exo1" class="uri">https://github.com/mthevenin/stata_fr/blob/master/exercices/exo1</a></p>
+<div class="alert alert-info">
+<p><strong>Graphique(s) 1</strong></p>
+<ul>
+<li>Reproduire l’un et/ou l’autre de ces graphiques avec les variables <em>mpg</em> et <em>foreign</em>.</li>
+<li>Les histogrammes sont générés avec la fonction <strong><code>tw histogram</code></strong> (à préférer à la commande de type oneway <code>histogram</code>).</li>
+<li>Les densités sont estimées avec la fonction <strong><code>kdensity</code></strong> [<code>help kdensity</code>] et le graphique est généré avec <strong><code>tw area</code></strong> [<code>help twoway area</code>].</li>
+<li>Les couleurs sont issues de la palette de type séquentielle <strong>YlGnBu</strong> de la collection Brewer (voir le chapitre sur les palettes de couleur). les codes des deux couleurs sont <strong><code>"34 94 168"</code></strong> et <strong><code>"139 209 187"</code></strong>.
+<hr>
+<img src="imgp1/g10.png" class="img-fluid" style="width:60.0%"></li>
+</ul>
+</div>
+<div class="alert alert-info">
+<p><strong>Graphique(s) 2</strong></p>
+<ul>
+<li>Nuage de points des variables price et mpg pour les deux modalités de la variable foreign, avec report des OLS.</li>
+<li>La droite de l’OLS est générée avec le type de graphique tw lfitci:</li>
+<li>Couleur de la droite : option <strong><code>clc()</code></strong></li>
+<li>Couleur de remplissage l’intervalle de confiance: option <strong><code>fc()</code></strong></li>
+<li>Couleur du contour de l’intervalle de confiance: option <strong><code>alc()</code></strong>
+<hr>
+<img src="imgp1/g11.png" class="img-fluid" style="width:60.0%"></li>
+</ul>
+
+
+</div></section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'alternate';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="../formation/formation11.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Types et syntaxe</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="../formation/formation13.html" class="pagination-link">
+        <span class="nav-page-text">Options: légende, titre…</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+      <div class="nav-footer-center">Marc Thévenin - Ined-Sms - Août 2022</div>
+  </div>
+</footer>
+
+
+
+</body></html>

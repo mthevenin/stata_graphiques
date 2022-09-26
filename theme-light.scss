@@ -1,0 +1,19 @@
+/*-- scss:defaults --*/
+// Base document colors
+$body-bg: white ;
+$body-color: #0f2537;
+$link-color: #4c9be8;
+
+//navbar
+$navbar-bg: #3B4D5B;
+$nav-tabs-link-active-color:  $body-color !default;
+$nav-link-disabled-color:  rgba(255, 255, 255, .4) !default;
+$navbar-hl: #ebebeb;
+
+// Code blocks
+$code-block-bg-alpha: -.5;
+$code-block-bg: #3B4D5B;
+
+// Code color-rendering
+$code-color: #3B4D5B;
+

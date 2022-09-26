@@ -1,0 +1,105 @@
+---
+title: "Alleger la syntaxe"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+options(Encoding="UTF-8")
+
+library(knitr)
+library(rsconnect)
+library(haven)
+library(pander)
+library(memisc)
+library(fontawesome)
+```
+
+
+
+
+… et surtout faciliter les changements d’options.   
+On le voit, les d’options sont répétées d’un objet graphique à un autre, et souvent en grand nombre. Les modifications de l’habillage du graphique avec les couleurs, les tailles/épaisseurs, peuvent alors s’avérer laborieuse.   
+De manière très simple, les options communes à plusieurs objets ou éléments du graphique peuvent être renseignées en amont, sous forme de macros. Cela facilite grandement la modification des options.  
+Prenons le graphique suivant avec un habillage assez poussé qui modifie les couleurs par défauts des titres et couleurs de fonds. Pour chaque nuage la taille de la bulle, la couleur et l’épaisseur du contour sont identiques, les titres partagent les mêmes couleurs, ainsi que les deux éléments du background. 
+
+```{r eval=FALSE}
+graph set window fontface Magneto
+
+tempvar rep
+gen    `rep' = rep78
+recode `rep' (1=2)  
+
+#delimit ;
+tw scatter price mpg if `rep'==2, mc("145 50 5")    mlw(*.5) mlc(black)  msiz(*1.5)  
+|| scatter price mpg if `rep'==3, mc("221 95 11")   mlw(*.5) mlc(black)  msiz(*1.5)  
+|| scatter price mpg if `rep'==4, mc("254 162 50")  mlw(*.5) mlc(black)  msiz(*1.5)  
+|| scatter price mpg if `rep'==5, mc("254 211 112") mlw(*.5) mlc(black)  msiz(*1.5)    
+
+|| , legend(off)                                                                           
+                              
+ylabel(, labc("254 211 112") glc("254 211 112") glw(*.2) angle(0))                                
+xlabel(, labc("254 211 112") glc("254 211 112") glw(*.2)) 
+                               
+ytitle(, color("254 211 112")) 
+xtitle(, color("254 211 112"))                               
+title("Price versus Mpg", color("254 211 112") pos(11)) 
+
+graphr(color("102 37 6*4"))  plotr(color("102 37 6*4"))      
+;
+```
+
+![](imgp2/g5a.png){width=70%}
+
+En mettant les options sous forme de macro et en les appelant dans la commande graphique, visuellement la syntaxe du graphique est nettement allégée :
+
+```{r eval=FALSE}
+tempvar rep
+gen    `rep' = rep78
+recode `rep' (1=2)  
+
+local mopt "mlw(*.5) mlc(black) msiz(*1.5)"
+local col1 "254 211 112"
+local col2 "102 37 6*4"
+
+#delimit ;
+tw scatter price mpg if `rep'==2, mc("145 50 5")    `mopt'   
+|| scatter price mpg if `rep'==3, mc("221 95 11")   `mopt' 
+|| scatter price mpg if `rep'==4, mc("254 162 50")  `mopt'
+|| scatter price mpg if `rep'==5, mc("254 211 112") `mopt'   
+
+|| , legend(off)                                                                                                     
+     ylabel(, labc(`col1') glc(`col1') glw(*.2) angle(0))                                
+     xlabel(, labc(`col1') glc(`col1') glw(*.2)) 
+     ytitle(, color(`col1')) xtitle(, color(`col1'))                               
+     title("Price versus Mpg", color(`col1') pos(11)) 
+     graphr(color(`col2'))     plotr(color(`col2'))      
+;
+```
+
+![](imgp2/g5b.png){width=70%}
+
+
+La modification des options est réalisée une seule fois en modifiant l’expression des macros.  
+Par exemple, en changeant quelques couleurs (coutours et titres) et en ajoutant un jitter:  
+
+```{r eval=FALSE}
+local mopt "mlw(*.5) mlc(white) m()  msiz(*1.5) jitter(2)"
+local col1 white
+local col2 black
+
+#delimit ;
+tw scatter price mpg if `rep'==2, mc("145 50 5")    `mopt'   
+|| scatter price mpg if `rep'==3, mc("221 95 11")   `mopt' 
+|| scatter price mpg if `rep'==4, mc("254 162 50")  `mopt'
+|| scatter price mpg if `rep'==5, mc("254 211 112") `mopt'   
+
+|| , legend(off)                                                                           
+     ylabel(, labc(`col1') glc(`col1') glw(*.2) angle(0))                                
+     xlabel(, labc(`col1') glc(`col1') glw(*.2)) 
+     ytitle(, color(`col1')) xtitle(, color(`col1'))                               
+     title("Price versus Mpg", color(`col1') pos(11)) 
+     graphr(color(`col2'))  plotr(color(`col2'))      
+;
+```
+
+![](imgp2/g5c.png){width=70%}

@@ -1,0 +1,33 @@
+---
+title: "Graphiques"
+---
+
+```{r setup, include=FALSE}
+options(Encoding="UTF-8")
+library(fontawesome)
+```
+
+
+::: {.callout-note icon="false"}
+## Mise à jour de la formation
+
+* **Chapitres 1 à 3 en ligne**. 
+* Lien vers le nouveau support de formation en format pdf [chapitre 1 à 3]:  [`r fa("link", fill = "steelblue", height = "1em", margin_right="1em")`](v2_2022_chap123.pdf)
+* Chapitre 4: la structure de ce chapitre de la première version ne me convient pas. On retrouve déjà un certain nombre d'éléments dans la partie ressources graphiques. 
+
+:::
+
+
+::: {.callout-note icon="false"}
+## Ressources graphiques
+
+* Topics sur la programmation de graphiques avec le langage Stata
+* Présentation de la programmation de graphiques  avec Python sous Stata [A ajouter rapidement] 
+
+:::
+
+<br>  
+
+*   `r fa("r-project", fill = "steelblue")` Support réalisé avec [Rstudio](href:https://www.rstudio.com) - [Quarto](https://quarto.org).
+*   `r fa("code", fill = "steelblue")` Version Stata: [17-SE](https://www.stata.com/)
+
