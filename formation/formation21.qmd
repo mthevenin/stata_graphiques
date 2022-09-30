@@ -3,15 +3,9 @@ title: "Rappels sur les macros"
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-options(Encoding="UTF-8")
-
-library(knitr)
-library(rsconnect)
-library(haven)
-library(pander)
-library(memisc)
-library(fontawesome)
+library(Statamarkdown)
+stataexe <- "C:/Program Files/Stata17/StataSE-64.exe"
+knitr::opts_chunk$set(engine.path=list(stata=stataexe))
 ```
 
 <br>
@@ -40,7 +34,7 @@ Les macros de type temporaire (**`local`**) sont conservées en mémoire seuleme
 Cependant en exécutant Stata avec ***Notebook Jupyter** (librairie `Stata Kernel` – *Kyle barron*), ce type de macro vont rester en mémoire d’une exécution à une autre, ce qui peut présenter des avantages, en particulier pour les graphiques. Les macros seront effacées à la fin de la session. Voir la section dédiée à Python. 
 
 ***Syntaxe***
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 local nom [=] expression/opération
 
 local nom [=] “expression”
@@ -52,14 +46,14 @@ local nom : fonction_macro
 
 
 ***Appel de l’expression dans un programme***
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 `nom' 
 
 “`nom'”
 ```
 
 ***Test/visualisation de l’expression***
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 mac list _nom
 
 di `nom'  
@@ -69,12 +63,11 @@ di “`nom'”
 
 <br>
 
-<style>div.blue pre { background-color:#4682B4 ; }</style>
 
 
 ***Exemple 1***: on veut enregistrer le résultat de l'opération 1 + 1
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 local  x  1 + 1
 
 mac list _x
@@ -89,7 +82,7 @@ di `x'
 `mac list` ne renvoie pas le résultat de l’opération, alors qu’il a été bien généré. On doit utiliser l’opérateur d’affectation = .   
 
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 local x = 1 + 1
 
 mac list _x
@@ -102,7 +95,7 @@ di `x'
 
 ***Exemple 2***: on veut enregistrer l'expression ABC  
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 local x "ABC" // ou
 local x ABC
 
@@ -119,7 +112,7 @@ ABC
 
 ***Exemple 3*** :  On veut enregistrer l’expression ABC avec les doubles quotes apparentes: "ABC"  
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 local x "A" "B" "C"
 
 mac list _x
@@ -132,7 +125,7 @@ ABC
 
 La solution précédente ne fonctionne pas.   
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 local x `""A" "B" "C""'
 
 mac list _x
@@ -147,7 +140,7 @@ A" "B" "C" " invalid name
 
 ***Exemple 4***: On alterne valeur numérique et du texte en conservant les doubles quotes.  
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 local no 0 "Non" 1 "Oui"
 
 mac list _no
@@ -161,7 +154,7 @@ di "`no'"
 Remarque: de nouveau `di` renvoie un message d’erreur alors que la macro est correctement assignée. 
 
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 local no 0 "Non" 1 "Oui"
 
 mac list _no
@@ -178,7 +171,7 @@ Les macros de type `global` sont enregistrées en dur, et conservées en mémoir
 
 
 ***Test/visualisation de l’expression***
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 mac list nom
 
 di $nom  
@@ -192,7 +185,7 @@ Cette commande particulièrement utile, pour ne pas dire incontournable, récup�
 **Syntaxe**: **`levelsof nom_var [if/in], local(nom_macro)`**  
 
 ***Exemple***
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 sysuse auto, clear
 label list origin
 origin:
@@ -231,7 +224,7 @@ Permet de compter le nombre de termes contenus dans une expression enregistrée 
 **Syntaxe**: **`Local/global : word count(nom_macro)`**  
 
 ***Exemple***
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 levelsof rep78, local(r)
 1 2 3 4 5
 
@@ -248,7 +241,7 @@ Récupère le nom d’un label affecté aux modalités d’une variable. Le nom 
 
 **Syntaxe**: **`local/global nom_macro : value label nom_variable/nom_macro`**  
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 local varname foreign
 local labn : value label `varname'
 
@@ -266,7 +259,7 @@ Récupère l’expression de la modalité associée à une valeur d’un nom de 
 
 ***Exemple***: 
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 local lab0 : label origin 0
 local lab1 : label origin 0
 
@@ -280,7 +273,7 @@ lab1 : Foreign
 
 En récupérant en amont le nom du label (origin).  
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 local labn: value label foreign
 local lab0: label `labn' 0
 local lab1: label `labn' 1
@@ -294,7 +287,7 @@ _lab1 : Foreign
 En récupérant les valeurs de la variable avec levelsof, la modalité de chaque valeur peut-être récupérée dans une boucle `foreach`.  
 
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 levelsof foreign, local(v)
 local labn: value label foreign
 
@@ -312,7 +305,7 @@ _lab1 : Foreign
 En mettant dès le début une macro sur le nom de la variable, on automatise les modifications. Il est même possible de mettre dans la macro plusieurs variables, et effectuer l’opération dans une boucle principale.
 
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 local X foreign
 
 levelsof `X', local(v)
@@ -337,7 +330,7 @@ On va récupérer automatiquement les modalités d’une variable pour renseigne
 -	Les modalités de la légende sont automatiquement insérées dans l’expression `legend(order(…)...)`.
 -	Pour utiliser une autre variable que rep, il suffit de modifier le nom de la variable dans la première macro (X).
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 sysuse auto, clear
 gen rep= rep78<4
 label define rep 0 "rep<4" 1 "rep>=4", modify
@@ -383,7 +376,7 @@ Récupère le label d’une variable sous forme du macro. Utile pour gérer une 
 
 **Syntaxe**: **`local/global nom_macro : variable label variable/macro`**  
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 local labv:  variable label foreign
 mac list _labv
 
@@ -396,7 +389,7 @@ Dans la section suivante, on va utiliser utiliser des objets de type macro qui s
 
 **Syntaxe**: **`local/global nom_macro : di format valeur/macro`**  
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 local dec: di %6.2f 0.123456789
 
 di `dec'
@@ -414,8 +407,9 @@ Après l’exécution d’une commande, un certain nombre d’objets sont conser
 -	objets ereturn: `e(nom_objet)`
 -	Affichage liste: `ereturn list`
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 sum price, d
+/*
                             Price
 -------------------------------------------------------------
       Percentiles      Smallest
@@ -452,11 +446,11 @@ scalars:
                 r(p90) =  11385
                 r(p95) =  13466
                 r(p99) =  15906
+*/
 ```
 
 
-<div class = "blue">
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 qui sum, d
 
 di r(mean)
@@ -491,7 +485,7 @@ On va tracer une droite sur chaque axe qui reporte les moyennes des variables pr
 * Récupération des moyennes de *price* et *mpg*
 * les noms des macros seront *mprice* et * mpg*
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 local varlist price mpg
 foreach v of local varlist {
 qui sum `v'
@@ -531,7 +525,7 @@ Les compteurs vont s’avérer très utiles dans les expressions en boucle pour 
 
 ***Exemple1***: on initialise un compteur `i`. Dans une boucle `forvalue` dont l’incrément va de 10 à 15 ($\delta=+1$), on génère à chaque boucle une valeur allant de 1 à 6 avec la macro ``i++'`. 
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 local i = 1
 
 forvalue k = 10/15 {
@@ -550,7 +544,7 @@ k=15 => i=6
 
 ***Exemple 2***: on va afficher les noms d’une liste de variable en noms génériques dans une boucle `foreach`.
 
-```{r eval=FALSE}
+```{stata,  eval=FALSE}
 local i=1
 local varlist price mpg turn length
 
@@ -558,10 +552,12 @@ foreach v of local varlist  {
 di "variable`i++' = `v'"		
 }
 
+/*
 variable1 = price
 variable2 = mpg
 variable3 = turn
 variable4 = length
+*/
 ```
 
 <br>
@@ -574,7 +570,7 @@ Dans les exemples précédents, le compteur n’a été utilisé qu’une fois d
 
 
 ***Situation1***: Un seul appel du compteur (cas standard)
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 forv i=1/5 {
   di "iteration `i': i++ ="  `i++' 
    }
@@ -589,7 +585,7 @@ iteration 5: i++ =5
 ```
 
 ***Situation2***: Plusieurs appels dans une itération dans une boucle standard : la valeur du compteur est fixe dans chaque itération, mais pour la première et la dernière, le second appel est ignoré.   
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 forv i=1/5 {
 di "iteration `i': i++ ="  `i++' 
 di "iteration `i': i++ ="  `i++' 
@@ -615,7 +611,7 @@ iteration 6: i++ =6
 ```
 
 ***Situation3***: On initialise le compteur en amont (**k***), il continue d’incrémenter dans chaque itération.
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 local k=1
 forv i=1/5 {
   di "iteration `i': "  `k++'
@@ -643,7 +639,7 @@ iteration 5: 10
 
 ***Situation4***: le compteur est appelé plusieurs fois. On veut fixer sa valeur pour qu’elle soit égale à la valeur de l’itération, sans rencontrer le problème de la situation2 avec un appel simple à la première et dernière itération. On va devoir initialiser un nouveau compteur à l’intérieur de la boucle, à chaque itération (compteur ***j***). 
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 local k=1
 forv i=1/5 {
  local j = `k++'
@@ -651,6 +647,7 @@ forv i=1/5 {
  di "iteration `i': "  `j'
   }
 
+/*
 iteration 1: 1
 iteration 1: 1
 
@@ -665,6 +662,7 @@ iteration 4: 4
 
 iteration 5: 5
 iteration 5: 5
+*/
 ```
 
 Si le compteur est utilisé plusieurs dans une itération et que sa valeur y doit être fixe, on devra donc utiliser cette dernière expression.   
@@ -674,7 +672,7 @@ Si le compteur est utilisé plusieurs dans une itération et que sa valeur y doi
 
 Le graphique suivant donne la distribution de la variable displacement selon le nombre de réparation (variable **rep78**). Pour chaque valeur de ***rep78***, la moyenne de displacement est reportée. Ces moyennes sont connectées à la moyenne calculée sur l’ensemble des voitures. On retrouve le principe d’un graphique de type « **lollipop** ».  
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 local i=1
 levelsof rep78, local(l)
 foreach v of local l {
@@ -708,7 +706,7 @@ title("Averages of displacement") ytitle("Number of repairs")
 
 ***Pas à pas du programme***   
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 recode rep78 (1=2)
 
 local i=1
@@ -728,7 +726,7 @@ local mean `r(mean)'
 -	Dans la boucle on récupère les valeurs des moyennes de ***displacement*** pour chaque valeur de `rep78`. Elles sont enregistrées dans les expressions macro ***m1*** à ***m4***. Les valeurs 1 à 4 sont générées par le compteur `i++`.
 -	On récupère la moyenne pour l’ensemble des voitures. Elle est enregistrée dans la macro ***mean***.
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 #delimit ;
 tw  scatteri 2 `m1',  msymbol(|) mc("210 50 0") msize(*5) mlw(*3)
 ||  scatteri 3 `m2',  msymbol(|) mc("210 50 0") msize(*5) mlw(*3)
@@ -769,7 +767,7 @@ tw  scatteri 2 `m1',  msymbol(|) mc("210 50 0") msize(*5) mlw(*3)
 Les tokens sont régulièrement utilisés dans la programmation de routines (***.ado***), mais peuvent dans un programme courant s’avérer utile pour transformer les noms variables en macros. Le token est une macro qui prend comme expression une liste de numéros : `1', `2', `3'……
 On transforme une expression en token avec la commande **`tokenize`**.
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 tokenize price mpg
 sum `1' `2'
 /*
@@ -781,14 +779,14 @@ sum `1' `2'
 ```
 
 Ou avec une expression sous forme de macro:
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 local varlist price mpg
 tokenize `varlist'
 sum `1' `2'
 ```
 
 Application pour un graphique:
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 local varlist price mpg foreign 
 tokenize `varlist'
 tw scatter `1' `2' if !`3'
@@ -800,7 +798,7 @@ tw scatter `1' `2' if !`3'
 Variables, fichiers… peuvent être créés de manière temporaire. On regardera seulement les variables temporaires générées avec la fonction **`tempvar nom_variable`**, elles sont appelées sous forme de macro temporaire : `command `nom_variable'`. Principalement, elles permettent de générer des variables dont le nom n’entre pas en conflit avec des variables existantes, le nom enregistré étant de la forme** _00000#**, tout en n’alourdissanrpas artificiellement le contenu de la base.
 
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 
 set obs 100
 number of observations (_N) was 0, now 100
@@ -851,7 +849,7 @@ sum `x'
 
 On va de nouveau représenter un nuage de points, entre la variable ***price*** et la variable ***displacement***. La couleur des bulles représente l’appartenance à un quartile de la variable displacement.  
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 sysuse auto, clear
 tempvar qdisp
 local varlist price displacement `qdisp'
