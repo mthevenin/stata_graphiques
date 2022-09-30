@@ -1,6 +1,9 @@
 ---
 title: "Lollipop"
 author: "Marc Thévenin"
+categories:
+  - programmation
+  - barre
 ---
 
 

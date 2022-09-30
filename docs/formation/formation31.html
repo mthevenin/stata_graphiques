@@ -294,7 +294,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Stata.html" class="sidebar-item-text sidebar-link">Graphiques Stata</a>
+  <a href="../Stata.html" class="sidebar-item-text sidebar-link">Programmation avec Stata</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -332,7 +332,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Palettes de couleurs</h1>
+<div class="quarto-title-block"><div><h1 class="title d-none d-lg-block">Palettes de couleurs</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -646,6 +646,8 @@ On va afficher un graphique avec 4 densités sous forme d’aires générées al
 <br></p>
 
 
+<!-- -->
+
 </section>
 </div></section>
 
@@ -698,6 +700,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
   function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
@@ -759,7 +812,453 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         <span class="nav-page-text">Styles-thèmes</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
-</nav>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb20" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Palettes de couleurs"</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup, include=FALSE}</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">Encoding=</span><span class="st">"UTF-8"</span>)</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rsconnect)</span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pander)</span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(memisc)</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fontawesome)</span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;br&gt;</span></span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>Lorsqu’ils sont générés, les graphiques appliquent un thème/style par défaut:  </span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Ces thèmes sont appelés scheme.</span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Les options de la commande graphique visent à modifier les paramètres du thème.</span>
+<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Les paramètres du style/thèmes sont appliqués aux couleurs, tailles/épaisseurs, positions des éléments de texte, définitions des axes….</span>
+<span id="cb20-28"><a href="#cb20-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-29"><a href="#cb20-29" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Stata dispose de 5 thèmes officiels. Des thèmes externes ont été programmés et peuvent être installés. La série de commandes associées à **`grstyle`** (*Ben Jann*) permet de paramétrer très facilement un thème, a minima en 2-3 lignes avec un nombre très réduit d’arguments. </span>
+<span id="cb20-30"><a href="#cb20-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-31"><a href="#cb20-31" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Collection **`schemepack`** : récemment (2021), *Asjad Naqvi* a programmé une suite de thèmes à partir du paquet <span class="in">`grstyle`</span>. Cette série offre une alternative très séduisante au thèmes usines vieillissants de Stata. </span>
+<span id="cb20-32"><a href="#cb20-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-33"><a href="#cb20-33" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Les thèmes utilisent des palettes de couleurs. Il existe 3 types de palettes selon la nature des données.</span>
+<span id="cb20-34"><a href="#cb20-34" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>***Palettes qualitatives*** (variables discrètes).</span>
+<span id="cb20-35"><a href="#cb20-35" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>***Palettes séquentielles*** (variables ordonnées/quantitatives).</span>
+<span id="cb20-36"><a href="#cb20-36" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>***Palettes divergentes*** (variables ordonnées/quantitatives avec deux sens implicites et une valeur pivot</span>
+<span id="cb20-37"><a href="#cb20-37" aria-hidden="true" tabindex="-1"></a>   </span>
+<span id="cb20-38"><a href="#cb20-38" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Des commandes externes permettent d’augmenter le nombre de palettes mises à disposition par Stata, de les modifier ou de les créer. </span>
+<span id="cb20-39"><a href="#cb20-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-40"><a href="#cb20-40" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Pour la cartographie, la commande <span class="in">`spmap`</span> (*Maurizio Pisatti*) intègre une quarantaine de palettes, principalement séquentielles (commande à visée cartographique).</span>
+<span id="cb20-41"><a href="#cb20-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-42"><a href="#cb20-42" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>La librairie <span class="in">`brewscheme`</span> (William Buchanan) dispose de plusieurs commandes pour générer des palettes de couleurs. Son utilisation est assez complexe. </span>
+<span id="cb20-43"><a href="#cb20-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-44"><a href="#cb20-44" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>La commande **<span class="in">`colorpalette`</span> (Benn Jann) charge plusieurs dizaines de palettes de couleurs, de tout type, permet de les modifier, d’en créer, et de les utiliser facilement dans la création de graphiques. Elle est indispensable dès lors qu’on souhaite utiliser efficacement des couleurs différentes de celles fournies par le logiciel.  Cette commande, à mon sens incontournable, sera longuement traitée dans ce chapitre, ainsi que la commande <span class="in">`grstyle`</span> qui reprend sa syntaxe pour générer de manière rapide un thème.</span>
+<span id="cb20-45"><a href="#cb20-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-46"><a href="#cb20-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-47"><a href="#cb20-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-48"><a href="#cb20-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-49"><a href="#cb20-49" aria-hidden="true" tabindex="-1"></a><span class="fu"># **Les palettes usines**</span></span>
+<span id="cb20-50"><a href="#cb20-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-51"><a href="#cb20-51" aria-hidden="true" tabindex="-1"></a>Stata dispose de 5 palettes de couleurs usines qui sont associées à des thèmes graphiques. Par exemple la *palette s2* est associée au *thème s2color*.   </span>
+<span id="cb20-52"><a href="#cb20-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-53"><a href="#cb20-53" aria-hidden="true" tabindex="-1"></a>Les palettes associées aux thèmes Stata sont de type qualitative. L’ordre d’utilisation des couleurs dans un graphique composé de plusieurs objets est pensé de tel sorte que des couleurs même type, par exemple le bleu, ne se succède pas. </span>
+<span id="cb20-54"><a href="#cb20-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-55"><a href="#cb20-55" aria-hidden="true" tabindex="-1"></a><span class="al">![](imgp3/g1.png)</span>{width=60%}  </span>
+<span id="cb20-56"><a href="#cb20-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-57"><a href="#cb20-57" aria-hidden="true" tabindex="-1"></a>Les numéros sur l’abscisse correspondent à l’ordre par défaut d’utilisation des couleurs.Les couleurs usines ont un nom, auquel correspond un code RGB.</span>
+<span id="cb20-58"><a href="#cb20-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-59"><a href="#cb20-59" aria-hidden="true" tabindex="-1"></a><span class="al">![](imgp3/g2.png)</span>{width=60%}  </span>
+<span id="cb20-60"><a href="#cb20-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-61"><a href="#cb20-61" aria-hidden="true" tabindex="-1"></a>La palette **mono** d’avère très utile pour modifier les couleurs des titres, labels, grids ou du background. Elle est ambivalente, l’ordre par défaut de la palette est plutôt qualitatif, mais le nom des couleurs correspond à une palette séquentielle appelé « grey scale » (gs# avec # allant de 0 – noir – à 16 – blanc).</span>
+<span id="cb20-62"><a href="#cb20-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-63"><a href="#cb20-63" aria-hidden="true" tabindex="-1"></a><span class="al">![](imgp3/g3.png)</span>{width=60%}  </span>
+<span id="cb20-64"><a href="#cb20-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-65"><a href="#cb20-65" aria-hidden="true" tabindex="-1"></a><span class="al">![](imgp3/g4.png)</span>{width=60%} </span>
+<span id="cb20-66"><a href="#cb20-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-67"><a href="#cb20-67" aria-hidden="true" tabindex="-1"></a>*Remarque*: il est facile de générer une couleur appartenant à une palette correspondant à une échelle de gris: les trois valeurs du code RGB étant identique (compris entre 0 et 255). </span>
+<span id="cb20-68"><a href="#cb20-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-69"><a href="#cb20-69" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;br&gt;</span></span>
+<span id="cb20-70"><a href="#cb20-70" aria-hidden="true" tabindex="-1"></a>On est vite limité avec les palettes usines de Stata. Malgré les efforts de plusieurs utilisateurs pour augmenter leur nombre (M.Pissatti, F.Briatte, D.Bischoff…), la commande **`colorpalette`** (Ben Jann) a récemment permis de démultiplier quasiment à l’infini les possibilités en terme de manipulation des couleurs.</span>
+<span id="cb20-71"><a href="#cb20-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-72"><a href="#cb20-72" aria-hidden="true" tabindex="-1"></a><span class="fu"># **Colorpalette (Ben Jann)**</span></span>
+<span id="cb20-73"><a href="#cb20-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-74"><a href="#cb20-74" aria-hidden="true" tabindex="-1"></a>***Installation***</span>
+<span id="cb20-75"><a href="#cb20-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-76"><a href="#cb20-76" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
+<span id="cb20-77"><a href="#cb20-77" aria-hidden="true" tabindex="-1"></a>ssc install palettes  [, replace force]</span>
+<span id="cb20-78"><a href="#cb20-78" aria-hidden="true" tabindex="-1"></a>ssc install colrspace [, replace force]</span>
+<span id="cb20-79"><a href="#cb20-79" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-80"><a href="#cb20-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-81"><a href="#cb20-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-82"><a href="#cb20-82" aria-hidden="true" tabindex="-1"></a>***Syntaxe générique***</span>
+<span id="cb20-83"><a href="#cb20-83" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">"grey"</span><span class="kw">&gt;</span></span>
+<span id="cb20-84"><a href="#cb20-84" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
+<span id="cb20-85"><a href="#cb20-85" aria-hidden="true" tabindex="-1"></a> colorpalette nom_palette<span class="sc">/</span>collection [, nom_sous_palette] [options]</span>
+<span id="cb20-86"><a href="#cb20-86" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-87"><a href="#cb20-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-88"><a href="#cb20-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-89"><a href="#cb20-89" aria-hidden="true" tabindex="-1"></a>*Remarque*: le nom d’une palette peut être une couleur ou une série de couleur</span>
+<span id="cb20-90"><a href="#cb20-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-91"><a href="#cb20-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-92"><a href="#cb20-92" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
+<span id="cb20-93"><a href="#cb20-93" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span> Charge et affiche la palette s1 de Stata </span>
+<span id="cb20-94"><a href="#cb20-94" aria-hidden="true" tabindex="-1"></a>colorpalette s1 </span>
+<span id="cb20-95"><a href="#cb20-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-96"><a href="#cb20-96" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span> Charge et affiche la palette hue </span>
+<span id="cb20-97"><a href="#cb20-97" aria-hidden="true" tabindex="-1"></a>colorpalette hue </span>
+<span id="cb20-98"><a href="#cb20-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-99"><a href="#cb20-99" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span> Charge et affiche la palette viridis </span>
+<span id="cb20-100"><a href="#cb20-100" aria-hidden="true" tabindex="-1"></a>colorpalette viridis </span>
+<span id="cb20-101"><a href="#cb20-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-102"><a href="#cb20-102" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span> Charge et affiche la palette summer de la collection matplotlib </span>
+<span id="cb20-103"><a href="#cb20-103" aria-hidden="true" tabindex="-1"></a>colorpalette matplotlib, summer</span>
+<span id="cb20-104"><a href="#cb20-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-105"><a href="#cb20-105" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span> Charge et affiche une palette composée des couleur bleu et rouge</span>
+<span id="cb20-106"><a href="#cb20-106" aria-hidden="true" tabindex="-1"></a>colorpalette blue red</span>
+<span id="cb20-107"><a href="#cb20-107" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-108"><a href="#cb20-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-109"><a href="#cb20-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-110"><a href="#cb20-110" aria-hidden="true" tabindex="-1"></a>Pour visualiser les palettes disponibles : **`help colorpalette`**. </span>
+<span id="cb20-111"><a href="#cb20-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-112"><a href="#cb20-112" aria-hidden="true" tabindex="-1"></a>**Exemple : la palette plasma** </span>
+<span id="cb20-113"><a href="#cb20-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-114"><a href="#cb20-114" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Appartient à la ***collection viridis**, palettes Python visant à remplacer les palettes de la *collection matplotlib* (intégrée à <span class="in">`colorpalette`</span>)</span>
+<span id="cb20-115"><a href="#cb20-115" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Longueur par défaut : 15 couleurs</span>
+<span id="cb20-116"><a href="#cb20-116" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Type : séquentielle</span>
+<span id="cb20-117"><a href="#cb20-117" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-118"><a href="#cb20-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-119"><a href="#cb20-119" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
+<span id="cb20-120"><a href="#cb20-120" aria-hidden="true" tabindex="-1"></a>colorpalette plasma</span>
+<span id="cb20-121"><a href="#cb20-121" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-122"><a href="#cb20-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-123"><a href="#cb20-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-124"><a href="#cb20-124" aria-hidden="true" tabindex="-1"></a><span class="al">![](imgp3/g5a.png)</span>{width=60%} </span>
+<span id="cb20-125"><a href="#cb20-125" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-126"><a href="#cb20-126" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;br&gt;</span></span>
+<span id="cb20-127"><a href="#cb20-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-128"><a href="#cb20-128" aria-hidden="true" tabindex="-1"></a><span class="fu">## **Principales options et altération d’une palette**</span></span>
+<span id="cb20-129"><a href="#cb20-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-130"><a href="#cb20-130" aria-hidden="true" tabindex="-1"></a>**Modifier la taille de la palette: `n(#)`** </span>
+<span id="cb20-131"><a href="#cb20-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-132"><a href="#cb20-132" aria-hidden="true" tabindex="-1"></a>Important car la réduction de la taille pour certaines palettes ne consiste pas à prendre les # premiers éléments de la palette par défaut (cf palettes *hu*e ou *viridis*), mais forcer une palette non qualitative, donc plutôt séquentielle, à produire une palette réduite avec des types de couleurs contrastées plutôt qualitative.</span>
+<span id="cb20-133"><a href="#cb20-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-134"><a href="#cb20-134" aria-hidden="true" tabindex="-1"></a>**Modifier l’intensité ou l’opacité : intensity(#), opacity(#) et ipolate(#)**</span>
+<span id="cb20-135"><a href="#cb20-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-136"><a href="#cb20-136" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>On peut modifier l’intensité (saturation) ou l’opacité d’une palette avec **`intensity(#)` ou **`intensity(numlist)`** et  **`opacity(#)`**.</span>
+<span id="cb20-137"><a href="#cb20-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-138"><a href="#cb20-138" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>On peut créer une palette séquentielle à partir d’une couleur de départ avec **`intensity(#1(delta)#2)`**.</span>
+<span id="cb20-139"><a href="#cb20-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-140"><a href="#cb20-140" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>On peut créer une palette divergente avec des couleurs de départ, d’arrivée et de transition avec **`ipolate(#)`**. </span>
+<span id="cb20-141"><a href="#cb20-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-142"><a href="#cb20-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-143"><a href="#cb20-143" aria-hidden="true" tabindex="-1"></a>**Select – reverse - nograph**</span>
+<span id="cb20-144"><a href="#cb20-144" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-145"><a href="#cb20-145" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>On peut sélectionner des couleurs d’une palette avec **`select(numlist)`**. L’option autorise la répétition de couleurs, utile lorsque plusieurs objets graphiques partage une même couleur au sein d’un graphique (exemple nuages de point et courbes pour différentes valeurs d’une variable additionnelle : voir exemple avec <span class="in">`grstyle`</span>).</span>
+<span id="cb20-146"><a href="#cb20-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-147"><a href="#cb20-147" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>On peut inverser l'ordre des couleurs de la palette: **`reverse`**. </span>
+<span id="cb20-148"><a href="#cb20-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-149"><a href="#cb20-149" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Ne pas afficher la palette: **`nograph`** <span class="co">[</span><span class="ot">voir *utilisation de colorpalette pour générer un graphique*</span><span class="co">]</span>. Après avoir séléctionné les couleurs, à utiliser systématiquement pour charger la palette avant son utilisation dans un graphique. Cela réduit considérablement le temps d’exécution.</span>
+<span id="cb20-150"><a href="#cb20-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-151"><a href="#cb20-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-152"><a href="#cb20-152" aria-hidden="true" tabindex="-1"></a>***Création d’une palette de 4 couleurs***</span>
+<span id="cb20-153"><a href="#cb20-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-154"><a href="#cb20-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-155"><a href="#cb20-155" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
+<span id="cb20-156"><a href="#cb20-156" aria-hidden="true" tabindex="-1"></a>colorpalette plasma, <span class="fu">n</span>(<span class="dv">4</span>)</span>
+<span id="cb20-157"><a href="#cb20-157" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-158"><a href="#cb20-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-159"><a href="#cb20-159" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-160"><a href="#cb20-160" aria-hidden="true" tabindex="-1"></a><span class="al">![](imgp3/g5b.png)</span>{width=60%} </span>
+<span id="cb20-161"><a href="#cb20-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-162"><a href="#cb20-162" aria-hidden="true" tabindex="-1"></a>***Répétition d’une liste de couleur avec select(numlist)***</span>
+<span id="cb20-163"><a href="#cb20-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-164"><a href="#cb20-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-165"><a href="#cb20-165" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
+<span id="cb20-166"><a href="#cb20-166" aria-hidden="true" tabindex="-1"></a>colorpalette plasma,  <span class="fu">select</span>(<span class="dv">1</span> <span class="dv">8</span> <span class="dv">15</span> <span class="dv">1</span> <span class="dv">8</span> <span class="dv">15</span>)</span>
+<span id="cb20-167"><a href="#cb20-167" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-168"><a href="#cb20-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-169"><a href="#cb20-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-170"><a href="#cb20-170" aria-hidden="true" tabindex="-1"></a><span class="al">![](imgp3/g5g.png)</span>{width=60%} </span>
+<span id="cb20-171"><a href="#cb20-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-172"><a href="#cb20-172" aria-hidden="true" tabindex="-1"></a>***Création d'une palette séquentielle avec augmentation de l'intensité***  </span>
+<span id="cb20-173"><a href="#cb20-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-174"><a href="#cb20-174" aria-hidden="true" tabindex="-1"></a>A partir de la couleur 3 (RGB= 237,121,83), création d’une palette sequentielle d’une longueur de 15, allant de "237,121,83*0" (proche blanc) à "237,121,83*15". </span>
+<span id="cb20-175"><a href="#cb20-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-176"><a href="#cb20-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-177"><a href="#cb20-177" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
+<span id="cb20-178"><a href="#cb20-178" aria-hidden="true" tabindex="-1"></a>colorpalette <span class="st">"237 121 83"</span>, <span class="fu">intensity</span>(<span class="dv">0</span>(.<span class="dv">1</span>)<span class="fl">1.5</span>)</span>
+<span id="cb20-179"><a href="#cb20-179" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-180"><a href="#cb20-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-181"><a href="#cb20-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-182"><a href="#cb20-182" aria-hidden="true" tabindex="-1"></a><span class="al">![](imgp3/g5c.png)</span>{width=60%} </span>
+<span id="cb20-183"><a href="#cb20-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-184"><a href="#cb20-184" aria-hidden="true" tabindex="-1"></a>***Création d'une palette séquentielle avec augmentation de l'intensité***  </span>
+<span id="cb20-185"><a href="#cb20-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-186"><a href="#cb20-186" aria-hidden="true" tabindex="-1"></a>Création d’une palette séquentielle d’une longueur 15 allant de la couleur 1 à la couleur 3 de la palette plasma à 4 couleurs. </span>
+<span id="cb20-187"><a href="#cb20-187" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-188"><a href="#cb20-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-189"><a href="#cb20-189" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
+<span id="cb20-190"><a href="#cb20-190" aria-hidden="true" tabindex="-1"></a>colorpalette <span class="st">"13 8 135"</span> <span class="st">"237 121 83"</span>, <span class="fu">ipolate</span>(<span class="dv">15</span>)</span>
+<span id="cb20-191"><a href="#cb20-191" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-192"><a href="#cb20-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-193"><a href="#cb20-193" aria-hidden="true" tabindex="-1"></a><span class="al">![](imgp3/g5d.png)</span>{width=60%} </span>
+<span id="cb20-194"><a href="#cb20-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-195"><a href="#cb20-195" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-196"><a href="#cb20-196" aria-hidden="true" tabindex="-1"></a>Si on ajoute la couleur 2 de la palette d’origine comme couleur de transition</span>
+<span id="cb20-197"><a href="#cb20-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-198"><a href="#cb20-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-199"><a href="#cb20-199" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
+<span id="cb20-200"><a href="#cb20-200" aria-hidden="true" tabindex="-1"></a>colorpalette <span class="st">"13 8 135"</span> <span class="st">"156 23 158"</span>  <span class="st">"237 121 83"</span>, <span class="fu">ipolate</span>(<span class="dv">15</span>)</span>
+<span id="cb20-201"><a href="#cb20-201" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-202"><a href="#cb20-202" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-203"><a href="#cb20-203" aria-hidden="true" tabindex="-1"></a><span class="al">![](imgp3/g5e.png)</span>{width=60%} </span>
+<span id="cb20-204"><a href="#cb20-204" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-205"><a href="#cb20-205" aria-hidden="true" tabindex="-1"></a>Si on utilise le blanc comme couleur de transition, on obtient une palette divergente.</span>
+<span id="cb20-206"><a href="#cb20-206" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-207"><a href="#cb20-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-208"><a href="#cb20-208" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
+<span id="cb20-209"><a href="#cb20-209" aria-hidden="true" tabindex="-1"></a>colorpalette <span class="st">"13 8 135"</span> white <span class="st">"237 121 83"</span>, <span class="fu">ipolate</span>(<span class="dv">15</span>)</span>
+<span id="cb20-210"><a href="#cb20-210" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-211"><a href="#cb20-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-212"><a href="#cb20-212" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-213"><a href="#cb20-213" aria-hidden="true" tabindex="-1"></a><span class="al">![](imgp3/g5f.png)</span>{width=60%} </span>
+<span id="cb20-214"><a href="#cb20-214" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-215"><a href="#cb20-215" aria-hidden="true" tabindex="-1"></a>**Créer, enregistrer et charger sa propre palette**    </span>
+<span id="cb20-216"><a href="#cb20-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-217"><a href="#cb20-217" aria-hidden="true" tabindex="-1"></a><span class="in">`colorpalette`</span> permet de conserver en mémoire sa propre palette, en la générant dans un .ado (voir la fin du chapitre dédié aux macros) ou dans le programme principal. Par exemple avec la palette issue du premier exemple (palette plasma à 4 couleur).</span>
+<span id="cb20-218"><a href="#cb20-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-219"><a href="#cb20-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-220"><a href="#cb20-220" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
+<span id="cb20-221"><a href="#cb20-221" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span> Création de la palette mypal</span>
+<span id="cb20-222"><a href="#cb20-222" aria-hidden="true" tabindex="-1"></a>capt program drop colorpalette_mypal</span>
+<span id="cb20-223"><a href="#cb20-223" aria-hidden="true" tabindex="-1"></a>program colorpalette_mypal</span>
+<span id="cb20-224"><a href="#cb20-224" aria-hidden="true" tabindex="-1"></a>c_local P <span class="dv">13</span> <span class="dv">8</span> <span class="dv">135</span>, <span class="dv">156</span> <span class="dv">23</span> <span class="dv">158</span>, <span class="dv">237</span> <span class="dv">121</span> <span class="dv">83</span>, <span class="dv">240</span> <span class="dv">249</span> <span class="dv">33</span></span>
+<span id="cb20-225"><a href="#cb20-225" aria-hidden="true" tabindex="-1"></a>c_local class qualitative</span>
+<span id="cb20-226"><a href="#cb20-226" aria-hidden="true" tabindex="-1"></a>end</span>
+<span id="cb20-227"><a href="#cb20-227" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-228"><a href="#cb20-228" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span> On charge la palette avec la commande colorpalette_mypal</span>
+<span id="cb20-229"><a href="#cb20-229" aria-hidden="true" tabindex="-1"></a>colorpalette_mypal</span>
+<span id="cb20-230"><a href="#cb20-230" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-231"><a href="#cb20-231" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span> On affiche la palette my_pal</span>
+<span id="cb20-232"><a href="#cb20-232" aria-hidden="true" tabindex="-1"></a>colorpalette my_pal</span>
+<span id="cb20-233"><a href="#cb20-233" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-234"><a href="#cb20-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-235"><a href="#cb20-235" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-236"><a href="#cb20-236" aria-hidden="true" tabindex="-1"></a><span class="fu">### **Utilisation de colorpalette pour générer un graphique**</span></span>
+<span id="cb20-237"><a href="#cb20-237" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-238"><a href="#cb20-238" aria-hidden="true" tabindex="-1"></a>On remarque, avec return list, que la commande génère une liste de macros qui enregistre les codes RGB des couleurs de la palette.  </span>
+<span id="cb20-239"><a href="#cb20-239" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-240"><a href="#cb20-240" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>la macro <span class="in">`r(p)`</span> permet d’utiliser les couleurs de la palette dans un graphique à un seul bloc d’éléments.</span>
+<span id="cb20-241"><a href="#cb20-241" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>les macros <span class="in">`r(p#)`</span> permettent d’utiliser les couleurs dans un graphique composé de plusieurs éléments.  </span>
+<span id="cb20-242"><a href="#cb20-242" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-243"><a href="#cb20-243" aria-hidden="true" tabindex="-1"></a>La commande <span class="in">`colorpalette`</span> n’est qu’un générateur de couleurs qui renvoie une liste de codes RGB sous forme de macros. Si pour des graphiques simples la technique du « copié/collé » de codes RGB reste possible, l’utilisation des macros va être une nouvelle fois fortement recommandée. On peut déjà néanmoins indiquer qu’avec le générateur de thème **`grstyle` (voir la section suivante), également programmé par *B.Jann*, une sélection de couleurs pourra être directement intégrée à un graphique sans manipulation supplémentaire.</span>
+<span id="cb20-244"><a href="#cb20-244" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-245"><a href="#cb20-245" aria-hidden="true" tabindex="-1"></a>**Macros générées par `colorpalette`**  </span>
+<span id="cb20-246"><a href="#cb20-246" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-247"><a href="#cb20-247" aria-hidden="true" tabindex="-1"></a>On va partir de la palette plasma précédente avec 4 couleurs et un % d’opacité de 80%. Avec return list, on affiche sous forme de macros la liste des codes RGB des couleurs</span>
+<span id="cb20-248"><a href="#cb20-248" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-249"><a href="#cb20-249" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-250"><a href="#cb20-250" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
+<span id="cb20-251"><a href="#cb20-251" aria-hidden="true" tabindex="-1"></a>colorpalette plasma, <span class="fu">n</span>(<span class="dv">4</span>) <span class="fu">opacity</span>(<span class="dv">80</span>) nograph</span>
+<span id="cb20-252"><a href="#cb20-252" aria-hidden="true" tabindex="-1"></a>return list</span>
+<span id="cb20-253"><a href="#cb20-253" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-254"><a href="#cb20-254" aria-hidden="true" tabindex="-1"></a><span class="sc">/</span><span class="er">*</span></span>
+<span id="cb20-255"><a href="#cb20-255" aria-hidden="true" tabindex="-1"></a>scalars<span class="sc">:</span></span>
+<span id="cb20-256"><a href="#cb20-256" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">r</span>(n) <span class="ot">=</span>  <span class="dv">4</span></span>
+<span id="cb20-257"><a href="#cb20-257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-258"><a href="#cb20-258" aria-hidden="true" tabindex="-1"></a>macros<span class="sc">:</span></span>
+<span id="cb20-259"><a href="#cb20-259" aria-hidden="true" tabindex="-1"></a>            <span class="fu">r</span>(ptype) <span class="sc">:</span> <span class="st">"color"</span></span>
+<span id="cb20-260"><a href="#cb20-260" aria-hidden="true" tabindex="-1"></a>            <span class="fu">r</span>(pname) <span class="sc">:</span> <span class="st">"plasma"</span></span>
+<span id="cb20-261"><a href="#cb20-261" aria-hidden="true" tabindex="-1"></a>            <span class="fu">r</span>(pnote) <span class="sc">:</span> <span class="st">"plasma colormap from matplotlib.org"</span></span>
+<span id="cb20-262"><a href="#cb20-262" aria-hidden="true" tabindex="-1"></a>            <span class="fu">r</span>(psource) <span class="sc">:</span> <span class="st">"https://github.com/matplotlib/matplotlib/blob/master/lib/matplotlib/_cm_listed.py"</span></span>
+<span id="cb20-263"><a href="#cb20-263" aria-hidden="true" tabindex="-1"></a>        <span class="fu">r</span>(pclass) <span class="sc">:</span> <span class="st">"sequential"</span></span>
+<span id="cb20-264"><a href="#cb20-264" aria-hidden="true" tabindex="-1"></a>        <span class="fu">r</span>(p) <span class="sc">:</span> <span class="st">""</span><span class="dv">13</span> <span class="dv">8</span> <span class="dv">135</span><span class="sc">%80" "156 23 158%</span><span class="dv">80</span><span class="st">" "</span><span class="dv">237</span> <span class="dv">121</span> <span class="dv">83</span><span class="sc">%80" "240 249 33%</span><span class="dv">80</span><span class="st">""</span></span>
+<span id="cb20-265"><a href="#cb20-265" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">r</span>(p4) <span class="sc">:</span> <span class="st">"240 249 33%80"</span></span>
+<span id="cb20-266"><a href="#cb20-266" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">r</span>(p3) <span class="sc">:</span> <span class="st">"237 121 83%80"</span></span>
+<span id="cb20-267"><a href="#cb20-267" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">r</span>(p2) <span class="sc">:</span> <span class="st">"156 23 158%80"</span></span>
+<span id="cb20-268"><a href="#cb20-268" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">r</span>(p1) <span class="sc">:</span> <span class="st">"13 8 135%80"</span></span>
+<span id="cb20-269"><a href="#cb20-269" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span><span class="er">/</span></span>
+<span id="cb20-270"><a href="#cb20-270" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb20-271"><a href="#cb20-271" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-272"><a href="#cb20-272" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-273"><a href="#cb20-273" aria-hidden="true" tabindex="-1"></a>La liste renvoie la macro r(p) qui liste l’ensemble des codes couleurs. Cette macro est utilisée pour les graphiques avec un seul objet qui liste pour l’axe des ordonnées une série de variables. </span>
+<span id="cb20-274"><a href="#cb20-274" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-275"><a href="#cb20-275" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-276"><a href="#cb20-276" aria-hidden="true" tabindex="-1"></a>***Exemple***</span>
+<span id="cb20-277"><a href="#cb20-277" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-278"><a href="#cb20-278" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
+<span id="cb20-279"><a href="#cb20-279" aria-hidden="true" tabindex="-1"></a>sysuse uslifeexp</span>
+<span id="cb20-280"><a href="#cb20-280" aria-hidden="true" tabindex="-1"></a>colorpalette plasma, <span class="fu">n</span>(<span class="dv">4</span>) <span class="fu">opacity</span>(<span class="dv">80</span>) nograph</span>
+<span id="cb20-281"><a href="#cb20-281" aria-hidden="true" tabindex="-1"></a>tw line le_wmale le_wfemale le_bmale le_bfemale year, <span class="fu">lc</span>(<span class="st">`</span><span class="at">r(p)')</span></span>
+<span id="cb20-282"><a href="#cb20-282" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span>
+<span id="cb20-283"><a href="#cb20-283" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-284"><a href="#cb20-284" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-285"><a href="#cb20-285" aria-hidden="true" tabindex="-1"></a>La macro <span class="st">`</span><span class="at">r(p)</span><span class="st">`</span> a déjà deux doubles quotes, on ne doit pas enfermer cette liste par <span class="st">""</span>.</span>
+<span id="cb20-286"><a href="#cb20-286" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-287"><a href="#cb20-287" aria-hidden="true" tabindex="-1"></a>La liste de macros <span class="st">`</span><span class="at">r(p#)</span><span class="st">`</span> renvoie le code couleur de chaque élément de la palette, ici <span class="st">`</span><span class="at">r(p1)</span><span class="st">`</span> à <span class="st">`</span><span class="at">r(p4)</span><span class="st">`</span>. Ces macros sont utilisées pour les graphiques composés de plusieurs objets. Entrée directement dans la syntaxe d’un graphique, ces macros devront être enfermées dans des doubles quotes.</span>
+<span id="cb20-288"><a href="#cb20-288" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-289"><a href="#cb20-289" aria-hidden="true" tabindex="-1"></a><span class="sc">**</span><span class="er">*</span>Exemple<span class="sc">**</span><span class="er">*</span>   </span>
+<span id="cb20-290"><a href="#cb20-290" aria-hidden="true" tabindex="-1"></a>On va afficher un graphique avec <span class="dv">4</span> densités sous forme d’aires générées aléatoirement. De nouveau on utilisera la palette plasma réduite à <span class="dv">4</span> couleurs et <span class="dv">80</span>% d’opacité.</span>
+<span id="cb20-291"><a href="#cb20-291" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-292"><a href="#cb20-292" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span>Données<span class="sc">*</span></span>
+<span id="cb20-293"><a href="#cb20-293" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-294"><a href="#cb20-294" aria-hidden="true" tabindex="-1"></a><span class="st">```</span><span class="at">{r eval=FALSE}</span></span>
+<span id="cb20-295"><a href="#cb20-295" aria-hidden="true" tabindex="-1"></a><span class="at">clear</span></span>
+<span id="cb20-296"><a href="#cb20-296" aria-hidden="true" tabindex="-1"></a><span class="at">set obs 1000</span></span>
+<span id="cb20-297"><a href="#cb20-297" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-298"><a href="#cb20-298" aria-hidden="true" tabindex="-1"></a><span class="at">gen y1= rnormal(0,1.5)</span></span>
+<span id="cb20-299"><a href="#cb20-299" aria-hidden="true" tabindex="-1"></a><span class="at">gen y2= rnormal(3, 2)</span></span>
+<span id="cb20-300"><a href="#cb20-300" aria-hidden="true" tabindex="-1"></a><span class="at">gen y3= rnormal(6, 3)</span></span>
+<span id="cb20-301"><a href="#cb20-301" aria-hidden="true" tabindex="-1"></a><span class="at">gen y4= rnormal(9, 4)</span></span>
+<span id="cb20-302"><a href="#cb20-302" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-303"><a href="#cb20-303" aria-hidden="true" tabindex="-1"></a><span class="at">forv i=1/4 {</span></span>
+<span id="cb20-304"><a href="#cb20-304" aria-hidden="true" tabindex="-1"></a><span class="at">kdensity y</span><span class="st">`</span>i<span class="st">', n(500) gen(x`i'</span> d<span class="st">`</span><span class="at">i') nograph</span></span>
+<span id="cb20-305"><a href="#cb20-305" aria-hidden="true" tabindex="-1"></a><span class="at">}</span></span>
+<span id="cb20-306"><a href="#cb20-306" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span>
+<span id="cb20-307"><a href="#cb20-307" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-308"><a href="#cb20-308" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-309"><a href="#cb20-309" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span>Graphique<span class="sc">*</span> (sans macros empilées pour faciliter la lisibilité du programme)</span>
+<span id="cb20-310"><a href="#cb20-310" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-311"><a href="#cb20-311" aria-hidden="true" tabindex="-1"></a><span class="st">```</span><span class="at">{r eval=FALSE}</span></span>
+<span id="cb20-312"><a href="#cb20-312" aria-hidden="true" tabindex="-1"></a><span class="at">Colorpalette plasma , n(4) opacity(80) nograph</span></span>
+<span id="cb20-313"><a href="#cb20-313" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-314"><a href="#cb20-314" aria-hidden="true" tabindex="-1"></a><span class="at">local ops lc(black) lw(*.5)</span></span>
+<span id="cb20-315"><a href="#cb20-315" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-316"><a href="#cb20-316" aria-hidden="true" tabindex="-1"></a><span class="at">#delimit ;</span></span>
+<span id="cb20-317"><a href="#cb20-317" aria-hidden="true" tabindex="-1"></a><span class="at">tw line d1 x1,  recast(area) </span><span class="st">`</span>ops<span class="st">' fc("`r(p1)'")  </span></span>
+<span id="cb20-318"><a href="#cb20-318" aria-hidden="true" tabindex="-1"></a><span class="st">|| line d2 x2,  recast(area) `ops' fc("`</span><span class="at">r(p2)'")</span></span>
+<span id="cb20-319"><a href="#cb20-319" aria-hidden="true" tabindex="-1"></a><span class="at">|| line d3 x3,  recast(area) </span><span class="st">`</span>ops<span class="st">' fc("`r(p3)'") </span></span>
+<span id="cb20-320"><a href="#cb20-320" aria-hidden="true" tabindex="-1"></a><span class="st">|| line d4 x4,  recast(area) `ops' fc("`</span><span class="at">r(p4)'")</span></span>
+<span id="cb20-321"><a href="#cb20-321" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-322"><a href="#cb20-322" aria-hidden="true" tabindex="-1"></a><span class="at">||, legend(order(1 "r(p1)" 2 "r(p2)" 3 "r(p3)" 4 "r(p4)") pos(11) row(1) region(color(%0))) </span></span>
+<span id="cb20-323"><a href="#cb20-323" aria-hidden="true" tabindex="-1"></a><span class="at">;</span></span>
+<span id="cb20-324"><a href="#cb20-324" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span>
+<span id="cb20-325"><a href="#cb20-325" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-326"><a href="#cb20-326" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-327"><a href="#cb20-327" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>[](imgp3<span class="sc">/</span>g6a.png){width<span class="ot">=</span><span class="dv">60</span>%} </span>
+<span id="cb20-328"><a href="#cb20-328" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-329"><a href="#cb20-329" aria-hidden="true" tabindex="-1"></a>Sans modifier la syntaxe du graphique, on peut alors simplement changer de palette, en modifiant son nom et<span class="sc">/</span>ou en modifiant une ou plusieurs options comme l’opacité.    </span>
+<span id="cb20-330"><a href="#cb20-330" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-331"><a href="#cb20-331" aria-hidden="true" tabindex="-1"></a><span class="sc">**</span><span class="er">*</span>Exemple<span class="sc">**</span><span class="er">*:</span> <span class="er">*</span>palette winte<span class="sc">*</span>r de la collection <span class="sc">*</span>matplotlib<span class="sc">*</span>, avec <span class="dv">50</span>% d’opacité et en inversant l’ordre des couleurs.</span>
+<span id="cb20-332"><a href="#cb20-332" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-333"><a href="#cb20-333" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-334"><a href="#cb20-334" aria-hidden="true" tabindex="-1"></a><span class="st">```</span><span class="at">{r eval=FALSE}</span></span>
+<span id="cb20-335"><a href="#cb20-335" aria-hidden="true" tabindex="-1"></a><span class="at">colorpalette plasma , n(4) opacity(80) nograph</span></span>
+<span id="cb20-336"><a href="#cb20-336" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-337"><a href="#cb20-337" aria-hidden="true" tabindex="-1"></a><span class="at">local ops lc(black) lw(*.5)</span></span>
+<span id="cb20-338"><a href="#cb20-338" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-339"><a href="#cb20-339" aria-hidden="true" tabindex="-1"></a><span class="at">#delimit ;</span></span>
+<span id="cb20-340"><a href="#cb20-340" aria-hidden="true" tabindex="-1"></a><span class="at">tw line d1 x1,  recast(area) </span><span class="st">`</span>ops<span class="st">' fc("`r(p1)'")  </span></span>
+<span id="cb20-341"><a href="#cb20-341" aria-hidden="true" tabindex="-1"></a><span class="st">|| line d2 x2,  recast(area) `ops' fc("`</span><span class="at">r(p2)'")</span></span>
+<span id="cb20-342"><a href="#cb20-342" aria-hidden="true" tabindex="-1"></a><span class="at">|| line d3 x3,  recast(area) </span><span class="st">`</span>ops<span class="st">' fc("`r(p3)'") </span></span>
+<span id="cb20-343"><a href="#cb20-343" aria-hidden="true" tabindex="-1"></a><span class="st">|| line d4 x4,  recast(area) `ops' fc("`</span><span class="at">r(p4)'")</span></span>
+<span id="cb20-344"><a href="#cb20-344" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-345"><a href="#cb20-345" aria-hidden="true" tabindex="-1"></a><span class="at">||, legend(order(1 "</span><span class="st">`</span><span class="fu">r</span>(p1)<span class="st">'" 2 "`r(p2)'" 3 "`</span><span class="at">r(p3)'" 4 "</span><span class="st">`</span><span class="fu">r</span>(p4)<span class="st">'") </span></span>
+<span id="cb20-346"><a href="#cb20-346" aria-hidden="true" tabindex="-1"></a><span class="st">    pos(11) row(1) region(color(%0))) </span></span>
+<span id="cb20-347"><a href="#cb20-347" aria-hidden="true" tabindex="-1"></a><span class="st">;</span></span>
+<span id="cb20-348"><a href="#cb20-348" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span>
+<span id="cb20-349"><a href="#cb20-349" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-350"><a href="#cb20-350" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-351"><a href="#cb20-351" aria-hidden="true" tabindex="-1"></a><span class="st">*Remarque : en utilisant les macros dans la légende, on a affiché les codes couleurs*</span></span>
+<span id="cb20-352"><a href="#cb20-352" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-353"><a href="#cb20-353" aria-hidden="true" tabindex="-1"></a><span class="st">![](imgp3/g6b.png){width=60%} </span></span>
+<span id="cb20-354"><a href="#cb20-354" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-355"><a href="#cb20-355" aria-hidden="true" tabindex="-1"></a><span class="st"># **Exemples de palettes**</span></span>
+<span id="cb20-356"><a href="#cb20-356" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-357"><a href="#cb20-357" aria-hidden="true" tabindex="-1"></a><span class="st">Sur le même principe que les deux graphiques précédents mais avec 6 éléments, on a mis à disposition une petite commande, **`testpal`**, qui permet de tester le rendu d’un graphique. La commande reporte 6 objets graphiques sous la forme de densités représentées par des aires et par des groupes. Les deux graphiques de la première colonne sont sur un fond blanc, ceux de la deuxième colonne sont sur un fond paramétrable (palette gs) par défaut très sombre.</span></span>
+<span id="cb20-358"><a href="#cb20-358" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-359"><a href="#cb20-359" aria-hidden="true" tabindex="-1"></a><span class="st">***Installation***</span></span>
+<span id="cb20-360"><a href="#cb20-360" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-361"><a href="#cb20-361" aria-hidden="true" tabindex="-1"></a><span class="st">```{r eval=FALSE}</span></span>
+<span id="cb20-362"><a href="#cb20-362" aria-hidden="true" tabindex="-1"></a><span class="st">net install testpal, from("https://mthevenin.github.io/stata_fr/ado/testpal/") replace</span></span>
+<span id="cb20-363"><a href="#cb20-363" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span>
+<span id="cb20-364"><a href="#cb20-364" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-365"><a href="#cb20-365" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-366"><a href="#cb20-366" aria-hidden="true" tabindex="-1"></a><span class="st">***Syntaxe***</span></span>
+<span id="cb20-367"><a href="#cb20-367" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;div class="grey"&gt;</span></span>
+<span id="cb20-368"><a href="#cb20-368" aria-hidden="true" tabindex="-1"></a><span class="st">```{r eval=FALSE}</span></span>
+<span id="cb20-369"><a href="#cb20-369" aria-hidden="true" tabindex="-1"></a><span class="st">testpal nom_palette , [rev] [op(#)] [bf(#)]</span></span>
+<span id="cb20-370"><a href="#cb20-370" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span>
+<span id="cb20-371"><a href="#cb20-371" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-372"><a href="#cb20-372" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-373"><a href="#cb20-373" aria-hidden="true" tabindex="-1"></a><span class="st">-   `rev`: inverse l'</span>ordre des couleurs de la palette.</span>
+<span id="cb20-374"><a href="#cb20-374" aria-hidden="true" tabindex="-1"></a><span class="sc">-</span>   <span class="st">`</span><span class="at">op(#)</span><span class="st">`</span><span class="sc">:</span> modifie le pourcentage d<span class="st">'opacité des couleurs. Par défaut 100% (op(100)). # est compris entre 0+ et 100.</span></span>
+<span id="cb20-375"><a href="#cb20-375" aria-hidden="true" tabindex="-1"></a><span class="st">-   `bf(#)`: permet de modifier la clarté des graphiques de la seconde colonne (blanc pour la première). # est une valeur comprise entre 1 (noir) et 14 (presque blanc). </span></span>
+<span id="cb20-376"><a href="#cb20-376" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-377"><a href="#cb20-377" aria-hidden="true" tabindex="-1"></a><span class="st">***Exemple avec la palette qualitative burd (François Briatte)***   </span></span>
+<span id="cb20-378"><a href="#cb20-378" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-379"><a href="#cb20-379" aria-hidden="true" tabindex="-1"></a><span class="st">```{r eval=FALSE}</span></span>
+<span id="cb20-380"><a href="#cb20-380" aria-hidden="true" tabindex="-1"></a><span class="st">testpal burd, rev op(100) bf(5)</span></span>
+<span id="cb20-381"><a href="#cb20-381" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span>
+<span id="cb20-382"><a href="#cb20-382" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-383"><a href="#cb20-383" aria-hidden="true" tabindex="-1"></a><span class="st">![](imgp3/g7a.png){width=60%} </span></span>
+<span id="cb20-384"><a href="#cb20-384" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-385"><a href="#cb20-385" aria-hidden="true" tabindex="-1"></a><span class="st">Pour les quelques palettes populaires qui vont être rapidement présentées, les options de la commande `testpal` n’ont pas été modifiées. Le nom de la palette est donné par le titre du graphique.</span></span>
+<span id="cb20-386"><a href="#cb20-386" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-387"><a href="#cb20-387" aria-hidden="true" tabindex="-1"></a><span class="st">&lt;br&gt;</span></span>
+<span id="cb20-388"><a href="#cb20-388" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-389"><a href="#cb20-389" aria-hidden="true" tabindex="-1"></a><span class="st">## **Palettes qualitatives**</span></span>
+<span id="cb20-390"><a href="#cb20-390" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-391"><a href="#cb20-391" aria-hidden="true" tabindex="-1"></a><span class="st">**Tableau**  </span></span>
+<span id="cb20-392"><a href="#cb20-392" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-393"><a href="#cb20-393" aria-hidden="true" tabindex="-1"></a><span class="st">**https://www.tableau.com/about/blog/2016/7/colors-upgrade-tableau-10-56782**</span></span>
+<span id="cb20-394"><a href="#cb20-394" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-395"><a href="#cb20-395" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-396"><a href="#cb20-396" aria-hidden="true" tabindex="-1"></a><span class="st">![](imgp3/g7b.png){width=60%} </span></span>
+<span id="cb20-397"><a href="#cb20-397" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-398"><a href="#cb20-398" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-399"><a href="#cb20-399" aria-hidden="true" tabindex="-1"></a><span class="st">**HUE**  </span></span>
+<span id="cb20-400"><a href="#cb20-400" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-401"><a href="#cb20-401" aria-hidden="true" tabindex="-1"></a><span class="st">-   Il s’agit de la palette par défaut de ggplot2 (R)</span></span>
+<span id="cb20-402"><a href="#cb20-402" aria-hidden="true" tabindex="-1"></a><span class="st">-   De plus en plus remplacée par la palette Viridis (voir plus loin)</span></span>
+<span id="cb20-403"><a href="#cb20-403" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-404"><a href="#cb20-404" aria-hidden="true" tabindex="-1"></a><span class="st">![](imgp3/g7c.png){width=60%} </span></span>
+<span id="cb20-405"><a href="#cb20-405" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-406"><a href="#cb20-406" aria-hidden="true" tabindex="-1"></a><span class="st">## **Palettes séquentielles**   </span></span>
+<span id="cb20-407"><a href="#cb20-407" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-408"><a href="#cb20-408" aria-hidden="true" tabindex="-1"></a><span class="st">-   Utilisées massivement en cartographie et plus généralement pour représenter des fréquences (graphique type barre) ou des valeurs ordonnées</span></span>
+<span id="cb20-409"><a href="#cb20-409" aria-hidden="true" tabindex="-1"></a><span class="st">-   Couleurs allant du plus clair au plus foncé (ou inversement).</span></span>
+<span id="cb20-410"><a href="#cb20-410" aria-hidden="true" tabindex="-1"></a><span class="st">–   Modification de l’intensité d’une couleur.</span></span>
+<span id="cb20-411"><a href="#cb20-411" aria-hidden="true" tabindex="-1"></a><span class="st">–   Une ou plusieurs gammes de couleurs : par exemples du jaune au rouge, du jaune au bleu…    </span></span>
+<span id="cb20-412"><a href="#cb20-412" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-413"><a href="#cb20-413" aria-hidden="true" tabindex="-1"></a><span class="st">En réduisant la taille de certaines palettes séquentielles ou divergentes, on peut obtenir une palette plutôt qualitative. C’est le cas de la collection, très en vogue, *Viridis*.</span></span>
+<span id="cb20-414"><a href="#cb20-414" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-415"><a href="#cb20-415" aria-hidden="true" tabindex="-1"></a><span class="st">**Collection viridis**  </span></span>
+<span id="cb20-416"><a href="#cb20-416" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-417"><a href="#cb20-417" aria-hidden="true" tabindex="-1"></a><span class="st">-   La palette **Viridis** et les ses palettes associées (plasma, magma, cividis...) est la palette "star" du moment.</span></span>
+<span id="cb20-418"><a href="#cb20-418" aria-hidden="true" tabindex="-1"></a><span class="st">-   Développée pour Python pour donner une palette alternative à *Matplotlib*, elle est devenue la palette par défaut de la librairie graphique</span></span>
+<span id="cb20-419"><a href="#cb20-419" aria-hidden="true" tabindex="-1"></a><span class="st">- Avantages:</span></span>
+<span id="cb20-420"><a href="#cb20-420" aria-hidden="true" tabindex="-1"></a><span class="st">  - Même rendu, ou très proche, des couleurs sur toutes les parties d’un écran (uniformité).</span></span>
+<span id="cb20-421"><a href="#cb20-421" aria-hidden="true" tabindex="-1"></a><span class="st">  - Différences de couleurs maintenue à l’impression n&amp;b.</span></span>
+<span id="cb20-422"><a href="#cb20-422" aria-hidden="true" tabindex="-1"></a><span class="st">  - Gère la plupart des formes de daltonisme.   </span></span>
+<span id="cb20-423"><a href="#cb20-423" aria-hidden="true" tabindex="-1"></a><span class="st">-   Limites : pour les courbes, un fond blanc ou très clair ou un fond noir ou très foncé, les couleurs aux extrémités passent difficilement. Prévoir un fond gris moyen ou ne pas sélectionner les couleurs aux extrémités de la palette. </span></span>
+<span id="cb20-424"><a href="#cb20-424" aria-hidden="true" tabindex="-1"></a><span class="st">-   Les autres palettes : plasma est également très utilisée, en particulier pour le remplissage de surface (aire).</span></span>
+<span id="cb20-425"><a href="#cb20-425" aria-hidden="true" tabindex="-1"></a><span class="st">-   Plus d’infos : **https://rtask.thinkr.fr/fr/ggplot2-welcome-viridis/**</span></span>
+<span id="cb20-426"><a href="#cb20-426" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-427"><a href="#cb20-427" aria-hidden="true" tabindex="-1"></a><span class="st">![](imgp3/g7d.png){width=60%} </span></span>
+<span id="cb20-428"><a href="#cb20-428" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-429"><a href="#cb20-429" aria-hidden="true" tabindex="-1"></a><span class="st"> ![](imgp3/g7e.png){width=60%}  </span></span>
+<span id="cb20-430"><a href="#cb20-430" aria-hidden="true" tabindex="-1"></a><span class="st"> </span></span>
+<span id="cb20-431"><a href="#cb20-431" aria-hidden="true" tabindex="-1"></a><span class="st"> </span></span>
+<span id="cb20-432"><a href="#cb20-432" aria-hidden="true" tabindex="-1"></a><span class="st">**Collection colorbrewer**  </span></span>
+<span id="cb20-433"><a href="#cb20-433" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-434"><a href="#cb20-434" aria-hidden="true" tabindex="-1"></a><span class="st">Très populaire en cartographie: **https://colorbrewer2.org/#type=sequential&amp;scheme=BuGn&amp;n=3**</span></span>
+<span id="cb20-435"><a href="#cb20-435" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-436"><a href="#cb20-436" aria-hidden="true" tabindex="-1"></a><span class="st"> ![](imgp3/g7f.png){width=60%}   </span></span>
+<span id="cb20-437"><a href="#cb20-437" aria-hidden="true" tabindex="-1"></a><span class="st"> </span></span>
+<span id="cb20-438"><a href="#cb20-438" aria-hidden="true" tabindex="-1"></a><span class="st">On présentera enfin une seule palette de type divergente, issue de cette collection, la palette *spectral*.</span></span>
+<span id="cb20-439"><a href="#cb20-439" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-440"><a href="#cb20-440" aria-hidden="true" tabindex="-1"></a><span class="st"> ![](imgp3/g7g.png){width=60%}    </span></span>
+<span id="cb20-441"><a href="#cb20-441" aria-hidden="true" tabindex="-1"></a><span class="st"> &lt;br&gt;</span></span>
+<span id="cb20-442"><a href="#cb20-442" aria-hidden="true" tabindex="-1"></a><span class="st"> </span></span>
+<span id="cb20-443"><a href="#cb20-443" aria-hidden="true" tabindex="-1"></a><span class="st"> </span></span>
+<span id="cb20-444"><a href="#cb20-444" aria-hidden="true" tabindex="-1"></a><span class="st"> </span></span>
+<span id="cb20-445"><a href="#cb20-445" aria-hidden="true" tabindex="-1"></a><span class="st"> </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

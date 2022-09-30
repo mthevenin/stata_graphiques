@@ -294,7 +294,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Stata.html" class="sidebar-item-text sidebar-link">Graphiques Stata</a>
+  <a href="../Stata.html" class="sidebar-item-text sidebar-link">Programmation avec Stata</a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -328,7 +328,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Options: légende, titre…</h1>
+<div class="quarto-title-block"><div><h1 class="title d-none d-lg-block">Options: légende, titre…</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
 </div>
 
 
@@ -488,6 +488,8 @@ Permet d’afficher un graphique enregistré.</p></li>
 </div>
 
 
+<!-- -->
+
 </section>
 </section>
 
@@ -540,6 +542,57 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
   function tippyHover(el, contentFn) {
     const config = {
       allowHTML: true,
@@ -601,7 +654,199 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         <span class="nav-page-text">Combiner des graphiques</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
-</nav>
+</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb8" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Options: légende, titre..."</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup, include=FALSE}</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">Encoding=</span><span class="st">"UTF-8"</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rsconnect)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pander)</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(memisc)</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fontawesome)</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="fu"># **Options pour la légende**</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(), <span class="fu">clegend</span>(), plegend<span class="sc">:</span> <span class="fu">legend</span>(contenu [options])</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>Les options **`clegend()`** et **`plegend()`** sont réservées aux graphiques de type courbes de niveau avec une troisième dimension (hauteur, densité...): <span class="in">`clegend()`</span> pour <span class="in">`tw contour`</span> et <span class="in">`plegend()`</span> pour <span class="in">`tw contourline`</span>. Ces options ont des arguments spécifiques que je ne décrirais pas ici.</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>Stata utilise par défaut le label de la variable y pour alimenter le contenu de la légende, ce qui peut conduire à un rendu inadapté qu'il faudra corriger manuellement ou à l'aide de macros et fonctions macro (voir chapitre2).</span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Ne pas afficher une légende: **`legend(off)`**.</span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Position par défaut: 6 heures (Sud) -- à l'extérieur. Modifiable avec <span class="in">`pos(#)`</span> et <span class="in">`ring(0 ou 1)`</span>.</span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Pour modifier le nombre de lignes et de colonnes: <span class="in">`row(#)`</span> et <span class="in">`col(#)`</span>.</span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Pour modifier les labels de la légende:</span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`order(...)`** : <span class="in">`order( 1 "label1" 2 "label2" .....)`</span> ou</span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`lab(...)`** : <span class="in">`lab(1 "label1") lab(2 "label2") ...)`</span></span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a>J'utilise de préférence order plus parcimonieux en parenthèses. L'apparence (gras, italique...) des labels est modifiable avec des balises smcl ; les tailles et couleurs sont également modifiables avec des options pour les textes.</span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Les labels peuvent être reportés sous les symboles avec l'option **`stack`**.</span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>On peut modifier l'aspect de la zône (couleur du fond, contour...) avec la sous option <span class="sc">\*\*</span><span class="in">`region(...)`</span> ou <span class="in">`r(...)`</span>.</span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a>**Le smcl** ::: {.callout-note} <span class="kw">&lt;strong&gt;</span>Le smcl<span class="kw">&lt;/strong&gt;</span>\</span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>Le Smcl « **Stata Markup Control Langage** » est le langage d'édition de Stata, il faut le reconnaître un peu préhistorique (ce n'est pas du Markup pour rien). Pour les graphiques, il permet de modifier les textes des titres, labels des axes, contenu des légendes : gras, italique... changement de police, ajout de formules.\</span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>Balise smcl : <span class="in">`"{type_option: texte}"`</span></span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>Quelques options/modifications de base :</span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Gras : <span class="in">`"{bf: texte}"`</span></span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Italique : <span class="in">`"{it: texte}"`</span></span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Gras et italique : <span class="in">`"{bf:{it :texte}}"`</span>\</span>
+<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-52"><a href="#cb8-52" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Le choix des polices dépend du système d'exploitation. Elles sont sélectionnées par leur type : <span class="in">`"{stSans : texte}"`</span> pour type sans serif, <span class="in">`"{stSerif : texte}"`</span> pour type serif, <span class="in">`"{stMono: texte}"`</span> pour type mono, et <span class="in">`"{stSymbol : texte}"`</span> pour les lettres grecques ou les symboles mathématiques. Exemples de polices avec windows : *arial* (sans serif), *times new roman* (serif), *courrier new* ou *consolas* (mono) et *symbol* (symbol). On peut également utiliser toutes les typographies disponibles en les sélectionnant en amont, avec la commande <span class="in">`graph set`</span>.</span>
+<span id="cb8-53"><a href="#cb8-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-54"><a href="#cb8-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-55"><a href="#cb8-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-56"><a href="#cb8-56" aria-hidden="true" tabindex="-1"></a><span class="al">![](imgp1/g14.png)</span>{width="60%"}</span>
+<span id="cb8-57"><a href="#cb8-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-58"><a href="#cb8-58" aria-hidden="true" tabindex="-1"></a>Options de la légende :</span>
+<span id="cb8-59"><a href="#cb8-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-60"><a href="#cb8-60" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
+<span id="cb8-61"><a href="#cb8-61" aria-hidden="true" tabindex="-1"></a><span class="fu">legend</span>(<span class="fu">order</span>(<span class="dv">1</span> <span class="st">"{bf:Domestic}"</span> <span class="dv">2</span> <span class="st">"{bf:Foreign}"</span>) <span class="fu">pos</span>(<span class="dv">1</span>) <span class="fu">ring</span>(<span class="dv">0</span>) <span class="fu">col</span>(<span class="dv">1</span>) <span class="fu">region</span>(<span class="fu">lw</span>(<span class="sc">*</span>.<span class="dv">1</span>)) stack )</span>
+<span id="cb8-62"><a href="#cb8-62" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-63"><a href="#cb8-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-64"><a href="#cb8-64" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Le texte de labels a été mis en gras avec une balise Smcl.</span>
+<span id="cb8-65"><a href="#cb8-65" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>La légende a été positionnée à l'intérieur du graphique avec <span class="in">`ring(0)`</span> et à 1 heure avec <span class="in">`pos(1)`</span>.</span>
+<span id="cb8-66"><a href="#cb8-66" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>La légende est reportée sous forme de colonne avec <span class="in">`col(1)`</span>.</span>
+<span id="cb8-67"><a href="#cb8-67" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>L'épaisseur du contour de la zône a été fortement réduit avec <span class="in">`r(lw(*.1))`</span>.</span>
+<span id="cb8-68"><a href="#cb8-68" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Le texte est positionné sous le symbole avec l'option <span class="in">`stack`</span>.</span>
+<span id="cb8-69"><a href="#cb8-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-70"><a href="#cb8-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-71"><a href="#cb8-71" aria-hidden="true" tabindex="-1"></a><span class="fu"># **Options pour les titres, notes, texte libre**</span></span>
+<span id="cb8-72"><a href="#cb8-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-73"><a href="#cb8-73" aria-hidden="true" tabindex="-1"></a>La majeure partie des options sont déjà précisées plus haut pour les titres des axes.  Les titres et les notes sont comme les légendes positionnés par rapport à des valeurs de l’horloge (de 1 à 12). Pour le texte libre on renseigne directement les coordonnées.    </span>
+<span id="cb8-74"><a href="#cb8-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-75"><a href="#cb8-75" aria-hidden="true" tabindex="-1"></a>**`title()`** – **`subtitle()`**   </span>
+<span id="cb8-76"><a href="#cb8-76" aria-hidden="true" tabindex="-1"></a>Il y a également des options pour des titres qui sont positionnés à gauche, à droite, au dessus (mais en dessous du titre principal) ou en bas du graphique :<span class="in">`l1title()`</span> et <span class="in">`l2title()`</span> pour un titre à gauche (l pour left), <span class="in">`r1title()`</span> et <span class="in">`r2title()`</span> à droite (r pour right), <span class="in">`t1title()`</span> et <span class="in">`t2title()`</span> pour un titre au dessus (t pour top) et ,enfin, <span class="in">`b1title()`</span> et <span class="in">`b2title()`</span> pour un titre en bas (b pour bottom) .   </span>
+<span id="cb8-77"><a href="#cb8-77" aria-hidden="true" tabindex="-1"></a>Par défaut le titre principal est positionné à 12 heures. Le sous titre est positionné en dessous du titre principal.  </span>
+<span id="cb8-78"><a href="#cb8-78" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-79"><a href="#cb8-79" aria-hidden="true" tabindex="-1"></a>**`note()`** – **`caption()`**  </span>
+<span id="cb8-80"><a href="#cb8-80" aria-hidden="true" tabindex="-1"></a><span class="in">`note()`</span> est positionné par défaut à 6 heures, <span class="in">`caption()`</span> en dessous de note(). </span>
+<span id="cb8-81"><a href="#cb8-81" aria-hidden="true" tabindex="-1"></a>Ces options permettent de faire des notes de lecture ou de préciser une ou plusieurs sources au graphique. </span>
+<span id="cb8-82"><a href="#cb8-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-83"><a href="#cb8-83" aria-hidden="true" tabindex="-1"></a>**<span class="in">`text(coordonnées "texte" [,options])`</span>    </span>
+<span id="cb8-84"><a href="#cb8-84" aria-hidden="true" tabindex="-1"></a>Cette option permet d’afficher un texte dans la zône du graphique en entrant directement les coordonnées (y,x). Les sous options relatives à l’alignement peuvent être assez utiles si on ne veut pas tâtonner avec les coordonnées <span class="co">[</span><span class="ot">on peut passer par les macros pour générer les coordonnées, voir le chapitre dédié</span><span class="co">]</span>.  </span>
+<span id="cb8-85"><a href="#cb8-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-86"><a href="#cb8-86" aria-hidden="true" tabindex="-1"></a>Le graphique suivant présente les options par défaut (position, taille, couleur) des titres, dont le titre des axes, ainsi qu’un texte libre positionné aux coordonnées (1,1).</span>
+<span id="cb8-87"><a href="#cb8-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-88"><a href="#cb8-88" aria-hidden="true" tabindex="-1"></a><span class="al">![](imgp1/g15.png)</span>{width=60%}</span>
+<span id="cb8-89"><a href="#cb8-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-90"><a href="#cb8-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-91"><a href="#cb8-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-92"><a href="#cb8-92" aria-hidden="true" tabindex="-1"></a><span class="fu"># **Autres options**</span></span>
+<span id="cb8-93"><a href="#cb8-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-94"><a href="#cb8-94" aria-hidden="true" tabindex="-1"></a><span class="fu">## **Changer la police par défaut**</span></span>
+<span id="cb8-95"><a href="#cb8-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-96"><a href="#cb8-96" aria-hidden="true" tabindex="-1"></a>On peut paramétrer en amont la typographie utiliser par les graphiques avec la commande <span class="in">`graph set`</span></span>
+<span id="cb8-97"><a href="#cb8-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-98"><a href="#cb8-98" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
+<span id="cb8-99"><a href="#cb8-99" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span> pour OS windows</span>
+<span id="cb8-100"><a href="#cb8-100" aria-hidden="true" tabindex="-1"></a>graph set window fontface[type_police] <span class="st">"nom_police"</span> </span>
+<span id="cb8-101"><a href="#cb8-101" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-102"><a href="#cb8-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-103"><a href="#cb8-103" aria-hidden="true" tabindex="-1"></a>Le type de police est: *sans*, *serif*, *mono*, *symbol*.</span>
+<span id="cb8-104"><a href="#cb8-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-105"><a href="#cb8-105" aria-hidden="true" tabindex="-1"></a>Par défaut:</span>
+<span id="cb8-106"><a href="#cb8-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-107"><a href="#cb8-107" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
+<span id="cb8-108"><a href="#cb8-108" aria-hidden="true" tabindex="-1"></a>   window           current</span>
+<span id="cb8-109"><a href="#cb8-109" aria-hidden="true" tabindex="-1"></a>   setting          default          choices</span>
+<span id="cb8-110"><a href="#cb8-110" aria-hidden="true" tabindex="-1"></a>   <span class="sc">----------------------------------------------------------------</span></span>
+<span id="cb8-111"><a href="#cb8-111" aria-hidden="true" tabindex="-1"></a>   fontface         Arial             font name</span>
+<span id="cb8-112"><a href="#cb8-112" aria-hidden="true" tabindex="-1"></a>   fontfacesans     Arial             font name</span>
+<span id="cb8-113"><a href="#cb8-113" aria-hidden="true" tabindex="-1"></a>   fontfaceserif    Times New Roman   font name</span>
+<span id="cb8-114"><a href="#cb8-114" aria-hidden="true" tabindex="-1"></a>   fontfacemono     Courier New       font name</span>
+<span id="cb8-115"><a href="#cb8-115" aria-hidden="true" tabindex="-1"></a>   fontfacesymbol   Symbol            font name</span>
+<span id="cb8-116"><a href="#cb8-116" aria-hidden="true" tabindex="-1"></a>   <span class="sc">---------------------------------------------------</span></span>
+<span id="cb8-117"><a href="#cb8-117" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-118"><a href="#cb8-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-119"><a href="#cb8-119" aria-hidden="true" tabindex="-1"></a>Exemple: avec Trebuchet MS pour fontface et consolas pour mono</span>
+<span id="cb8-120"><a href="#cb8-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-121"><a href="#cb8-121" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
+<span id="cb8-122"><a href="#cb8-122" aria-hidden="true" tabindex="-1"></a>graph set window fontface<span class="st">"trebuchet MS"</span></span>
+<span id="cb8-123"><a href="#cb8-123" aria-hidden="true" tabindex="-1"></a>graph set window fontfacemono <span class="st">"consolas"</span></span>
+<span id="cb8-124"><a href="#cb8-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-125"><a href="#cb8-125" aria-hidden="true" tabindex="-1"></a><span class="sc">/</span><span class="er">*</span></span>
+<span id="cb8-126"><a href="#cb8-126" aria-hidden="true" tabindex="-1"></a>   window           current</span>
+<span id="cb8-127"><a href="#cb8-127" aria-hidden="true" tabindex="-1"></a>   setting          default          choices</span>
+<span id="cb8-128"><a href="#cb8-128" aria-hidden="true" tabindex="-1"></a>   <span class="sc">------------------------------------------------------------------------</span></span>
+<span id="cb8-129"><a href="#cb8-129" aria-hidden="true" tabindex="-1"></a>   fontface         trebuchet MS      font name</span>
+<span id="cb8-130"><a href="#cb8-130" aria-hidden="true" tabindex="-1"></a>   fontfacesans     Arial             font name</span>
+<span id="cb8-131"><a href="#cb8-131" aria-hidden="true" tabindex="-1"></a>   fontfaceserif    Minion Pro        font name</span>
+<span id="cb8-132"><a href="#cb8-132" aria-hidden="true" tabindex="-1"></a>   fontfacemono     consolas          font name</span>
+<span id="cb8-133"><a href="#cb8-133" aria-hidden="true" tabindex="-1"></a>   fontfacesymbol   Symbol            font name</span>
+<span id="cb8-134"><a href="#cb8-134" aria-hidden="true" tabindex="-1"></a>   <span class="sc">------------------------------------------------------------------------</span></span>
+<span id="cb8-135"><a href="#cb8-135" aria-hidden="true" tabindex="-1"></a><span class="er">*/</span></span>
+<span id="cb8-136"><a href="#cb8-136" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-137"><a href="#cb8-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-138"><a href="#cb8-138" aria-hidden="true" tabindex="-1"></a><span class="fu">## **Taille du graphique**</span></span>
+<span id="cb8-139"><a href="#cb8-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-140"><a href="#cb8-140" aria-hidden="true" tabindex="-1"></a>Ces options sont particulièrement utiles pour les graphiques combinés lorsque l'empilement de plusieurs graphiques provoque un effet d'écrasement des axes (axes x plus court si plusieurs colonnes par exemple).</span>
+<span id="cb8-141"><a href="#cb8-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-142"><a href="#cb8-142" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`xsize(#)`** - **`ysize(#)`** : en pouce (max=20). Peut s'appliquer à un graphique individuel, ou plus souvent à la commande <span class="in">`graph combine`</span> pour retrouver un bon ratio x/y pour les sous graphiques.</span>
+<span id="cb8-143"><a href="#cb8-143" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`fxize(#)`** -- **`fysize(#)`** : <span class="sc">\#</span> en %. A utiliser seulement pour combiner des graphiques. Avant la combinaison on peut appliquer ces options aux graphiques individuels pour contrôler les ratios x/y. Cela permet plus de liberté dans les compositions des graphiques combinés.</span>
+<span id="cb8-144"><a href="#cb8-144" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-145"><a href="#cb8-145" aria-hidden="true" tabindex="-1"></a>Une application est donnée plus loin dans la section dédiée aux graphiques combinés.</span>
+<span id="cb8-146"><a href="#cb8-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-147"><a href="#cb8-147" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;br&gt;</span></span>
+<span id="cb8-148"><a href="#cb8-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-149"><a href="#cb8-149" aria-hidden="true" tabindex="-1"></a><span class="fu">## **Modifier automatiquement la taille du texte et des symboles**</span></span>
+<span id="cb8-150"><a href="#cb8-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-151"><a href="#cb8-151" aria-hidden="true" tabindex="-1"></a>**`scale(#)`** -- <span class="sc">\*\*</span><span class="in">`iscale(#)`</span><span class="sc">\*</span>\</span>
+<span id="cb8-152"><a href="#cb8-152" aria-hidden="true" tabindex="-1"></a>Permet de modifier la taille des éléments types texte et symboles générés par un graphique. Utile lorsque le texte d'une légende sort du contour. Valeur de référence=1.\</span>
+<span id="cb8-153"><a href="#cb8-153" aria-hidden="true" tabindex="-1"></a>Pour la commande <span class="in">`graph combine`</span>, on utilise l'option <span class="in">`iscale()`</span> qui appliquera la modification à tous les sous graphiques.</span>
+<span id="cb8-154"><a href="#cb8-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-155"><a href="#cb8-155" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;br&gt;</span></span>
+<span id="cb8-156"><a href="#cb8-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-157"><a href="#cb8-157" aria-hidden="true" tabindex="-1"></a><span class="fu">## **Options d'affichage et d'enregistrement**</span></span>
+<span id="cb8-158"><a href="#cb8-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-159"><a href="#cb8-159" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`nodraw`**\</span>
+<span id="cb8-160"><a href="#cb8-160" aria-hidden="true" tabindex="-1"></a>    Equivalent de <span class="in">`quietly`</span> pour les graphiques, il permet de ne pas afficher le graphique dans l'éditeur. Plutôt à utiliser pour les sous-graphiques qui seront combiner ou associer à l'option <span class="in">`saving()`</span>. Cela permet de gagner un temps d'exécution non négligeabe.</span>
+<span id="cb8-161"><a href="#cb8-161" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-162"><a href="#cb8-162" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`name()`**: <span class="in">`name(nom_graph [,replace])`</span>\</span>
+<span id="cb8-163"><a href="#cb8-163" aria-hidden="true" tabindex="-1"></a>    Permet de sauvegarder temporairement le graphique sur la session. On peut privilégier cette option pour combiner des graphiques ultérieurement.\</span>
+<span id="cb8-164"><a href="#cb8-164" aria-hidden="true" tabindex="-1"></a>    Utiliser de préférence l'option <span class="in">`replace`</span> pour écraser un graphique déjà en mémoire et avec un même nom, à défaut de quoi il faut supprimer le ou les graphiques en mémoire avec <span class="in">`graph drop noms_graphs`</span> ou <span class="in">`graph drop _all`</span> en amont.</span>
+<span id="cb8-165"><a href="#cb8-165" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-166"><a href="#cb8-166" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`graph display [nom_graph]`**\</span>
+<span id="cb8-167"><a href="#cb8-167" aria-hidden="true" tabindex="-1"></a>    Permet d'afficher un graphique en mémoire (non sauvegardé en dur). Si le nom du graphique n'est pas précisé, le dernier graphique généré est ouvert dans l'éditeur de graphique.</span>
+<span id="cb8-168"><a href="#cb8-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-169"><a href="#cb8-169" aria-hidden="true" tabindex="-1"></a>Exemple:</span>
+<span id="cb8-170"><a href="#cb8-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-171"><a href="#cb8-171" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
+<span id="cb8-172"><a href="#cb8-172" aria-hidden="true" tabindex="-1"></a> graph display g1</span>
+<span id="cb8-173"><a href="#cb8-173" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-174"><a href="#cb8-174" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-175"><a href="#cb8-175" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`saving("path/nom"[, replace])`**\</span>
+<span id="cb8-176"><a href="#cb8-176" aria-hidden="true" tabindex="-1"></a>    Même principe que <span class="in">`name()`</span>, mais sauvegarde en dur sur le disque.</span>
+<span id="cb8-177"><a href="#cb8-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-178"><a href="#cb8-178" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**`graph use "nom_graph"`**\</span>
+<span id="cb8-179"><a href="#cb8-179" aria-hidden="true" tabindex="-1"></a>    Permet d'afficher un graphique enregistré.</span>
+<span id="cb8-180"><a href="#cb8-180" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-181"><a href="#cb8-181" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>**Exporter un graphique**\</span>
+<span id="cb8-182"><a href="#cb8-182" aria-hidden="true" tabindex="-1"></a>    <span class="in">`export nom_graph.format [, replace name(nom du graphique ouvert dans l’éditeur)]`</span>. Stata peut convertir un graphique en plusieurs format : jpeg, png, gif (seulement mac), svg.... On peut le faire directement dans l'éditeur de graphique ou passer par la ligne de commande export. Pour utiliser cette commande, le graphique doit être ouvert dans l'éditeur. Les formats d'exportation on des options propres.</span>
+<span id="cb8-183"><a href="#cb8-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-184"><a href="#cb8-184" aria-hidden="true" tabindex="-1"></a>Exemples:</span>
+<span id="cb8-185"><a href="#cb8-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-186"><a href="#cb8-186" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
+<span id="cb8-187"><a href="#cb8-187" aria-hidden="true" tabindex="-1"></a>tw line y x</span>
+<span id="cb8-188"><a href="#cb8-188" aria-hidden="true" tabindex="-1"></a>graph export graphpng.png</span>
+<span id="cb8-189"><a href="#cb8-189" aria-hidden="true" tabindex="-1"></a>tw line y x, <span class="fu">name</span>(g1,replace)</span>
+<span id="cb8-190"><a href="#cb8-190" aria-hidden="true" tabindex="-1"></a>graph export graphpng.png, replace <span class="fu">name</span>(g1)</span>
+<span id="cb8-191"><a href="#cb8-191" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">

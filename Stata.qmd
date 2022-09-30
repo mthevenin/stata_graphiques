@@ -1,7 +1,9 @@
 ---
-title: "Graphiques Stata"
+title: "Programmation avec Stata"
 listing:
+  categories: true
   id: topics
+  feed: true
   type: table
   table-striped: true
   table-hover: true
@@ -12,8 +14,12 @@ listing:
     - "programmation/fabplot/fabplot.qmd"     
 ---
 
-Vous trouverez ici des topics concernant la programmation de graphiques avec Stata, et seront inclus au quatrième chapitre de la formation.
-Ce document sera peut-être réogarnisé savec l'évolution de son contenu.
+Vous trouverez ici de courts topics concernant la programmation de graphiques avec Stata, qui seront inclus au quatrième chapitre de la formation.   
+
+Les articles sont filtrables par catégorie, comme dans un blog.  Chaque article aura soit une catégorie **programmation** soit une catégorie **ado**: 
+- programmation: article orienté vers des astuces de programmation 
+- ado: article présentant une commande externe ()
+
 <br><br>
 
 ::: {#topics}

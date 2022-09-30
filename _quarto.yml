@@ -70,5 +70,7 @@ format:
     toc-depth: 3
     toc-title: Sections
     highlight-style: zenburn
+    code-tools:
+      source: true
 number-sections: true
     

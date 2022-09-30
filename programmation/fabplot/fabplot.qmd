@@ -1,6 +1,9 @@
 ---
 title: "fabplot (NJ.Cox)"
 author: "Marc Thévenin"
+categories:
+  - ado
+  - courbe
 ---
 
 
