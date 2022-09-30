@@ -1,6 +1,6 @@
 ---
 title: "gridge"
-format: html
+author: "Marc Thévenin"
 ---
 
 Depuis 2020, des programmes permettent de générer de type lignes de crête: `joyplot` (A.Naqvi) et `joy_plot` (F.Rios-Avila).

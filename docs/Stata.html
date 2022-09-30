@@ -71,9 +71,9 @@ ul.task-list li input[type="checkbox"] {
     }
 
     const options = {
-      valueNames: ['listing-title','listing-author','listing-image','listing-description',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
+      valueNames: ['listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
       
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description"],
+      searchColumns: ["listing-title","listing-author"],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
@@ -297,95 +297,78 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <p>Vous trouverez ici des topics concernant la programmation de graphiques avec Stata, et seront inclus au quatrième chapitre de la formation. Ce document sera peut-être réogarnisé savec l’évolution de son contenu. <br><br></p>
-<div id="listing-topics" class="quarto-listing quarto-listing-container-default">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1661499211695" data-listing-reading-time-sort="1.505">
-<div class="thumbnail">
-<p><a href="./programmation/lollipop/lollipop.html"> <img src="./programmation/lollipop/g1.png" class="thumnail-image"> </a></p>
+<div id="listing-topics" class="quarto-listing quarto-listing-container-table">
+<div class="listing-actions-group">
+   <div class="input-group input-group-sm quarto-listing-sort">
+     <span class="input-group-text"><i class="bi bi-sort-down"></i></span>
+     <select id="listing-topics-sort" class="form-select" aria-label="Order By" onchange="window['quarto-listings']['listing-topics'].sort(this.options[this.selectedIndex].value, { order: this.options[this.selectedIndex].getAttribute('data-direction')})">
+       <option value="" disabled="" selected="" hidden="">Order By</option>
+       <option value="index" data-direction="asc">Default</option>
+         <option value="listing-title-sort" data-direction="asc">
+          Title
+        </option>
+         <option value="listing-author" data-direction="asc">
+          Author
+        </option>
+     </select>
+  </div>
+    <div class="input-group input-group-sm quarto-listing-filter">
+      <span class="input-group-text"><i class="bi bi-search"></i></span>
+      <input type="text" class="search form-control" placeholder="Filter">
+    </div>
 </div>
-<div class="body">
-<a href="./programmation/lollipop/lollipop.html">
-<h3 class="no-anchor listing-title">
-Lollipop
-</h3>
-<div class="listing-subtitle">
 
-</div>
-<div class="listing-description">
-<strong>Lolliplot et haltère: pourquoi faire compliquer lorsque…..</strong><br>
-J’étais complétement passé à côte de la fonction <strong><code>axis</code></strong> du package <strong><code>egenmore</code></strong> de Nj.Cox. Elle permet de construire un axe discret ordonné en récupérant automatiquement les labels d’une variable. Les programmes de la version 2000 pour générer des graphiques de types <strong>lollipop</strong> ou <strong>haltères</strong>, qui étaient particulièrement complexes et long se retouvent, et pas qu’un peu, extrêmement simplifiés:
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./programmation/lollipop/lollipop.html"> </a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1660739214784" data-listing-reading-time-sort="1.895">
-<div class="thumbnail">
-<p><a href="./programmation/fabplot/fabplot.html"> <img src="./programmation/fabplot/g1.png" class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./programmation/fabplot/fabplot.html">
-<h3 class="no-anchor listing-title">
-fabplot (NJ.Cox)
-</h3>
-<div class="listing-subtitle">
+<table class="quarto-listing-table table table-striped table-hover">
+<thead>
+<tr>
+<th>
+<a class="sort" data-sort="listing-title-sort" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Title</a>
+</th>
+<th>
+<a class="sort" data-sort="listing-author" onclick="if (this.classList.contains('sort-asc')) { this.classList.add('sort-desc'); this.classList.remove('sort-asc') } else { this.classList.add('sort-asc'); this.classList.remove('sort-desc')} return false;">Author</a>
+</th>
+</tr>
+</thead>
+<tbody class="list">
+<tr data-index="0" data-listing-file-modified-sort="1664538564988" data-listing-reading-time-sort="1.505" data-listing-title-sort="Lollipop" data-listing-filename-sort="lollipop.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td class="listing-title">
+<a href="./programmation/lollipop/lollipop.html" class="title">Lollipop</a>
+</td>
+<td class="listing-author">
+Marc Thévenin
+</td>
+</tr>
+<tr data-index="1" data-listing-file-modified-sort="1664538479684" data-listing-reading-time-sort="1.895" data-listing-title-sort="fabplot (NJ.Cox)" data-listing-filename-sort="fabplot.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td class="listing-title">
+<a href="./programmation/fabplot/fabplot.html" class="title">fabplot (NJ.Cox)</a>
+</td>
+<td class="listing-author">
+Marc Thévenin
+</td>
+</tr>
+<tr data-index="2" data-listing-file-modified-sort="1664538535527" data-listing-reading-time-sort="0.57" data-listing-title-sort="gjoint" data-listing-filename-sort="gjoint.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td class="listing-title">
+<a href="./programmation/gjoint/gjoint.html" class="title">gjoint</a>
+</td>
+<td class="listing-author">
+Marc Thévenin
+</td>
+</tr>
+<tr data-index="3" data-listing-file-modified-sort="1664538549475" data-listing-reading-time-sort="5.495" data-listing-title-sort="gridge" data-listing-filename-sort="gridge.qmd" onclick="href = this.querySelector('a').getAttribute('href');
+ if (href) { window.location=href ; return false; }">
+<td class="listing-title">
+<a href="./programmation/gridge/gridge.html" class="title">gridge</a>
+</td>
+<td class="listing-author">
+Marc Thévenin
+</td>
+</tr>
+</tbody>
 
-</div>
-<div class="listing-description">
-La commande <strong><code>fabplot</code></strong> programmée en 2021 par Nj.Cox permet de contrôler efficacement les effets dits <em>spaghetti</em> (courbes) ou <em>paella</em> (nuages de points). J’ai ajouté une option pour modifier les courbes au second plan, NJ.Cox ayant toujours tendance à bloquer l’habillage de ces commandes graphiques. La commande a été renommée <strong><code>fabplot2</code></strong> et s’installe via github.
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./programmation/fabplot/fabplot.html"> </a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-listing-file-modified-sort="1660732794262" data-listing-reading-time-sort="0.57">
-<div class="thumbnail">
-<p><a href="./programmation/gjoint/gjoint.html"> <img src="./programmation/gjoint/g1.png" class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./programmation/gjoint/gjoint.html">
-<h3 class="no-anchor listing-title">
-gjoint
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-Petite commande graphique en version alpha: <strong><code>gjoint</code></strong>. Permet de visualiser la distribution croisée de deux variables quantitatives avec la commande <strong><code>hexplot</code></strong> de Ben Jann, en reportant également les distributions marginales avec des d’histogrammes.<br>
-Pas de gros changement à prévoir, si ce n’est ajouter la possibilité de sélectionner des observations avec [if/else].
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./programmation/gjoint/gjoint.html"> </a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-listing-file-modified-sort="1660734820663" data-listing-reading-time-sort="5.495">
-<div class="thumbnail">
-<p><a href="./programmation/gridge/gridge.html"> <img src="./programmation/gridge/g1.png" class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./programmation/gridge/gridge.html">
-<h3 class="no-anchor listing-title">
-gridge
-</h3>
-<div class="listing-subtitle">
-
-</div>
-<div class="listing-description">
-Depuis 2020, des programmes permettent de générer de type lignes de crête: <code>joyplot</code> (A.Naqvi) et <code>joy_plot</code> (F.Rios-Avila).
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./programmation/gridge/gridge.html"> </a>
-</div>
-</div>
-</div>
+</table>
 <div class="listing-no-matching d-none">
 No matching items
 </div>
