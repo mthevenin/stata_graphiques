@@ -9,7 +9,8 @@ Lien vers le support: https://mthevenin.github.io/stata_graphiques/
 **MAJ 2022**
 | Date | Description |
 | --- | --- |
-| 01-08: | Commande `gjoin`  (MT)  |
+| 30-09: | Ajout catégories dans la page programmation Stata |
+| 01-08: | Commande `gjoint`  (MT) |
 | 18-07: | Commande `gridge` (MT)  |
 | 11-07: | Grosse simplification de la programmation des graphiques de type **lollipop** ou **haltère**. Merci à la fonction `axis` de **NJ.Cox**  |
 | 06-07: | Mise en ligne des chapitres 2 et 3  |
