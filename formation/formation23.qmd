@@ -5,13 +5,9 @@ title: "Automatiser la programmation"
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 options(Encoding="UTF-8")
-
-library(knitr)
-library(rsconnect)
-library(haven)
-library(pander)
-library(memisc)
-library(fontawesome)
+library(Statamarkdown)
+stataexe <- "C:/Program Files/Stata17/StataSE-64.exe"
+knitr::opts_chunk$set(engine.path=list(stata=stataexe))
 ```
 
 
@@ -30,7 +26,7 @@ Exemple : On veut obtenir la chaîne de caractère «A B C » à partir des troi
 
 Avec une macro standard:
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 local expression A B C 
 foreach e of local expression {
   mac list _ms
@@ -51,14 +47,14 @@ Dans chaque itération, chaque expression a bien été enregistrée, mais elle e
 
 Syntaxe:
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 local nom_macro  `nom_macro'    expression
 global nom_macro  $nom_macro    expression 
 ```
 
 Avec une macro empilée:
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 local expression A B C 
 
 foreach e of local expression {
@@ -83,7 +79,7 @@ mac list _me
 
 Pour un graphique, une application évidente est d'alléger et automatiser une syntaxe qui empile plusieurs objets graphiques de même nature. Si on reprend un type de nuage de points déjà exécuté de nombreuses fois dans ce document:
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 tw scatter price mpg if rep78==1
 || scatter price mpg if rep78==2
 || scatter price mpg if rep78==3
@@ -93,7 +89,7 @@ tw scatter price mpg if rep78==1
 
 Avec une macro empilée:
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 * On génère la syntaxe
 levelsof rep78, local(l)
 foreach v of local l {
@@ -108,33 +104,33 @@ Ce qui est généré par la macro à chaque itération :
 
 Itération 1:
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 scatter price mpg if rep78==1 ||
 ```
 
 Itération 2:
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 scatter price mpg if rep78==1 || scatter price mpg if rep78==2 ||
 ```
 
 Itération 3:
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 scatter price mpg if rep78==1 || scatter price mpg if rep78==2 || 
 scatter price mpg if rep78==3 ||
 ```
 
 Itération 4
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 scatter price mpg if rep78==1 || scatter price mpg if rep78==2 || 
 scatter price mpg if rep78==3 || scatter price mpg if rep78==4 ||
 ```
 
 Itération 5
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 scatter price mpg if rep78==1 || scatter price mpg if rep78==2 || 
 scatter price mpg if rep78==3 || scatter price mpg if rep78==4 || 
 scatter price mpg if rep78==5 ||
@@ -142,7 +138,7 @@ scatter price mpg if rep78==5 ||
 
 C'est la dernière qui est finalement enregistrée et il ne manque plus qu'à l'appeler après `tw`. Au-delà de l'allègement de la syntaxe du grap recode rep78 (1=2) hique cette manière de procéder automatise des modifications faites en amont, par exemple ici un regroupement de modalités de la variable ***rep78***.
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 *Il n’est pas nécessaire de modifier le graphique
 
 levelsof rep78, local(l)
@@ -161,7 +157,7 @@ Dans un premier temps on ne va pas utiliser les fonctions macro qui permettent d
 
 **Sans les fonctions macro**:
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 local l1 `""Domestic""'
 local l2 `""Foreign""'
 forvalue i=1/2 {
@@ -183,7 +179,7 @@ tw scatter price mpg if !foreign
 **Avec les fonctions macro**:\
 Les fonctions utilisées sont `value label` pour récupérer le nom du label et `lab` pour récupérer l'expression affectée à la modalité. Comme les expressions de la légende vont être récupérées via des macros on va accroître le nombre de quotes, ce qui peut s'avérer fastidieux pour lire le programme et éventuellement le modifier. Dans le programme qui suit on va générer automatiquement la syntaxe principale du graphique avec une macro empilée, comme expliqué précédemment. Les noms des variables seront également transformés en *token*. Pour anticiper un changement de variable de stratification, ici *foreign*, on va utiliser un compteur pour automatiser le nombre d'éléments contenu dans la légende.
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 local varlist price weight foreign
 tokenize `varlist'
 
@@ -218,7 +214,7 @@ Nous allons décrire seulement quelques principes qui utilisent les éléments v
 
 Syntaxe générique
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 capture program drop nom_commande // jusqu’à la validation du programme
 program define nom_routine [options]
 
@@ -234,7 +230,7 @@ La première ligne est nécessaire tant que la commande est exécutée dans l'é
 
 Programmation de la routine:
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 capture program drop division
 program define division
 
@@ -249,7 +245,7 @@ end
 
 Exécution et résultat:
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 division 1245 722
 
 * Le résultat de la division est: 1.7243767
@@ -260,7 +256,7 @@ On va automatiser l'exécution du nuage de points avec une stratification, ici l
 
 ***Programme***
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 capture program drop sgraph 
 program define sgraph
 
@@ -292,7 +288,7 @@ end
 
 ***Exécution de la commande sgraph***
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 sgraph price mpg foreign, gops(ylabel(,labs(*.6)) title("mpg") name(mpg, replace))
 ```
 
@@ -300,7 +296,7 @@ sgraph price mpg foreign, gops(ylabel(,labs(*.6)) title("mpg") name(mpg, replace
 
 ***Programme pas à pas***
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 capture program drop sgraph 
 program define sgraph
 
@@ -314,7 +310,7 @@ tokenize `varlist'
 -   La commande a un argument optionnel . Comme pour les fichiers d'aide, le caractère optionnel est indiqué par \[nom_option\].
 -   Le nom de l'option est précisé: elle permet de passer des options générales d'un graphique (`gops()`). On indique son format attendu, ici une chaîne de caractères.
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 * Légende
 qui levelsof `3', local(l)
 local i=1
@@ -334,7 +330,7 @@ local scat `scat' scatter `1' `2' if `3'==`l2', `ops' ||
 
 La légende et la syntaxe du graphique combiné sont générés avec une macro empilée
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 * Exécution du graphique
 tw `scat', legend(order(`ord') pos(6) region(color(%0))) `title' `gops'
 
@@ -346,7 +342,7 @@ Le programme du graphique indique déjà des éléments optionnels liés à la l
 
 ***Exemple : générer rapidement un graphique qui combine le prix à plusieurs variables avec la commande `sgraph`***
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 foreach X of varlist mpg trunk weight length {
 
 #delimit ;
