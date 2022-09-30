@@ -5,14 +5,11 @@ title: "Alleger la syntaxe"
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 options(Encoding="UTF-8")
-
-library(knitr)
-library(rsconnect)
-library(haven)
-library(pander)
-library(memisc)
-library(fontawesome)
+library(Statamarkdown)
+stataexe <- "C:/Program Files/Stata17/StataSE-64.exe"
+knitr::opts_chunk$set(engine.path=list(stata=stataexe))
 ```
+
 
 
 
@@ -22,7 +19,7 @@ On le voit, les d’options sont répétées d’un objet graphique à un autre,
 De manière très simple, les options communes à plusieurs objets ou éléments du graphique peuvent être renseignées en amont, sous forme de macros. Cela facilite grandement la modification des options.  
 Prenons le graphique suivant avec un habillage assez poussé qui modifie les couleurs par défauts des titres et couleurs de fonds. Pour chaque nuage la taille de la bulle, la couleur et l’épaisseur du contour sont identiques, les titres partagent les mêmes couleurs, ainsi que les deux éléments du background. 
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 graph set window fontface Magneto
 
 tempvar rep
@@ -52,7 +49,7 @@ graphr(color("102 37 6*4"))  plotr(color("102 37 6*4"))
 
 En mettant les options sous forme de macro et en les appelant dans la commande graphique, visuellement la syntaxe du graphique est nettement allégée :
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 tempvar rep
 gen    `rep' = rep78
 recode `rep' (1=2)  
@@ -82,7 +79,7 @@ tw scatter price mpg if `rep'==2, mc("145 50 5")    `mopt'
 La modification des options est réalisée une seule fois en modifiant l’expression des macros.  
 Par exemple, en changeant quelques couleurs (coutours et titres) et en ajoutant un jitter:  
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 local mopt "mlw(*.5) mlc(white) m()  msiz(*1.5) jitter(2)"
 local col1 white
 local col2 black

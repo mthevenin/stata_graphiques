@@ -333,76 +333,76 @@ On le voit, les d’options sont répétées d’un objet graphique à un autre,
 De manière très simple, les options communes à plusieurs objets ou éléments du graphique peuvent être renseignées en amont, sous forme de macros. Cela facilite grandement la modification des options.<br>
 Prenons le graphique suivant avec un habillage assez poussé qui modifie les couleurs par défauts des titres et couleurs de fonds. Pour chaque nuage la taille de la bulle, la couleur et l’épaisseur du contour sont identiques, les titres partagent les mêmes couleurs, ainsi que les deux éléments du background.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>graph set window fontface Magneto</span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">graph</span> <span class="kw">set</span> <span class="kw">window</span> fontface Magneto</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>tempvar rep</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>gen    <span class="st">`</span><span class="at">rep' = rep78</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="at">recode </span><span class="st">`</span>rep<span class="st">' (1=2)  </span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="kw">tempvar</span> rep</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="kw">gen</span>    <span class="ot">`rep'</span> = rep78</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="kw">recode</span> <span class="ot">`rep'</span> (1=2)  </span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="st">#delimit ;</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="st">tw scatter price mpg if `rep'</span><span class="sc">==</span><span class="dv">2</span>, <span class="fu">mc</span>(<span class="st">"145 50 5"</span>)    <span class="fu">mlw</span>(<span class="sc">*</span>.<span class="dv">5</span>) <span class="fu">mlc</span>(black)  <span class="fu">msiz</span>(<span class="sc">*</span><span class="fl">1.5</span>)  </span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="sc">||</span> scatter price mpg <span class="cf">if</span> <span class="st">`</span><span class="at">rep'==3, mc("221 95 11")   mlw(*.5) mlc(black)  msiz(*1.5)  </span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="at">|| scatter price mpg if </span><span class="st">`</span>rep<span class="st">'==4, mc("254 162 50")  mlw(*.5) mlc(black)  msiz(*1.5)  </span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="st">|| scatter price mpg if `rep'</span><span class="sc">==</span><span class="dv">5</span>, <span class="fu">mc</span>(<span class="st">"254 211 112"</span>) <span class="fu">mlw</span>(<span class="sc">*</span>.<span class="dv">5</span>) <span class="fu">mlc</span>(black)  <span class="fu">msiz</span>(<span class="sc">*</span><span class="fl">1.5</span>)    </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>#delimit ;</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="kw">tw</span> <span class="kw">scatter</span> price mpg <span class="kw">if</span> <span class="ot">`rep'</span>==2, mc(<span class="st">"145 50 5"</span>)    mlw(*.5) mlc(<span class="bn">black</span>)  msiz(*1.5)  </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>|| <span class="kw">scatter</span> price mpg <span class="kw">if</span> <span class="ot">`rep'</span>==3, mc(<span class="st">"221 95 11"</span>)   mlw(*.5) mlc(<span class="bn">black</span>)  msiz(*1.5)  </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>|| <span class="kw">scatter</span> price mpg <span class="kw">if</span> <span class="ot">`rep'</span>==4, mc(<span class="st">"254 162 50"</span>)  mlw(*.5) mlc(<span class="bn">black</span>)  msiz(*1.5)  </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>|| <span class="kw">scatter</span> price mpg <span class="kw">if</span> <span class="ot">`rep'</span>==5, mc(<span class="st">"254 211 112"</span>) mlw(*.5) mlc(<span class="bn">black</span>)  msiz(*1.5)    </span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="sc">||</span> , <span class="fu">legend</span>(off)                                                                           </span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>|| , <span class="bn">legend</span>(<span class="kw">off</span>)                                                                           </span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>                              </span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">ylabel</span>(, <span class="fu">labc</span>(<span class="st">"254 211 112"</span>) <span class="fu">glc</span>(<span class="st">"254 211 112"</span>) <span class="fu">glw</span>(<span class="sc">*</span>.<span class="dv">2</span>) <span class="fu">angle</span>(<span class="dv">0</span>))                                </span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">xlabel</span>(, <span class="fu">labc</span>(<span class="st">"254 211 112"</span>) <span class="fu">glc</span>(<span class="st">"254 211 112"</span>) <span class="fu">glw</span>(<span class="sc">*</span>.<span class="dv">2</span>)) </span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="kw">ylabel</span>(, labc(<span class="st">"254 211 112"</span>) glc(<span class="st">"254 211 112"</span>) glw(*.2) angle(0))                                </span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="kw">xlabel</span>(, labc(<span class="st">"254 211 112"</span>) glc(<span class="st">"254 211 112"</span>) glw(*.2)) </span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>                               </span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu">ytitle</span>(, <span class="fu">color</span>(<span class="st">"254 211 112"</span>)) </span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="fu">xtitle</span>(, <span class="fu">color</span>(<span class="st">"254 211 112"</span>))                               </span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="st">"Price versus Mpg"</span>, <span class="fu">color</span>(<span class="st">"254 211 112"</span>) <span class="fu">pos</span>(<span class="dv">11</span>)) </span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="bn">ytitle</span>(, <span class="kw">color</span>(<span class="st">"254 211 112"</span>)) </span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="bn">xtitle</span>(, <span class="kw">color</span>(<span class="st">"254 211 112"</span>))                               </span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="bn">title</span>(<span class="st">"Price versus Mpg"</span>, <span class="kw">color</span>(<span class="st">"254 211 112"</span>) pos(11)) </span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="fu">graphr</span>(<span class="fu">color</span>(<span class="st">"102 37 6*4"</span>))  <span class="fu">plotr</span>(<span class="fu">color</span>(<span class="st">"102 37 6*4"</span>))      </span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>graphr(<span class="kw">color</span>(<span class="st">"102 37 6*4"</span>))  plotr(<span class="kw">color</span>(<span class="st">"102 37 6*4"</span>))      </span>
 <span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><img src="imgp2/g5a.png" class="img-fluid" style="width:70.0%"></p>
 <p>En mettant les options sous forme de macro et en les appelant dans la commande graphique, visuellement la syntaxe du graphique est nettement allégée :</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>tempvar rep</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>gen    <span class="st">`</span><span class="at">rep' = rep78</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="at">recode </span><span class="st">`</span>rep<span class="st">' (1=2)  </span></span>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">tempvar</span> rep</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">gen</span>    <span class="ot">`rep'</span> = rep78</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="kw">recode</span> <span class="ot">`rep'</span> (1=2)  </span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="st">local mopt "mlw(*.5) mlc(black) msiz(*1.5)"</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="st">local col1 "254 211 112"</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="st">local col2 "102 37 6*4"</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> mopt <span class="st">"mlw(*.5) mlc(black) msiz(*1.5)"</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> col1 <span class="st">"254 211 112"</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> col2 <span class="st">"102 37 6*4"</span></span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="st">#delimit ;</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="st">tw scatter price mpg if `rep'</span><span class="sc">==</span><span class="dv">2</span>, <span class="fu">mc</span>(<span class="st">"145 50 5"</span>)    <span class="st">`</span><span class="at">mopt'   </span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="at">|| scatter price mpg if </span><span class="st">`</span>rep<span class="st">'==3, mc("221 95 11")   `mopt'</span> </span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="sc">||</span> scatter price mpg <span class="cf">if</span> <span class="st">`</span><span class="at">rep'==4, mc("254 162 50")  </span><span class="st">`</span>mopt<span class="st">'</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="st">|| scatter price mpg if `rep'</span><span class="sc">==</span><span class="dv">5</span>, <span class="fu">mc</span>(<span class="st">"254 211 112"</span>) <span class="st">`</span><span class="at">mopt'   </span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>#delimit ;</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="kw">tw</span> <span class="kw">scatter</span> price mpg <span class="kw">if</span> <span class="ot">`rep'</span>==2, mc(<span class="st">"145 50 5"</span>)    <span class="ot">`mopt'</span>   </span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>|| <span class="kw">scatter</span> price mpg <span class="kw">if</span> <span class="ot">`rep'</span>==3, mc(<span class="st">"221 95 11"</span>)   <span class="ot">`mopt'</span> </span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>|| <span class="kw">scatter</span> price mpg <span class="kw">if</span> <span class="ot">`rep'</span>==4, mc(<span class="st">"254 162 50"</span>)  <span class="ot">`mopt'</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>|| <span class="kw">scatter</span> price mpg <span class="kw">if</span> <span class="ot">`rep'</span>==5, mc(<span class="st">"254 211 112"</span>) <span class="ot">`mopt'</span>   </span>
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="at">|| , legend(off)                                                                                                     </span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="at">     ylabel(, labc(</span><span class="st">`</span>col1<span class="st">') glc(`col1'</span><span class="er">)</span> <span class="fu">glw</span>(<span class="sc">*</span>.<span class="dv">2</span>) <span class="fu">angle</span>(<span class="dv">0</span>)<span class="er">)</span>                                </span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>     <span class="fu">xlabel</span>(, <span class="fu">labc</span>(<span class="st">`</span><span class="at">col1') glc(</span><span class="st">`</span>col1<span class="st">') glw(*.2)) </span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="st">     ytitle(, color(`col1'</span>)) <span class="fu">xtitle</span>(, <span class="fu">color</span>(<span class="st">`</span><span class="at">col1'))                               </span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="at">     title("Price versus Mpg", color(</span><span class="st">`</span>col1<span class="st">') pos(11)) </span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="st">     graphr(color(`col2'</span>))     <span class="fu">plotr</span>(<span class="fu">color</span>(<span class="st">`</span><span class="at">col2'))      </span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="at">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>|| , <span class="bn">legend</span>(<span class="kw">off</span>)                                                                                                     </span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>     <span class="kw">ylabel</span>(, labc(<span class="ot">`col1'</span>) glc(<span class="ot">`col1'</span>) glw(*.2) angle(0))                                </span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>     <span class="kw">xlabel</span>(, labc(<span class="ot">`col1'</span>) glc(<span class="ot">`col1'</span>) glw(*.2)) </span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>     <span class="bn">ytitle</span>(, <span class="kw">color</span>(<span class="ot">`col1'</span>)) <span class="bn">xtitle</span>(, <span class="kw">color</span>(<span class="ot">`col1'</span>))                               </span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>     <span class="bn">title</span>(<span class="st">"Price versus Mpg"</span>, <span class="kw">color</span>(<span class="ot">`col1'</span>) pos(11)) </span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>     graphr(<span class="kw">color</span>(<span class="ot">`col2'</span>))     plotr(<span class="kw">color</span>(<span class="ot">`col2'</span>))      </span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><img src="imgp2/g5b.png" class="img-fluid" style="width:70.0%"></p>
 <p>La modification des options est réalisée une seule fois en modifiant l’expression des macros.<br>
 Par exemple, en changeant quelques couleurs (coutours et titres) et en ajoutant un jitter:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>local mopt <span class="st">"mlw(*.5) mlc(white) m()  msiz(*1.5) jitter(2)"</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>local col1 white</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>local col2 black</span>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> mopt <span class="st">"mlw(*.5) mlc(white) m()  msiz(*1.5) jitter(2)"</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> col1 <span class="bn">white</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> col2 <span class="bn">black</span></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co">#delimit ;</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>tw scatter price mpg <span class="cf">if</span> <span class="st">`</span><span class="at">rep'==2, mc("145 50 5")    </span><span class="st">`</span>mopt<span class="st">'   </span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="st">|| scatter price mpg if `rep'</span><span class="sc">==</span><span class="dv">3</span>, <span class="fu">mc</span>(<span class="st">"221 95 11"</span>)   <span class="st">`</span><span class="at">mopt' </span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="at">|| scatter price mpg if </span><span class="st">`</span>rep<span class="st">'==4, mc("254 162 50")  `mopt'</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="sc">||</span> scatter price mpg <span class="cf">if</span> <span class="st">`</span><span class="at">rep'==5, mc("254 211 112") </span><span class="st">`</span>mopt<span class="st">'   </span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>#delimit ;</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="kw">tw</span> <span class="kw">scatter</span> price mpg <span class="kw">if</span> <span class="ot">`rep'</span>==2, mc(<span class="st">"145 50 5"</span>)    <span class="ot">`mopt'</span>   </span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>|| <span class="kw">scatter</span> price mpg <span class="kw">if</span> <span class="ot">`rep'</span>==3, mc(<span class="st">"221 95 11"</span>)   <span class="ot">`mopt'</span> </span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>|| <span class="kw">scatter</span> price mpg <span class="kw">if</span> <span class="ot">`rep'</span>==4, mc(<span class="st">"254 162 50"</span>)  <span class="ot">`mopt'</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>|| <span class="kw">scatter</span> price mpg <span class="kw">if</span> <span class="ot">`rep'</span>==5, mc(<span class="st">"254 211 112"</span>) <span class="ot">`mopt'</span>   </span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="st">|| , legend(off)                                                                           </span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="st">     ylabel(, labc(`col1'</span><span class="er">)</span> <span class="fu">glc</span>(<span class="st">`</span><span class="at">col1') glw(*.2) angle(0))                                </span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="at">     xlabel(, labc(</span><span class="st">`</span>col1<span class="st">') glc(`col1'</span>) <span class="fu">glw</span>(<span class="sc">*</span>.<span class="dv">2</span>)<span class="er">)</span> </span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>     <span class="fu">ytitle</span>(, <span class="fu">color</span>(<span class="st">`</span><span class="at">col1')) xtitle(, color(</span><span class="st">`</span>col1<span class="st">'))                               </span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="st">     title("Price versus Mpg", color(`col1'</span>) <span class="fu">pos</span>(<span class="dv">11</span>)) </span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>     <span class="fu">graphr</span>(<span class="fu">color</span>(<span class="st">`</span><span class="at">col2'))  plotr(color(</span><span class="st">`</span>col2<span class="st">'))      </span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="st">;</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>|| , <span class="bn">legend</span>(<span class="kw">off</span>)                                                                           </span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>     <span class="kw">ylabel</span>(, labc(<span class="ot">`col1'</span>) glc(<span class="ot">`col1'</span>) glw(*.2) angle(0))                                </span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>     <span class="kw">xlabel</span>(, labc(<span class="ot">`col1'</span>) glc(<span class="ot">`col1'</span>) glw(*.2)) </span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>     <span class="bn">ytitle</span>(, <span class="kw">color</span>(<span class="ot">`col1'</span>)) <span class="bn">xtitle</span>(, <span class="kw">color</span>(<span class="ot">`col1'</span>))                               </span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>     <span class="bn">title</span>(<span class="st">"Price versus Mpg"</span>, <span class="kw">color</span>(<span class="ot">`col1'</span>) pos(11)) </span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a>     graphr(<span class="kw">color</span>(<span class="ot">`col2'</span>))  plotr(<span class="kw">color</span>(<span class="ot">`col2'</span>))      </span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><img src="imgp2/g5c.png" class="img-fluid" style="width:70.0%"></p>
 
@@ -579,104 +579,101 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup, include=FALSE}</span></span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">Encoding=</span><span class="st">"UTF-8"</span>)</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rsconnect)</span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pander)</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(memisc)</span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fontawesome)</span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Statamarkdown)</span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>stataexe <span class="ot">&lt;-</span> <span class="st">"C:/Program Files/Stata17/StataSE-64.exe"</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">engine.path=</span><span class="fu">list</span>(<span class="at">stata=</span>stataexe))</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>… et surtout faciliter les changements d’options.   </span>
-<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a>On le voit, les d’options sont répétées d’un objet graphique à un autre, et souvent en grand nombre. Les modifications de l’habillage du graphique avec les couleurs, les tailles/épaisseurs, peuvent alors s’avérer laborieuse.   </span>
-<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a>De manière très simple, les options communes à plusieurs objets ou éléments du graphique peuvent être renseignées en amont, sous forme de macros. Cela facilite grandement la modification des options.  </span>
-<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>Prenons le graphique suivant avec un habillage assez poussé qui modifie les couleurs par défauts des titres et couleurs de fonds. Pour chaque nuage la taille de la bulle, la couleur et l’épaisseur du contour sont identiques, les titres partagent les mêmes couleurs, ainsi que les deux éléments du background. </span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a>… et surtout faciliter les changements d’options.   </span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>On le voit, les d’options sont répétées d’un objet graphique à un autre, et souvent en grand nombre. Les modifications de l’habillage du graphique avec les couleurs, les tailles/épaisseurs, peuvent alors s’avérer laborieuse.   </span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a>De manière très simple, les options communes à plusieurs objets ou éléments du graphique peuvent être renseignées en amont, sous forme de macros. Cela facilite grandement la modification des options.  </span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a>Prenons le graphique suivant avec un habillage assez poussé qui modifie les couleurs par défauts des titres et couleurs de fonds. Pour chaque nuage la taille de la bulle, la couleur et l’épaisseur du contour sont identiques, les titres partagent les mêmes couleurs, ainsi que les deux éléments du background. </span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a><span class="in">graph set window fontface Magneto</span></span>
 <span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
-<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a>graph set window fontface Magneto</span>
-<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a>tempvar rep</span>
-<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>gen    <span class="st">`</span><span class="at">rep' = rep78</span></span>
-<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="at">recode </span><span class="st">`</span>rep<span class="st">' (1=2)  </span></span>
-<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="st">#delimit ;</span></span>
-<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="st">tw scatter price mpg if `rep'</span><span class="sc">==</span><span class="dv">2</span>, <span class="fu">mc</span>(<span class="st">"145 50 5"</span>)    <span class="fu">mlw</span>(<span class="sc">*</span>.<span class="dv">5</span>) <span class="fu">mlc</span>(black)  <span class="fu">msiz</span>(<span class="sc">*</span><span class="fl">1.5</span>)  </span>
-<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a><span class="sc">||</span> scatter price mpg <span class="cf">if</span> <span class="st">`</span><span class="at">rep'==3, mc("221 95 11")   mlw(*.5) mlc(black)  msiz(*1.5)  </span></span>
-<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="at">|| scatter price mpg if </span><span class="st">`</span>rep<span class="st">'==4, mc("254 162 50")  mlw(*.5) mlc(black)  msiz(*1.5)  </span></span>
-<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="st">|| scatter price mpg if `rep'</span><span class="sc">==</span><span class="dv">5</span>, <span class="fu">mc</span>(<span class="st">"254 211 112"</span>) <span class="fu">mlw</span>(<span class="sc">*</span>.<span class="dv">5</span>) <span class="fu">mlc</span>(black)  <span class="fu">msiz</span>(<span class="sc">*</span><span class="fl">1.5</span>)    </span>
-<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a><span class="sc">||</span> , <span class="fu">legend</span>(off)                                                                           </span>
-<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a>                              </span>
-<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="fu">ylabel</span>(, <span class="fu">labc</span>(<span class="st">"254 211 112"</span>) <span class="fu">glc</span>(<span class="st">"254 211 112"</span>) <span class="fu">glw</span>(<span class="sc">*</span>.<span class="dv">2</span>) <span class="fu">angle</span>(<span class="dv">0</span>))                                </span>
-<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="fu">xlabel</span>(, <span class="fu">labc</span>(<span class="st">"254 211 112"</span>) <span class="fu">glc</span>(<span class="st">"254 211 112"</span>) <span class="fu">glw</span>(<span class="sc">*</span>.<span class="dv">2</span>)) </span>
-<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a>                               </span>
-<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a><span class="fu">ytitle</span>(, <span class="fu">color</span>(<span class="st">"254 211 112"</span>)) </span>
-<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a><span class="fu">xtitle</span>(, <span class="fu">color</span>(<span class="st">"254 211 112"</span>))                               </span>
-<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a><span class="fu">title</span>(<span class="st">"Price versus Mpg"</span>, <span class="fu">color</span>(<span class="st">"254 211 112"</span>) <span class="fu">pos</span>(<span class="dv">11</span>)) </span>
-<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a><span class="fu">graphr</span>(<span class="fu">color</span>(<span class="st">"102 37 6*4"</span>))  <span class="fu">plotr</span>(<span class="fu">color</span>(<span class="st">"102 37 6*4"</span>))      </span>
-<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a>;</span>
-<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a><span class="al">![](imgp2/g5a.png)</span>{width=70%}</span>
-<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a>En mettant les options sous forme de macro et en les appelant dans la commande graphique, visuellement la syntaxe du graphique est nettement allégée :</span>
-<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
-<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a>tempvar rep</span>
-<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a>gen    <span class="st">`</span><span class="at">rep' = rep78</span></span>
-<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a><span class="at">recode </span><span class="st">`</span>rep<span class="st">' (1=2)  </span></span>
-<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a><span class="st">local mopt "mlw(*.5) mlc(black) msiz(*1.5)"</span></span>
-<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a><span class="st">local col1 "254 211 112"</span></span>
-<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a><span class="st">local col2 "102 37 6*4"</span></span>
-<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a><span class="st">#delimit ;</span></span>
-<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a><span class="st">tw scatter price mpg if `rep'</span><span class="sc">==</span><span class="dv">2</span>, <span class="fu">mc</span>(<span class="st">"145 50 5"</span>)    <span class="st">`</span><span class="at">mopt'   </span></span>
-<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a><span class="at">|| scatter price mpg if </span><span class="st">`</span>rep<span class="st">'==3, mc("221 95 11")   `mopt'</span> </span>
-<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a><span class="sc">||</span> scatter price mpg <span class="cf">if</span> <span class="st">`</span><span class="at">rep'==4, mc("254 162 50")  </span><span class="st">`</span>mopt<span class="st">'</span></span>
-<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a><span class="st">|| scatter price mpg if `rep'</span><span class="sc">==</span><span class="dv">5</span>, <span class="fu">mc</span>(<span class="st">"254 211 112"</span>) <span class="st">`</span><span class="at">mopt'   </span></span>
-<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a><span class="at">|| , legend(off)                                                                                                     </span></span>
-<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a><span class="at">     ylabel(, labc(</span><span class="st">`</span>col1<span class="st">') glc(`col1'</span><span class="er">)</span> <span class="fu">glw</span>(<span class="sc">*</span>.<span class="dv">2</span>) <span class="fu">angle</span>(<span class="dv">0</span>)<span class="er">)</span>                                </span>
-<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a>     <span class="fu">xlabel</span>(, <span class="fu">labc</span>(<span class="st">`</span><span class="at">col1') glc(</span><span class="st">`</span>col1<span class="st">') glw(*.2)) </span></span>
-<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a><span class="st">     ytitle(, color(`col1'</span>)) <span class="fu">xtitle</span>(, <span class="fu">color</span>(<span class="st">`</span><span class="at">col1'))                               </span></span>
-<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a><span class="at">     title("Price versus Mpg", color(</span><span class="st">`</span>col1<span class="st">') pos(11)) </span></span>
-<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a><span class="st">     graphr(color(`col2'</span>))     <span class="fu">plotr</span>(<span class="fu">color</span>(<span class="st">`</span><span class="at">col2'))      </span></span>
-<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a><span class="at">;</span></span>
-<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="in">tempvar rep</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="in">gen    `rep' = rep78</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="in">recode `rep' (1=2)  </span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a><span class="in">#delimit ;</span></span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a><span class="in">tw scatter price mpg if `rep'==2, mc("145 50 5")    mlw(*.5) mlc(black)  msiz(*1.5)  </span></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="in">|| scatter price mpg if `rep'==3, mc("221 95 11")   mlw(*.5) mlc(black)  msiz(*1.5)  </span></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="in">|| scatter price mpg if `rep'==4, mc("254 162 50")  mlw(*.5) mlc(black)  msiz(*1.5)  </span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="in">|| scatter price mpg if `rep'==5, mc("254 211 112") mlw(*.5) mlc(black)  msiz(*1.5)    </span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="in">|| , legend(off)                                                                           </span></span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="in">                              </span></span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a><span class="in">ylabel(, labc("254 211 112") glc("254 211 112") glw(*.2) angle(0))                                </span></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a><span class="in">xlabel(, labc("254 211 112") glc("254 211 112") glw(*.2)) </span></span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a><span class="in">                               </span></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="in">ytitle(, color("254 211 112")) </span></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="in">xtitle(, color("254 211 112"))                               </span></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a><span class="in">title("Price versus Mpg", color("254 211 112") pos(11)) </span></span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a><span class="in">graphr(color("102 37 6*4"))  plotr(color("102 37 6*4"))      </span></span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a><span class="in">;</span></span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a><span class="al">![](imgp2/g5a.png)</span>{width=70%}</span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a>En mettant les options sous forme de macro et en les appelant dans la commande graphique, visuellement la syntaxe du graphique est nettement allégée :</span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a><span class="in">tempvar rep</span></span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a><span class="in">gen    `rep' = rep78</span></span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a><span class="in">recode `rep' (1=2)  </span></span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a><span class="in">local mopt "mlw(*.5) mlc(black) msiz(*1.5)"</span></span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a><span class="in">local col1 "254 211 112"</span></span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a><span class="in">local col2 "102 37 6*4"</span></span>
+<span id="cb4-60"><a href="#cb4-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-61"><a href="#cb4-61" aria-hidden="true" tabindex="-1"></a><span class="in">#delimit ;</span></span>
+<span id="cb4-62"><a href="#cb4-62" aria-hidden="true" tabindex="-1"></a><span class="in">tw scatter price mpg if `rep'==2, mc("145 50 5")    `mopt'   </span></span>
+<span id="cb4-63"><a href="#cb4-63" aria-hidden="true" tabindex="-1"></a><span class="in">|| scatter price mpg if `rep'==3, mc("221 95 11")   `mopt' </span></span>
+<span id="cb4-64"><a href="#cb4-64" aria-hidden="true" tabindex="-1"></a><span class="in">|| scatter price mpg if `rep'==4, mc("254 162 50")  `mopt'</span></span>
+<span id="cb4-65"><a href="#cb4-65" aria-hidden="true" tabindex="-1"></a><span class="in">|| scatter price mpg if `rep'==5, mc("254 211 112") `mopt'   </span></span>
+<span id="cb4-66"><a href="#cb4-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-67"><a href="#cb4-67" aria-hidden="true" tabindex="-1"></a><span class="in">|| , legend(off)                                                                                                     </span></span>
+<span id="cb4-68"><a href="#cb4-68" aria-hidden="true" tabindex="-1"></a><span class="in">     ylabel(, labc(`col1') glc(`col1') glw(*.2) angle(0))                                </span></span>
+<span id="cb4-69"><a href="#cb4-69" aria-hidden="true" tabindex="-1"></a><span class="in">     xlabel(, labc(`col1') glc(`col1') glw(*.2)) </span></span>
+<span id="cb4-70"><a href="#cb4-70" aria-hidden="true" tabindex="-1"></a><span class="in">     ytitle(, color(`col1')) xtitle(, color(`col1'))                               </span></span>
+<span id="cb4-71"><a href="#cb4-71" aria-hidden="true" tabindex="-1"></a><span class="in">     title("Price versus Mpg", color(`col1') pos(11)) </span></span>
+<span id="cb4-72"><a href="#cb4-72" aria-hidden="true" tabindex="-1"></a><span class="in">     graphr(color(`col2'))     plotr(color(`col2'))      </span></span>
+<span id="cb4-73"><a href="#cb4-73" aria-hidden="true" tabindex="-1"></a><span class="in">;</span></span>
+<span id="cb4-74"><a href="#cb4-74" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-75"><a href="#cb4-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-76"><a href="#cb4-76" aria-hidden="true" tabindex="-1"></a><span class="al">![](imgp2/g5b.png)</span>{width=70%}</span>
+<span id="cb4-77"><a href="#cb4-77" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-78"><a href="#cb4-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a><span class="sc">!</span>[](imgp2<span class="sc">/</span>g5b.png){width<span class="ot">=</span><span class="dv">70</span>%}</span>
-<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-79"><a href="#cb4-79" aria-hidden="true" tabindex="-1"></a>La modification des options est réalisée une seule fois en modifiant l’expression des macros.  </span>
+<span id="cb4-80"><a href="#cb4-80" aria-hidden="true" tabindex="-1"></a>Par exemple, en changeant quelques couleurs (coutours et titres) et en ajoutant un jitter:  </span>
 <span id="cb4-81"><a href="#cb4-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a>La modification des options est réalisée une seule fois en modifiant l’expression des macros.  </span>
-<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a>Par exemple, en changeant quelques <span class="fu">couleurs</span> (coutours et titres) et en ajoutant un jitter<span class="sc">:</span>  </span>
-<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a><span class="st">```</span><span class="at">{r eval=FALSE}</span></span>
-<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a><span class="at">local mopt "mlw(*.5) mlc(white) m()  msiz(*1.5) jitter(2)"</span></span>
-<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a><span class="at">local col1 white</span></span>
-<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a><span class="at">local col2 black</span></span>
-<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a><span class="at">#delimit ;</span></span>
-<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a><span class="at">tw scatter price mpg if </span><span class="st">`</span>rep<span class="st">'==2, mc("145 50 5")    `mopt'</span>   </span>
-<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a><span class="sc">||</span> scatter price mpg <span class="cf">if</span> <span class="st">`</span><span class="at">rep'==3, mc("221 95 11")   </span><span class="st">`</span>mopt<span class="st">' </span></span>
-<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a><span class="st">|| scatter price mpg if `rep'</span><span class="sc">==</span><span class="dv">4</span>, <span class="fu">mc</span>(<span class="st">"254 162 50"</span>)  <span class="st">`</span><span class="at">mopt'</span></span>
-<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a><span class="at">|| scatter price mpg if </span><span class="st">`</span>rep<span class="st">'==5, mc("254 211 112") `mopt'</span>   </span>
-<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a><span class="sc">||</span> , <span class="fu">legend</span>(off)                                                                           </span>
-<span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a>     <span class="fu">ylabel</span>(, <span class="fu">labc</span>(<span class="st">`</span><span class="at">col1') glc(</span><span class="st">`</span>col1<span class="st">') glw(*.2) angle(0))                                </span></span>
-<span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a><span class="st">     xlabel(, labc(`col1'</span>) <span class="fu">glc</span>(<span class="st">`</span><span class="at">col1') glw(*.2)) </span></span>
-<span id="cb4-99"><a href="#cb4-99" aria-hidden="true" tabindex="-1"></a><span class="at">     ytitle(, color(</span><span class="st">`</span>col1<span class="st">')) xtitle(, color(`col1'</span>))                               </span>
-<span id="cb4-100"><a href="#cb4-100" aria-hidden="true" tabindex="-1"></a>     <span class="fu">title</span>(<span class="st">"Price versus Mpg"</span>, <span class="fu">color</span>(<span class="st">`</span><span class="at">col1') pos(11)) </span></span>
-<span id="cb4-101"><a href="#cb4-101" aria-hidden="true" tabindex="-1"></a><span class="at">     graphr(color(</span><span class="st">`</span>col2<span class="st">'))  plotr(color(`col2'</span>))      </span>
-<span id="cb4-102"><a href="#cb4-102" aria-hidden="true" tabindex="-1"></a>;</span>
-<span id="cb4-103"><a href="#cb4-103" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span>
-<span id="cb4-104"><a href="#cb4-104" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-105"><a href="#cb4-105" aria-hidden="true" tabindex="-1"></a><span class="at">![](imgp2/g5c.png){width=70%}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb4-82"><a href="#cb4-82" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
+<span id="cb4-83"><a href="#cb4-83" aria-hidden="true" tabindex="-1"></a><span class="in">local mopt "mlw(*.5) mlc(white) m()  msiz(*1.5) jitter(2)"</span></span>
+<span id="cb4-84"><a href="#cb4-84" aria-hidden="true" tabindex="-1"></a><span class="in">local col1 white</span></span>
+<span id="cb4-85"><a href="#cb4-85" aria-hidden="true" tabindex="-1"></a><span class="in">local col2 black</span></span>
+<span id="cb4-86"><a href="#cb4-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-87"><a href="#cb4-87" aria-hidden="true" tabindex="-1"></a><span class="in">#delimit ;</span></span>
+<span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a><span class="in">tw scatter price mpg if `rep'==2, mc("145 50 5")    `mopt'   </span></span>
+<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a><span class="in">|| scatter price mpg if `rep'==3, mc("221 95 11")   `mopt' </span></span>
+<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a><span class="in">|| scatter price mpg if `rep'==4, mc("254 162 50")  `mopt'</span></span>
+<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a><span class="in">|| scatter price mpg if `rep'==5, mc("254 211 112") `mopt'   </span></span>
+<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a><span class="in">|| , legend(off)                                                                           </span></span>
+<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a><span class="in">     ylabel(, labc(`col1') glc(`col1') glw(*.2) angle(0))                                </span></span>
+<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a><span class="in">     xlabel(, labc(`col1') glc(`col1') glw(*.2)) </span></span>
+<span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a><span class="in">     ytitle(, color(`col1')) xtitle(, color(`col1'))                               </span></span>
+<span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a><span class="in">     title("Price versus Mpg", color(`col1') pos(11)) </span></span>
+<span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a><span class="in">     graphr(color(`col2'))  plotr(color(`col2'))      </span></span>
+<span id="cb4-99"><a href="#cb4-99" aria-hidden="true" tabindex="-1"></a><span class="in">;</span></span>
+<span id="cb4-100"><a href="#cb4-100" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-101"><a href="#cb4-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-102"><a href="#cb4-102" aria-hidden="true" tabindex="-1"></a><span class="al">![](imgp2/g5c.png)</span>{width=70%}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
