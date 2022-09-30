@@ -42,6 +42,6 @@ library(fontawesome)
 ## Autres supports
 
 -   **Formation analyse des durées (2017-2020)**: <https://mthevenin.github.io/analyse_duree/>
--   **Formation introduction à Stata (2018): datée - mise à jour en cours**: <https://mthevenin.github.io/formation_stata/>
+-   **Formation introduction à Stata (2018): datée - mise à jour en cours**
 :::
 

@@ -100,12 +100,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -165,9 +163,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <a class="nav-link" href="../about.html">A propos</a>
   </li>  
 </ul>
-              <div class="quarto-toggle-container">
-                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-              </div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -316,13 +311,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Sections</h2>
    
   <ul>
-  <li><a href="#combiner-des-graphiques" id="toc-combiner-des-graphiques" class="nav-link active" data-scroll-target="#combiner-des-graphiques"><strong>Combiner des graphiques</strong></a>
+  <li><a href="#combiner-des-graphiques" id="toc-combiner-des-graphiques" class="nav-link active" data-scroll-target="#combiner-des-graphiques"><span class="toc-section-number">1</span>  <strong>Combiner des graphiques</strong></a>
   <ul class="collapse">
-  <li><a href="#facettes-automatiques" id="toc-facettes-automatiques" class="nav-link" data-scroll-target="#facettes-automatiques"><strong>Facettes automatiques</strong></a></li>
-  <li><a href="#combinaison-libre" id="toc-combinaison-libre" class="nav-link" data-scroll-target="#combinaison-libre"><strong>Combinaison libre</strong></a>
+  <li><a href="#facettes-automatiques" id="toc-facettes-automatiques" class="nav-link" data-scroll-target="#facettes-automatiques"><span class="toc-section-number">1.1</span>  <strong>Facettes automatiques</strong></a></li>
+  <li><a href="#combinaison-libre" id="toc-combinaison-libre" class="nav-link" data-scroll-target="#combinaison-libre"><span class="toc-section-number">1.2</span>  <strong>Combinaison libre</strong></a>
   <ul class="collapse">
-  <li><a href="#conseils-et-options-pour-les-sous-graphiques" id="toc-conseils-et-options-pour-les-sous-graphiques" class="nav-link" data-scroll-target="#conseils-et-options-pour-les-sous-graphiques">Conseils et options pour les sous-graphiques</a></li>
-  <li><a href="#syntaxe-et-options" id="toc-syntaxe-et-options" class="nav-link" data-scroll-target="#syntaxe-et-options">Syntaxe et options</a></li>
+  <li><a href="#conseils-et-options-pour-les-sous-graphiques" id="toc-conseils-et-options-pour-les-sous-graphiques" class="nav-link" data-scroll-target="#conseils-et-options-pour-les-sous-graphiques"><span class="toc-section-number">1.2.1</span>  Conseils et options pour les sous-graphiques</a></li>
+  <li><a href="#syntaxe-et-options" id="toc-syntaxe-et-options" class="nav-link" data-scroll-target="#syntaxe-et-options"><span class="toc-section-number">1.2.2</span>  Syntaxe et options</a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -347,10 +342,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<section id="combiner-des-graphiques" class="level1">
-<h1><strong>Combiner des graphiques</strong></h1>
-<section id="facettes-automatiques" class="level2">
-<h2 class="anchored" data-anchor-id="facettes-automatiques"><strong>Facettes automatiques</strong></h2>
+<section id="combiner-des-graphiques" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> <strong>Combiner des graphiques</strong></h1>
+<section id="facettes-automatiques" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="facettes-automatiques"><span class="header-section-number">1.1</span> <strong>Facettes automatiques</strong></h2>
 <p>Les facettes ou <em>small multiples</em> permet de combiner rapidement plusieurs graphiques répétés pour différentes valeurs d’une variable additionnelle, généralement catégorielle. Stata est plutôt efficace pour produire ce genre de visualisation avec l’option <code>by()</code> dans la commande graphique. On peut néanmoins regretter le manque de possibilité concernant l’habillage des sous graphiques avec, par exemple, une même couleur imposée à l’ensemble des sous graphiques.</p>
 <p><strong>Syntaxe</strong> : <code>graphique, by(variable [, total col(#) row(#)…])…</code><br>
 Avec l’argument <code>total</code> en option de <code>by()</code>, on peut ajouter un graphique additionnel représentant le graphique avec toutes les valeurs, donc celui sans l’option by. On peut également modifier la répartition des sous-graphiques par ligne et colonne avec <code>row()</code> et <code>col()</code>. Le graphique génère automatiquement une note « Graphs by nom_variable » plutôt dispensable. Si l’on souhaite supprimer cette note, on ajoute <code>note(" ")</code> en option de <code>by()</code>.</p>
@@ -368,15 +363,15 @@ Avec l’argument <code>total</code> en option de <code>by()</code>, on peut ajo
 </div>
 <p><img src="imgp1/g16.png" class="img-fluid" style="width:60.0%"></p>
 </section>
-<section id="combinaison-libre" class="level2">
-<h2 class="anchored" data-anchor-id="combinaison-libre"><strong>Combinaison libre</strong></h2>
+<section id="combinaison-libre" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="combinaison-libre"><span class="header-section-number">1.2</span> <strong>Combinaison libre</strong></h2>
 <p>Deux commandes sont disponibles pour combiner plusieurs sous-graphique:</p>
 <ul>
 <li><strong><code>graph combine</code></strong>: commande officielle.</li>
 <li><strong><code>grc1leg</code></strong>: commande externe qui permet d’afficher une seule légende lorsque les sous graphiques partagent la même légende. Installation : <code>ssc install grc1leg</code>.</li>
 </ul>
-<section id="conseils-et-options-pour-les-sous-graphiques" class="level3">
-<h3 class="anchored" data-anchor-id="conseils-et-options-pour-les-sous-graphiques">Conseils et options pour les sous-graphiques</h3>
+<section id="conseils-et-options-pour-les-sous-graphiques" class="level3" data-number="1.2.1">
+<h3 data-number="1.2.1" class="anchored" data-anchor-id="conseils-et-options-pour-les-sous-graphiques"><span class="header-section-number">1.2.1</span> Conseils et options pour les sous-graphiques</h3>
 <ul>
 <li><p>Les sous-graphiques devant être enregistrés, préférer <code>name(nom, replace)</code> à <code>save(path/nom, replace)</code>.</p></li>
 <li><p>Une fois les sous-graphiques validés, utiliser l’option <strong><code>nodraw</code></strong> pour raccourcir le temps d’exécution.</p></li>
@@ -406,8 +401,8 @@ Avec l’argument <code>total</code> en option de <code>by()</code>, on peut ajo
 </div>
 <p><img src="imgp1/g17.png" class="img-fluid" style="width:60.0%"></p>
 </section>
-<section id="syntaxe-et-options" class="level3">
-<h3 class="anchored" data-anchor-id="syntaxe-et-options">Syntaxe et options</h3>
+<section id="syntaxe-et-options" class="level3" data-number="1.2.2">
+<h3 data-number="1.2.2" class="anchored" data-anchor-id="syntaxe-et-options"><span class="header-section-number">1.2.2</span> Syntaxe et options</h3>
 <p><strong>Syntaxe générique</strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>graph combine liste_sousgraph [, <span class="fu">col</span>() <span class="fu">row</span>() <span class="fu">xsize</span>() <span class="fu">ysize</span>() <span class="fu">iscale</span>() xcommon </span>
@@ -552,121 +547,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
-      }
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  let localAlternateSentinel = 'alternate';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -760,7 +640,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-      <div class="nav-footer-center">Marc Thévenin - Ined-Sms - Août 2022</div>
+      <div class="nav-footer-center">Marc Thévenin / Ined-Sms / Août 2022-</div>
   </div>
 </footer>
 

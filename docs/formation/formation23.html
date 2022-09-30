@@ -100,12 +100,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -165,9 +163,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <a class="nav-link" href="../about.html">A propos</a>
   </li>  
 </ul>
-              <div class="quarto-toggle-container">
-                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-              </div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -316,13 +311,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Sections</h2>
    
   <ul>
-  <li><a href="#macros-empilées" id="toc-macros-empilées" class="nav-link active" data-scroll-target="#macros-empilées"><strong>Macros empilées</strong></a>
+  <li><a href="#macros-empilées" id="toc-macros-empilées" class="nav-link active" data-scroll-target="#macros-empilées"><span class="toc-section-number">1</span>  <strong>Macros empilées</strong></a>
   <ul class="collapse">
-  <li><a href="#syntaxe-type" id="toc-syntaxe-type" class="nav-link" data-scroll-target="#syntaxe-type"><strong>Syntaxe type</strong></a></li>
-  <li><a href="#automatiser-la-création-du-graphique" id="toc-automatiser-la-création-du-graphique" class="nav-link" data-scroll-target="#automatiser-la-création-du-graphique"><strong>Automatiser la création du graphique</strong></a></li>
-  <li><a href="#générer-une-légende" id="toc-générer-une-légende" class="nav-link" data-scroll-target="#générer-une-légende"><strong>Générer une légende</strong></a></li>
+  <li><a href="#syntaxe-type" id="toc-syntaxe-type" class="nav-link" data-scroll-target="#syntaxe-type"><span class="toc-section-number">1.1</span>  <strong>Syntaxe type</strong></a></li>
+  <li><a href="#automatiser-la-création-du-graphique" id="toc-automatiser-la-création-du-graphique" class="nav-link" data-scroll-target="#automatiser-la-création-du-graphique"><span class="toc-section-number">1.2</span>  <strong>Automatiser la création du graphique</strong></a></li>
+  <li><a href="#générer-une-légende" id="toc-générer-une-légende" class="nav-link" data-scroll-target="#générer-une-légende"><span class="toc-section-number">1.3</span>  <strong>Générer une légende</strong></a></li>
   </ul></li>
-  <li><a href="#routine-.ado" id="toc-routine-.ado" class="nav-link" data-scroll-target="#routine-.ado"><strong>Routine (.ado)</strong></a></li>
+  <li><a href="#routine-.ado" id="toc-routine-.ado" class="nav-link" data-scroll-target="#routine-.ado"><span class="toc-section-number">2</span>  <strong>Routine (.ado)</strong></a></li>
   </ul>
 </nav>
     </div>
@@ -358,11 +353,11 @@ Danger
 <p>Les informations qui vont suivre demande un minimum de pratique avec la manipulation des macros Stata.</p>
 </div>
 </div>
-<section id="macros-empilées" class="level1">
-<h1><strong>Macros empilées</strong></h1>
+<section id="macros-empilées" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> <strong>Macros empilées</strong></h1>
 <p>Le principe est plutôt simple, il s’agit lors d’une expression en boucle de conserver et empiler les expressions générées à chaque itération, et les enregistrer dans une macro.</p>
-<section id="syntaxe-type" class="level2">
-<h2 class="anchored" data-anchor-id="syntaxe-type"><strong>Syntaxe type</strong></h2>
+<section id="syntaxe-type" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="syntaxe-type"><span class="header-section-number">1.1</span> <strong>Syntaxe type</strong></h2>
 <p>Exemple : On veut obtenir la chaîne de caractère «A B C » à partir des trois éléments distincts « A », « B » et « C ».</p>
 <p>Avec une macro standard:</p>
 <div class="cell">
@@ -408,8 +403,8 @@ Danger
 <span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="st">* _me:            A B C</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="automatiser-la-création-du-graphique" class="level2">
-<h2 class="anchored" data-anchor-id="automatiser-la-création-du-graphique"><strong>Automatiser la création du graphique</strong></h2>
+<section id="automatiser-la-création-du-graphique" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="automatiser-la-création-du-graphique"><span class="header-section-number">1.2</span> <strong>Automatiser la création du graphique</strong></h2>
 <p>Pour un graphique, une application évidente est d’alléger et automatiser une syntaxe qui empile plusieurs objets graphiques de même nature. Si on reprend un type de nuage de points déjà exécuté de nombreuses fois dans ce document:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>tw scatter price mpg <span class="cf">if</span> rep78<span class="sc">==</span><span class="dv">1</span></span>
@@ -466,8 +461,8 @@ Danger
 </div>
 <p><br></p>
 </section>
-<section id="générer-une-légende" class="level2">
-<h2 class="anchored" data-anchor-id="générer-une-légende"><strong>Générer une légende</strong></h2>
+<section id="générer-une-légende" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="générer-une-légende"><span class="header-section-number">1.3</span> <strong>Générer une légende</strong></h2>
 <p>Sur le même principe, on peut générer automatiquement une légende. <strong><em>L’opération peut néanmoins s’avérer un peu plus délicate</em></strong>, en raison du contrôle des doubles quotes pour les labels.<br>
 Dans un premier temps on ne va pas utiliser les fonctions macro qui permettent de récupérer automatiquement les noms et le contenu des labels.</p>
 <p><strong>Sans les fonctions macro</strong>:</p>
@@ -514,8 +509,8 @@ Les fonctions utilisées sont <code>value label</code> pour récupérer le nom d
 </div>
 </section>
 </section>
-<section id="routine-.ado" class="level1">
-<h1><strong>Routine (.ado)</strong></h1>
+<section id="routine-.ado" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> <strong>Routine (.ado)</strong></h1>
 <ul>
 <li><p>Manuel d’aide Stata [entrée syntax] https://www.stata.com/manuals/p.pdf#ppProgramming</p></li>
 <li><p>Principe des programmes qui exécutent des commandes (.ado)</p></li>
@@ -675,121 +670,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
-      }
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  let localAlternateSentinel = 'alternate';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -883,7 +763,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-      <div class="nav-footer-center">Marc Thévenin - Ined-Sms - Août 2022</div>
+      <div class="nav-footer-center">Marc Thévenin / Ined-Sms / Août 2022-</div>
   </div>
 </footer>
 

@@ -98,12 +98,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="dark">
-<link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -164,9 +162,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <a class="nav-link" href="../../about.html">A propos</a>
   </li>  
 </ul>
-              <div class="quarto-toggle-container">
-                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-              </div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -315,11 +310,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Sections</h2>
    
   <ul>
-  <li><a href="#installation" id="toc-installation" class="nav-link active" data-scroll-target="#installation">Installation</a></li>
-  <li><a href="#syntaxe" id="toc-syntaxe" class="nav-link" data-scroll-target="#syntaxe">Syntaxe</a></li>
-  <li><a href="#exemple-1" id="toc-exemple-1" class="nav-link" data-scroll-target="#exemple-1">Exemple 1</a></li>
-  <li><a href="#exemple-2" id="toc-exemple-2" class="nav-link" data-scroll-target="#exemple-2">Exemple 2</a></li>
-  <li><a href="#nombre-dobservations-insuffisantes-pour-estimer-les-densités" id="toc-nombre-dobservations-insuffisantes-pour-estimer-les-densités" class="nav-link" data-scroll-target="#nombre-dobservations-insuffisantes-pour-estimer-les-densités">Nombre d’observations insuffisantes pour estimer les densités</a></li>
+  <li><a href="#installation" id="toc-installation" class="nav-link active" data-scroll-target="#installation"><span class="toc-section-number">0.1</span>  Installation</a></li>
+  <li><a href="#syntaxe" id="toc-syntaxe" class="nav-link" data-scroll-target="#syntaxe"><span class="toc-section-number">1</span>  Syntaxe</a></li>
+  <li><a href="#exemple-1" id="toc-exemple-1" class="nav-link" data-scroll-target="#exemple-1"><span class="toc-section-number">2</span>  Exemple 1</a></li>
+  <li><a href="#exemple-2" id="toc-exemple-2" class="nav-link" data-scroll-target="#exemple-2"><span class="toc-section-number">3</span>  Exemple 2</a></li>
+  <li><a href="#nombre-dobservations-insuffisantes-pour-estimer-les-densités" id="toc-nombre-dobservations-insuffisantes-pour-estimer-les-densités" class="nav-link" data-scroll-target="#nombre-dobservations-insuffisantes-pour-estimer-les-densités"><span class="toc-section-number">4</span>  Nombre d’observations insuffisantes pour estimer les densités</a></li>
   </ul>
 </nav>
     </div>
@@ -347,14 +342,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>La première commande, malgré une maj récente, présente toujours des problèmes concernant le report des informations sur l’axe discret pour la version <code>joyplot y</code>.<br>
 A partir d’un programme écrit à l’automne 2020, et en restant au plus près de la fonction <code>ggridge</code> de R, j’ai également programmé une commande. Elle permet, entre autres, de paramétrer le tri les modalités de l’axe discret à partir d’une fonction autorisée avec <code>egen</code> (<em>mean</em>, <em>median</em>, <em>sd</em>….), de choisir librement un intervalle sur l’axe des abcisses pour éviter le report de valeurs sortant de borne acceptables (probabilité négatives ou supérieure à 1 par exemple). Comme on estime des densités, le nombre d’observations minimales a été fixé à 10. Si ce critère n’est pas respecté, les valeurs de y qui ne respectent pas cette contrainte sont affichées.<br>
 Des améliorations restent néanmoins à prévoir.</p>
-<section id="installation" class="level2">
-<h2 class="anchored" data-anchor-id="installation">Installation</h2>
+<section id="installation" class="level2" data-number="0.1">
+<h2 data-number="0.1" class="anchored" data-anchor-id="installation"><span class="header-section-number">0.1</span> Installation</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>net install gridge, <span class="fu">from</span>(<span class="st">"https://mthevenin.github.io/stata_graphiques/ressources/gridge/"</span>) replace</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="syntaxe" class="level1">
-<h1>Syntaxe</h1>
+<section id="syntaxe" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Syntaxe</h1>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>syntax variable [<span class="cf">if</span>],                                                                <span class="sc">/</span><span class="er">//</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">over</span>(variable)  <span class="fu">super</span>(numeric <span class="fl">1.8</span>)                                                   <span class="sc">/</span><span class="er">//</span></span>
@@ -385,8 +380,8 @@ Des améliorations restent néanmoins à prévoir.</p>
 <li>Ce type de visualisation est également utilisée pour représenter comparer l’évolution dans le temps d’une variable quantitative, par exemple entre pays (très à la mode avec le COVID)<a href="https://www.ined.fr/fichier/rte/166/Page%20accueil/SDR_plot_all_countries_fr.jpg">exemple</a>. Cela permet d’offrir un certain contrôle des effets dits “spaghetti”, mais je préfère dans ce cadre les approches de type <em>small-multiple</em>. Par ailleurs, dans l’esprit des courbes de Ridge, l’axe Y est plutôt de type ordonné. Cette option est offerte dans la fonction <code>joyplot</code> (A.Navqui).</li>
 </ul>
 </section>
-<section id="exemple-1" class="level1">
-<h1>Exemple 1</h1>
+<section id="exemple-1" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Exemple 1</h1>
 <p><strong><em>Ouverture de la base</em></strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>webuse set  <span class="st">"https://raw.githubusercontent.com//mthevenin/stata_graphiques/master/ressources/gridge"</span></span>
@@ -407,8 +402,8 @@ Des améliorations restent néanmoins à prévoir.</p>
 </div>
 <p><img src="g1.png" class="img-fluid" style="width:70.0%"></p>
 </section>
-<section id="exemple-2" class="level1">
-<h1>Exemple 2</h1>
+<section id="exemple-2" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Exemple 2</h1>
 <p>Dans le premier exemple, les modalités de l’axe discret était ordonnée. Avec cet exemple, Le premier graphique représente la série de distributions suivant l’ordre des valeurs par défaut de la variable <em>zône</em>. Le second graphique avec l’option <code>sort(median)</code> trie de manière croissante les secteurs selon la valeur médiane du prix de la location, enfin le troisième applique un tri décroissant avec l’option <code>sortrev(median)</code>.</p>
 <p><strong><em>Ouverture de la base</em></strong></p>
 <div class="cell">
@@ -439,8 +434,8 @@ Des améliorations restent néanmoins à prévoir.</p>
 </div>
 <p><img src="g3.png" class="img-fluid" style="width:70.0%"></p>
 </section>
-<section id="nombre-dobservations-insuffisantes-pour-estimer-les-densités" class="level1">
-<h1>Nombre d’observations insuffisantes pour estimer les densités</h1>
+<section id="nombre-dobservations-insuffisantes-pour-estimer-les-densités" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Nombre d’observations insuffisantes pour estimer les densités</h1>
 <p>Le seuil à été fixé à 10 observations. Si ce n’est pas le cas, le graphique n’est pas exécuté mais les informations sur les valeurs de y qui manquent d’informations sont indiquées</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>webuse nhanes2, clear</span>
@@ -491,121 +486,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
-      }
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  let localAlternateSentinel = 'alternate';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -687,7 +567,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-      <div class="nav-footer-center">Marc Thévenin - Ined-Sms - Août 2022</div>
+      <div class="nav-footer-center">Marc Thévenin / Ined-Sms / Août 2022-</div>
   </div>
 </footer>
 

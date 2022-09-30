@@ -7,7 +7,7 @@ website:
     location: sidebar
   page-navigation: true
   page-footer: 
-    center: "Marc Thévenin - Ined-Sms - Août 2022" 
+    center: "Marc Thévenin / Ined-Sms / Août 2022-" 
     background: dark
 
   navbar:
@@ -31,7 +31,7 @@ website:
   sidebar:
     style: "docked"
     align: left
-    background: "#6B92B2"
+#    background: "#6B92B2"
     collapse-level: 1    
     contents:
       - section: "Formation"
@@ -63,13 +63,12 @@ website:
 format:
   html:
     theme: 
-      dark:  [superhero, theme-light.scss]    
-      light: [superhero,theme-dark.scss]
+      light:  [yeti, theme-light.scss]          
     code-background: true
     code-copy: true
     toc: true
     toc-depth: 3
     toc-title: Sections
-    highlight-style: monochrome
-    linestretch: 1.5    
+    highlight-style: zenburn
+number-sections: true
     

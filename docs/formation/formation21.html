@@ -100,12 +100,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -166,9 +164,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <a class="nav-link" href="../about.html">A propos</a>
   </li>  
 </ul>
-              <div class="quarto-toggle-container">
-                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-              </div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -317,24 +312,24 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Sections</h2>
    
   <ul>
-  <li><a href="#local---global" id="toc-local---global" class="nav-link active" data-scroll-target="#local---global"><strong>local - global</strong></a>
+  <li><a href="#local---global" id="toc-local---global" class="nav-link active" data-scroll-target="#local---global"><span class="toc-section-number">1</span>  <strong>local - global</strong></a>
   <ul class="collapse">
-  <li><a href="#macro-temporaire-local" id="toc-macro-temporaire-local" class="nav-link" data-scroll-target="#macro-temporaire-local"><strong>Macro temporaire: local</strong></a></li>
-  <li><a href="#macro-en-dur-global" id="toc-macro-en-dur-global" class="nav-link" data-scroll-target="#macro-en-dur-global"><strong>Macro en dur: global</strong></a></li>
-  <li><a href="#la-commande-levelsof" id="toc-la-commande-levelsof" class="nav-link" data-scroll-target="#la-commande-levelsof"><strong>La commande levelsof</strong></a></li>
-  <li><a href="#quelques-fonctions-associées-à-une-macro" id="toc-quelques-fonctions-associées-à-une-macro" class="nav-link" data-scroll-target="#quelques-fonctions-associées-à-une-macro"><strong>Quelques fonctions associées à une macro</strong></a>
+  <li><a href="#macro-temporaire-local" id="toc-macro-temporaire-local" class="nav-link" data-scroll-target="#macro-temporaire-local"><span class="toc-section-number">1.1</span>  <strong>Macro temporaire: local</strong></a></li>
+  <li><a href="#macro-en-dur-global" id="toc-macro-en-dur-global" class="nav-link" data-scroll-target="#macro-en-dur-global"><span class="toc-section-number">1.2</span>  <strong>Macro en dur: global</strong></a></li>
+  <li><a href="#la-commande-levelsof" id="toc-la-commande-levelsof" class="nav-link" data-scroll-target="#la-commande-levelsof"><span class="toc-section-number">1.3</span>  <strong>La commande levelsof</strong></a></li>
+  <li><a href="#quelques-fonctions-associées-à-une-macro" id="toc-quelques-fonctions-associées-à-une-macro" class="nav-link" data-scroll-target="#quelques-fonctions-associées-à-une-macro"><span class="toc-section-number">1.4</span>  <strong>Quelques fonctions associées à une macro</strong></a>
   <ul class="collapse">
-  <li><a href="#word-count" id="toc-word-count" class="nav-link" data-scroll-target="#word-count">word count</a></li>
-  <li><a href="#value-label" id="toc-value-label" class="nav-link" data-scroll-target="#value-label">value label</a></li>
-  <li><a href="#label" id="toc-label" class="nav-link" data-scroll-target="#label">label</a></li>
-  <li><a href="#variable-label" id="toc-variable-label" class="nav-link" data-scroll-target="#variable-label">variable label</a></li>
+  <li><a href="#word-count" id="toc-word-count" class="nav-link" data-scroll-target="#word-count"><span class="toc-section-number">1.4.1</span>  word count</a></li>
+  <li><a href="#value-label" id="toc-value-label" class="nav-link" data-scroll-target="#value-label"><span class="toc-section-number">1.4.2</span>  value label</a></li>
+  <li><a href="#label" id="toc-label" class="nav-link" data-scroll-target="#label"><span class="toc-section-number">1.4.3</span>  label</a></li>
+  <li><a href="#variable-label" id="toc-variable-label" class="nav-link" data-scroll-target="#variable-label"><span class="toc-section-number">1.4.4</span>  variable label</a></li>
   </ul></li>
-  <li><a href="#return-et-ereturn" id="toc-return-et-ereturn" class="nav-link" data-scroll-target="#return-et-ereturn"><strong>return et ereturn</strong></a></li>
-  <li><a href="#compteurs-i" id="toc-compteurs-i" class="nav-link" data-scroll-target="#compteurs-i"><strong>Compteurs i++</strong></a></li>
-  <li><a href="#autres-objets-macro-token-tempvar" id="toc-autres-objets-macro-token-tempvar" class="nav-link" data-scroll-target="#autres-objets-macro-token-tempvar"><strong>Autres objets macro: token, tempvar</strong></a>
+  <li><a href="#return-et-ereturn" id="toc-return-et-ereturn" class="nav-link" data-scroll-target="#return-et-ereturn"><span class="toc-section-number">1.5</span>  <strong>return et ereturn</strong></a></li>
+  <li><a href="#compteurs-i" id="toc-compteurs-i" class="nav-link" data-scroll-target="#compteurs-i"><span class="toc-section-number">1.6</span>  <strong>Compteurs i++</strong></a></li>
+  <li><a href="#autres-objets-macro-token-tempvar" id="toc-autres-objets-macro-token-tempvar" class="nav-link" data-scroll-target="#autres-objets-macro-token-tempvar"><span class="toc-section-number">1.7</span>  <strong>Autres objets macro: token, tempvar</strong></a>
   <ul class="collapse">
-  <li><a href="#token" id="toc-token" class="nav-link" data-scroll-target="#token"><strong>Token</strong></a></li>
-  <li><a href="#variables-temporaires" id="toc-variables-temporaires" class="nav-link" data-scroll-target="#variables-temporaires"><strong>Variables temporaires</strong></a></li>
+  <li><a href="#token" id="toc-token" class="nav-link" data-scroll-target="#token"><span class="toc-section-number">1.7.1</span>  <strong>Token</strong></a></li>
+  <li><a href="#variables-temporaires" id="toc-variables-temporaires" class="nav-link" data-scroll-target="#variables-temporaires"><span class="toc-section-number">1.7.2</span>  <strong>Variables temporaires</strong></a></li>
   </ul></li>
   </ul></li>
   </ul>
@@ -360,8 +355,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </header>
 
 <p><br></p>
-<section id="local---global" class="level1">
-<h1><strong>local - global</strong></h1>
+<section id="local---global" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> <strong>local - global</strong></h1>
 <p>Les macros sont des objets qui enregistre une valeur ou une expression. On peut les utiliser une ou plusieurs fois dans un programme, et permettent de générer des blocs de programme en boucle.<br>
 Leur utilisation est essentielle pour les graphiques Stata et faciliter leur réutilisation. Elles permettent entre autres:</p>
 <ul>
@@ -383,8 +378,8 @@ Important
 - <code>display</code> (di) peut être privilégier pour visualiser ce qui sera affiché dans la fenêtre de l’output, ou pour les macros qui renvoient une valeur. à la fin de la session.</p>
 </div>
 </div>
-<section id="macro-temporaire-local" class="level2">
-<h2 class="anchored" data-anchor-id="macro-temporaire-local"><strong>Macro temporaire: local</strong></h2>
+<section id="macro-temporaire-local" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="macro-temporaire-local"><span class="header-section-number">1.1</span> <strong>Macro temporaire: local</strong></h2>
 <p><br> Les macros de type temporaire (<strong><code>local</code></strong>) sont conservées en mémoire seulement le temps de l’exécution. Cependant en exécutant Stata avec <em><strong>Notebook Jupyter</strong> (librairie <code>Stata Kernel</code> – </em>Kyle barron*), ce type de macro vont rester en mémoire d’une exécution à une autre, ce qui peut présenter des avantages, en particulier pour les graphiques. Les macros seront effacées à la fin de la session. Voir la section dédiée à Python.</p>
 <p><strong><em>Syntaxe</em></strong></p>
 <div class="cell">
@@ -489,8 +484,8 @@ Important
 <span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a><span class="dv">0</span> Non<span class="st">" 1 "</span>Oui<span class="st">""</span> invalid name</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="macro-en-dur-global" class="level2">
-<h2 class="anchored" data-anchor-id="macro-en-dur-global"><strong>Macro en dur: global</strong></h2>
+<section id="macro-en-dur-global" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="macro-en-dur-global"><span class="header-section-number">1.2</span> <strong>Macro en dur: global</strong></h2>
 <p>Les macros de type <code>global</code> sont enregistrées en dur, et conservées en mémoire d’une exécution à une autre et d’une session à une autre. Elles sont appelées avec <strong><code>$</code></strong> et, avec <code>mac list</code>, le nom de la macro n’est pas précédé d’un underscore.</p>
 <p><strong><em>Test/visualisation de l’expression</em></strong></p>
 <div class="cell">
@@ -500,8 +495,8 @@ Important
 <span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>di <span class="st">"$nom"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="la-commande-levelsof" class="level2">
-<h2 class="anchored" data-anchor-id="la-commande-levelsof"><strong>La commande levelsof</strong></h2>
+<section id="la-commande-levelsof" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="la-commande-levelsof"><span class="header-section-number">1.3</span> <strong>La commande levelsof</strong></h2>
 <p>Cette commande particulièrement utile, pour ne pas dire incontournable, récupère les valeurs d’une variable et les enregistre dans une macro temporaire. <strong><code>levelsof</code></strong> précède régulièrement l’utilisation d’une boucle de type <code>foreach</code>.</p>
 <p><strong>Syntaxe</strong>: <strong><code>levelsof nom_var [if/in], local(nom_macro)</code></strong></p>
 <p><strong><em>Exemple</em></strong></p>
@@ -534,12 +529,12 @@ glevelsof
 </div>
 </div>
 </section>
-<section id="quelques-fonctions-associées-à-une-macro" class="level2">
-<h2 class="anchored" data-anchor-id="quelques-fonctions-associées-à-une-macro"><strong>Quelques fonctions associées à une macro</strong></h2>
+<section id="quelques-fonctions-associées-à-une-macro" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="quelques-fonctions-associées-à-une-macro"><span class="header-section-number">1.4</span> <strong>Quelques fonctions associées à une macro</strong></h2>
 <p>Il ne s’agit ici que de quelques fonctions utiles pour produire des graphiques et faciliter leur automatisation. L’ensemble des fonctions associées à une macro sont disponible dans l’aide (<code>help macro</code>).</p>
 <p><br></p>
-<section id="word-count" class="level3">
-<h3 class="anchored" data-anchor-id="word-count">word count</h3>
+<section id="word-count" class="level3" data-number="1.4.1">
+<h3 data-number="1.4.1" class="anchored" data-anchor-id="word-count"><span class="header-section-number">1.4.1</span> word count</h3>
 <p>Permet de compter le nombre de termes contenus dans une expression enregistrée sous forme de macro. Utile pour compter le nombre de boucles à effectuer avec <code>forvalue</code>.</p>
 <p><strong>Syntaxe</strong>: <strong><code>Local/global : word count(nom_macro)</code></strong></p>
 <p><strong><em>Exemple</em></strong></p>
@@ -554,8 +549,8 @@ glevelsof
 </div>
 <p><br></p>
 </section>
-<section id="value-label" class="level3">
-<h3 class="anchored" data-anchor-id="value-label">value label</h3>
+<section id="value-label" class="level3" data-number="1.4.2">
+<h3 data-number="1.4.2" class="anchored" data-anchor-id="value-label"><span class="header-section-number">1.4.2</span> value label</h3>
 <p>Récupère le nom d’un label affecté aux modalités d’une variable. Le nom de la variable peut-être enregistré en amont sous forme de macro.</p>
 <p><strong>Syntaxe</strong>: <strong><code>local/global nom_macro : value label nom_variable/nom_macro</code></strong></p>
 <div class="cell">
@@ -567,8 +562,8 @@ glevelsof
 </div>
 <p><br></p>
 </section>
-<section id="label" class="level3">
-<h3 class="anchored" data-anchor-id="label">label</h3>
+<section id="label" class="level3" data-number="1.4.3">
+<h3 data-number="1.4.3" class="anchored" data-anchor-id="label"><span class="header-section-number">1.4.3</span> label</h3>
 <p>Récupère l’expression de la modalité associée à une valeur d’un nom de label. Le nom du label peut avoir été enregistré en amont dans une macro (avec par exemple la fonction <code>value label</code>).</p>
 <p><strong>Syntaxe</strong>: <strong><code>local/global nom_macro : label nom_label valeur</code></strong></p>
 <p><strong><em>Exemple</em></strong>:</p>
@@ -662,8 +657,8 @@ glevelsof
 A partir du programme faire un graphique combiné des deux graphiques précédents en automatisant au maximum la sélection des variables <em>rep</em> et <em>foreign</em>. Il y a très peu d’ajouts ou de modifications à faire.</p>
 <p><img src="imgp2/g1c.png" class="img-fluid" style="width:80.0%"></p>
 </section>
-<section id="variable-label" class="level3">
-<h3 class="anchored" data-anchor-id="variable-label">variable label</h3>
+<section id="variable-label" class="level3" data-number="1.4.4">
+<h3 data-number="1.4.4" class="anchored" data-anchor-id="variable-label"><span class="header-section-number">1.4.4</span> variable label</h3>
 <p>Récupère le label d’une variable sous forme du macro. Utile pour gérer une modification du titre des axes passer par les lignes de programme d’un graphique, et plus généralement pour donner de l’information sur variable de type continu ou de comptage sans label affecté au valeurs.</p>
 <p><strong>Syntaxe</strong>: <strong><code>local/global nom_macro : variable label variable/macro</code></strong></p>
 <div class="cell">
@@ -683,8 +678,8 @@ Dans la section suivante, on va utiliser utiliser des objets de type macro qui s
 </div>
 </section>
 </section>
-<section id="return-et-ereturn" class="level2">
-<h2 class="anchored" data-anchor-id="return-et-ereturn"><strong>return et ereturn</strong></h2>
+<section id="return-et-ereturn" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="return-et-ereturn"><span class="header-section-number">1.5</span> <strong>return et ereturn</strong></h2>
 <p>Après l’exécution d’une commande, un certain nombre d’objets sont conservés en mémoire jusqu’à l’exécution de la commande suivante. Leur liste est indiquée en bas du fichier d’aide.</p>
 <ul>
 <li><p>objets return: <code>r(nom_objet)</code></p></li>
@@ -797,8 +792,8 @@ Dans la section suivante, on va utiliser utiliser des objets de type macro qui s
 </div>
 <p><img src="imgp2/g2.png" class="img-fluid" style="width:60.0%"></p>
 </div></section>
-<section id="compteurs-i" class="level2">
-<h2 class="anchored" data-anchor-id="compteurs-i"><strong>Compteurs i++</strong></h2>
+<section id="compteurs-i" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="compteurs-i"><span class="header-section-number">1.6</span> <strong>Compteurs i++</strong></h2>
 <p>Les compteurs vont s’avérer très utiles dans les expressions en boucle pour générer une valeur incrémentale de type macro. C’est sur ce principe que fonctionne les boucles de type <code>forvalue</code>, mais il est possible de les générer dans une boucle de type <code>foreach</code>.</p>
 <p><strong><em>Exemple1</em></strong>: on initialise un compteur <code>i</code>. Dans une boucle <code>forvalue</code> dont l’incrément va de 10 à 15 (<span class="math inline">\(\delta=+1\)</span>), on génère à chaque boucle une valeur allant de 1 à 6 avec la macro `<code>i++'</code>.</p>
 <div class="cell">
@@ -1019,10 +1014,10 @@ Important
 </ul>
 <p><strong><em>Remarque</em></strong>: on pourrait améliorer le rendu de l’angle pour la connection des moyennes en modifiant légèrement les valeurs de Y_min et Y_max pour la droite verticale, avec par exemple : <strong><em>pci 1.985 <code>mean' 5.015</code>mean’, lw(</em>2.5) lc(“210 50 0”)</strong>*.</p>
 </section>
-<section id="autres-objets-macro-token-tempvar" class="level2">
-<h2 class="anchored" data-anchor-id="autres-objets-macro-token-tempvar"><strong>Autres objets macro: token, tempvar</strong></h2>
-<section id="token" class="level3">
-<h3 class="anchored" data-anchor-id="token"><strong>Token</strong></h3>
+<section id="autres-objets-macro-token-tempvar" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="autres-objets-macro-token-tempvar"><span class="header-section-number">1.7</span> <strong>Autres objets macro: token, tempvar</strong></h2>
+<section id="token" class="level3" data-number="1.7.1">
+<h3 data-number="1.7.1" class="anchored" data-anchor-id="token"><span class="header-section-number">1.7.1</span> <strong>Token</strong></h3>
 <p>Les tokens sont régulièrement utilisés dans la programmation de routines (<strong><em>.ado</em></strong>), mais peuvent dans un programme courant s’avérer utile pour transformer les noms variables en macros. Le token est une macro qui prend comme expression une liste de numéros : <code>1',</code>2’, <code>3'…… On transforme une expression en token avec la commande **</code>tokenize`**.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>tokenize price mpg</span>
@@ -1048,8 +1043,8 @@ Important
 <span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a><span class="at">|| scatter </span><span class="st">`</span><span class="dv">1</span><span class="st">' `2'</span> <span class="cf">if</span>  <span class="st">`</span><span class="at">3'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="variables-temporaires" class="level3">
-<h3 class="anchored" data-anchor-id="variables-temporaires"><strong>Variables temporaires</strong></h3>
+<section id="variables-temporaires" class="level3" data-number="1.7.2">
+<h3 data-number="1.7.2" class="anchored" data-anchor-id="variables-temporaires"><span class="header-section-number">1.7.2</span> <strong>Variables temporaires</strong></h3>
 <p>Variables, fichiers… peuvent être créés de manière temporaire. On regardera seulement les variables temporaires générées avec la fonction <strong><code>tempvar nom_variable</code></strong>, elles sont appelées sous forme de macro temporaire : <code>command</code>nom_variable’`. Principalement, elles permettent de générer des variables dont le nom n’entre pas en conflit avec des variables existantes, le nom enregistré étant de la forme** _00000#**, tout en n’alourdissanrpas artificiellement le contenu de la base.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>set obs <span class="dv">100</span></span>
@@ -1148,121 +1143,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
-      }
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  let localAlternateSentinel = 'alternate';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -1356,7 +1236,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-      <div class="nav-footer-center">Marc Thévenin - Ined-Sms - Août 2022</div>
+      <div class="nav-footer-center">Marc Thévenin / Ined-Sms / Août 2022-</div>
   </div>
 </footer>
 

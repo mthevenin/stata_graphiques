@@ -100,12 +100,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="../site_libs/quarto-html/anchor.min.js"></script>
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="dark">
-<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -165,9 +163,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <a class="nav-link" href="../about.html">A propos</a>
   </li>  
 </ul>
-              <div class="quarto-toggle-container">
-                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
-              </div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
@@ -316,18 +311,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Sections</h2>
    
   <ul>
-  <li><a href="#les-palettes-usines" id="toc-les-palettes-usines" class="nav-link active" data-scroll-target="#les-palettes-usines"><strong>Les palettes usines</strong></a></li>
-  <li><a href="#colorpalette-ben-jann" id="toc-colorpalette-ben-jann" class="nav-link" data-scroll-target="#colorpalette-ben-jann"><strong>Colorpalette (Ben Jann)</strong></a>
+  <li><a href="#les-palettes-usines" id="toc-les-palettes-usines" class="nav-link active" data-scroll-target="#les-palettes-usines"><span class="toc-section-number">1</span>  <strong>Les palettes usines</strong></a></li>
+  <li><a href="#colorpalette-ben-jann" id="toc-colorpalette-ben-jann" class="nav-link" data-scroll-target="#colorpalette-ben-jann"><span class="toc-section-number">2</span>  <strong>Colorpalette (Ben Jann)</strong></a>
   <ul class="collapse">
-  <li><a href="#principales-options-et-altération-dune-palette" id="toc-principales-options-et-altération-dune-palette" class="nav-link" data-scroll-target="#principales-options-et-altération-dune-palette"><strong>Principales options et altération d’une palette</strong></a>
+  <li><a href="#principales-options-et-altération-dune-palette" id="toc-principales-options-et-altération-dune-palette" class="nav-link" data-scroll-target="#principales-options-et-altération-dune-palette"><span class="toc-section-number">2.1</span>  <strong>Principales options et altération d’une palette</strong></a>
   <ul class="collapse">
-  <li><a href="#utilisation-de-colorpalette-pour-générer-un-graphique" id="toc-utilisation-de-colorpalette-pour-générer-un-graphique" class="nav-link" data-scroll-target="#utilisation-de-colorpalette-pour-générer-un-graphique"><strong>Utilisation de colorpalette pour générer un graphique</strong></a></li>
+  <li><a href="#utilisation-de-colorpalette-pour-générer-un-graphique" id="toc-utilisation-de-colorpalette-pour-générer-un-graphique" class="nav-link" data-scroll-target="#utilisation-de-colorpalette-pour-générer-un-graphique"><span class="toc-section-number">2.1.1</span>  <strong>Utilisation de colorpalette pour générer un graphique</strong></a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#exemples-de-palettes" id="toc-exemples-de-palettes" class="nav-link" data-scroll-target="#exemples-de-palettes"><strong>Exemples de palettes</strong></a>
+  <li><a href="#exemples-de-palettes" id="toc-exemples-de-palettes" class="nav-link" data-scroll-target="#exemples-de-palettes"><span class="toc-section-number">3</span>  <strong>Exemples de palettes</strong></a>
   <ul class="collapse">
-  <li><a href="#palettes-qualitatives" id="toc-palettes-qualitatives" class="nav-link" data-scroll-target="#palettes-qualitatives"><strong>Palettes qualitatives</strong></a></li>
-  <li><a href="#palettes-séquentielles" id="toc-palettes-séquentielles" class="nav-link" data-scroll-target="#palettes-séquentielles"><strong>Palettes séquentielles</strong></a></li>
+  <li><a href="#palettes-qualitatives" id="toc-palettes-qualitatives" class="nav-link" data-scroll-target="#palettes-qualitatives"><span class="toc-section-number">3.1</span>  <strong>Palettes qualitatives</strong></a></li>
+  <li><a href="#palettes-séquentielles" id="toc-palettes-séquentielles" class="nav-link" data-scroll-target="#palettes-séquentielles"><span class="toc-section-number">3.2</span>  <strong>Palettes séquentielles</strong></a></li>
   </ul></li>
   </ul>
 </nav>
@@ -369,8 +364,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>La librairie <code>brewscheme</code> (William Buchanan) dispose de plusieurs commandes pour générer des palettes de couleurs. Son utilisation est assez complexe.</p></li>
 <li><p>La commande **<code>colorpalette</code> (Benn Jann) charge plusieurs dizaines de palettes de couleurs, de tout type, permet de les modifier, d’en créer, et de les utiliser facilement dans la création de graphiques. Elle est indispensable dès lors qu’on souhaite utiliser efficacement des couleurs différentes de celles fournies par le logiciel. Cette commande, à mon sens incontournable, sera longuement traitée dans ce chapitre, ainsi que la commande <code>grstyle</code> qui reprend sa syntaxe pour générer de manière rapide un thème.</p></li>
 </ul>
-<section id="les-palettes-usines" class="level1">
-<h1><strong>Les palettes usines</strong></h1>
+<section id="les-palettes-usines" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> <strong>Les palettes usines</strong></h1>
 <p>Stata dispose de 5 palettes de couleurs usines qui sont associées à des thèmes graphiques. Par exemple la <em>palette s2</em> est associée au <em>thème s2color</em>.</p>
 <p>Les palettes associées aux thèmes Stata sont de type qualitative. L’ordre d’utilisation des couleurs dans un graphique composé de plusieurs objets est pensé de tel sorte que des couleurs même type, par exemple le bleu, ne se succède pas.</p>
 <p><img src="imgp3/g1.png" class="img-fluid" style="width:60.0%"></p>
@@ -382,8 +377,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><em>Remarque</em>: il est facile de générer une couleur appartenant à une palette correspondant à une échelle de gris: les trois valeurs du code RGB étant identique (compris entre 0 et 255).</p>
 <p><br> On est vite limité avec les palettes usines de Stata. Malgré les efforts de plusieurs utilisateurs pour augmenter leur nombre (M.Pissatti, F.Briatte, D.Bischoff…), la commande <strong><code>colorpalette</code></strong> (Ben Jann) a récemment permis de démultiplier quasiment à l’infini les possibilités en terme de manipulation des couleurs.</p>
 </section>
-<section id="colorpalette-ben-jann" class="level1">
-<h1><strong>Colorpalette (Ben Jann)</strong></h1>
+<section id="colorpalette-ben-jann" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> <strong>Colorpalette (Ben Jann)</strong></h1>
 <p><strong><em>Installation</em></strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>ssc install palettes  [, replace force]</span>
@@ -424,8 +419,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <p><img src="imgp3/g5a.png" class="img-fluid" style="width:60.0%"></p>
 <p><br></p>
-<section id="principales-options-et-altération-dune-palette" class="level2">
-<h2 class="anchored" data-anchor-id="principales-options-et-altération-dune-palette"><strong>Principales options et altération d’une palette</strong></h2>
+<section id="principales-options-et-altération-dune-palette" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="principales-options-et-altération-dune-palette"><span class="header-section-number">2.1</span> <strong>Principales options et altération d’une palette</strong></h2>
 <p><strong>Modifier la taille de la palette: <code>n(#)</code></strong></p>
 <p>Important car la réduction de la taille pour certaines palettes ne consiste pas à prendre les # premiers éléments de la palette par défaut (cf palettes <em>hu</em>e ou <em>viridis</em>), mais forcer une palette non qualitative, donc plutôt séquentielle, à produire une palette réduite avec des types de couleurs contrastées plutôt qualitative.</p>
 <p><strong>Modifier l’intensité ou l’opacité : intensity(#), opacity(#) et ipolate(#)</strong></p>
@@ -488,8 +483,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="sc">*</span> On affiche la palette my_pal</span>
 <span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a>colorpalette my_pal</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="utilisation-de-colorpalette-pour-générer-un-graphique" class="level3">
-<h3 class="anchored" data-anchor-id="utilisation-de-colorpalette-pour-générer-un-graphique"><strong>Utilisation de colorpalette pour générer un graphique</strong></h3>
+<section id="utilisation-de-colorpalette-pour-générer-un-graphique" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="utilisation-de-colorpalette-pour-générer-un-graphique"><span class="header-section-number">2.1.1</span> <strong>Utilisation de colorpalette pour générer un graphique</strong></h3>
 <p>On remarque, avec return list, que la commande génère une liste de macros qui enregistre les codes RGB des couleurs de la palette.</p>
 <ul>
 <li>la macro <code>r(p)</code> permet d’utiliser les couleurs de la palette dans un graphique à un seul bloc d’éléments.</li>
@@ -582,8 +577,8 @@ On va afficher un graphique avec 4 densités sous forme d’aires générées al
 </section>
 </section>
 </div></section>
-<section id="exemples-de-palettes" class="level1">
-<h1><strong>Exemples de palettes</strong></h1>
+<section id="exemples-de-palettes" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> <strong>Exemples de palettes</strong></h1>
 <p>Sur le même principe que les deux graphiques précédents mais avec 6 éléments, on a mis à disposition une petite commande, <strong><code>testpal</code></strong>, qui permet de tester le rendu d’un graphique. La commande reporte 6 objets graphiques sous la forme de densités représentées par des aires et par des groupes. Les deux graphiques de la première colonne sont sur un fond blanc, ceux de la deuxième colonne sont sur un fond paramétrable (palette gs) par défaut très sombre.</p>
 <p><strong><em>Installation</em></strong></p>
 <div class="cell">
@@ -607,8 +602,8 @@ On va afficher un graphique avec 4 densités sous forme d’aires générées al
 <p><img src="imgp3/g7a.png" class="img-fluid" style="width:60.0%"></p>
 <p>Pour les quelques palettes populaires qui vont être rapidement présentées, les options de la commande <code>testpal</code> n’ont pas été modifiées. Le nom de la palette est donné par le titre du graphique.</p>
 <p><br></p>
-<section id="palettes-qualitatives" class="level2">
-<h2 class="anchored" data-anchor-id="palettes-qualitatives"><strong>Palettes qualitatives</strong></h2>
+<section id="palettes-qualitatives" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="palettes-qualitatives"><span class="header-section-number">3.1</span> <strong>Palettes qualitatives</strong></h2>
 <p><strong>Tableau</strong></p>
 <p><strong>https://www.tableau.com/about/blog/2016/7/colors-upgrade-tableau-10-56782</strong></p>
 <p><img src="imgp3/g7b.png" class="img-fluid" style="width:60.0%"></p>
@@ -619,8 +614,8 @@ On va afficher un graphique avec 4 densités sous forme d’aires générées al
 </ul>
 <p><img src="imgp3/g7c.png" class="img-fluid" style="width:60.0%"></p>
 </section>
-<section id="palettes-séquentielles" class="level2">
-<h2 class="anchored" data-anchor-id="palettes-séquentielles"><strong>Palettes séquentielles</strong></h2>
+<section id="palettes-séquentielles" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="palettes-séquentielles"><span class="header-section-number">3.2</span> <strong>Palettes séquentielles</strong></h2>
 <ul>
 <li>Utilisées massivement en cartographie et plus généralement pour représenter des fréquences (graphique type barre) ou des valeurs ordonnées</li>
 <li>Couleurs allant du plus clair au plus foncé (ou inversement). – Modification de l’intensité d’une couleur. – Une ou plusieurs gammes de couleurs : par exemples du jaune au rouge, du jaune au bleu…</li>
@@ -675,121 +670,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
-  const disableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'prefetch';
-    }
-  }
-  const enableStylesheet = (stylesheets) => {
-    for (let i=0; i < stylesheets.length; i++) {
-      const stylesheet = stylesheets[i];
-      stylesheet.rel = 'stylesheet';
-    }
-  }
-  const manageTransitions = (selector, allowTransitions) => {
-    const els = window.document.querySelectorAll(selector);
-    for (let i=0; i < els.length; i++) {
-      const el = els[i];
-      if (allowTransitions) {
-        el.classList.remove('notransition');
-      } else {
-        el.classList.add('notransition');
-      }
-    }
-  }
-  const toggleColorMode = (alternate) => {
-    // Switch the stylesheets
-    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
-    manageTransitions('#quarto-margin-sidebar .nav-link', false);
-    if (alternate) {
-      enableStylesheet(alternateStylesheets);
-      for (const sheetNode of alternateStylesheets) {
-        if (sheetNode.id === "quarto-bootstrap") {
-          toggleBodyColorMode(sheetNode);
-        }
-      }
-    } else {
-      disableStylesheet(alternateStylesheets);
-      toggleBodyColorPrimary();
-    }
-    manageTransitions('#quarto-margin-sidebar .nav-link', true);
-    // Switch the toggles
-    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
-    for (let i=0; i < toggles.length; i++) {
-      const toggle = toggles[i];
-      if (toggle) {
-        if (alternate) {
-          toggle.classList.add("alternate");     
-        } else {
-          toggle.classList.remove("alternate");
-        }
-      }
-    }
-    // Hack to workaround the fact that safari doesn't
-    // properly recolor the scrollbar when toggling (#1455)
-    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
-      manageTransitions("body", false);
-      window.scrollTo(0, 1);
-      setTimeout(() => {
-        window.scrollTo(0, 0);
-        manageTransitions("body", true);
-      }, 40);  
-    }
-  }
-  const isFileUrl = () => { 
-    return window.location.protocol === 'file:';
-  }
-  const hasAlternateSentinel = () => {  
-    let styleSentinel = getColorSchemeSentinel();
-    if (styleSentinel !== null) {
-      return styleSentinel === "alternate";
-    } else {
-      return false;
-    }
-  }
-  const setStyleSentinel = (alternate) => {
-    const value = alternate ? "alternate" : "default";
-    if (!isFileUrl()) {
-      window.localStorage.setItem("quarto-color-scheme", value);
-    } else {
-      localAlternateSentinel = value;
-    }
-  }
-  const getColorSchemeSentinel = () => {
-    if (!isFileUrl()) {
-      const storageValue = window.localStorage.getItem("quarto-color-scheme");
-      return storageValue != null ? storageValue : localAlternateSentinel;
-    } else {
-      return localAlternateSentinel;
-    }
-  }
-  let localAlternateSentinel = 'alternate';
-  // Dark / light mode switch
-  window.quartoToggleColorScheme = () => {
-    // Read the current dark / light value 
-    let toAlternate = !hasAlternateSentinel();
-    toggleColorMode(toAlternate);
-    setStyleSentinel(toAlternate);
-  };
-  // Ensure there is a toggle, if there isn't float one in the top right
-  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
-    const a = window.document.createElement('a');
-    a.classList.add('top-right');
-    a.classList.add('quarto-color-scheme-toggle');
-    a.href = "";
-    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
-    const i = window.document.createElement("i");
-    i.classList.add('bi');
-    a.appendChild(i);
-    window.document.body.appendChild(a);
-  }
-  // Switch to dark mode if need be
-  if (hasAlternateSentinel()) {
-    toggleColorMode(true);
-  } else {
-    toggleColorMode(false);
-  }
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
@@ -883,7 +763,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-      <div class="nav-footer-center">Marc Thévenin - Ined-Sms - Août 2022</div>
+      <div class="nav-footer-center">Marc Thévenin / Ined-Sms / Août 2022-</div>
   </div>
 </footer>
 
