@@ -14,8 +14,8 @@ knitr::opts_chunk$set(engine.path=list(stata=stataexe))
 **Quelques généralités sur l'utilisation de Python avec Stata**   
 
 * Depuis la version 16 de Stata (printemps 2019) il est possible d'utiliser Python de manière intéractive avec Stata.
-* Une librairie Python  `SFI` (https://www.stata.com/python/api16/Data.html) est mise à disposition pour favoriser cette interactivé.
-* Une librairie Python officielle a été mise à disposition pour utiliser Stata sous **Jupyter** et **Spyder** si on installe une version **Conda** de Python (je ne le conseille pas) . Un noyau Stata [**Statakernel**] est disponible depuis de nombreuses années pour le notebook **Jupyter**  et fonctionne très bien. 
+* Une librairie Python  `SFI` (https://www.stata.com/python/api16/Data.html) est mise à disposition pour favoriser cette interactivé [J'en ai jamais eu besoin, et le code n'a pas l'air facile d'accès]. 
+* Une librairie Python officielle a été mise à disposition pour utiliser Stata sous **Jupyter** et **Spyder** si on installe une version **Conda** de Python (je ne le conseille pas). Un noyau Stata [**Statakernel**] est disponible depuis de nombreuses années pour le notebook **Jupyter**  et fonctionne très bien. 
 * l'entrée de l'aide Stata pour utiliser Python: `help python`
 * Des éléments de correspondance Stata-Python pour la manipulation des données (librairie`pandas`) sont disponibles  sur  <https://pandas.pydata.org/docs/getting_started/comparison/comparison_with_stata.html#compare-with-stata>
 * Et c'est très important:
