@@ -1,0 +1,180 @@
+---
+title: "Programmation avec Python"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+options(Encoding="UTF-8")
+library(Statamarkdown)
+stataexe <- "C:/Program Files/Stata17/StataSE-64.exe"
+knitr::opts_chunk$set(engine.path=list(stata=stataexe))
+```
+
+
+**Quelques généralités sur l'utilisation de Python avec Stata**   
+
+* Depuis la version 16 de Stata (printemps 2019) il est possible d'utiliser Python de manière intéractive avec Stata.
+* Une librairie Python  `SFI` (https://www.stata.com/python/api16/Data.html) est mise à disposition pour favoriser cette interactivé.
+* Une librairie Python officielle a été mise à disposition pour utiliser Stata sous **Jupyter** et **Spyder** si on installe une version **Conda** de Python (je ne le conseille pas) . Un noyau Stata [**Statakernel**] est disponible depuis de nombreuses années pour le notebook **Jupyter**  et fonctionne très bien. 
+* l'entrée de l'aide Stata pour utiliser Python: `help python`
+* Des éléments de correspondance Stata-Python pour la manipulation des données (librairie`pandas`) sont disponibles  sur  <https://pandas.pydata.org/docs/getting_started/comparison/comparison_with_stata.html#compare-with-stata>
+* Et c'est très important:
+
+::: callout-tip
+Les macros Stata sont reconnu dans un code Python et appelé de la même façon. 
+:::
+
+
+
+Dans ce support, seul les graphiques seront exécutés avec Python, les manipulations en amont étant faite avec Stata. Seuls le chargement des bases seront effectués avec la librairie **`pandas`**.  
+
+
+# Installation de Python et des librairies [OS Windows]
+
+
+## Installation de python 
+
+Je déconseille vivement d'installer Python via une distribution *conda* pour générer des graphique. Un bug systématique se produira lorsque qu'un script *matplotlib* sera exécuté, faisant crasher la session de Stata. On
+peut remédier à ce problème facilement via une ligne de code à insérer dans un fichier .profile, mais autant contourner un problème que d'y remédier.
+
+**WARNING**
+Pour utiliser Python, vous devez avoir le même type de built pour les deux applications:  
+
+* Stata 64 bits => Python 64 bits
+* Stata 32 bits => Pyhon  32 bits
+
+Normalement, à l'Ined, on est sur 64b
+
+* *Python 64* Installation Standard: <https://www.python.org/downloads/windows/>
+* *Python 32* Installation Standard: <https://www.python.org/downloads/>
+
+
+
+**Vérification de la reconnaissance de Python sous Stata**
+
+```{stata}
+python query
+```
+
+**Test exécution de python dans un .do**
+```{stata filename="Dans un .do"}
+python: 
+print("Ined forever!!!!")
+1+1
+end  
+```
+
+**Test de reconnaisance des macros Stata avec Python**
+
+```{stata filename="Dans un .do"}
+local  x=5
+global m "Salut"
+
+python: 
+print("$m")
+`x'/2
+end  
+```
+
+
+## Installation des libraries
+
+**Vérification des librairies installées** 
+
+Dans le terminal windows pour garder le prompteur ouvert. ^[touche windows + R et taper cmd dans la fenêtre qui s'ouvre / taper cmd dans la fenêtre de recherche de la barre de tache. On peut attacher le prompteur à la barre de tâche pour l'ouvrir directement par la suite]
+
+```{stata, filename="Dans le terminal de commande windows", eval=FALSE}
+pip list
+```
+
+
+Installation d'une librairie. De préférence dans le terminal 
+```{stata, filename="Dans le terminal de commande windows", eval="FALSE"}
+pip install plotnine
+```
+
+Ou dans Stata:
+```{stata, eval=FALSE}
+! pip install plotnine
+```
+
+
+Librairies nécessaire pour la suite de cette documentation: **`pandas`** (installe `numpy`), **`matplotlib`**, **`seaborn`**, **`plotnine`**, **`plotly`**
+
+```{stata, eval=FALSE}
+pip install pandas
+pip install matplotlib
+pip install seaborn
+pip install plotnine
+pip install plotly
+```
+
+
+
+# Graphiques
+
+
+
+**Exemple 1**
+
+Exécution d'un graphique avec la librairie `seaborn` (fonction `pairplot()`).  
+Le graphique est enregistré avec la fonction `savefig` et affiché sous commande windows 
+
+
+```{stata, eval=FALSE}
+qui sysuse auto, clear
+qui keep price mpg displacement gear_ratio turn foreign
+qui save auto, replace
+
+qui python:
+import pandas as pa 
+df = pa.read_stata('auto.dta')
+import seaborn as sns
+g = sns.pairplot(df, hue="foreign")
+g.savefig("D:/D/Marc/SMS/STATA INED/Graphiques/programmation/python/img/graph1.png")
+end
+
+* ! "D:/D/Marc/SMS/STATA INED/Graphiques/programmation/python/img/graph1.png"
+```
+
+
+![seaborn: fonction `pairplot`](img/graph1.png)
+
+**Exemple 2**  
+
+
+```{stata, eval=FALSE}
+
+local x turn   // macro x = nom de la variable
+
+qui python:
+import pandas as pa 
+df = pa.read_stata('auto.dta')
+
+import plotly.graph_objects as go
+
+df = pa.read_stata('auto.dta')
+g = go.Figure(data=go.Violin(y=df['`x''], box_visible=True, line_color='black', meanline_visible=True, 
+fillcolor='rgb(248,118,109)', opacity=0.5, x0='Distribution de `x''))
+g.update_layout( title=" Violinplot pour la variable `x'", font=dict(family="Arial", size=24, color='rgb(0,0,0)'))
+g.write_html("D:/D/Marc/SMS/STATA INED/Graphiques/programmation/python/img/graph2.html")
+# pour afficher le graph sans l'enregistrer: g.show()
+end
+
+! "D:/D/Marc/SMS/STATA INED/Graphiques/programmation/python/img/graph2.html"
+```
+
+
+```{r showChoro1, echo=FALSE}
+library(htmltools)
+htmltools::includeHTML("D:/D/Marc/SMS/STATA INED/Graphiques/programmation/python/img/graph2.html")
+```
+
+
+
+
+
+
+
+
+

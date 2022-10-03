@@ -58,7 +58,7 @@ website:
       - section: "Ressources graphiques"
         contents:
           - Stata.qmd
-          - Python.qmd
+          - programmation/python/python.qmd
 
 format:
   html:
