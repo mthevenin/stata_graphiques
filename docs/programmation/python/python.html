@@ -317,7 +317,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   <li><a href="#installation-de-python" id="toc-installation-de-python" class="nav-link" data-scroll-target="#installation-de-python"><span class="toc-section-number">1.1</span>  Installation de python</a></li>
   <li><a href="#installation-des-libraries" id="toc-installation-des-libraries" class="nav-link" data-scroll-target="#installation-des-libraries"><span class="toc-section-number">1.2</span>  Installation des libraries</a></li>
   </ul></li>
-  <li><a href="#graphiques" id="toc-graphiques" class="nav-link" data-scroll-target="#graphiques"><span class="toc-section-number">2</span>  Graphiques</a></li>
+  <li><a href="#graphiques" id="toc-graphiques" class="nav-link" data-scroll-target="#graphiques"><span class="toc-section-number">2</span>  Graphiques</a>
+  <ul class="collapse">
+  <li><a href="#visualisation-des-données" id="toc-visualisation-des-données" class="nav-link" data-scroll-target="#visualisation-des-données"><span class="toc-section-number">2.1</span>  Visualisation des données</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -359,7 +362,7 @@ Tip
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Les macros Stata sont reconnu dans un code Python et appelé de la même façon.</p>
+<p>Les macros Stata sont reconnues dans un code Python et appelées de la même façon. C’est très intéressant.</p>
 </div>
 </div>
 <p>Dans ce support, seul les graphiques seront exécutés avec Python, les manipulations en amont étant faite avec Stata. Seuls le chargement des bases seront effectués avec la librairie <strong><code>pandas</code></strong>.</p>
@@ -478,7 +481,7 @@ Salut
 </section>
 <section id="graphiques" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> Graphiques</h1>
-<p><strong>Exemple 1</strong></p>
+<p><strong>Exemple 1 avec <code>seaborn</code></strong></p>
 <p>Exécution d’un graphique avec la librairie <code>seaborn</code> (fonction <code>pairplot()</code>).<br>
 Le graphique est enregistré avec la fonction <code>savefig</code> et affiché sous commande windows</p>
 <div class="cell">
@@ -498,11 +501,11 @@ Le graphique est enregistré avec la fonction <code>savefig</code> et affiché s
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="img/graph1.png" class="img-fluid figure-img"></p>
+<p><img src="img/graph1.png" class="img-fluid figure-img" style="width:80.0%"></p>
 <p></p><figcaption class="figure-caption">seaborn: fonction <code>pairplot</code></figcaption><p></p>
 </figure>
 </div>
-<p><strong>Exemple 2</strong></p>
+<p><strong>Exemple 2 avec <code>plotly</code></strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">local</span> x turn   <span class="co">// macro x = nom de la variable</span></span>
@@ -599,10 +602,25 @@ e.exports=function(t){return null!=t&&(n(t)||function(t){return"function"==typeo
 
 </div>
 </div>
+<section id="visualisation-des-données" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="visualisation-des-données"><span class="header-section-number">2.1</span> Visualisation des données</h2>
+<ul>
+<li>La majeure partie des graphiques sont générés avec la librairie <code>plotnine</code> qui est un wrapper de ggplot2 sous python. La logique de la syntaxe est assez particulière, et l’objet de cette présentation n’est pas de la présentée. La programmation des graphiques avec ggplot est très documentée et on reverra vers:
+<ul>
+<li>le Support <strong>plotnine</strong> (fonctions peu détaillées): <a href="https://plotnine.readthedocs.io/en/stable/index.html" class="uri">https://plotnine.readthedocs.io/en/stable/index.html</a></li>
+<li>la traduction des chapitres de l’ouvrage <em><a href="https://r4ds.had.co.nz/">R for data science</a></em> (H.Wickham,G.Grolemund) dédiés à <strong>ggplot</strong> en <strong>plotnine</strong>:<a href="https://datascienceworkshops.com/blog/plotnine-grammar-of-graphics-for-python/" class="uri">https://datascienceworkshops.com/blog/plotnine-grammar-of-graphics-for-python/</a></li>
+<li>Quelques ressources ggplot2:
+<ul>
+<li><a href="https://larmarange.github.io/seminaire-INED-18juin2019/diaporama.html#/" class="uri">https://larmarange.github.io/seminaire-INED-18juin2019/diaporama.html#/</a> et <a href="https://larmarange.github.io/analyse-R/" class="uri">https://larmarange.github.io/analyse-R/</a> (plusieurs chapitres dédiés aux graphiques)</li>
+<li><a href="http://www.sthda.com/english/wiki/be-awesome-in-ggplot2-a-practical-guide-to-be-highly-effective-r-software-and-data-visualization" class="uri">http://www.sthda.com/english/wiki/be-awesome-in-ggplot2-a-practical-guide-to-be-highly-effective-r-software-and-data-visualization</a></li>
+</ul></li>
+</ul></li>
+</ul>
 
 
 <!-- -->
 
+</section>
 </section>
 
 
@@ -793,7 +811,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb13-21"><a href="#cb13-21" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Et c'est très important:</span>
 <span id="cb13-22"><a href="#cb13-22" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-23"><a href="#cb13-23" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
-<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>Les macros Stata sont reconnu dans un code Python et appelé de la même façon. </span>
+<span id="cb13-24"><a href="#cb13-24" aria-hidden="true" tabindex="-1"></a>Les macros Stata sont reconnues dans un code Python et appelées de la même façon. C'est très intéressant.</span>
 <span id="cb13-25"><a href="#cb13-25" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb13-26"><a href="#cb13-26" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-27"><a href="#cb13-27" aria-hidden="true" tabindex="-1"></a></span>
@@ -886,69 +904,74 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb13-116"><a href="#cb13-116" aria-hidden="true" tabindex="-1"></a><span class="fu"># Graphiques</span></span>
 <span id="cb13-117"><a href="#cb13-117" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-118"><a href="#cb13-118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-119"><a href="#cb13-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-120"><a href="#cb13-120" aria-hidden="true" tabindex="-1"></a>**Exemple 1**</span>
-<span id="cb13-121"><a href="#cb13-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-122"><a href="#cb13-122" aria-hidden="true" tabindex="-1"></a>Exécution d'un graphique avec la librairie <span class="in">`seaborn`</span> (fonction <span class="in">`pairplot()`</span>).  </span>
-<span id="cb13-123"><a href="#cb13-123" aria-hidden="true" tabindex="-1"></a>Le graphique est enregistré avec la fonction <span class="in">`savefig`</span> et affiché sous commande windows </span>
+<span id="cb13-119"><a href="#cb13-119" aria-hidden="true" tabindex="-1"></a>**Exemple 1 avec `seaborn`**</span>
+<span id="cb13-120"><a href="#cb13-120" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-121"><a href="#cb13-121" aria-hidden="true" tabindex="-1"></a>Exécution d'un graphique avec la librairie <span class="in">`seaborn`</span> (fonction <span class="in">`pairplot()`</span>).  </span>
+<span id="cb13-122"><a href="#cb13-122" aria-hidden="true" tabindex="-1"></a>Le graphique est enregistré avec la fonction <span class="in">`savefig`</span> et affiché sous commande windows </span>
+<span id="cb13-123"><a href="#cb13-123" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-124"><a href="#cb13-124" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-125"><a href="#cb13-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-126"><a href="#cb13-126" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
-<span id="cb13-127"><a href="#cb13-127" aria-hidden="true" tabindex="-1"></a><span class="in">qui sysuse auto, clear</span></span>
-<span id="cb13-128"><a href="#cb13-128" aria-hidden="true" tabindex="-1"></a><span class="in">qui keep price mpg displacement gear_ratio turn foreign</span></span>
-<span id="cb13-129"><a href="#cb13-129" aria-hidden="true" tabindex="-1"></a><span class="in">qui save auto, replace</span></span>
-<span id="cb13-130"><a href="#cb13-130" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-131"><a href="#cb13-131" aria-hidden="true" tabindex="-1"></a><span class="in">qui python:</span></span>
-<span id="cb13-132"><a href="#cb13-132" aria-hidden="true" tabindex="-1"></a><span class="in">import pandas as pa </span></span>
-<span id="cb13-133"><a href="#cb13-133" aria-hidden="true" tabindex="-1"></a><span class="in">df = pa.read_stata('auto.dta')</span></span>
-<span id="cb13-134"><a href="#cb13-134" aria-hidden="true" tabindex="-1"></a><span class="in">import seaborn as sns</span></span>
-<span id="cb13-135"><a href="#cb13-135" aria-hidden="true" tabindex="-1"></a><span class="in">g = sns.pairplot(df, hue="foreign")</span></span>
-<span id="cb13-136"><a href="#cb13-136" aria-hidden="true" tabindex="-1"></a><span class="in">g.savefig("D:/D/Marc/SMS/STATA INED/Graphiques/programmation/python/img/graph1.png")</span></span>
-<span id="cb13-137"><a href="#cb13-137" aria-hidden="true" tabindex="-1"></a><span class="in">end</span></span>
-<span id="cb13-138"><a href="#cb13-138" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-139"><a href="#cb13-139" aria-hidden="true" tabindex="-1"></a><span class="in">* ! "D:/D/Marc/SMS/STATA INED/Graphiques/programmation/python/img/graph1.png"</span></span>
-<span id="cb13-140"><a href="#cb13-140" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-125"><a href="#cb13-125" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
+<span id="cb13-126"><a href="#cb13-126" aria-hidden="true" tabindex="-1"></a><span class="in">qui sysuse auto, clear</span></span>
+<span id="cb13-127"><a href="#cb13-127" aria-hidden="true" tabindex="-1"></a><span class="in">qui keep price mpg displacement gear_ratio turn foreign</span></span>
+<span id="cb13-128"><a href="#cb13-128" aria-hidden="true" tabindex="-1"></a><span class="in">qui save auto, replace</span></span>
+<span id="cb13-129"><a href="#cb13-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-130"><a href="#cb13-130" aria-hidden="true" tabindex="-1"></a><span class="in">qui python:</span></span>
+<span id="cb13-131"><a href="#cb13-131" aria-hidden="true" tabindex="-1"></a><span class="in">import pandas as pa </span></span>
+<span id="cb13-132"><a href="#cb13-132" aria-hidden="true" tabindex="-1"></a><span class="in">df = pa.read_stata('auto.dta')</span></span>
+<span id="cb13-133"><a href="#cb13-133" aria-hidden="true" tabindex="-1"></a><span class="in">import seaborn as sns</span></span>
+<span id="cb13-134"><a href="#cb13-134" aria-hidden="true" tabindex="-1"></a><span class="in">g = sns.pairplot(df, hue="foreign")</span></span>
+<span id="cb13-135"><a href="#cb13-135" aria-hidden="true" tabindex="-1"></a><span class="in">g.savefig("D:/D/Marc/SMS/STATA INED/Graphiques/programmation/python/img/graph1.png")</span></span>
+<span id="cb13-136"><a href="#cb13-136" aria-hidden="true" tabindex="-1"></a><span class="in">end</span></span>
+<span id="cb13-137"><a href="#cb13-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-138"><a href="#cb13-138" aria-hidden="true" tabindex="-1"></a><span class="in">* ! "D:/D/Marc/SMS/STATA INED/Graphiques/programmation/python/img/graph1.png"</span></span>
+<span id="cb13-139"><a href="#cb13-139" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-140"><a href="#cb13-140" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-141"><a href="#cb13-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-142"><a href="#cb13-142" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-143"><a href="#cb13-143" aria-hidden="true" tabindex="-1"></a><span class="al">![seaborn: fonction `pairplot`](img/graph1.png)</span></span>
-<span id="cb13-144"><a href="#cb13-144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-145"><a href="#cb13-145" aria-hidden="true" tabindex="-1"></a>**Exemple 2**  </span>
+<span id="cb13-142"><a href="#cb13-142" aria-hidden="true" tabindex="-1"></a><span class="al">![seaborn: fonction `pairplot`](img/graph1.png)</span>{width=80%}</span>
+<span id="cb13-143"><a href="#cb13-143" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-144"><a href="#cb13-144" aria-hidden="true" tabindex="-1"></a>**Exemple 2 avec `plotly`**  </span>
+<span id="cb13-145"><a href="#cb13-145" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-146"><a href="#cb13-146" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-147"><a href="#cb13-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-148"><a href="#cb13-148" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
-<span id="cb13-149"><a href="#cb13-149" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-150"><a href="#cb13-150" aria-hidden="true" tabindex="-1"></a><span class="in">local x turn   // macro x = nom de la variable</span></span>
-<span id="cb13-151"><a href="#cb13-151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-152"><a href="#cb13-152" aria-hidden="true" tabindex="-1"></a><span class="in">qui python:</span></span>
-<span id="cb13-153"><a href="#cb13-153" aria-hidden="true" tabindex="-1"></a><span class="in">import pandas as pa </span></span>
-<span id="cb13-154"><a href="#cb13-154" aria-hidden="true" tabindex="-1"></a><span class="in">df = pa.read_stata('auto.dta')</span></span>
-<span id="cb13-155"><a href="#cb13-155" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-156"><a href="#cb13-156" aria-hidden="true" tabindex="-1"></a><span class="in">import plotly.graph_objects as go</span></span>
-<span id="cb13-157"><a href="#cb13-157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-158"><a href="#cb13-158" aria-hidden="true" tabindex="-1"></a><span class="in">df = pa.read_stata('auto.dta')</span></span>
-<span id="cb13-159"><a href="#cb13-159" aria-hidden="true" tabindex="-1"></a><span class="in">g = go.Figure(data=go.Violin(y=df['`x''], box_visible=True, line_color='black', meanline_visible=True, </span></span>
-<span id="cb13-160"><a href="#cb13-160" aria-hidden="true" tabindex="-1"></a><span class="in">fillcolor='rgb(248,118,109)', opacity=0.5, x0='Distribution de `x''))</span></span>
-<span id="cb13-161"><a href="#cb13-161" aria-hidden="true" tabindex="-1"></a><span class="in">g.update_layout( title=" Violinplot pour la variable `x'", font=dict(family="Arial", size=24, color='rgb(0,0,0)'))</span></span>
-<span id="cb13-162"><a href="#cb13-162" aria-hidden="true" tabindex="-1"></a><span class="in">g.write_html("D:/D/Marc/SMS/STATA INED/Graphiques/programmation/python/img/graph2.html")</span></span>
-<span id="cb13-163"><a href="#cb13-163" aria-hidden="true" tabindex="-1"></a><span class="in"># pour afficher le graph sans l'enregistrer: g.show()</span></span>
-<span id="cb13-164"><a href="#cb13-164" aria-hidden="true" tabindex="-1"></a><span class="in">end</span></span>
-<span id="cb13-165"><a href="#cb13-165" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-166"><a href="#cb13-166" aria-hidden="true" tabindex="-1"></a><span class="in">! "D:/D/Marc/SMS/STATA INED/Graphiques/programmation/python/img/graph2.html"</span></span>
-<span id="cb13-167"><a href="#cb13-167" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-147"><a href="#cb13-147" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
+<span id="cb13-148"><a href="#cb13-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-149"><a href="#cb13-149" aria-hidden="true" tabindex="-1"></a><span class="in">local x turn   // macro x = nom de la variable</span></span>
+<span id="cb13-150"><a href="#cb13-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-151"><a href="#cb13-151" aria-hidden="true" tabindex="-1"></a><span class="in">qui python:</span></span>
+<span id="cb13-152"><a href="#cb13-152" aria-hidden="true" tabindex="-1"></a><span class="in">import pandas as pa </span></span>
+<span id="cb13-153"><a href="#cb13-153" aria-hidden="true" tabindex="-1"></a><span class="in">df = pa.read_stata('auto.dta')</span></span>
+<span id="cb13-154"><a href="#cb13-154" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-155"><a href="#cb13-155" aria-hidden="true" tabindex="-1"></a><span class="in">import plotly.graph_objects as go</span></span>
+<span id="cb13-156"><a href="#cb13-156" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-157"><a href="#cb13-157" aria-hidden="true" tabindex="-1"></a><span class="in">df = pa.read_stata('auto.dta')</span></span>
+<span id="cb13-158"><a href="#cb13-158" aria-hidden="true" tabindex="-1"></a><span class="in">g = go.Figure(data=go.Violin(y=df['`x''], box_visible=True, line_color='black', meanline_visible=True, </span></span>
+<span id="cb13-159"><a href="#cb13-159" aria-hidden="true" tabindex="-1"></a><span class="in">fillcolor='rgb(248,118,109)', opacity=0.5, x0='Distribution de `x''))</span></span>
+<span id="cb13-160"><a href="#cb13-160" aria-hidden="true" tabindex="-1"></a><span class="in">g.update_layout( title=" Violinplot pour la variable `x'", font=dict(family="Arial", size=24, color='rgb(0,0,0)'))</span></span>
+<span id="cb13-161"><a href="#cb13-161" aria-hidden="true" tabindex="-1"></a><span class="in">g.write_html("D:/D/Marc/SMS/STATA INED/Graphiques/programmation/python/img/graph2.html")</span></span>
+<span id="cb13-162"><a href="#cb13-162" aria-hidden="true" tabindex="-1"></a><span class="in"># pour afficher le graph sans l'enregistrer: g.show()</span></span>
+<span id="cb13-163"><a href="#cb13-163" aria-hidden="true" tabindex="-1"></a><span class="in">end</span></span>
+<span id="cb13-164"><a href="#cb13-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-165"><a href="#cb13-165" aria-hidden="true" tabindex="-1"></a><span class="in">! "D:/D/Marc/SMS/STATA INED/Graphiques/programmation/python/img/graph2.html"</span></span>
+<span id="cb13-166"><a href="#cb13-166" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-167"><a href="#cb13-167" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-168"><a href="#cb13-168" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-169"><a href="#cb13-169" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-170"><a href="#cb13-170" aria-hidden="true" tabindex="-1"></a><span class="in">```{r showChoro1, echo=FALSE}</span></span>
-<span id="cb13-171"><a href="#cb13-171" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(htmltools)</span>
-<span id="cb13-172"><a href="#cb13-172" aria-hidden="true" tabindex="-1"></a>htmltools<span class="sc">::</span><span class="fu">includeHTML</span>(<span class="st">"D:/D/Marc/SMS/STATA INED/Graphiques/programmation/python/img/graph2.html"</span>)</span>
-<span id="cb13-173"><a href="#cb13-173" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-169"><a href="#cb13-169" aria-hidden="true" tabindex="-1"></a><span class="in">```{r showChoro1, echo=FALSE}</span></span>
+<span id="cb13-170"><a href="#cb13-170" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(htmltools)</span>
+<span id="cb13-171"><a href="#cb13-171" aria-hidden="true" tabindex="-1"></a>htmltools<span class="sc">::</span><span class="fu">includeHTML</span>(<span class="st">"D:/D/Marc/SMS/STATA INED/Graphiques/programmation/python/img/graph2.html"</span>)</span>
+<span id="cb13-172"><a href="#cb13-172" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb13-173"><a href="#cb13-173" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb13-174"><a href="#cb13-174" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-175"><a href="#cb13-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-175"><a href="#cb13-175" aria-hidden="true" tabindex="-1"></a><span class="fu">## Visualisation des données</span></span>
 <span id="cb13-176"><a href="#cb13-176" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-177"><a href="#cb13-177" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-178"><a href="#cb13-178" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-179"><a href="#cb13-179" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-180"><a href="#cb13-180" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-181"><a href="#cb13-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-177"><a href="#cb13-177" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>La majeure partie des graphiques sont générés avec la librairie <span class="in">`plotnine`</span> qui est un wrapper de ggplot2 sous python. La logique de la syntaxe est assez particulière, et l'objet de cette présentation n'est pas de la présentée. La programmation des graphiques avec ggplot est très documentée et on reverra vers: </span>
+<span id="cb13-178"><a href="#cb13-178" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>le Support **plotnine** (fonctions peu détaillées): <span class="ot">&lt;https://plotnine.readthedocs.io/en/stable/index.html&gt;</span> </span>
+<span id="cb13-179"><a href="#cb13-179" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>la traduction des chapitres de l'ouvrage *[R for data science](https://r4ds.had.co.nz/)* (H.Wickham,G.Grolemund) dédiés à **ggplot** en **plotnine**:<span class="ot">&lt;https://datascienceworkshops.com/blog/plotnine-grammar-of-graphics-for-python/&gt;</span></span>
+<span id="cb13-180"><a href="#cb13-180" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>Quelques ressources ggplot2:</span>
+<span id="cb13-181"><a href="#cb13-181" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span><span class="ot">&lt;https://larmarange.github.io/seminaire-INED-18juin2019/diaporama.html#/&gt;</span> et <span class="ot">&lt;https://larmarange.github.io/analyse-R/&gt;</span> (plusieurs chapitres dédiés aux graphiques)</span>
+<span id="cb13-182"><a href="#cb13-182" aria-hidden="true" tabindex="-1"></a><span class="ss">    * </span><span class="ot">&lt;http://www.sthda.com/english/wiki/be-awesome-in-ggplot2-a-practical-guide-to-be-highly-effective-r-software-and-data-visualization&gt;</span> </span>
+<span id="cb13-183"><a href="#cb13-183" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-184"><a href="#cb13-184" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-185"><a href="#cb13-185" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-186"><a href="#cb13-186" aria-hidden="true" tabindex="-1"></a></span>
 </code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
