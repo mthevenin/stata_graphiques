@@ -1,5 +1,6 @@
 ---
 title: "Automatiser la programmation"
+fig-cap-location: top
 ---
 
 ```{r setup, include=FALSE}

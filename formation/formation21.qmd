@@ -1,5 +1,6 @@
 ---
 title: "Rappels sur les macros"
+fig-cap-location: top
 ---
 
 ```{r setup, include=FALSE}
@@ -358,20 +359,17 @@ tw scatter price mpg if `X',
 #delimit cr
 ```
 
-![](imgp2/g1a.png){width=60%}
+
+
+![Macro: Légende automatique (a)](imgp2/g1a.png){width=60%}
 
 
 Il suffit de modifier la première ligne qui enregistre le nom de la variable pour faire le même graphique avec la variable *foreign*: local X foreign.
 
-![](imgp2/g1b.png){width=60%}
-
-***Exercice***  
-A partir du programme faire un graphique combiné des deux graphiques précédents en automatisant au maximum la sélection des variables *rep* et *foreign*.  Il y a très peu d’ajouts ou de modifications à faire.  
-
-![](imgp2/g1c.png){width=80%}
+![Macro: Légende automatique (b)](imgp2/g1b.png){width=60%}
 
 
-### variable label 
+###  Variable label 
 Récupère le label d’une variable sous forme du macro. Utile pour gérer une modification du titre des axes passer par les lignes de programme d’un graphique, et plus généralement pour donner de l’information sur variable de type continu ou de comptage sans label affecté au valeurs.  
 
 **Syntaxe**: **`local/global nom_macro : variable label variable/macro`**  
@@ -517,7 +515,7 @@ tw scatter price mpg if !foreign,
 ```
 
 
-![](imgp2/g2.png){width=60%}
+![xline - yline: récupération des valeurs dans une macro](imgp2/g2.png){width=60%}
 
 ## **Compteurs i++**
 
@@ -702,7 +700,7 @@ legend(off)
 title("Averages of displacement") ytitle("Number of repairs")
 ```
 
-![](imgp2/g3.png){width=60%}
+![Graphique avec compteur et objet de type `r()`](imgp2/g3.png){width=60%}
 
 ***Pas à pas du programme***   
 
@@ -872,4 +870,4 @@ tw scatter `1' `2' if `3'==1,
 ;
 ````
 
-![](imgp2/g4.png){width=60%}
+![Utilisation des tokens et des variables temporaires](imgp2/g4.png){width=60%}

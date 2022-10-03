@@ -12,14 +12,13 @@ knitr::opts_chunk$set(engine.path=list(stata=stataexe))
 ```
 
 
-# **Combiner des graphiques**
 
-## **Facettes automatiques**
+## **Small multiple automatiques**
 
-Les facettes ou *small multiples* permet de combiner rapidement plusieurs graphiques répétés pour différentes valeurs d’une variable additionnelle, généralement catégorielle. Stata est plutôt efficace pour produire ce genre de visualisation avec l’option `by()` dans la commande graphique. On peut néanmoins regretter le manque de possibilité concernant l’habillage des sous graphiques avec, par exemple, une même couleur imposée à l’ensemble des sous graphiques.  
+Les facettes ou *small multiple* permet de combiner rapidement plusieurs graphiques répétés pour différentes valeurs d’une variable additionnelle, généralement catégorielle. Stata est plutôt efficace pour produire ce genre de visualisation avec l’option `by()` dans la commande graphique. On peut néanmoins regretter le manque de possibilité concernant l’habillage des sous graphiques avec, par exemple, une même couleur imposée à l’ensemble des sous graphiques.  
 
 
-**Syntaxe** : `graphique, by(variable [, total col(#) row(#)…])…`  
+**Syntaxe** : **`graphique, by(variable [, total col(#) row(#)…])…`**  
 Avec l’argument `total` en option de `by()`, on peut ajouter un graphique additionnel représentant le graphique avec toutes les valeurs, donc celui sans l’option by. On peut également modifier la répartition des sous-graphiques par ligne et colonne avec `row()` et `col()`.
 Le graphique génère automatiquement une note « Graphs by nom_variable » plutôt dispensable. Si l’on souhaite supprimer cette note, on ajoute `note(" ")` en option de `by()`.  
 
