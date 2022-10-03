@@ -1,17 +1,14 @@
 ---
 title: "Combiner des graphiques"
+fig-cap-location: top
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 options(Encoding="UTF-8")
-
-library(knitr)
-library(rsconnect)
-library(haven)
-library(pander)
-library(memisc)
-library(fontawesome)
+library(Statamarkdown)
+stataexe <- "C:/Program Files/Stata17/StataSE-64.exe"
+knitr::opts_chunk$set(engine.path=list(stata=stataexe))
 ```
 
 
@@ -28,7 +25,7 @@ Le graphique génère automatiquement une note « Graphs by nom_variable » plut
 
 ***Exemple***
 
-```{r eval=FALSE}
+```{stata eval=FALSE}
 sysuse lifeexp
 #delimit ;
 tw scatter lexp gnppc, 
@@ -40,7 +37,7 @@ xscale(log)
 ;
 ```
 
-![](imgp1/g16.png){width=60%}
+![Small multiple avec l'option by](imgp1/g16.png){width=100%}
 
 ## **Combinaison libre**
 
@@ -61,7 +58,7 @@ Deux commandes sont disponibles pour combiner plusieurs sous-graphique:
 **Graphique vide**  
 
 ***Syntaxe***  
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 tw scatteri 1 1, ylab(,nogrid) xlab(,nogrid) mc(%0) xtitle("") ytitle("") yscale(off noline) xscale(off noline) name(gv,replace) 
 ```
 
@@ -69,36 +66,36 @@ Pour récupérer cette syntaxe on peut l’enregistrer dans une macro en dur, de
 
 ***Enregistrement dans une macro***
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 global gvide "scatteri 1 1, ylab(,nogrid) xlab(,nogrid) mc(%0) xtitle("") ytitle("") yscale(off noline) xscale(off noline) name(gv,replace)"
 ```
 
 ***Exécution directe du graphique vide sans affichage (ajout de `nodraw`)***
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 tw $gvide nodraw
 ```
 
 ***Récupération de la syntaxe et ajout d’un texte libre et modifier l’habillage***  
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 mac list gvide
 tw $gvide text(1 1 "MON TEXTE", color(white)) ///
           graphr(color(gs8)) plotr(color(gs8))
 ```
 
-![](imgp1/g17.png){width=60%}
+![Graphique vide](imgp1/g17.png){width=80%}
 
 ### Syntaxe et options
 
 **Syntaxe générique**
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 graph combine liste_sousgraph [, col() row() xsize() ysize() iscale() xcommon 
 ycommon …..]
 ```
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 grc1leg graph combine liste_sousgraph [, legendfrom(nom_graph) col() row() xsize() ysize() iscale() xcommon ycommon…..]
 ```
 
@@ -123,7 +120,7 @@ Au niveau des options je n’ai pas reporté les altérations du style par défa
 
 ***Graphique combiné simple***  
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 sysuse auto
 #delimit ;
 histogram price, bin(20) freq
@@ -143,11 +140,11 @@ graph combine g1 g2 g3, title("Prix et consommation")
 ;
 ```
 
-![](imgp1/g18a.png){width=60%}
+![Combinaison libre (a)](imgp1/g18a.png){width=100%}
 
 On ajoute un graphique vide dans lequel on indiquera le titre du graphique, et on positionne l’histogramme de la variable price à l’horizontal (option `horizontal`) :
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 tw $gvide title("Prix et" "consommation")
 
 #delimit ;
@@ -170,7 +167,7 @@ name(g3,replace)
 graph combine g2 gv g3 g1 ;
 ```
 
-![](imgp1/g18b.png){width=60%}
+![Combinaison libre (b)](imgp1/g18b.png){width=100%}
 
 Pour la version suivante, on va réduire la taille des abscisses pour g1 (*price*) et le graphique vide, la taille des ordonnées pour g2 (*mpg*) et le graphique vide avec `fxsize(#)` et `fysize(#)`. On va également cacher plusieurs titres et labels d’axes et réduire les distances d’espacement entre les sous graphiques avec l’option `imargin(#1 #2 #3 #4)` de `graph combine`. La distance d’espacement avec le bord du graphique combiné sera par contre augmentée pour compenser.
 Titres et labels d’axes seront cachés et non pas supprimés. Si on les enlève, on modifie le ratio d’affichage du graphique et les axes reportés ne seront pas correctement ajustés entre le nuage et les histogrammes. Visuellement cela augmente la distance de séparation entre les graphiques, d’où sa réduction avec `imargin()`.  
@@ -191,7 +188,7 @@ Titres et labels des axes cachés:
 Modification des distances avec les bords: 
 Pour les sous graphiques, comme on applique la même modification, on utilise l’option `imargin(-5 -5 -5 -5)` de `graph combine`. C’est équivalent à utiliser pour chaque sous graphique `graphr(margin(-5 -5 -5 -5)`. Pour que la distance entre les bords extérieurs des sous-graphiques ne soient pas trop proche de la limite du graphique combiné, on augmente la distance avec `graphr(margin(5 5 5 5))` appliqué en option de `graph combine`.  
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 #delimit ;
 histogram price, bin(20) freq
 fc("31 161 135%70") lc(%0) mlw(*6) 
@@ -225,7 +222,7 @@ xsize(20) ysize(20) col(2) imargin(-5 -5 -5 -5) graphr(margin(5 5 5 5))
 ;
 ```
 
-![](imgp1/g18c.png){width=60%}
+![Combinaison libre (c)](imgp1/g18c.png){width=100%}
 
 Le positionnement du titre, à droite, n’apparait pas optimal. En inversant le sens de l’axe x pour l’histogramme de *price*, en cachant le titre de l’axe de price pour le nuage, et en combinant différemment les graphiques, on obtient un meilleur résultat.  
 
@@ -233,7 +230,7 @@ Le positionnement du titre, à droite, n’apparait pas optimal. En inversant le
 -Cache du titre de l’axe price pour le nuage : `ylabel(, labc(%0))`
 -Modification de l’ordre des sous-graphique : `graph combine gv g2 g1 g3`
 
-![](imgp1/g18d.png){width=60%}
+![Combinaison libre (d)](imgp1/g18d.png){width=100%}
 
 
 

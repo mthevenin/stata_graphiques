@@ -1,23 +1,20 @@
 ---
-title: "Options: légende, titre..."
+title: "**Options: axes, légende...**"
+fig-cap-location: top
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 options(Encoding="UTF-8")
-
-library(knitr)
-library(rsconnect)
-library(haven)
-library(pander)
-library(memisc)
-library(fontawesome)
+library(Statamarkdown)
+stataexe <- "C:/Program Files/Stata17/StataSE-64.exe"
+knitr::opts_chunk$set(engine.path=list(stata=stataexe))
 ```
 
 
-# **Options pour la légende**
+# Options pour la légende
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 legend(), clegend(), plegend: legend(contenu [options])
 ```
 
@@ -37,7 +34,9 @@ J'utilise de préférence order plus parcimonieux en parenthèses. L'apparence (
 -   Les labels peuvent être reportés sous les symboles avec l'option **`stack`**.
 -   On peut modifier l'aspect de la zône (couleur du fond, contour...) avec la sous option \*\*`region(...)` ou `r(...)`.
 
-**Le smcl** ::: {.callout-note} <strong>Le smcl</strong>\
+::: callout-note
+
+## Le smcl
 Le Smcl « **Stata Markup Control Langage** » est le langage d'édition de Stata, il faut le reconnaître un peu préhistorique (ce n'est pas du Markup pour rien). Pour les graphiques, il permet de modifier les textes des titres, labels des axes, contenu des légendes : gras, italique... changement de police, ajout de formules.\
 Balise smcl : `"{type_option: texte}"`
 
@@ -47,17 +46,17 @@ Quelques options/modifications de base :
 
 -   Italique : `"{it: texte}"`
 
--   Gras et italique : `"{bf:{it :texte}}"`\
+-   Gras et italique : `"{bf:{it :texte}}"` 
 
 -   Le choix des polices dépend du système d'exploitation. Elles sont sélectionnées par leur type : `"{stSans : texte}"` pour type sans serif, `"{stSerif : texte}"` pour type serif, `"{stMono: texte}"` pour type mono, et `"{stSymbol : texte}"` pour les lettres grecques ou les symboles mathématiques. Exemples de polices avec windows : *arial* (sans serif), *times new roman* (serif), *courrier new* ou *consolas* (mono) et *symbol* (symbol). On peut également utiliser toutes les typographies disponibles en les sélectionnant en amont, avec la commande `graph set`.
+:::
 
 
-
-![](imgp1/g14.png){width="60%"}
+![Options légende](imgp1/g14.png){width="100%"}
 
 Options de la légende :
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 legend(order(1 "{bf:Domestic}" 2 "{bf:Foreign}") pos(1) ring(0) col(1) region(lw(*.1)) stack )
 ```
 
@@ -80,12 +79,12 @@ Par défaut le titre principal est positionné à 12 heures. Le sous titre est p
 `note()` est positionné par défaut à 6 heures, `caption()` en dessous de note(). 
 Ces options permettent de faire des notes de lecture ou de préciser une ou plusieurs sources au graphique. 
 
-**`text(coordonnées "texte" [,options])`    
+**`text(coordonnées "texte" [,options])`**    
 Cette option permet d’afficher un texte dans la zône du graphique en entrant directement les coordonnées (y,x). Les sous options relatives à l’alignement peuvent être assez utiles si on ne veut pas tâtonner avec les coordonnées [on peut passer par les macros pour générer les coordonnées, voir le chapitre dédié].  
 
 Le graphique suivant présente les options par défaut (position, taille, couleur) des titres, dont le titre des axes, ainsi qu’un texte libre positionné aux coordonnées (1,1).
 
-![](imgp1/g15.png){width=60%}
+![Position du texte](imgp1/g15.png){width=60%}
 
 
 
@@ -95,7 +94,7 @@ Le graphique suivant présente les options par défaut (position, taille, couleu
 
 On peut paramétrer en amont la typographie utiliser par les graphiques avec la commande `graph set`
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 * pour OS windows
 graph set window fontface[type_police] "nom_police" 
 ```
@@ -104,7 +103,7 @@ Le type de police est: *sans*, *serif*, *mono*, *symbol*.
 
 Par défaut:
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
    window           current
    setting          default          choices
    ----------------------------------------------------------------
@@ -118,7 +117,7 @@ Par défaut:
 
 Exemple: avec Trebuchet MS pour fontface et consolas pour mono
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 graph set window fontface"trebuchet MS"
 graph set window fontfacemono "consolas"
 
@@ -148,7 +147,7 @@ Une application est donnée plus loin dans la section dédiée aux graphiques co
 
 ## **Modifier automatiquement la taille du texte et des symboles**
 
-**`scale(#)`** -- \*\*`iscale(#)`\*\
+**`scale(#)`** - **`iscale(#)`**
 Permet de modifier la taille des éléments types texte et symboles générés par un graphique. Utile lorsque le texte d'une légende sort du contour. Valeur de référence=1.\
 Pour la commande `graph combine`, on utilise l'option `iscale()` qui appliquera la modification à tous les sous graphiques.
 
@@ -168,7 +167,7 @@ Pour la commande `graph combine`, on utilise l'option `iscale()` qui appliquera 
 
 Exemple:
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
  graph display g1
 ```
 
@@ -183,7 +182,7 @@ Exemple:
 
 Exemples:
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 tw line y x
 graph export graphpng.png
 tw line y x, name(g1,replace)
