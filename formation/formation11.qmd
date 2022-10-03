@@ -1,21 +1,16 @@
 ---
 title: "Types et syntaxe"
+fig-cap-location: top
 ---
 
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 options(Encoding="UTF-8")
-
-library(knitr)
-library(rsconnect)
-library(haven)
-library(pander)
-library(memisc)
-library(fontawesome)
+library(Statamarkdown)
+stataexe <- "C:/Program Files/Stata17/StataSE-64.exe"
+knitr::opts_chunk$set(engine.path=list(stata=stataexe))
 ```
-
-
 
 
 # **Types de graphique** 
@@ -39,7 +34,7 @@ On peut obtenir la liste et aides des commandes graphiques officielles avec **`h
 Un graphique peut devenir assez gourmand en options. Par défaut avec Stata l’exécution est faite ligne par ligne avec l’option par défaut `#delimit cr`.  Pour exécuter une commande sur plusieurs lignes, il est d’usage d’utiliser un triple slash **`///`**. Pour les graphiques, cette option manque de souplesse et peut provoquer des messages d’erreur lorsque **`///`** est attaché par inadvertance au dernier caractère d’une ligne.   
 Lorsque le nombre de lignes devient assez conséquent, il est préférable d’utiliser **`;`** comme délimiteur. Le changement de délimiteur se fait avec **`#delimit ;`** et on indique la fin de l’exécution avec `;`. On retourne au délimiteur par défaut avec **`#delimit cr`**.  
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 #delimit ;
 tw scatter y x,
 [option1]
@@ -70,7 +65,7 @@ En première approche, la syntaxe d’un graphique avec Stata est particulièrem
 
 Un graphique comportant plusieurs géométries de même type peut être exécuté avec un seul bloc de coordonnées renseigné par des variables pour l’axe des ordonnées. Ces différentes coordonnées peuvent être des variables correspondant à plusieurs valeurs d’une variable additionnelle, souvent de type catégoriel [voir la commande separate plus bas].
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 [tw/graph] type_géométrie Y1 Y2 Y3.... [X] [, option1(Y1 Y2 Y3...)..options_du graphique]
 ```
 
@@ -78,19 +73,27 @@ Les options de la géométrie (plusieurs coordonnées pour Y) comme les couleurs
 
 ***Exemple***  
 
-Graphique de type `line`, reportant les espérances de vie aux USA de 1900 à 2000. Le premier graphique est sans option, le second en comporte.
+Graphique de type `line`, reportant les espérances de vie aux USA de 1900 à 2000. Le graphique de gauche est sans option, celui de droite en a.
 
-![](imgp1/g1.png){width=50%}
+::: {layout-ncol=2}
+
+![Sans options](imgp1/g1a.png)
+
+![Avec options](imgp1/g1b.png)
+:::
+
+
+
 
 
 *Premier graphique (haut)*
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 sysuse lifeexp, clear
 tw line le_male le_female year 
 ```
 
 *Second graphique (bas)*
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 sysuse lifeexp, clear
 
 #delimit ;
@@ -109,7 +112,7 @@ tw line  le_male le_female year,
 
 
 ::: {.callout-note}
-`r fa("thumbs-up", fill = "steelblue", height = "1em", margin_right="1em")` Avec le changement de délimiteur, il est plus facile de distinguer les différents éléments du graphique, comme les options qui affectent directement les courbes (couleur, épaisseur) et les options générales du graphique (titre, légende, labels de y à l’horizontal, titre de x, couleur de fond).
+ Avec le changement de délimiteur, il est plus facile de distinguer les différents éléments du graphique, comme les options qui affectent directement les courbes (couleur, épaisseur) et les options générales du graphique (titre, légende, labels de y à l’horizontal, titre de x, couleur de fond).
 :::
 
 ***Options des courbes***:   
@@ -132,13 +135,13 @@ tw line  le_male le_female year,
 Dans l’exemple précédent on avait deux variables, mais il est plus standard que les bases donnent des observations à partir d’une variable qui peut être croisées avec d’autres informations regroupées avec une variable discrète. Par rapport à d’autres langages graphiques, on pense bien évidemment à R avec ggplot, les choses se gâtent un peu du côté de Stata car plusieurs graphiques doivent être exécutés séparément dans la même commande. On donnera plus loin un moyen via les macros et les boucles d’automatiser cette exécution. Cela ne concerne que les éléments surperposés, Stata possédant en revanche une option pour générer des sous graphiques de type facettes ou small-multiple (voir section sur les graphiques combinés).  
 Chaque sous graphique a son propre jeu d’options et ont doit bien indiquer leur séparation, soit avec des parenthèses soit avec des doubles barres horizontales.  
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 (graph 1, options graph1) (graph2, options graph2)… (graph n, option graph n) , options graphiques
 ```
 
 ou
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 graph 1, options graph1 || graph2, options graph2 ||…. || graph n, option graph n || , options graphiques
 ```
 
@@ -148,7 +151,7 @@ Ma préférence va plutôt à la deuxième solution pour éviter une surabondanc
 Principe de la syntaxe avec `;` comme délimiteur  
 
 *Graphiques séparés par ()*
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 #delimit ;
 [tw/graph] 
 (type_géométrie1 Y1 [X1] [Y2] [X2] [Z] [in if] [weight]
@@ -164,7 +167,7 @@ Principe de la syntaxe avec `;` comme délimiteur
 
 
 *Graphiques séparés par ||*
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 #delimit ;
 [tw/graph] 
    type_géométrie1 Y1 [X1] [Y2] [X2] [Z] [in if] [weight]
@@ -183,11 +186,15 @@ Principe de la syntaxe avec `;` comme délimiteur
 
 Comme dans le premier graphique, celui du haut est sans option et celui du bas avec.  On va afficher un nuage de point avec la base auto, entre les variables price et mpg (consommation d’essence en gallon) selon l’origine de la voiture (US ou autres pays).
 
-![](imgp1/g2.png){width=50%}
+::: {layout-ncol=2}
 
+![Sans options](imgp1/g2a.png)
+
+![Avec options](imgp1/g2b.png)
+:::
 
 *Premier graphique*
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 sysuse auto, clear
 
 #delimit
@@ -211,7 +218,7 @@ tw
 
 *Second graphique*  
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 #delimit ;
 tw 
    scatter price mpg if !foreign, 

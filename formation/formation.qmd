@@ -20,19 +20,17 @@ library(fontawesome)
 
 ::: {.callout-important}
 ## Prochaines mises à jour
-* Introduction/présentation - remerciements [à faire]
-* Liens externes principaux [à faire]
-* Chapitre 4: visualisation des données avec Stata
-  - pas satisfait de l'organisation du chapitre, bien que classique... j'y réfléchis
-  - voir déjà en page d'acceuil les solutions très nettement améliorée avec par exemple `fabplot`
-* Chapitre 5: principalement réservé à l'exécution de graphique avec Python, principalement avec **seaborn** et **plotnine**, ainsi que quelques graphiques intéractifs avec **plotly** [MAJ EN COURS]
+* Introduction/présentation - remerciements 
+* Liens externes principaux 
+* Chapitre 4: visualisation des données avec Stata.Version précédente pas satisfaisante
+* Chapitre 5: principalement réservé à l'exécution de graphique avec Python sous Stata, principalement avec **seaborn** et **plotnine**, ainsi que quelques graphiques intéractifs avec **plotly**
 :::
 
 
 **Les programmes des chapitres sont disponibles aux adresses suivantes**: 
 
-* **Chapitre 1**: <https://github.com/mthevenin/stata_graphiques/blob/main/programmes/chapitre1.do>
-* **Chapitre 2**: <https://github.com/mthevenin/stata_graphiques/blob/main/programmes/chapitre2.do>
+* **Chapitre 1**: [Programme Partie 1](programme_p1.do)
+* **Chapitre 2**: [Programme Partie 2](programme_p2.do)
 
 <br>
 
@@ -40,6 +38,6 @@ library(fontawesome)
 
 Lien vers le document: [`r fa("file-pdf", fill = "steelblue", margin_right="1em")`](https://github.com/mthevenin/stata_fr/blob/master/semio_bene/2020.09.14.BGIntro_ppt.pdff)
 
-<iframe src="BGIntro_ppt.pdf" height="500" width="1000" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay"></iframe>
+<iframe src="BGIntro_ppt.pdf" height="500" width="900" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay"></iframe>
 
 

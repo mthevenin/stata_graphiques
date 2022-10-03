@@ -6,13 +6,9 @@ title: "Options: couleur, épaisseur"
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 options(Encoding="UTF-8")
-
-library(knitr)
-library(rsconnect)
-library(haven)
-library(pander)
-library(memisc)
-library(fontawesome)
+library(Statamarkdown)
+stataexe <- "C:/Program Files/Stata17/StataSE-64.exe"
+knitr::opts_chunk$set(engine.path=list(stata=stataexe))
 ```
 
 
@@ -21,12 +17,11 @@ Il s’agit ici d’un tour d’horizon forcément incomplet des options qui von
 
 
 ::: {.callout-note}
-Un très bon cheatsheet:   
-* <https://geocenter.github.io/StataTraining/pdf/StataCheatSheet_visualization15_Syntax_2016_June-REV.pdf>
-* <https://geocenter.github.io/StataTraining/pdf/StataCheatSheet_visualization15_Plots_2016_June-REV.pdf>
+Un très bon cheatsheet:  
+
+* [Partie 1](https://geocenter.github.io/StataTraining/pdf/StataCheatSheet_visualization15_Syntax_2016_June-REV.pdf)
+* [Partie 2](https://geocenter.github.io/StataTraining/pdf/StataCheatSheet_visualization15_Plots_2016_June-REV.pdf)
 :::
-
-
 
 
 
@@ -53,11 +48,11 @@ Pour un élément de type bulle : `mc(%50)` réduit de moitié l’opacité de l
 
 Comme on le voit dans le second graphique ci-dessous, il n’y a pas trop de sens à baisser simultanément la saturation et l’opacité, une couleur plus transparente étant plus claire. On peut à l’inverse augmenter la saturation et baisser l’opacité.   
 
-![](imgp1/g3.png){width=50%}
+![Intensité et opacité (a)](imgp1/g3.png){width=70%}
 
-![](imgp1/g4.png){width=50%}
+![Intensité et opacité (b)](imgp1/g4.png){width=70%}
 
-![](imgp1/g5.png){width=50%}
+![Intensité et opacité (c)](imgp1/g5.png){width=70%}
 
 # **Tailles/épaisseurs**
 
@@ -67,13 +62,13 @@ Lorsqu’elles sont prédéfinies, leur mémorisation peut s’avérer un peu la
 
 ***Tailles prédéfinies***  
 
-![](imgp1/g6.png){width=50%}
+![Taille et épaisseur (a)](imgp1/g6.png){width=50%}
 
-<br>
-![](imgp1/g7.png){width=50%}
 
-<br>
-![](imgp1/g8.png){width=50%}
+![Taille et épaisseur (b)](imgp1/g7.png){width=50%}
+
+
+![Taille et épaisseur (c)](imgp1/g8.png){width=50%}
 
 ***Tailles reposant sur des valeurs***  
 
@@ -89,7 +84,7 @@ Relatives:
 
 -	`option(*#)` : coefficient multiplicateur d’une taille ou épaisseur par défaut définie par le style (thème) du graphique. Je privilégie ce type de paramétrisation. Sauf exception, j'utilise cette option.
 
-![](imgp1/g9.png){width=50%}
+![Taille et épaisseur (d)](imgp1/g9.png){width=50%}
 
 
 # **Exercice**  
@@ -106,7 +101,7 @@ Solution : <https://github.com/mthevenin/stata_fr/blob/master/exercices/exo1>
 -	Les densités sont estimées avec la fonction **`kdensity`** [`help kdensity`] et le graphique est généré avec **`tw area`** [`help twoway area`].
 -	Les couleurs sont issues de la palette de type séquentielle **YlGnBu** de la collection Brewer (voir le chapitre sur les palettes de couleur). les codes des deux couleurs sont **`"34 94 168"`** et **`"139 209 187"`**.
 <hr>
-![](imgp1/g10.png){width=60%}
+![Exercice: graphique 1](imgp1/g10.png){width=60%}
 </div>
 
 
@@ -119,6 +114,6 @@ Solution : <https://github.com/mthevenin/stata_fr/blob/master/exercices/exo1>
   -	Couleur de remplissage l’intervalle de confiance: option **`fc()`**
   -	Couleur du contour de l’intervalle de confiance: option **`alc()`**
 <hr>
-![](imgp1/g11.png){width=60%}
+![Exercice: graphique 2](imgp1/g11.png){width=60%}
 
 

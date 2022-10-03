@@ -347,8 +347,11 @@ Note
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Un très bon cheatsheet:<br>
-* <a href="https://geocenter.github.io/StataTraining/pdf/StataCheatSheet_visualization15_Syntax_2016_June-REV.pdf" class="uri">https://geocenter.github.io/StataTraining/pdf/StataCheatSheet_visualization15_Syntax_2016_June-REV.pdf</a> * <a href="https://geocenter.github.io/StataTraining/pdf/StataCheatSheet_visualization15_Plots_2016_June-REV.pdf" class="uri">https://geocenter.github.io/StataTraining/pdf/StataCheatSheet_visualization15_Plots_2016_June-REV.pdf</a></p>
+<p>Un très bon cheatsheet:</p>
+<ul>
+<li><a href="https://geocenter.github.io/StataTraining/pdf/StataCheatSheet_visualization15_Syntax_2016_June-REV.pdf">Partie 1</a></li>
+<li><a href="https://geocenter.github.io/StataTraining/pdf/StataCheatSheet_visualization15_Plots_2016_June-REV.pdf">Partie 2</a></li>
+</ul>
 </div>
 </div>
 <section id="couleurs" class="level1" data-number="1">
@@ -362,17 +365,47 @@ Pour un élément de type barre, l’option pour modifier une couleur est donné
 <p><strong>Transparence</strong> En retard sur ce point jusqu’à la version 15 de Stata, on peut maintenant modifier l’opacité (transparence) des couleurs. La transparence permet de gérer les effets de superposition, mais on doit se méfier des effets de flou qui peuvent se révéler assez désagréable, en particulier pour les nuages en l’absence de contour sur les bulles. L’argument de l’option exprime un pourcentage d’opacité avec comme valeur minimale 0 et une valeur maximale 100 (100 = valeur par défaut). Après le nom ou le code de la couleur, l’opacité est réduite par %#. On peut utiliser une transparence totale (%0) pour cacher des éléments d’un graphique.</p>
 <p>Pour un élément de type bulle : <code>mc(%50)</code> réduit de moitié l’opacité de la couleur par défaut, <code>mc("26 71 11%70")</code> applique 70% de transparence à la couleur navy.</p>
 <p>Comme on le voit dans le second graphique ci-dessous, il n’y a pas trop de sens à baisser simultanément la saturation et l’opacité, une couleur plus transparente étant plus claire. On peut à l’inverse augmenter la saturation et baisser l’opacité.</p>
-<p><img src="imgp1/g3.png" class="img-fluid" style="width:50.0%"></p>
-<p><img src="imgp1/g4.png" class="img-fluid" style="width:50.0%"></p>
-<p><img src="imgp1/g5.png" class="img-fluid" style="width:50.0%"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="imgp1/g3.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<p></p><figcaption class="figure-caption">Intensité et opacité (a)</figcaption><p></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="imgp1/g4.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<p></p><figcaption class="figure-caption">Intensité et opacité (b)</figcaption><p></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="imgp1/g5.png" class="img-fluid figure-img" style="width:70.0%"></p>
+<p></p><figcaption class="figure-caption">Intensité et opacité (c)</figcaption><p></p>
+</figure>
+</div>
 </section>
 <section id="taillesépaisseurs" class="level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span> <strong>Tailles/épaisseurs</strong></h1>
 <p>On peut altérer les tailles et épaisseurs d’éléments composants le graphiques en s’appuyant soit sur des arguments prédéfinis, soit en jouant sur les valeurs de plusieurs types d’unités, absolues (cm, point, pouce) ou relatives. Certaines ont été implémentées à la version 16 de Stata. Lorsqu’elles sont prédéfinies, leur mémorisation peut s’avérer un peu laborieuse avec une liste qui diffère selon le type d’objet. On peut donc privilégier la modification directe des valeurs en choissisant des unités absolues (pouces, cm) ou relative. Dans mes graphiques, je priviliégie sauf exception l’utilisation de valeurs relatives.</p>
 <p><strong><em>Tailles prédéfinies</em></strong></p>
-<p><img src="imgp1/g6.png" class="img-fluid" style="width:50.0%"></p>
-<p><br> <img src="imgp1/g7.png" class="img-fluid" style="width:50.0%"></p>
-<p><br> <img src="imgp1/g8.png" class="img-fluid" style="width:50.0%"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="imgp1/g6.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<p></p><figcaption class="figure-caption">Taille et épaisseur (a)</figcaption><p></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="imgp1/g7.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<p></p><figcaption class="figure-caption">Taille et épaisseur (b)</figcaption><p></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="imgp1/g8.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<p></p><figcaption class="figure-caption">Taille et épaisseur (c)</figcaption><p></p>
+</figure>
+</div>
 <p><strong><em>Tailles reposant sur des valeurs</em></strong></p>
 <p>Pour modifier directement les valeurs des tailles et épaisseurs Stata propose 6 unités : 3 absolues et 3 relatives. Ces dernières sont un peu obscures au niveau de la définition de la valeur de référence. <code>#</code> donne la valeur de la modification.</p>
 <p>Absolues (par ordre décroissant) : le pouce (<code>#in</code>), le centimètre (<code>#cm</code>), et le point (<code>#pt</code>).<br>
@@ -382,7 +415,12 @@ Pour un élément de type barre, l’option pour modifier une couleur est donné
 <li><p><code>option(#)</code> : également une valeur par rapport au minimum de la largeur et de la longueur, mais on garde cette valeur comme référence. Avec option(.5) et que le minimum est toujours égal à 10 (largeur), la taille ou l’épaisseur de l’élément est égale à .5% de 10.</p></li>
 <li><p><code>option(*#)</code> : coefficient multiplicateur d’une taille ou épaisseur par défaut définie par le style (thème) du graphique. Je privilégie ce type de paramétrisation. Sauf exception, j’utilise cette option.</p></li>
 </ul>
-<p><img src="imgp1/g9.png" class="img-fluid" style="width:50.0%"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="imgp1/g9.png" class="img-fluid figure-img" style="width:50.0%"></p>
+<p></p><figcaption class="figure-caption">Taille et épaisseur (d)</figcaption><p></p>
+</figure>
+</div>
 </section>
 <section id="exercice" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> <strong>Exercice</strong></h1>
@@ -396,7 +434,7 @@ Pour un élément de type barre, l’option pour modifier une couleur est donné
 <li>Les densités sont estimées avec la fonction <strong><code>kdensity</code></strong> [<code>help kdensity</code>] et le graphique est généré avec <strong><code>tw area</code></strong> [<code>help twoway area</code>].</li>
 <li>Les couleurs sont issues de la palette de type séquentielle <strong>YlGnBu</strong> de la collection Brewer (voir le chapitre sur les palettes de couleur). les codes des deux couleurs sont <strong><code>"34 94 168"</code></strong> et <strong><code>"139 209 187"</code></strong>.
 <hr>
-<img src="imgp1/g10.png" class="img-fluid" style="width:60.0%"></li>
+<img src="imgp1/g10.png" title="fig:" class="img-fluid" style="width:60.0%" alt="Exercice: graphique 1"></li>
 </ul>
 </div>
 <div class="alert alert-info">
@@ -408,7 +446,7 @@ Pour un élément de type barre, l’option pour modifier une couleur est donné
 <li>Couleur de remplissage l’intervalle de confiance: option <strong><code>fc()</code></strong></li>
 <li>Couleur du contour de l’intervalle de confiance: option <strong><code>alc()</code></strong>
 <hr>
-<img src="imgp1/g11.png" class="img-fluid" style="width:60.0%"></li>
+<img src="imgp1/g11.png" title="fig:" class="img-fluid" style="width:60.0%" alt="Exercice: graphique 2"></li>
 </ul>
 
 
@@ -586,121 +624,116 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup, include=FALSE}</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">Encoding=</span><span class="st">"UTF-8"</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(knitr)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(rsconnect)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pander)</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(memisc)</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(fontawesome)</span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Statamarkdown)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>stataexe <span class="ot">&lt;-</span> <span class="st">"C:/Program Files/Stata17/StataSE-64.exe"</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">engine.path=</span><span class="fu">list</span>(<span class="at">stata=</span>stataexe))</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>Il s’agit ici d’un tour d’horizon forcément incomplet des options qui vont permettre de modifier et d’habiller les graphiques, afin d’en améliorer la visibilité. On va regarder principalement les options liées aux couleurs, tailles/épaisseurs dans cette section; ainsi que quelques paramètres de bases pour les axes, légendes, titres. L’idée est de ne traiter que des options qui sont utilisées au moins une fois dans le document.</span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>Il s’agit ici d’un tour d’horizon forcément incomplet des options qui vont permettre de modifier et d’habiller les graphiques, afin d’en améliorer la visibilité. On va regarder principalement les options liées aux couleurs, tailles/épaisseurs dans cette section; ainsi que quelques paramètres de bases pour les axes, légendes, titres. L’idée est de ne traiter que des options qui sont utilisées au moins une fois dans le document.</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>Un très bon cheatsheet:  </span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>::: {.callout-note}</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>Un très bon cheatsheet:   </span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="ot">&lt;https://geocenter.github.io/StataTraining/pdf/StataCheatSheet_visualization15_Syntax_2016_June-REV.pdf&gt;</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="ot">&lt;https://geocenter.github.io/StataTraining/pdf/StataCheatSheet_visualization15_Plots_2016_June-REV.pdf&gt;</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">Partie 1</span><span class="co">](https://geocenter.github.io/StataTraining/pdf/StataCheatSheet_visualization15_Syntax_2016_June-REV.pdf)</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span><span class="co">[</span><span class="ot">Partie 2</span><span class="co">](https://geocenter.github.io/StataTraining/pdf/StataCheatSheet_visualization15_Plots_2016_June-REV.pdf)</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="fu"># **Couleurs**</span></span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>***Se reporter au chapitre 3, pour un tour d’horizon plus complet sur les couleurs et les palettes de couleurs [mettre lien]***</span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="fu"># **Couleurs**</span></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>***Se reporter au chapitre 3, pour un tour d’horizon plus complet sur les couleurs et les palettes de couleurs [mettre lien]***</span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>3 Eléments entrent dans les options relatives aux couleurs.</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>3 Eléments entrent dans les options relatives aux couleurs.</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>**Nom - code couleur**</span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>Un nom de couleur prédéfini ou un code couleur numérique : la couleur <span class="in">`navy`</span> (première couleur de la palette Stata *s2*) a pour code RGB <span class="co">[</span><span class="ot">Red-Green-Blue</span><span class="co">]</span> <span class="in">`"26 71 11"`</span>.  </span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>Pour un élément de type ligne, courbe… : **`lc(navy)`** = **`lc("26 71 11")`**  </span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>**Nom - code couleur**</span>
-<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>Un nom de couleur prédéfini ou un code couleur numérique : la couleur <span class="in">`navy`</span> (première couleur de la palette Stata *s2*) a pour code RGB <span class="co">[</span><span class="ot">Red-Green-Blue</span><span class="co">]</span> <span class="in">`"26 71 11"`</span>.  </span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>Pour un élément de type ligne, courbe… : **`lc(navy)`** = **`lc("26 71 11")`**  </span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>**Saturation/intensité**</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>On peut modifier la saturation : clair (blanc) &lt;=&gt; foncé (noir). Une couleur par défaut ou renseignée manuellement a une intensité de 1. On tire vers le blanc en réduisant cette saturation, vers le noir en l’augmentant.  Après le nom ou le code couleur, l’intensité est modifiée par **`*#`** avec # supérieur ou égal à 0 (0=blanc).  </span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>Pour un élément de type barre, l’option pour modifier une couleur est donnée par <span class="in">`fc()`</span> (f pour fill, c pour color tronqué) : <span class="in">`fc(*.5)`</span> réduit la saturation de 50% de la  couleur par défaut, <span class="in">`fc("26 71 11*1.2")`</span> augmente de 20% la saturation de la couleur navy, ici renseignée par son code RGB.  </span>
 <span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>**Saturation/intensité**</span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>On peut modifier la saturation : clair (blanc) &lt;=&gt; foncé (noir). Une couleur par défaut ou renseignée manuellement a une intensité de 1. On tire vers le blanc en réduisant cette saturation, vers le noir en l’augmentant.  Après le nom ou le code couleur, l’intensité est modifiée par **`*#`** avec # supérieur ou égal à 0 (0=blanc).  </span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>Pour un élément de type barre, l’option pour modifier une couleur est donnée par <span class="in">`fc()`</span> (f pour fill, c pour color tronqué) : <span class="in">`fc(*.5)`</span> réduit la saturation de 50% de la  couleur par défaut, <span class="in">`fc("26 71 11*1.2")`</span> augmente de 20% la saturation de la couleur navy, ici renseignée par son code RGB.  </span>
-<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>**Transparence**</span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>En retard sur ce point jusqu’à la version 15 de Stata, on peut maintenant modifier l’opacité (transparence) des couleurs.</span>
-<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>La transparence permet de gérer les effets de superposition, mais on doit se méfier des effets de flou qui peuvent se révéler assez désagréable, en particulier pour les nuages en l’absence de contour sur les bulles. L’argument de l’option exprime un pourcentage d’opacité avec comme valeur minimale 0 et une valeur maximale 100 (100 = valeur par défaut). Après le nom ou le code de la couleur, l’opacité est réduite par %#. On peut utiliser une transparence totale (%0) pour cacher des éléments d’un graphique.  </span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>Pour un élément de type bulle : <span class="in">`mc(%50)`</span> réduit de moitié l’opacité de la couleur par défaut, <span class="in">`mc("26 71 11%70")`</span> applique 70% de transparence à la couleur navy.  </span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>Comme on le voit dans le second graphique ci-dessous, il n’y a pas trop de sens à baisser simultanément la saturation et l’opacité, une couleur plus transparente étant plus claire. On peut à l’inverse augmenter la saturation et baisser l’opacité.   </span>
-<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a><span class="al">![](imgp1/g3.png)</span>{width=50%}</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a><span class="al">![](imgp1/g4.png)</span>{width=50%}</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="al">![](imgp1/g5.png)</span>{width=50%}</span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>**Transparence**</span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>En retard sur ce point jusqu’à la version 15 de Stata, on peut maintenant modifier l’opacité (transparence) des couleurs.</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>La transparence permet de gérer les effets de superposition, mais on doit se méfier des effets de flou qui peuvent se révéler assez désagréable, en particulier pour les nuages en l’absence de contour sur les bulles. L’argument de l’option exprime un pourcentage d’opacité avec comme valeur minimale 0 et une valeur maximale 100 (100 = valeur par défaut). Après le nom ou le code de la couleur, l’opacité est réduite par %#. On peut utiliser une transparence totale (%0) pour cacher des éléments d’un graphique.  </span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a>Pour un élément de type bulle : <span class="in">`mc(%50)`</span> réduit de moitié l’opacité de la couleur par défaut, <span class="in">`mc("26 71 11%70")`</span> applique 70% de transparence à la couleur navy.  </span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>Comme on le voit dans le second graphique ci-dessous, il n’y a pas trop de sens à baisser simultanément la saturation et l’opacité, une couleur plus transparente étant plus claire. On peut à l’inverse augmenter la saturation et baisser l’opacité.   </span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a><span class="al">![Intensité et opacité (a)](imgp1/g3.png)</span>{width=70%}</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a><span class="al">![Intensité et opacité (b)](imgp1/g4.png)</span>{width=70%}</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a><span class="al">![Intensité et opacité (c)](imgp1/g5.png)</span>{width=70%}</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="fu"># **Tailles/épaisseurs**</span></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>On peut altérer les tailles et épaisseurs d’éléments composants le graphiques en s’appuyant soit sur des arguments prédéfinis, soit en jouant sur les valeurs de plusieurs types d’unités, absolues (cm, point, pouce) ou relatives. Certaines ont été implémentées à la version 16 de Stata. </span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>Lorsqu’elles sont prédéfinies, leur mémorisation peut s’avérer un peu laborieuse avec une liste qui diffère selon le type d’objet. On peut donc privilégier la modification directe des valeurs en choissisant des unités absolues (pouces, cm) ou relative. Dans mes graphiques, je priviliégie sauf exception l’utilisation de valeurs relatives.</span>
 <span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="fu"># **Tailles/épaisseurs**</span></span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>On peut altérer les tailles et épaisseurs d’éléments composants le graphiques en s’appuyant soit sur des arguments prédéfinis, soit en jouant sur les valeurs de plusieurs types d’unités, absolues (cm, point, pouce) ou relatives. Certaines ont été implémentées à la version 16 de Stata. </span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>Lorsqu’elles sont prédéfinies, leur mémorisation peut s’avérer un peu laborieuse avec une liste qui diffère selon le type d’objet. On peut donc privilégier la modification directe des valeurs en choissisant des unités absolues (pouces, cm) ou relative. Dans mes graphiques, je priviliégie sauf exception l’utilisation de valeurs relatives.</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>***Tailles prédéfinies***  </span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a><span class="al">![Taille et épaisseur (a)](imgp1/g6.png)</span>{width=50%}</span>
 <span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>***Tailles prédéfinies***  </span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="al">![Taille et épaisseur (b)](imgp1/g7.png)</span>{width=50%}</span>
 <span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="al">![](imgp1/g6.png)</span>{width=50%}</span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;br&gt;</span></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a><span class="al">![](imgp1/g7.png)</span>{width=50%}</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="al">![Taille et épaisseur (c)](imgp1/g8.png)</span>{width=50%}</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>***Tailles reposant sur des valeurs***  </span>
 <span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;br&gt;</span></span>
-<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a><span class="al">![](imgp1/g8.png)</span>{width=50%}</span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>***Tailles reposant sur des valeurs***  </span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>Pour modifier directement les valeurs des tailles et épaisseurs Stata propose 6 unités : 3 absolues et 3 relatives. Ces dernières sont un peu obscures au niveau de la définition de la valeur de référence. <span class="in">`#`</span> donne la valeur de la modification.  </span>
-<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a>Absolues (par ordre décroissant) : le pouce (<span class="in">`#in`</span>), le centimètre (<span class="in">`#cm`</span>), et le point (<span class="in">`#pt`</span>).  </span>
-<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;br&gt;</span></span>
-<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a>Relatives:  </span>
-<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`option(#rs)`</span>: valeur relative par rapport au minimum de la longueur et de la largeur du graphique (=100). Si option(.5rs) et que le graphique fait 10 de largeur et 20 de longueur, la référence est associée à la largeur et est égale à 100. La taille ou l’épaisseur de l’élément fera alors .5% de cette référence. L’aide de Stata ne s’attarde pas sur ce type de modification, pas forcément très claire.</span>
-<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`option(#)`</span> : également une valeur par rapport au minimum de la largeur et de la longueur, mais on garde cette valeur comme référence. Avec option(.5) et que le minimum est toujours égal à 10 (largeur), la taille ou l’épaisseur de l’élément est égale à .5% de 10.</span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>Pour modifier directement les valeurs des tailles et épaisseurs Stata propose 6 unités : 3 absolues et 3 relatives. Ces dernières sont un peu obscures au niveau de la définition de la valeur de référence. <span class="in">`#`</span> donne la valeur de la modification.  </span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>Absolues (par ordre décroissant) : le pouce (<span class="in">`#in`</span>), le centimètre (<span class="in">`#cm`</span>), et le point (<span class="in">`#pt`</span>).  </span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;br&gt;</span></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>Relatives:  </span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`option(#rs)`</span>: valeur relative par rapport au minimum de la longueur et de la largeur du graphique (=100). Si option(.5rs) et que le graphique fait 10 de largeur et 20 de longueur, la référence est associée à la largeur et est égale à 100. La taille ou l’épaisseur de l’élément fera alors .5% de cette référence. L’aide de Stata ne s’attarde pas sur ce type de modification, pas forcément très claire.</span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`option(#)`</span> : également une valeur par rapport au minimum de la largeur et de la longueur, mais on garde cette valeur comme référence. Avec option(.5) et que le minimum est toujours égal à 10 (largeur), la taille ou l’épaisseur de l’élément est égale à .5% de 10.</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`option(*#)`</span> : coefficient multiplicateur d’une taille ou épaisseur par défaut définie par le style (thème) du graphique. Je privilégie ce type de paramétrisation. Sauf exception, j'utilise cette option.</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a><span class="al">![Taille et épaisseur (d)](imgp1/g9.png)</span>{width=50%}</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span><span class="in">`option(*#)`</span> : coefficient multiplicateur d’une taille ou épaisseur par défaut définie par le style (thème) du graphique. Je privilégie ce type de paramétrisation. Sauf exception, j'utilise cette option.</span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a><span class="fu"># **Exercice**  </span></span>
 <span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a><span class="al">![](imgp1/g9.png)</span>{width=50%}</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a>Reproduire les deux graphiques ci-dessous avec la base auto: <span class="in">`sysuse auto.dta`</span>.  </span>
 <span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a><span class="fu"># **Exercice**  </span></span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>Reproduire les deux graphiques ci-dessous avec la base auto: <span class="in">`sysuse auto.dta`</span>.  </span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a>Solution : <span class="ot">&lt;https://github.com/mthevenin/stata_fr/blob/master/exercices/exo1&gt;</span></span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">"alert alert-info"</span><span class="kw">&gt;</span></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a>**Graphique(s) 1**  </span>
 <span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>Solution : <span class="ot">&lt;https://github.com/mthevenin/stata_fr/blob/master/exercices/exo1&gt;</span></span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">"alert alert-info"</span><span class="kw">&gt;</span></span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>**Graphique(s) 1**  </span>
-<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Reproduire l’un et/ou l’autre de ces graphiques avec les variables *mpg* et *foreign*.</span>
-<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Les histogrammes sont générés avec la fonction **`tw histogram`** (à préférer à la commande de type oneway <span class="in">`histogram`</span>).</span>
-<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Les densités sont estimées avec la fonction **`kdensity`** [`help kdensity`] et le graphique est généré avec **`tw area`** <span class="co">[</span><span class="ot">`help twoway area`</span><span class="co">]</span>.</span>
-<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Les couleurs sont issues de la palette de type séquentielle **YlGnBu** de la collection Brewer (voir le chapitre sur les palettes de couleur). les codes des deux couleurs sont **`"34 94 168"`** et **`"139 209 187"`**.</span>
-<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;hr&gt;</span></span>
-<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a><span class="al">![](imgp1/g10.png)</span>{width=60%}</span>
-<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/div&gt;</span></span>
-<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">"alert alert-info"</span><span class="kw">&gt;</span></span>
-<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a>**Graphique(s) 2** </span>
-<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Nuage de points des variables price et mpg pour les deux modalités de la variable foreign, avec report des OLS. </span>
-<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>La droite de l’OLS est générée avec le type de graphique tw lfitci:</span>
-<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Couleur de la droite : option **`clc()`**</span>
-<span id="cb1-119"><a href="#cb1-119" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Couleur de remplissage l’intervalle de confiance: option **`fc()`**</span>
-<span id="cb1-120"><a href="#cb1-120" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Couleur du contour de l’intervalle de confiance: option **`alc()`**</span>
-<span id="cb1-121"><a href="#cb1-121" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;hr&gt;</span></span>
-<span id="cb1-122"><a href="#cb1-122" aria-hidden="true" tabindex="-1"></a><span class="al">![](imgp1/g11.png)</span>{width=60%}</span>
-<span id="cb1-123"><a href="#cb1-123" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Reproduire l’un et/ou l’autre de ces graphiques avec les variables *mpg* et *foreign*.</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Les histogrammes sont générés avec la fonction **`tw histogram`** (à préférer à la commande de type oneway <span class="in">`histogram`</span>).</span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Les densités sont estimées avec la fonction **`kdensity`** [`help kdensity`] et le graphique est généré avec **`tw area`** <span class="co">[</span><span class="ot">`help twoway area`</span><span class="co">]</span>.</span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Les couleurs sont issues de la palette de type séquentielle **YlGnBu** de la collection Brewer (voir le chapitre sur les palettes de couleur). les codes des deux couleurs sont **`"34 94 168"`** et **`"139 209 187"`**.</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;hr&gt;</span></span>
+<span id="cb1-104"><a href="#cb1-104" aria-hidden="true" tabindex="-1"></a><span class="al">![Exercice: graphique 1](imgp1/g10.png)</span>{width=60%}</span>
+<span id="cb1-105"><a href="#cb1-105" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;/div&gt;</span></span>
+<span id="cb1-106"><a href="#cb1-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-107"><a href="#cb1-107" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-108"><a href="#cb1-108" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;div</span> <span class="er">class</span><span class="ot">=</span><span class="st">"alert alert-info"</span><span class="kw">&gt;</span></span>
+<span id="cb1-109"><a href="#cb1-109" aria-hidden="true" tabindex="-1"></a>**Graphique(s) 2** </span>
+<span id="cb1-110"><a href="#cb1-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-111"><a href="#cb1-111" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Nuage de points des variables price et mpg pour les deux modalités de la variable foreign, avec report des OLS. </span>
+<span id="cb1-112"><a href="#cb1-112" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>La droite de l’OLS est générée avec le type de graphique tw lfitci:</span>
+<span id="cb1-113"><a href="#cb1-113" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Couleur de la droite : option **`clc()`**</span>
+<span id="cb1-114"><a href="#cb1-114" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Couleur de remplissage l’intervalle de confiance: option **`fc()`**</span>
+<span id="cb1-115"><a href="#cb1-115" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Couleur du contour de l’intervalle de confiance: option **`alc()`**</span>
+<span id="cb1-116"><a href="#cb1-116" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;hr&gt;</span></span>
+<span id="cb1-117"><a href="#cb1-117" aria-hidden="true" tabindex="-1"></a><span class="al">![Exercice: graphique 2](imgp1/g11.png)</span>{width=60%}</span>
+<span id="cb1-118"><a href="#cb1-118" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
