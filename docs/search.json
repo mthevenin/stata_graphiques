@@ -221,7 +221,11 @@
     "href": "index.html",
     "title": "Graphiques",
     "section": "",
+<<<<<<< HEAD
     "text": "Graphique programmé en Python sous\n\n\n\nDepuis la version 16 de Stata on peut programmer de manière intéractive en Python. Dans un premier temps, une courte présentation de Python sous Stata (installation, exécution sous Stata), avec deux exemples de graphiques exécuté avec des fonctions des librairies seaborn et plotly [Lien]\n\n\n\n\n\n\n\n\nMise à jour de la formation\n\n\n\n\nChapitres 1 à 3 en ligne.\nLien vers le nouveau support de formation en format pdf [chapitre 1 à 3]: \nChapitre 4: la structure de ce chapitre de la première version ne me convient pas. On retrouve déjà un certain nombre d’éléments dans la partie ressources graphiques.\n\n\n\n\n\n\n\n\n\nRessources graphiques\n\n\n\n\nTopics sur la programmation de graphiques avec le langage Stata\nPrésentation de la programmation de graphiques avec Python sous Stata [A ajouter rapidement]\n\n\n\n\n\n Support réalisé avec Rstudio - Quarto.\n Version Stata: 17-SE"
+=======
+    "text": "Python\n\n\n\nblablabla\n\n\n\n\n\n\n\n\nMise à jour de la formation\n\n\n\n\nChapitres 1 à 3 en ligne.\nLien vers le nouveau support de formation en format pdf [chapitre 1 à 3]: \nChapitre 4: la structure de ce chapitre de la première version ne me convient pas. On retrouve déjà un certain nombre d’éléments dans la partie ressources graphiques.\n\n\n\n\n\n\n\n\n\nRessources graphiques\n\n\n\n\nTopics sur la programmation de graphiques avec le langage Stata\nPrésentation de la programmation de graphiques avec Python sous Stata [A ajouter rapidement]\n\n\n\n\n\n Support réalisé avec Rstudio - Quarto.\n Version Stata: 17-SE"
+>>>>>>> 8471627d35241de3a6ebf36e0ec80a1207172c02
   },
   {
     "objectID": "programmation/fabplot/fabplot.html",
