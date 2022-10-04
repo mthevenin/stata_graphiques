@@ -55,7 +55,7 @@ website:
           - section: "Chapitre 4: [A venir]"
           - section: "Chapitre 5: [A venir]"
           - text: "  "  
-      - section: "Ressources graphiques"
+      - section: "Programmation"
         contents:
           - Stata.qmd
           - programmation/python/python.qmd

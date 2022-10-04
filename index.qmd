@@ -9,6 +9,13 @@ library(fontawesome)
 
 
 ::: {.callout-note icon="false"}
+## Python
+
+blablabla
+:::
+
+
+::: {.callout-note icon="false"}
 ## Mise à jour de la formation
 
 * **Chapitres 1 à 3 en ligne**. 
