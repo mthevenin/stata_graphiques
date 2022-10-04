@@ -31,7 +31,6 @@ website:
   sidebar:
     style: "docked"
     align: left
-#    background: "#6B92B2"
     collapse-level: 1    
     contents:
       - section: "Formation"
@@ -55,7 +54,7 @@ website:
           - section: "Chapitre 4: [A venir]"
           - section: "Chapitre 5: [A venir]"
           - text: "  "  
-      - section: "Ressources graphiques"
+      - section: "Programmation"
         contents:
           - Stata.qmd
           - programmation/python/python.qmd

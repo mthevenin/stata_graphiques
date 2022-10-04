@@ -9,6 +9,13 @@ library(fontawesome)
 
 
 ::: {.callout-note icon="false"}
+## Graphique programmé en Python sous
+
+Depuis la version 16 de Stata on peut programmer de manière intéractive en Python.  Dans un premier temps, une courte présentation de Python sous Stata (installation, exécution sous Stata), avec deux exemples de graphiques exécuté avec des fonctions des librairies `seaborn` et `plotly` [[Lien](programmation/python/python.html)]
+:::
+
+
+::: {.callout-note icon="false"}
 ## Mise à jour de la formation
 
 * **Chapitres 1 à 3 en ligne**. 

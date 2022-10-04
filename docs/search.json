@@ -221,7 +221,7 @@
     "href": "index.html",
     "title": "Graphiques",
     "section": "",
-    "text": "Mise à jour de la formation\n\n\n\n\nChapitres 1 à 3 en ligne.\nLien vers le nouveau support de formation en format pdf [chapitre 1 à 3]: \nChapitre 4: la structure de ce chapitre de la première version ne me convient pas. On retrouve déjà un certain nombre d’éléments dans la partie ressources graphiques.\n\n\n\n\n\n\n\n\n\nRessources graphiques\n\n\n\n\nTopics sur la programmation de graphiques avec le langage Stata\nPrésentation de la programmation de graphiques avec Python sous Stata [A ajouter rapidement]\n\n\n\n\n\n Support réalisé avec Rstudio - Quarto.\n Version Stata: 17-SE"
+    "text": "Graphique programmé en Python sous\n\n\n\nDepuis la version 16 de Stata on peut programmer de manière intéractive en Python. Dans un premier temps, une courte présentation de Python sous Stata (installation, exécution sous Stata), avec deux exemples de graphiques exécuté avec des fonctions des librairies seaborn et plotly [Lien]\n\n\n\n\n\n\n\n\nMise à jour de la formation\n\n\n\n\nChapitres 1 à 3 en ligne.\nLien vers le nouveau support de formation en format pdf [chapitre 1 à 3]: \nChapitre 4: la structure de ce chapitre de la première version ne me convient pas. On retrouve déjà un certain nombre d’éléments dans la partie ressources graphiques.\n\n\n\n\n\n\n\n\n\nRessources graphiques\n\n\n\n\nTopics sur la programmation de graphiques avec le langage Stata\nPrésentation de la programmation de graphiques avec Python sous Stata [A ajouter rapidement]\n\n\n\n\n\n Support réalisé avec Rstudio - Quarto.\n Version Stata: 17-SE"
   },
   {
     "objectID": "programmation/fabplot/fabplot.html",
@@ -298,7 +298,7 @@
     "href": "programmation/python/python.html",
     "title": "Programmation avec Python",
     "section": "",
-    "text": "Quelques généralités sur l’utilisation de Python avec Stata\nDans ce support, seul les graphiques seront exécutés avec Python, les manipulations en amont étant faite avec Stata. Seuls le chargement des bases seront effectués avec la fonction read_Stata de la librairie pandas."
+    "text": "Il s’agit d’une courte présentation de l’utilisation de Python sous Stata pour générer des graphiques. Après quelques éléments sur l’installation de Python et son utilisation avec Stata, 3 exemples de graphiques sont données avec les librairies seaborn, plotnine (wrapper de R/ggplot2) et plotly (graphiques intéractifs).\nDans un futur plus ou moins proche, des graphiques tirés du (trè attendu chapitre 4) seront reproduits avec des fonctions de ces librairies Python.\nQuelques généralités sur l’utilisation de Python avec Stata\nDans ce support, seul les graphiques seront exécutés avec Python, les manipulations en amont étant faite avec Stata. Seuls le chargement des bases seront effectués avec la fonction read_Stata de la librairie pandas."
   },
   {
     "objectID": "programmation/python/python.html#installation-de-python",
@@ -315,6 +315,13 @@
     "text": "1.2 Installation des libraries\nVérification des librairies installées\nDans le terminal windows pour garder le prompteur ouvert. 1\n\n\n\nDans le terminal de commande windows\n\npip list\n\n\nInstallation d’une librairie. De préférence dans le terminal\n\n\n\nDans le terminal de commande windows\n\npip install plotnine\n\n\nOu dans Stata:\n\n! pip install plotnine\n\nLibrairies nécessaire pour la suite de cette documentation: pandas (installe numpy), matplotlib, seaborn, plotnine, plotly\n\npip install pandas\npip install matplotlib\npip install seaborn\npip install plotnine\npip install plotly"
   },
   {
+    "objectID": "programmation/python/python.html#visualisation-des-données",
+    "href": "programmation/python/python.html#visualisation-des-données",
+    "title": "Programmation avec Python",
+    "section": "2.1 Visualisation des données",
+    "text": "2.1 Visualisation des données\n\nLa majeure partie des graphiques sont générés avec la librairie plotnine qui est un wrapper de ggplot2 sous python. La logique de la syntaxe est assez particulière, et l’objet de cette présentation n’est pas de la présentée. La programmation des graphiques avec ggplot est très documentée et on reverra vers:\n\nle Support plotnine (fonctions peu détaillées): https://plotnine.readthedocs.io/en/stable/index.html\nla traduction des chapitres de l’ouvrage R for data science (H.Wickham,G.Grolemund) dédiés à ggplot en plotnine:https://datascienceworkshops.com/blog/plotnine-grammar-of-graphics-for-python/\nQuelques ressources ggplot2:\n\nhttps://larmarange.github.io/seminaire-INED-18juin2019/diaporama.html#/ et https://larmarange.github.io/analyse-R/ (plusieurs chapitres dédiés aux graphiques)\nhttp://www.sthda.com/english/wiki/be-awesome-in-ggplot2-a-practical-guide-to-be-highly-effective-r-software-and-data-visualization"
+  },
+  {
     "objectID": "Stata.html",
     "href": "Stata.html",
     "title": "Programmation avec Stata",
@@ -322,10 +329,10 @@
     "text": "Vous trouverez ici de courts topics concernant la programmation de graphiques avec Stata, qui seront inclus au quatrième chapitre de la formation.\nLes articles sont filtrables par catégorie, comme dans un blog. Chaque article aura soit une catégorie programmation soit une catégorie ado: - programmation: article orienté vers des astuces de programmation - ado: article présentant une commande externe ()\n\n\n\n   \n     \n     \n       Order By\n       Default\n         \n          Title\n        \n         \n          Author\n        \n     \n  \n    \n      \n      \n    \n\n\n\n\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nLollipop\n\n\nMarc Thévenin\n\n\n\n\nfabplot (NJ.Cox)\n\n\nMarc Thévenin\n\n\n\n\ngjoint\n\n\nMarc Thévenin\n\n\n\n\ngridge\n\n\nMarc Thévenin\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "programmation/python/python.html#visualisation-des-données",
-    "href": "programmation/python/python.html#visualisation-des-données",
-    "title": "Programmation avec Python",
-    "section": "2.1 Visualisation des données",
-    "text": "2.1 Visualisation des données\n\nLa majeure partie des graphiques sont générés avec la librairie plotnine qui est un wrapper de ggplot2 sous python. La logique de la syntaxe est assez particulière, et l’objet de cette présentation n’est pas de la présentée. La programmation des graphiques avec ggplot est très documentée et on reverra vers:\n\nle Support plotnine (fonctions peu détaillées): https://plotnine.readthedocs.io/en/stable/index.html\nla traduction des chapitres de l’ouvrage R for data science (H.Wickham,G.Grolemund) dédiés à ggplot en plotnine:https://datascienceworkshops.com/blog/plotnine-grammar-of-graphics-for-python/\nQuelques ressources ggplot2:\n\nhttps://larmarange.github.io/seminaire-INED-18juin2019/diaporama.html#/ et https://larmarange.github.io/analyse-R/ (plusieurs chapitres dédiés aux graphiques)\nhttp://www.sthda.com/english/wiki/be-awesome-in-ggplot2-a-practical-guide-to-be-highly-effective-r-software-and-data-visualization"
+    "objectID": "arnaud.html#mise-en-oeuvre-plusieurs-variables-explicatives",
+    "href": "arnaud.html#mise-en-oeuvre-plusieurs-variables-explicatives",
+    "title": "Régression logistique simple",
+    "section": "1 Mise en oeuvre plusieurs variables explicatives",
+    "text": "1 Mise en oeuvre plusieurs variables explicatives\n\n# Régression logistique CLASSIQUE\nM3 = glm( immob ~ age_cl+sex+relate+marst, data=Benin, family=binomial)\nsummary(M3)\n\n# Estimateurs\ncoef(M3)\n\ntbl_regression(M3, exponentiate = TRUE) %>%\n  add_global_p() %>%\n  bold_p() %>%\n  bold_labels() %>%\n  italicize_levels()\n\n\n1.1 Affichage des estimations avec intervalles de confiance\nPour chaque dimension explicative, il peut être affiché les etimateurs (ou odd-ratio, avec l’option exponentiate=T) avec les intervalles de confiance à 95%\n\nggcoef(M3,exponentiate=T)"
   }
 ]

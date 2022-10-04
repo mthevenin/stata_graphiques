@@ -12,6 +12,11 @@ knitr::opts_chunk$set(engine.path=list(stata=stataexe))
 ```
 
 
+Il s'agit d'une courte présentation de l'utilisation de Python sous Stata pour générer des graphiques. 
+Après quelques éléments sur l'installation de Python et son utilisation avec Stata, 3 exemples de graphiques sont données avec 
+les librairies **`seaborn`**, **`plotnine`** (wrapper de R/ggplot2) et **`plotly`** (graphiques intéractifs).   
+Dans un futur plus ou moins proche, des graphiques tirés du (trè attendu chapitre 4) seront reproduits avec des fonctions de ces librairies Python.  
+
 
 **Quelques généralités sur l'utilisation de Python avec Stata**   
 
@@ -126,7 +131,7 @@ pip install plotly
 
 
 
-# Graphiques
+# Deux exemple de graphiques
 
 
 ### Exemple 1 avec `seaborn`
@@ -206,14 +211,6 @@ htmltools::includeHTML("D:/D/Marc/SMS/STATA INED/Graphiques/programmation/python
 ```
 
 
-## Visualisation des données
-
-* La majeure partie des graphiques sont générés avec la librairie `plotnine` qui est un wrapper de ggplot2 sous python. La logique de la syntaxe est assez particulière, et l'objet de cette présentation n'est pas de la présentée. La programmation des graphiques avec ggplot est très documentée et on reverra vers: 
-  * le Support **plotnine** (fonctions peu détaillées): <https://plotnine.readthedocs.io/en/stable/index.html> 
-  * la traduction des chapitres de l'ouvrage *[R for data science](https://r4ds.had.co.nz/)* (H.Wickham,G.Grolemund) dédiés à **ggplot** en **plotnine**:<https://datascienceworkshops.com/blog/plotnine-grammar-of-graphics-for-python/>
-  * Quelques ressources ggplot2:
-    * <https://larmarange.github.io/seminaire-INED-18juin2019/diaporama.html#/> et <https://larmarange.github.io/analyse-R/> (plusieurs chapitres dédiés aux graphiques)
-    * <http://www.sthda.com/english/wiki/be-awesome-in-ggplot2-a-practical-guide-to-be-highly-effective-r-software-and-data-visualization> 
 
 
 
