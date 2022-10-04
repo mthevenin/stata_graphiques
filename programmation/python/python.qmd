@@ -131,7 +131,7 @@ pip install plotly
 
 
 
-# Deux exemple de graphiques
+# Deux exemples de graphiques
 
 
 ### Exemple 1 avec `seaborn`
