@@ -1,5 +1,6 @@
 ---
 title: "Styles-thèmes"
+fig-cap-location: top
 ---
 
 ```{r setup, include=FALSE}
@@ -42,7 +43,7 @@ Stata fournit 11 thèmes internes dont la liste peut être obtenue avec `help sc
 
 ***Exemple de mise en page interne avec 4 de ces 11 thèmes*** 
  
- ![](imgp3/g8.png){width=60%}     
+ ![Thèmes usines](imgp3/g8.png){fig-align="left"}
  
  **Styles externes**   
  
@@ -61,19 +62,19 @@ help schemepack
 Attention  seulement une palette est de type qualitative (tableau), les autres séquentielles. L’utilisation des thèmes associés aux palettes séquentielles peuvent donner un rendu peu satisfaisant lorsque le nombre d’objets graphique réduit (par exemple 2 courbes). Il conviendra alors d’utiliser en amont colorpalette. Egalement, la position par défaut de la légende a été fixée à 3 heures ce qui n’est peut-être pas le plus judicieux.  
  
 ***Exemple  avec les thèmes white_tableau et white_viridis*** 
- ![](imgp3/g9a.png){width=60%}  
+ ![Schemepack (a)](imgp3/g9a.png){fig-align="left"}
 
 Les deux couleurs se distinguent difficilement avec la palette viridis. On peut corriger rapidement ce problème avec colorpalette.
 
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 use uslifeexp, clear
 colorpalette viridis, n(2) nograph
 tw line le_wfemale le_wmale year, ///
 fc(`r(p)') lc(`r(p)')  recast(area) scheme(white_viridis)
 ```
 
-![](imgp3/g9b.png){width=60%}  
+![Schemepack (b)](imgp3/g9b.png){fig-align="left"}
 
 <br>
 
@@ -83,7 +84,7 @@ Parallèllement à colorpalette, B.Jann a mis à disposition un générateur de 
 
 ***Installation***
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 ssc install grstyle
 ```
 
@@ -110,11 +111,10 @@ On peut retirer facilement le contour de la légende (on allège ainsi les optio
 
 
 ::: {layout-ncol=3}
-![](imgp3/g12a.png)
-
+![grstyle (a)](imgp3/g12a.png){fig-align="left"}
 ![](imgp3/g12b.png)
 
-![](imgp3/g12c.png)
+![grstyle (b)](imgp3/g12c.png){fig-align="left"}
 :::
 
 
@@ -130,10 +130,10 @@ Avec la palette *viridis* réduite à deux couleurs, par exemple avec `select(1 
 
 ***Exemple avec le fond de type mesh, la légende à 11 heures sans contour et une sélection de deux couleurs de la palette viridis***
 
-![](imgp3/g11.png){width=60%}  
+![grstyle (c)](imgp3/g11.png){width=60%}{fig-align="left"} 
 
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 webuse set https://github.com/mthevenin/stata_graphiques/tree/main/bases
 use pingouin, replace
 webuse set
