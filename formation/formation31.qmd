@@ -1,17 +1,14 @@
 ---
 title: "Palettes de couleurs"
+fig-cap-location: top
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 options(Encoding="UTF-8")
-
-library(knitr)
-library(rsconnect)
-library(haven)
-library(pander)
-library(memisc)
-library(fontawesome)
+library(Statamarkdown)
+stataexe <- "C:/Program Files/Stata17/StataSE-64.exe"
+knitr::opts_chunk$set(engine.path=list(stata=stataexe))
 ```
 
 
@@ -20,7 +17,7 @@ library(fontawesome)
 <br>
 Lorsqu’ils sont générés, les graphiques appliquent un thème/style par défaut:  
 
--	Ces thèmes sont appelés scheme.
+-	Ces thèmes sont appelés `scheme`.
 
 -	Les options de la commande graphique visent à modifier les paramètres du thème.
 
@@ -52,17 +49,17 @@ Stata dispose de 5 palettes de couleurs usines qui sont associées à des thème
 
 Les palettes associées aux thèmes Stata sont de type qualitative. L’ordre d’utilisation des couleurs dans un graphique composé de plusieurs objets est pensé de tel sorte que des couleurs même type, par exemple le bleu, ne se succède pas. 
 
-![](imgp3/g1.png){width=60%}  
+![Palette Stata](imgp3/g1.png){fig-align="left"}
 
 Les numéros sur l’abscisse correspondent à l’ordre par défaut d’utilisation des couleurs.Les couleurs usines ont un nom, auquel correspond un code RGB.
 
-![](imgp3/g2.png){width=60%}  
+![Palette s2](imgp3/g2.png){fig-align="left"}
 
 La palette **mono** d’avère très utile pour modifier les couleurs des titres, labels, grids ou du background. Elle est ambivalente, l’ordre par défaut de la palette est plutôt qualitatif, mais le nom des couleurs correspond à une palette séquentielle appelé « grey scale » (gs# avec # allant de 0 – noir – à 16 – blanc).
 
-![](imgp3/g3.png){width=60%}  
+![Palette mono](imgp3/g3.png){fig-align="left"}
 
-![](imgp3/g4.png){width=60%} 
+![Palette mono rgb](imgp3/g4.png){fig-align="left"}
 
 *Remarque*: il est facile de générer une couleur appartenant à une palette correspondant à une échelle de gris: les trois valeurs du code RGB étant identique (compris entre 0 et 255). 
 
@@ -73,7 +70,7 @@ On est vite limité avec les palettes usines de Stata. Malgré les efforts de pl
 
 ***Installation***
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 ssc install palettes  [, replace force]
 ssc install colrspace [, replace force]
 ```
@@ -81,7 +78,7 @@ ssc install colrspace [, replace force]
 
 ***Syntaxe générique***
 <div class="grey">
-```{r eval=FALSE}
+```{stata, eval=FALSE}
  colorpalette nom_palette/collection [, nom_sous_palette] [options]
 ```
 
@@ -89,7 +86,7 @@ ssc install colrspace [, replace force]
 *Remarque*: le nom d’une palette peut être une couleur ou une série de couleur
 
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 * Charge et affiche la palette s1 de Stata 
 colorpalette s1 
 
@@ -116,12 +113,12 @@ Pour visualiser les palettes disponibles : **`help colorpalette`**.
 - Type : séquentielle
 
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 colorpalette plasma
 ```
 
 
-![](imgp3/g5a.png){width=60%} 
+![Palette plasma](imgp3/g5a.png){fig-align="left"}
 
 <br>
 
@@ -152,72 +149,72 @@ Important car la réduction de la taille pour certaines palettes ne consiste pas
 ***Création d’une palette de 4 couleurs***
 
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 colorpalette plasma, n(4)
 ```
 
 
-![](imgp3/g5b.png){width=60%} 
+![Palette plasma 5 couleurs](imgp3/g5b.png){fig-align="left"}
 
 ***Répétition d’une liste de couleur avec select(numlist)***
 
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 colorpalette plasma,  select(1 8 15 1 8 15)
 ```
 
 
-![](imgp3/g5g.png){width=60%} 
+![Palette plasma 2 cycles](imgp3/g5g.png){width=60%, fig-align="left"}
 
 ***Création d'une palette séquentielle avec augmentation de l'intensité***  
 
 A partir de la couleur 3 (RGB= 237,121,83), création d’une palette sequentielle d’une longueur de 15, allant de "237,121,83*0" (proche blanc) à "237,121,83*15". 
 
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 colorpalette "237 121 83", intensity(0(.1)1.5)
 ```
 
 
-![](imgp3/g5c.png){width=60%} 
+![Palette séquentielle (a)](imgp3/g5c.png){width=60%, fig-align="left"}
 
 ***Création d'une palette séquentielle avec augmentation de l'intensité***  
 
 Création d’une palette séquentielle d’une longueur 15 allant de la couleur 1 à la couleur 3 de la palette plasma à 4 couleurs. 
 
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 colorpalette "13 8 135" "237 121 83", ipolate(15)
 ```
 
-![](imgp3/g5d.png){width=60%} 
+![Palette séquentielle (b)](imgp3/g5d.png){width=60%, fig-align="left"}
 
 
 Si on ajoute la couleur 2 de la palette d’origine comme couleur de transition
 
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 colorpalette "13 8 135" "156 23 158"  "237 121 83", ipolate(15)
 ```
 
-![](imgp3/g5e.png){width=60%} 
+![Palette séquentielle (c)](imgp3/g5e.png){width=60%, fig-align="left"}
 
 Si on utilise le blanc comme couleur de transition, on obtient une palette divergente.
 
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 colorpalette "13 8 135" white "237 121 83", ipolate(15)
 ```
 
 
-![](imgp3/g5f.png){width=60%} 
+![Palette divergente](imgp3/g5f.png){width=60%, fig-align="left"}
 
 **Créer, enregistrer et charger sa propre palette**    
 
 `colorpalette` permet de conserver en mémoire sa propre palette, en la générant dans un .ado (voir la fin du chapitre dédié aux macros) ou dans le programme principal. Par exemple avec la palette issue du premier exemple (palette plasma à 4 couleur).
 
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 * Création de la palette mypal
 capt program drop colorpalette_mypal
 program colorpalette_mypal
@@ -247,7 +244,7 @@ La commande `colorpalette` n’est qu’un générateur de couleurs qui renvoie 
 On va partir de la palette plasma précédente avec 4 couleurs et un % d’opacité de 80%. Avec return list, on affiche sous forme de macros la liste des codes RGB des couleurs
 
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 colorpalette plasma, n(4) opacity(80) nograph
 return list
 
@@ -275,7 +272,7 @@ La liste renvoie la macro r(p) qui liste l’ensemble des codes couleurs. Cette 
 
 ***Exemple***
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 sysuse uslifeexp
 colorpalette plasma, n(4) opacity(80) nograph
 tw line le_wmale le_wfemale le_bmale le_bfemale year, lc(`r(p)')
@@ -291,7 +288,7 @@ On va afficher un graphique avec 4 densités sous forme d’aires générées al
 
 *Données*
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 clear
 set obs 1000
 
@@ -308,7 +305,7 @@ kdensity y`i', n(500) gen(x`i' d`i') nograph
 
 *Graphique* (sans macros empilées pour faciliter la lisibilité du programme)
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 Colorpalette plasma , n(4) opacity(80) nograph
 
 local ops lc(black) lw(*.5)
@@ -324,15 +321,15 @@ tw line d1 x1,  recast(area) `ops' fc("`r(p1)'")
 ```
 
 
-![](imgp3/g6a.png){width=60%} 
+![Test palette plasma](imgp3/g6a.png){width=60%, fig-align="left"}
 
 Sans modifier la syntaxe du graphique, on peut alors simplement changer de palette, en modifiant son nom et/ou en modifiant une ou plusieurs options comme l’opacité.    
 
-***Exemple***: *palette winte*r de la collection *matplotlib*, avec 50% d’opacité et en inversant l’ordre des couleurs.
+***Exemple***: *palette winter* de la collection *matplotlib*, avec 50% d’opacité et en inversant l’ordre des couleurs.
 
 
-```{r eval=FALSE}
-colorpalette plasma , n(4) opacity(80) nograph
+```{stata, eval=FALSE}
+colorpalette winter , matplotlib n(4) opacity(80) nograph
 
 local ops lc(black) lw(*.5)
 
@@ -350,7 +347,7 @@ tw line d1 x1,  recast(area) `ops' fc("`r(p1)'")
 
 *Remarque : en utilisant les macros dans la légende, on a affiché les codes couleurs*
 
-![](imgp3/g6b.png){width=60%} 
+![Palette winter (matplotli)](imgp3/g6b.png){width=60%, fig-align="left"}
 
 # **Exemples de palettes**
 
@@ -358,14 +355,14 @@ Sur le même principe que les deux graphiques précédents mais avec 6 élément
 
 ***Installation***
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 net install testpal, from("https://mthevenin.github.io/stata_fr/ado/testpal/") replace
 ```
 
 
 ***Syntaxe***
 <div class="grey">
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 testpal nom_palette , [rev] [op(#)] [bf(#)]
 ```
 
@@ -376,11 +373,11 @@ testpal nom_palette , [rev] [op(#)] [bf(#)]
 
 ***Exemple avec la palette qualitative burd (François Briatte)***   
 
-```{r eval=FALSE}
+```{stata, eval=FALSE}
 testpal burd, rev op(100) bf(5)
 ```
 
-![](imgp3/g7a.png){width=60%} 
+![testpal - Tableau (a)](imgp3/g7a.png){width=60%, fig-align="left"}
 
 Pour les quelques palettes populaires qui vont être rapidement présentées, les options de la commande `testpal` n’ont pas été modifiées. Le nom de la palette est donné par le titre du graphique.
 
@@ -393,7 +390,7 @@ Pour les quelques palettes populaires qui vont être rapidement présentées, le
 **https://www.tableau.com/about/blog/2016/7/colors-upgrade-tableau-10-56782**
 
 
-![](imgp3/g7b.png){width=60%} 
+![testpal - tableau (b)](imgp3/g7b.png){width=60%, fig-align="left"}
 
 
 **HUE**  
@@ -401,7 +398,7 @@ Pour les quelques palettes populaires qui vont être rapidement présentées, le
 -	Il s’agit de la palette par défaut de ggplot2 (R)
 -	De plus en plus remplacée par la palette Viridis (voir plus loin)
 
-![](imgp3/g7c.png){width=60%} 
+![testpal - hue](imgp3/g7c.png){width=60%, fig-align="left"}
 
 ## **Palettes séquentielles**   
 
@@ -424,20 +421,20 @@ En réduisant la taille de certaines palettes séquentielles ou divergentes, on 
 -	Les autres palettes : plasma est également très utilisée, en particulier pour le remplissage de surface (aire).
 -	Plus d’infos : **https://rtask.thinkr.fr/fr/ggplot2-welcome-viridis/**
 
-![](imgp3/g7d.png){width=60%} 
+![testpal - viridis](imgp3/g7d.png){width=60%, fig-align="left"} 
 
- ![](imgp3/g7e.png){width=60%}  
+ ![testpal - plasma](imgp3/g7e.png){width=60%, fig-align="left"}
  
  
 **Collection colorbrewer**  
 
 Très populaire en cartographie: **https://colorbrewer2.org/#type=sequential&scheme=BuGn&n=3**
 
- ![](imgp3/g7f.png){width=60%}   
+ ![testpal YlOrBr](imgp3/g7f.png){width=60%, fig-align="left"}   
  
 On présentera enfin une seule palette de type divergente, issue de cette collection, la palette *spectral*.
 
- ![](imgp3/g7g.png){width=60%}    
+ ![tespal - spectral](imgp3/g7g.png){width=60%, fig-align="left"}    
  <br>
  
  
