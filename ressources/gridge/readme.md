@@ -7,7 +7,7 @@ date: "13/07/2022"
 
 Depuis 2020, des programmes permettent de générer de type lignes de crête: `joyplot` (A.Naqvi) et `joy_plot` (F.Rios-Avila).
 
-![](g1.png)
+
 
 
 La première commande, malgré une maj récente, présente toujours des problèmes concernant le report des informations sur l'axe discret pour la version `joyplot y`.   
@@ -79,7 +79,7 @@ xtitle("probabilités (%)"))
 ;
 ```
 
-![](g1.png)
+<img src="g1.png" width=50% height=50%>
 
 # Exemple 2
 
@@ -106,7 +106,7 @@ gopts(title("Prix location Rbnb à Paris", pos(11))) range(0 300) op(100)
 ;
 ```
 
-![](g2.png)
+<img src="g2.png" width=50% height=50%>
 
 ***Graphique 3***
 ```{r eval=FALSE}
@@ -117,7 +117,7 @@ gopts(title("Prix location Rbnb à Paris", pos(11)))
 ;
 ```
 
-![](g3.png){width=70%}
+<img src="g3.png" width=50% height=50%>
 
 # Nombre d'observations insuffisantes pour estimer les densités
 
