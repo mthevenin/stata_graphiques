@@ -1,4 +1,10 @@
-La commande **`fabplot`** programmée en 2021 par Nj.Cox permet de contrôler efficacement les effets dits *spaghetti* (courbes) ou *paella* (nuages de points). J'ai ajouté une option pour modifier les courbes au second plan, NJ.Cox ayant toujours tendance à bloquer l'habillage de ces commandes graphiques. La commande a été renommée **`fabplot2`** et s'installe via github.
+---
+title: "Commande fabplot2"
+author: "Marc Thevenin"
+date: "13/07/2022"
+---
+
+La commande **`fabplot`** programmée en 2021 par Nj.Cox permet de contrôler efficacement les effets dits *spaghetti* (courbes) ou *paella* (nuages de points). J'ai seulement ajouté  une option pour modifier les courbes au second plan, NJ.Cox ayant toujours tendance à bloquer l'habillage de ces commandes graphiques. La commande a été renommée **`fabplot2`** et s'installe via github.
 
 [**Article Stata Journal**](https://journals.sagepub.com/doi/full/10.1177/1536867X211025838) 
 
@@ -22,7 +28,7 @@ ssc install fabplot
 J'ai juste ajouté l'option **`backopts`**. Même principe que l'option **`frontopts`** qui modifie l'objet au premier plan.
 
 ```{r eval=FALSE}
-net install fabplot2, from("https://mthevenin.github.io/stata_graphiques/ressources/fabplot/") replace
+net install fabplot2, from("https://mthevenin.github.io/stata_graphiques/ressources/fabplot2/") replace
 ```
 
 ## Exemple
@@ -35,7 +41,7 @@ Je reprends le même exemple que pour la formation, avec la base babynames.
 Ouverture de de la base:  
 
 ```{r eval=FALSE}
-webuse set "https://raw.githubusercontent.com//mthevenin/stata_graphiques/master/ressources/fabplot"
+webuse set "https://raw.githubusercontent.com//mthevenin/stata_graphiques/master/ressources/fabplot2"
 use babynames, clear
 webuse set
 ```
@@ -63,7 +69,7 @@ tw `line' , legend(order(`leg') row(2) size(*.8)  region(color(%0)) pos(11)) yti
 title("Popularité des prénoms")
 ```
 
-![](g1.png)
+<img src="g1.png" width=50% height=50%>
 
 # Small-Multiple avec fabplot
 
@@ -96,4 +102,4 @@ ytitle("")  ylabel(0(20000)100000, labsize(*.8) glw(*.5))
 #delimit cr
 ```
 
-![](g2.png){width=70%}
+<img src="g2.png" width=50% height=50%>
