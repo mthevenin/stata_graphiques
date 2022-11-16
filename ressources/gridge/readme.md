@@ -19,7 +19,7 @@ Des améliorations restent néanmoins à prévoir.
 ## Installation
 
 ```{r eval=FALSE}
-net install gridge, from("https://mthevenin.github.io/stata_graphiques/ressources/gridge/") replace
+net install gridge, from("https://raw.githubusercontent.com/mthevenin/stata_graphiques/master/ressources/gridge/") replace
 ```
 
 # Syntaxe
