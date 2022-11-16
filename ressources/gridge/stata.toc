@@ -1,0 +1,8 @@
+d 2022-07-14
+d commande      : gridge 
+d auteur        : Marc Thevenin
+d affiliation   : ined-sms
+d support       : marc.thevenin@ined.fr
+d               : https://mthevenin.github.io/stata_graphiques/
+
+p gridge        : lignes de crête sur densités 
