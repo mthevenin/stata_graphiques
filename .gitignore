@@ -2,9 +2,9 @@
 .Rhistory
 .RData
 .Ruserdata
+*.md
 
 /.quarto/
 /_*.local
 
 
-nhanes <- read.csv("D:/D/Marc/SMS/STATA INED/Programmation/R/marginaleffect/nhanes.csv")
