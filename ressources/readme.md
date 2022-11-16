@@ -1,1 +1,1 @@
-commandes perso
+commandes graphiques perso
