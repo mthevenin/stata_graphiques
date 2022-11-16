@@ -1,12 +1,15 @@
 Petite commande graphique en version alpha: **`gjoint`**. Permet de visualiser la distribution croisée de deux variables quantitatives avec la commande **`hexplot`** de Ben Jann, en reportant également les distributions marginales avec des d'histogrammes.  
 Pas de gros changement à prévoir, si ce n'est ajouter la possibilité de sélectionner des observations avec [if/else].  
 
-![](g1.png){width=70%}
+<img src="g1.png" width=50% height=50%>
 
 
 **Exemple**
 
-***Installation**: pour l'instant manuellement. Récupérer le programme gjoint.ado à cette adresse: (<https://github.com/mthevenin/stata_graphiques/blob/main/ressources/gjoint/gjoint.ado>), l'exécuter dans l'éditeur de programme ou le sauvegarder dans un sous répertoire de l'ado plus
+***Installation***
+```{r eval=FALSE}
+net install gjoint, from("https://raw.githubusercontent.com/mthevenin/stata_graphiques/master/ressources/gjoint/") replace
+```
 
 ***Ouverture de la base***
 
