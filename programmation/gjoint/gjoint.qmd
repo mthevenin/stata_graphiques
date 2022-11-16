@@ -15,7 +15,11 @@ Pas de gros changement à prévoir, si ce n'est ajouter la possibilité de séle
 
 **Exemple**
 
-***Installation**: pour l'instant manuellement. Récupérer le programme gjoint.ado à cette adresse: (<https://github.com/mthevenin/stata_graphiques/blob/main/ressources/gjoint/gjoint.ado>), l'exécuter dans l'éditeur de programme ou le sauvegarder dans un sous répertoire de l'ado plus
+***Installation***:
+
+```{r eval=FALSE}
+net install gjoint, from("https://raw.githubusercontent.com/mthevenin/stata_graphiques/master/ressources/gjoint/") replace
+```
 
 ***Ouverture de la base***
 

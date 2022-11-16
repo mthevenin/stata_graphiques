@@ -242,7 +242,7 @@
     "href": "programmation/fabplot/fabplot.html#fabplot2",
     "title": "fabplot (NJ.Cox)",
     "section": "1.2 fabplot2",
-    "text": "1.2 fabplot2\nJ’ai juste ajouté l’option backopts. Même principe que l’option frontopts qui modifie l’objet au premier plan.\n\nnet install fabplot2, from(\"https://mthevenin.github.io/stata_graphiques/ressources/fabplot/\") replace"
+    "text": "1.2 fabplot2\nJ’ai juste ajouté l’option backopts. Même principe que l’option frontopts qui modifie l’objet au premier plan.\n\nnet install fabplot2, from(\"https://raw.githubusercontent.com/mthevenin/stata_graphiques/master/ressources/fabplot2/\") replace"
   },
   {
     "objectID": "programmation/fabplot/fabplot.html#exemple",
@@ -270,7 +270,7 @@
     "href": "programmation/gjoint/gjoint.html",
     "title": "gjoint",
     "section": "",
-    "text": "Petite commande graphique en version alpha: gjoint. Permet de visualiser la distribution croisée de deux variables quantitatives avec la commande hexplot de Ben Jann, en reportant également les distributions marginales avec des d’histogrammes.\nPas de gros changement à prévoir, si ce n’est ajouter la possibilité de sélectionner des observations avec [if/else].\n\nExemple\n*Installation: pour l’instant manuellement. Récupérer le programme gjoint.ado à cette adresse: (https://github.com/mthevenin/stata_graphiques/blob/main/ressources/gjoint/gjoint.ado), l’exécuter dans l’éditeur de programme ou le sauvegarder dans un sous répertoire de l’ado plus\nOuverture de la base\n\nwebuse set  \"https://raw.githubusercontent.com//mthevenin/stata_graphiques/master/ressources/gjoint\"\nwebuse \"logement.dta\", clear\nwebuse set\n\nExécution du graphique\n\ngjoint prix surface,  hopts(levels(10) fast) palette(flare, reverse) title(\"gjoint alpha\")\n\nRemarque: le temps d’exécution est de 6-7 secondes pour l’exemple (Stata 17 Se)"
+    "text": "Petite commande graphique en version alpha: gjoint. Permet de visualiser la distribution croisée de deux variables quantitatives avec la commande hexplot de Ben Jann, en reportant également les distributions marginales avec des d’histogrammes.\nPas de gros changement à prévoir, si ce n’est ajouter la possibilité de sélectionner des observations avec [if/else].\n\nExemple\nInstallation:\n\nnet install gjoint, from(\"https://raw.githubusercontent.com/mthevenin/stata_graphiques/master/ressources/gjoint/\") replace\n\nOuverture de la base\n\nwebuse set  \"https://raw.githubusercontent.com//mthevenin/stata_graphiques/master/ressources/gjoint\"\nwebuse \"logement.dta\", clear\nwebuse set\n\nExécution du graphique\n\ngjoint prix surface,  hopts(levels(10) fast) palette(flare, reverse) title(\"gjoint alpha\")\n\nRemarque: le temps d’exécution est de 6-7 secondes pour l’exemple (Stata 17 Se)"
   },
   {
     "objectID": "programmation/gridge/gridge.html",
@@ -284,7 +284,7 @@
     "href": "programmation/gridge/gridge.html#installation",
     "title": "gridge",
     "section": "0.1 Installation",
-    "text": "0.1 Installation\n\nnet install gridge, from(\"https://mthevenin.github.io/stata_graphiques/ressources/gridge/\") replace"
+    "text": "0.1 Installation\n\nnet install gridge, from(\"https://raw.githubusercontent.com/mthevenin/stata_graphiques/master/ressources/gridge/\") replace"
   },
   {
     "objectID": "programmation/lollipop/lollipop.html",
