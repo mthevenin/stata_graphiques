@@ -9,6 +9,31 @@ library(fontawesome)
 
 
 ::: {.callout-note icon="false"}
+## Violinplot de Ben Jann... must-have !
+
+Nouvelle commande programmée par Ben Jann pour la visualisation des distributions. Très complète et se hisse, il me semble, au niveau de R et Python (`plotly`) sans problème.  
+Je vais essayer d'en faire une présentation assez rapidement, la documentation disponible sur Github est néanmoins déjà très complète. Beaucoup d'exemples à exécuter directement dans le fichier d'aide de la commande
+
+<https://github.com/benjann/violinplot/blob/main/README.md>
+
+::: {layout-ncol=2}
+
+![](https://github.com/benjann/violinplot/raw/main/images/6.png)
+
+![](https://github.com/benjann/violinplot/raw/main/images/8.png)
+
+![](https://github.com/benjann/violinplot/raw/main/images/5.png)
+
+![](https://github.com/benjann/violinplot/raw/main/images/10.png)
+
+
+Violinplot (Ben Jann)
+:::
+
+:::
+
+
+::: {.callout-note icon="false"}
 ## Graphiques programmés en Python
 
 Depuis la version 16 de Stata on peut programmer de manière intéractive en Python.  Dans un premier temps, une courte présentation de Python sous Stata (installation, exécution sous Stata), avec deux exemples de graphiques exécuté avec des fonctions des librairies `seaborn` et `plotly` [[Lien](programmation/python/python.html)]

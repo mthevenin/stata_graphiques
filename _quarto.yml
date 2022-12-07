@@ -72,4 +72,7 @@ format:
     code-tools:
       source: true
 number-sections: true
+filters:
+   - lightbox
+lightbox: auto
     

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.96">
+<meta name="generator" content="quarto-1.3.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -104,6 +104,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -139,28 +142,32 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://mthevenin.github.io/stata_fr/">Stata Ined</a>
+    <a class="nav-link" href="https://mthevenin.github.io/stata_fr/" rel="">
+ <span class="menu-text">Stata Ined</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://mthevenin.github.io/stata_graphiques/">Graphiques</a>
+    <a class="nav-link" href="https://mthevenin.github.io/stata_graphiques/" rel="">
+ <span class="menu-text">Graphiques</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://mthevenin.github.io/stata_programmation">Programmation</a>
+    <a class="nav-link" href="https://mthevenin.github.io/stata_programmation" rel="">
+ <span class="menu-text">Programmation</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/mthevenin"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/mthevenin" rel=""><i class="bi bi-github" role="img">
 </i> 
- </a>
+ <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="mailto:marc.thevenin@ined.fr"><i class="bi bi-envelope" role="img">
+    <a class="nav-link" href="mailto:marc.thevenin@ined.fr" rel=""><i class="bi bi-envelope" role="img">
 </i> 
- </a>
+ <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../about.html">A propos</a>
+    <a class="nav-link" href="../about.html" rel="">
+ <span class="menu-text">A propos</span></a>
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
@@ -331,6 +338,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="quarto-title-meta">
 
     
+  
     
   </div>
   
@@ -363,7 +371,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
 <p></p><figcaption class="figure-caption">Thèmes usines</figcaption><p></p>
-<p><img src="imgp3/g8.png" class="img-fluid figure-img"></p>
+<p><a href="imgp3/g8.png" class="lightbox" title="Thèmes usines" data-gallery="quarto-lightbox-gallery-1"><img src="imgp3/g8.png" class="img-fluid figure-img"></a></p>
 </figure>
 </div>
 <p><strong>Styles externes</strong></p>
@@ -375,7 +383,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>help schemepack </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Attention seulement une palette est de type qualitative (tableau), les autres séquentielles. L’utilisation des thèmes associés aux palettes séquentielles peuvent donner un rendu peu satisfaisant lorsque le nombre d’objets graphique réduit (par exemple 2 courbes). Il conviendra alors d’utiliser en amont colorpalette. Egalement, la position par défaut de la légende a été fixée à 3 heures ce qui n’est peut-être pas le plus judicieux.</p>
-<p><strong><em>Exemple avec les thèmes white_tableau et white_viridis</em></strong> <img src="imgp3/g9a.png" class="img-fluid" data-fig-align="left" alt="Schemepack (a)"></p>
+<p><strong><em>Exemple avec les thèmes white_tableau et white_viridis</em></strong> <a href="imgp3/g9a.png" class="lightbox" title="Schemepack (a)" data-gallery="quarto-lightbox-gallery-2"><img src="imgp3/g9a.png" class="img-fluid" data-fig-align="left" alt="Schemepack (a)"></a></p>
 <p>Les deux couleurs se distinguent difficilement avec la palette viridis. On peut corriger rapidement ce problème avec colorpalette.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> uslifeexp, <span class="kw">clear</span></span>
@@ -386,7 +394,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
 <p></p><figcaption class="figure-caption">Schemepack (b)</figcaption><p></p>
-<p><img src="imgp3/g9b.png" class="img-fluid figure-img"></p>
+<p><a href="imgp3/g9b.png" class="lightbox" title="Schemepack (b)" data-gallery="quarto-lightbox-gallery-3"><img src="imgp3/g9b.png" class="img-fluid figure-img"></a></p>
 </figure>
 </div>
 <p><br></p>
@@ -420,15 +428,13 @@ On peut retirer facilement le contour de la légende (on allège ainsi les optio
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-<p><img src="imgp3/g12a.png" class="img-fluid" data-fig-align="left" alt="grstyle (a)"> <img src="imgp3/g12b.png" class="img-fluid"></p>
+<p><a href="imgp3/g12a.png" class="lightbox" title="grstyle (a)" data-gallery="quarto-lightbox-gallery-4"><img src="imgp3/g12a.png" class="img-fluid" data-fig-align="left" alt="grstyle (a)"></a> <a href="imgp3/g12b.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img src="imgp3/g12b.png" class="img-fluid"></a></p>
 </div>
-<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-<div class="quarto-figure quarto-figure-left">
+<div class="quarto-figure quarto-figure-left" style="flex-basis: 33.3%;justify-content: center;">
 <figure class="figure">
 <p></p><figcaption class="figure-caption">grstyle (b)</figcaption><p></p>
-<p><img src="imgp3/g12c.png" class="img-fluid figure-img"></p>
+<p><a href="imgp3/g12c.png" class="lightbox" title="grstyle (b)" data-gallery="quarto-lightbox-gallery-6"><img src="imgp3/g12c.png" class="img-fluid figure-img"></a></p>
 </figure>
-</div>
 </div>
 </div>
 </div>
@@ -438,7 +444,7 @@ On peut retirer facilement le contour de la légende (on allège ainsi les optio
 <li><strong><code>grstyle set color viridis, select(1 11)</code></strong></li>
 </ul>
 <p><strong><em>Exemple avec le fond de type mesh, la légende à 11 heures sans contour et une sélection de deux couleurs de la palette viridis</em></strong></p>
-<p><img src="imgp3/g11.png" class="img-fluid" style="width:60.0%" alt="grstyle (c)">{fig-align=“left”}</p>
+<p><a href="imgp3/g11.png" class="lightbox" title="grstyle (c)" data-gallery="quarto-lightbox-gallery-7"><img src="imgp3/g11.png" class="img-fluid" style="width:60.0%" alt="grstyle (c)"></a>{fig-align=“left”}</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">webuse</span> <span class="kw">set</span> https:<span class="co">//github.com/mthevenin/stata_graphiques/tree/main/bases</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> pingouin, <span class="kw">replace</span></span>
@@ -516,7 +522,24 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
     button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -603,24 +626,42 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>
@@ -812,6 +853,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       <div class="nav-footer-center">Marc Thévenin / Ined-Sms / Août 2022-</div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","openEffect":"zoom","selector":".lightbox","loop":true,"closeEffect":"zoom"});</script>
 
 
 

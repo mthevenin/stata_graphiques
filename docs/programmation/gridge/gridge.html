@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.207">
+<meta name="generator" content="quarto-1.3.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -103,6 +103,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -139,31 +142,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://mthevenin.github.io/stata_fr/">
+    <a class="nav-link" href="https://mthevenin.github.io/stata_fr/" rel="">
  <span class="menu-text">Stata Ined</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://mthevenin.github.io/stata_graphiques/">
+    <a class="nav-link" href="https://mthevenin.github.io/stata_graphiques/" rel="">
  <span class="menu-text">Graphiques</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://mthevenin.github.io/stata_programmation">
+    <a class="nav-link" href="https://mthevenin.github.io/stata_programmation" rel="">
  <span class="menu-text">Programmation</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/mthevenin"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/mthevenin" rel=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="mailto:marc.thevenin@ined.fr"><i class="bi bi-envelope" role="img">
+    <a class="nav-link" href="mailto:marc.thevenin@ined.fr" rel=""><i class="bi bi-envelope" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html">
+    <a class="nav-link" href="../../about.html" rel="">
  <span class="menu-text">A propos</span></a>
   </li>  
 </ul>
@@ -357,7 +360,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </header>
 
 <p>Depuis 2020, des programmes permettent de générer de type lignes de crête: <code>joyplot</code> (A.Naqvi) et <code>joy_plot</code> (F.Rios-Avila).</p>
-<p><img src="g1.png" class="img-fluid" style="width:50.0%"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="g1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="g1.png" class="img-fluid figure-img" style="width:50.0%"></a></p>
+</figure>
+</div>
 <p>La première commande, malgré une maj récente, présente toujours des problèmes concernant le report des informations sur l’axe discret pour la version <code>joyplot y</code>.<br>
 A partir d’un programme écrit à l’automne 2020, et en restant au plus près de la fonction <code>ggridge</code> de R, j’ai également programmé une commande. Elle permet, entre autres, de paramétrer le tri les modalités de l’axe discret à partir d’une fonction autorisée avec <code>egen</code> (<em>mean</em>, <em>median</em>, <em>sd</em>….), de choisir librement un intervalle sur l’axe des abcisses pour éviter le report de valeurs sortant de borne acceptables (probabilité négatives ou supérieure à 1 par exemple). Comme on estime des densités, le nombre d’observations minimales a été fixé à 10. Si ce critère n’est pas respecté, les valeurs de y qui ne respectent pas cette contrainte sont affichées.<br>
 Des améliorations restent néanmoins à prévoir.</p>
@@ -419,7 +426,11 @@ Des améliorations restent néanmoins à prévoir.</p>
 <span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="fu">xtitle</span>(<span class="st">"probabilités (%)"</span>)) </span>
 <span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><img src="g1.png" class="img-fluid" style="width:70.0%"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="g1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="g1.png" class="img-fluid figure-img" style="width:70.0%"></a></p>
+</figure>
+</div>
 </section>
 <section id="exemple-2" class="level1" data-number="3">
 <h1 data-number="3"><span class="header-section-number">3</span> Exemple 2</h1>
@@ -442,7 +453,11 @@ Des améliorations restent néanmoins à prévoir.</p>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gopts</span>(<span class="fu">title</span>(<span class="st">"Prix location Rbnb à Paris"</span>, <span class="fu">pos</span>(<span class="dv">11</span>))) <span class="fu">range</span>(<span class="dv">0</span> <span class="dv">300</span>) <span class="fu">op</span>(<span class="dv">100</span>)</span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><img src="g2.png" class="img-fluid" style="width:70.0%"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="g2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="g2.png" class="img-fluid figure-img" style="width:70.0%"></a></p>
+</figure>
+</div>
 <p><strong><em>Graphique 3</em></strong></p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#delimit ;</span></span>
@@ -451,7 +466,11 @@ Des améliorations restent néanmoins à prévoir.</p>
 <span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="fu">gopts</span>(<span class="fu">title</span>(<span class="st">"Prix location Rbnb à Paris"</span>, <span class="fu">pos</span>(<span class="dv">11</span>)))</span>
 <span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>;</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><img src="g3.png" class="img-fluid" style="width:70.0%"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="g3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img src="g3.png" class="img-fluid figure-img" style="width:70.0%"></a></p>
+</figure>
+</div>
 </section>
 <section id="nombre-dobservations-insuffisantes-pour-estimer-les-densités" class="level1" data-number="4">
 <h1 data-number="4"><span class="header-section-number">4</span> Nombre d’observations insuffisantes pour estimer les densités</h1>
@@ -839,6 +858,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       <div class="nav-footer-center">Marc Thévenin / Ined-Sms / Août 2022-</div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","openEffect":"zoom","loop":true,"closeEffect":"zoom"});</script>
 
 
 

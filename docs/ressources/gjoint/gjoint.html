@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.207">
+<meta name="generator" content="quarto-1.3.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -103,6 +103,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -138,31 +141,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://mthevenin.github.io/stata_fr/">
+    <a class="nav-link" href="https://mthevenin.github.io/stata_fr/" rel="">
  <span class="menu-text">Stata Ined</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://mthevenin.github.io/stata_graphiques/">
+    <a class="nav-link" href="https://mthevenin.github.io/stata_graphiques/" rel="">
  <span class="menu-text">Graphiques</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://mthevenin.github.io/stata_programmation">
+    <a class="nav-link" href="https://mthevenin.github.io/stata_programmation" rel="">
  <span class="menu-text">Programmation</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/mthevenin"><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/mthevenin" rel=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="mailto:marc.thevenin@ined.fr"><i class="bi bi-envelope" role="img">
+    <a class="nav-link" href="mailto:marc.thevenin@ined.fr" rel=""><i class="bi bi-envelope" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html">
+    <a class="nav-link" href="../../about.html" rel="">
  <span class="menu-text">A propos</span></a>
   </li>  
 </ul>
@@ -347,7 +350,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <p>Petite commande graphique en version alpha: <strong><code>gjoint</code></strong>. Permet de visualiser la distribution croisée de deux variables quantitatives avec la commande <strong><code>hexplot</code></strong> de Ben Jann, en reportant également les distributions marginales avec des d’histogrammes.<br>
 Pas de gros changement à prévoir, si ce n’est ajouter la possibilité de sélectionner des observations avec [if/else].</p>
-<p><img src="g1.png" class="img-fluid" style="width:70.0%"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="g1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="g1.png" class="img-fluid figure-img" style="width:70.0%"></a></p>
+</figure>
+</div>
 <p><strong>Exemple</strong></p>
 <p>*<strong>Installation</strong>: pour l’instant manuellement. Récupérer le programme gjoint.ado à cette adresse: (<a href="https://github.com/mthevenin/stata_graphiques/blob/main/ressources/gjoint/gjoint.ado" class="uri">https://github.com/mthevenin/stata_graphiques/blob/main/ressources/gjoint/gjoint.ado</a>), l’exécuter dans l’éditeur de programme ou le sauvegarder dans un sous répertoire de l’ado plus</p>
 <p><strong><em>Ouverture de la base</em></strong></p>
@@ -598,6 +605,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       <div class="nav-footer-center">Marc Thévenin / Ined-Sms / Août 2022-</div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom","loop":true});</script>
 
 
 
