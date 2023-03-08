@@ -51,9 +51,9 @@ website:
             contents:
             - formation/formation31.qmd
             - formation/formation32.qmd
-          - section: "Chapitre 4: [A venir]"
-          - section: "Chapitre 5: [A venir]"
-          - text: "  "  
+          - section: "Chapitre 4: Eléments de visualisation"
+            contents: 
+            - formation/formation41.qmd
       - section: "Programmation"
         contents:
           - Stata.qmd

@@ -1,0 +1,66 @@
+---
+title: "Introduction"
+---
+[Début mise à jour: 03-03-2023]
+
+
+Par rapport à la première version (2020) et suite aux évolutions qu'a connu le logiciel depuis, il me semble plus pertinent de se focaliser sur certaines points importants concernant la production de graphiques que de les reprendre quasiment un par un selon le types de variables introduites. L'aide de Stata est suffisamment qualitative pour donner les éléments de programmations utiles. On partira plutôt de questions, et voir les réponses les plus adaptés. Contrairement à la première version, on priviliera des solutions programmatives les plus simples, aidés par certaines contributions externes particulièrement séduisantes ces dernières années. Citons deux exemples: 
+
+- **`violinplot`** (2022) de Ben Jann pour la visualisation des distributions de variables continues.
+- **`fabplot`** (2021) de Nicolas J.Cox pour la gestion des effets spaghetti.
+- **`waffle_plot`** (2022) de Fernando Rios-Avila. Enfin, on tient peut-être l'alternative au très décrié *camember* (*pie chart*) 
+
+
+Lien visualisation des données:  
+
+- From Data to Viz (Y.Holtz): <https://www.data-to-viz.com/> dont il faut lire absolument la partie consacrée aux [mises en garde](https://www.data-to-viz.com/caveats.html)
+
+# **principaux contributeurs**
+
+[**Nicola J.Cox**](https://www.durham.ac.uk/staff/n-j-cox/)      
+Très connu par la communauté des utilisateurs du logiciel, NJ.Cox est surement la personne qui le manipule mieux. 
+Il propose régulièrement des notes pédagogiques dans les fameux *stata tips* ou *speaking stata* du  *Stata Journal*. Ses commandes sont toujours très utiles, et plus particulièrement pour les graphiques 
+Certaines `catplot` , `tabplot` , `spineplot` , `fabplot`, `axis` seront présentées plus loin. Un peu en décalage avec les effets de mode dans le domaine de la visualisation, il privilégie le fond/ le sens plutôt que la forme / l'esthétique...et c'est très bien ainsi.  
+Sa dernière contribution **`fabplot`** est essentielle pour la gestion des effets dits *spaghetti*. Une partie de ce chapitre lui sera consacrée.
+
+[**Ben Jann**](https://github.com/benjann?page=1&tab=repositories)
+Egalement une référence incontournable pour l'utilisation de Stata, ses contributions dans le domaine des graphiques sont majeures.  **`colorpalette`** (chapitre 3) est une commande incontournable pour la gestion des couleurs et, personnellement, je ne peux plus me passer de **`grstyle`**. Très recemment la commande **`violinplot`** donne une solution complètement aboutie pour la visualisation d'une distribution. Toujours dans les ***must have***, **`heatplot`**/**`hexplot`** reste un incontournable pour la visualisation des distributions jointes. B.Jann reste également particulièrement connu pour sa suite **`coefplot`**. 
+
+
+[**Asjad Naqvi**](https://github.com/asjadnaqvi)
+A fait une entrée assez fracassante dans le domaine de la visualisation avec Stata en 2020. Il est l'auteur d'une douzaine de commandes sous l'angle de la fameuse ***dataviz*** moderne. Compte tenu du moteur vieillissant de Stata, le tour de force est particulièrement impressionnant. Néanmoins, de mon point de vue, une partie de ces visualisations prennent tout leur sens de manière intéractive, avec une diffusion type html. Cela demande alors de se reporter vers d'autres langage, comme **python**,  maintenant directement exécutable dans l'interface principale de Stata. On est donc ici dans une approche plus moderne, mais également complexe de la visualisation.   
+Sur son site du réseau [medium](https://asjadnaqvi.medium.com/), les solutions graphiques proposées sont toujours précédées d'une partie très détaillée sur la mise en forme des données. Une petite remarque sur *medium*: sans inscription au site, le nombre d'accès fait l'objet d'un nombre de pages limité mensuellement. Cela est fort dommage. Penser donc à récupérer les programmes qui sont mis à disposition par l'auteur.
+
+**Quelques visuels des commandes d'A.Naqvi**
+
+::: {layout-ncol=3 layout-valign="bottom"}
+![[Tree map](https://github.com/asjadnaqvi/stata-treemap)](https://github.com/asjadnaqvi/stata-treemap/raw/main/figures/treemap25.png)
+
+![[Arc plot](https://github.com/asjadnaqvi/stata-arcplot)](https://github.com/asjadnaqvi/stata-arcplot/raw/main/figures/arcplot2.png)
+
+![[Stream plot](https://github.com/asjadnaqvi/stata-streamplot)](https://github.com/asjadnaqvi/stata-streamplot/raw/main/figures/streamplot5.png)
+:::
+
+
+[**Demetris Christodoulou**](https://graphworkflow.com)
+A ma connaissance il n'a pas programmé de commande, mais la démarche de son support, très orienté sémiologie graphique est très pertinente, ses choix graphiques faisant l'objet d'une justification. Les programmes sont mis à disposition, et sa conversion en Stata du célèbre graphique de *Charles Joseph Minard* ([original](https://fr.m.wikipedia.org/wiki/Fichier:Minard.png)) sur la campagne de Russie des armées napoléonienne est vraiement bluffante. Dans les prévisions de publication de Stata, il serait en train de préparer un ouvrage pour 2024 (*Visual Data Analytics*)
+
+
+**Quelques graphiques de D.Christodoulou**
+
+::: {layout-ncol=3 layout-valign="bottom"}
+![[Minard](https://graphworkflow.com/2019/06/25/minard/)](https://graphworkflow.files.wordpress.com/2017/01/minard.png)
+
+![[Massacre dauphins](https://graphworkflow.com/2018/12/16/taiji-cove/)](https://graphworkflow.files.wordpress.com/2018/09/taijicove2.png)
+
+![[Mariage homo](https://graphworkflow.com/2020/01/17/marriage-equality/)](https://graphworkflow.files.wordpress.com/2017/12/marriage_equality.png)
+:::
+
+
+De manière générale, ne pas hésiter à aller également sur le forum [statalist](https://www.statalist.org/) où les questions concernant les graphiques sont relativement nombreuses. 
+
+  
+[08-03-2023]  
+  
+  
+  

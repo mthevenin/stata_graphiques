@@ -36,7 +36,7 @@ library(fontawesome)
 
 **INTRODUCTION A LA SEMIOLOGIE GRAPHIQUE (Bénédicte Garnier - Ined-SMS)**
 
-Lien vers le document: [`r fa("file-pdf", fill = "steelblue", margin_right="1em")`](https://github.com/mthevenin/stata_fr/blob/master/semio_bene/2020.09.14.BGIntro_ppt.pdff)
+Lien vers le document: [`r fa("file-pdf", fill = "steelblue", margin_right="1em")`](BGIntro_ppt.pdf)
 
 <iframe src="BGIntro_ppt.pdf" height="500" width="900" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay"></iframe>
 
