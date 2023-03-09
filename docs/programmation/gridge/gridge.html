@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.26">
+<meta name="generator" content="quarto-1.3.179">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -142,31 +142,31 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://mthevenin.github.io/stata_fr/" rel="">
+    <a class="nav-link" href="https://mthevenin.github.io/stata_fr/" rel="" target="">
  <span class="menu-text">Stata Ined</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://mthevenin.github.io/stata_graphiques/" rel="">
+    <a class="nav-link" href="https://mthevenin.github.io/stata_graphiques/" rel="" target="">
  <span class="menu-text">Graphiques</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://mthevenin.github.io/stata_programmation" rel="">
+    <a class="nav-link" href="https://mthevenin.github.io/stata_programmation" rel="" target="">
  <span class="menu-text">Programmation</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/mthevenin" rel=""><i class="bi bi-github" role="img">
+    <a class="nav-link" href="https://github.com/mthevenin" rel="" target=""><i class="bi bi-github" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="mailto:marc.thevenin@ined.fr" rel=""><i class="bi bi-envelope" role="img">
+    <a class="nav-link" href="mailto:marc.thevenin@ined.fr" rel="" target=""><i class="bi bi-envelope" role="img">
 </i> 
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">A propos</span></a>
   </li>  
 </ul>
@@ -282,23 +282,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">Chapitre 4: [A venir]</span>
-  </li>
-          <li class="sidebar-item sidebar-item-section">
-      <span class="sidebar-item-text sidebar-link text-start">Chapitre 5: [A venir]</span>
-  </li>
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">Chapitre 4: Eléments de visualisation</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../formation/formation41.html" class="sidebar-item-text sidebar-link">Introduction</a>
+  </div>
+</li>
+      </ul>
   </li>
       </ul>
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">Programmation</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">Programmation</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../../Stata.html" class="sidebar-item-text sidebar-link">Programmation avec Stata</a>
@@ -365,9 +372,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p><a href="g1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="g1.png" class="img-fluid figure-img" style="width:50.0%"></a></p>
 </figure>
 </div>
-<p>La première commande, malgré une maj récente, présente toujours des problèmes concernant le report des informations sur l’axe discret pour la version <code>joyplot y</code>.<br>
-A partir d’un programme écrit à l’automne 2020, et en restant au plus près de la fonction <code>ggridge</code> de R, j’ai également programmé une commande. Elle permet, entre autres, de paramétrer le tri les modalités de l’axe discret à partir d’une fonction autorisée avec <code>egen</code> (<em>mean</em>, <em>median</em>, <em>sd</em>….), de choisir librement un intervalle sur l’axe des abcisses pour éviter le report de valeurs sortant de borne acceptables (probabilité négatives ou supérieure à 1 par exemple). Comme on estime des densités, le nombre d’observations minimales a été fixé à 10. Si ce critère n’est pas respecté, les valeurs de y qui ne respectent pas cette contrainte sont affichées.<br>
-Des améliorations restent néanmoins à prévoir.</p>
+<p>A partir d’un programme écrit à l’automne 2020, et en restant au plus près de la fonction <code>ggridge</code> de R, j’ai également (et modestement) programmé une commande. Elle permet, entre autres, de contrôler le tri les modalités de l’axe discret à partir d’une fonction autorisée avec <code>egen</code> (<em>mean</em>, <em>median</em>, <em>sd</em>….), de choisir librement un intervalle sur l’axe des abscisses pour éviter le report de valeurs sortant d’une borne acceptable (probabilité négatives ou supérieure à 1 dans l’exemple). Comme on estime des densités, le nombre d’observations minimales a été fixé à 10. Si ce critère n’est pas respecté, les valeurs de y en cause sont affichées. Des améliorations restent néanmoins à prévoir.</p>
 <section id="installation" class="level2" data-number="0.1">
 <h2 data-number="0.1" class="anchored" data-anchor-id="installation"><span class="header-section-number">0.1</span> Installation</h2>
 <div class="cell">
@@ -651,6 +656,92 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -704,143 +795,143 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="al">![](g1.png)</span>{width=50%}</span>
 <span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>La première commande, malgré une maj récente, présente toujours des problèmes concernant le report des informations sur l'axe discret pour la version <span class="in">`joyplot y`</span>.   </span>
-<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a>A partir d'un programme écrit à l'automne 2020, et en restant au plus près de la fonction <span class="in">`ggridge`</span> de R, j'ai également programmé une commande. Elle permet, entre autres, de paramétrer le tri les modalités de l'axe discret à partir d'une fonction autorisée avec <span class="in">`egen`</span> (*mean*, *median*, *sd*....), de choisir librement un intervalle sur l'axe des abcisses pour éviter le report de valeurs sortant de borne acceptables (probabilité négatives ou supérieure à 1 par exemple). Comme  on estime des densités, le nombre d'observations minimales a été fixé à 10. Si ce critère n'est pas respecté, les valeurs de y qui ne respectent pas cette contrainte sont affichées.  </span>
-<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a>Des améliorations restent néanmoins à prévoir.</span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>A partir d'un programme écrit à l'automne 2020, et en restant au plus près de la fonction <span class="in">`ggridge`</span> de R, j'ai également (et modestement) programmé une commande. Elle permet, entre autres, de contrôler le tri les modalités de l'axe discret à partir d'une fonction autorisée avec <span class="in">`egen`</span> (*mean*, *median*, *sd*....), de choisir librement un intervalle sur l'axe des abscisses pour éviter le report de valeurs sortant d'une borne acceptable (probabilité négatives ou supérieure à 1 dans l'exemple). Comme  on estime des densités, le nombre d'observations minimales a été fixé à 10. Si ce critère n'est pas respecté, les valeurs de y en cause  sont affichées.  Des améliorations restent néanmoins à prévoir.</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a><span class="fu">## Installation</span></span>
 <span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a><span class="fu">## Installation</span></span>
-<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
-<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>net install gridge, <span class="fu">from</span>(<span class="st">"https://raw.githubusercontent.com/mthevenin/stata_graphiques/master/ressources/gridge/"</span>) replace</span>
-<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>net install gridge, <span class="fu">from</span>(<span class="st">"https://raw.githubusercontent.com/mthevenin/stata_graphiques/master/ressources/gridge/"</span>) replace</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a><span class="fu"># Syntaxe</span></span>
 <span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a><span class="fu"># Syntaxe</span></span>
-<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
-<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a>syntax variable [<span class="cf">if</span>],                                                                <span class="sc">/</span><span class="er">//</span></span>
-<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a><span class="fu">over</span>(variable)  <span class="fu">super</span>(numeric <span class="fl">1.8</span>)                                                   <span class="sc">/</span><span class="er">//</span></span>
-<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(string)  <span class="fu">sortrev</span>(string) <span class="fu">bw</span>(real<span class="sc">&gt;</span><span class="dv">0</span> <span class="fl">1.5</span>)                                         <span class="sc">/</span><span class="er">//</span></span>
-<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a><span class="fu">palette</span>(string) colrev <span class="fu">opac</span>(integer <span class="dv">80</span>)  <span class="fu">lc</span>(integer <span class="dv">2</span>)] <span class="fu">lw</span>(real .<span class="dv">5</span>)] <span class="fu">gopts</span>(string)]  <span class="sc">/</span><span class="er">//</span>   </span>
-<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(value1 value2)   </span>
-<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-27"><a href="#cb10-27" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
+<span id="cb10-28"><a href="#cb10-28" aria-hidden="true" tabindex="-1"></a>syntax variable [<span class="cf">if</span>],                                                                <span class="sc">/</span><span class="er">//</span></span>
+<span id="cb10-29"><a href="#cb10-29" aria-hidden="true" tabindex="-1"></a><span class="fu">over</span>(variable)  <span class="fu">super</span>(numeric <span class="fl">1.8</span>)                                                   <span class="sc">/</span><span class="er">//</span></span>
+<span id="cb10-30"><a href="#cb10-30" aria-hidden="true" tabindex="-1"></a><span class="fu">sort</span>(string)  <span class="fu">sortrev</span>(string) <span class="fu">bw</span>(real<span class="sc">&gt;</span><span class="dv">0</span> <span class="fl">1.5</span>)                                         <span class="sc">/</span><span class="er">//</span></span>
+<span id="cb10-31"><a href="#cb10-31" aria-hidden="true" tabindex="-1"></a><span class="fu">palette</span>(string) colrev <span class="fu">opac</span>(integer <span class="dv">80</span>)  <span class="fu">lc</span>(integer <span class="dv">2</span>)] <span class="fu">lw</span>(real .<span class="dv">5</span>)] <span class="fu">gopts</span>(string)]  <span class="sc">/</span><span class="er">//</span>   </span>
+<span id="cb10-32"><a href="#cb10-32" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(value1 value2)   </span>
+<span id="cb10-33"><a href="#cb10-33" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-34"><a href="#cb10-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-35"><a href="#cb10-35" aria-hidden="true" tabindex="-1"></a>*Entre parenthèse le type d'argument, suivi si nécessaire de la valeur par défaut.* </span>
 <span id="cb10-36"><a href="#cb10-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a>*Entre parenthèse le type d'argument, suivi si nécessaire de la valeur par défaut.* </span>
+<span id="cb10-37"><a href="#cb10-37" aria-hidden="true" tabindex="-1"></a>**Arguments**  </span>
 <span id="cb10-38"><a href="#cb10-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a>**Arguments**  </span>
-<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`over(variable)`</span>: variable de stratification. De type numérique avec ou non un label</span>
-<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`super(numeric 1.8)`</span>: degré de superposition des densités. Positif de préférence.</span>
-<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`sort(string)`</span>: **mean**, **median**, **sd**, **iqr**, **mode** (ou autre fonction statistique compatible avec <span class="in">`egen`</span>)</span>
-<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`sortrev(string)`</span> - <span class="in">`sortr(string)`</span>: idem mais les valeurs de la variable <span class="in">`over()`</span> seront affichées en ordre décroissant</span>
-<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`bw(real&gt;0 1.5)`</span>: largeur de la fenêtre de lissage.</span>
-<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`palette(string)`</span>  <span class="in">`pal(string)`</span>: nom d'une palette du package <span class="in">`colorpalette`</span>. Ce dernier sera installé comme dépendance si nécessaire. L'ordre des couleurs sera inversé par rapport à palette sélectionnée. </span>
-<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`colrev`</span>: permet d'inverser l'ordre des couleurs de la palette. Permet de retrouvet l'ordre de la palette d'origine de <span class="in">`colorpalette`</span></span>
-<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`opac(integer 80)`</span>: % d'opacité des couleurs. Valeur max = 100</span>
-<span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`range(value1 value2)`</span>: permet de borner les valeurs de l'axe continu (x). value1 $&lt;$ value2</span>
-<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a><span class="ss">-  </span><span class="in">`lc(integer 2)`</span>: échelle de gris du contour des densités (palette **gs**). Valeurs comprise entre 1 (noir) et 15 (blanc)</span>
-<span id="cb10-51"><a href="#cb10-51" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`lw(real .5)`</span>: épaisseur du contour des densités en valeur relative. Valeur minimum 0</span>
-<span id="cb10-52"><a href="#cb10-52" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`gopts(string)`</span>: autres options des graphique de type <span class="in">`tw`</span>: titre, xlabel, plotr, graphr.... **Ne pas utiliser l'option `ylabel`** (option spécifique à venir).            </span>
+<span id="cb10-39"><a href="#cb10-39" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`over(variable)`</span>: variable de stratification. De type numérique avec ou non un label</span>
+<span id="cb10-40"><a href="#cb10-40" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`super(numeric 1.8)`</span>: degré de superposition des densités. Positif de préférence.</span>
+<span id="cb10-41"><a href="#cb10-41" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`sort(string)`</span>: **mean**, **median**, **sd**, **iqr**, **mode** (ou autre fonction statistique compatible avec <span class="in">`egen`</span>)</span>
+<span id="cb10-42"><a href="#cb10-42" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`sortrev(string)`</span> - <span class="in">`sortr(string)`</span>: idem mais les valeurs de la variable <span class="in">`over()`</span> seront affichées en ordre décroissant</span>
+<span id="cb10-43"><a href="#cb10-43" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`bw(real&gt;0 1.5)`</span>: largeur de la fenêtre de lissage.</span>
+<span id="cb10-44"><a href="#cb10-44" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`palette(string)`</span>  <span class="in">`pal(string)`</span>: nom d'une palette du package <span class="in">`colorpalette`</span>. Ce dernier sera installé comme dépendance si nécessaire. L'ordre des couleurs sera inversé par rapport à palette sélectionnée. </span>
+<span id="cb10-45"><a href="#cb10-45" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`colrev`</span>: permet d'inverser l'ordre des couleurs de la palette. Permet de retrouvet l'ordre de la palette d'origine de <span class="in">`colorpalette`</span></span>
+<span id="cb10-46"><a href="#cb10-46" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`opac(integer 80)`</span>: % d'opacité des couleurs. Valeur max = 100</span>
+<span id="cb10-47"><a href="#cb10-47" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`range(value1 value2)`</span>: permet de borner les valeurs de l'axe continu (x). value1 $&lt;$ value2</span>
+<span id="cb10-48"><a href="#cb10-48" aria-hidden="true" tabindex="-1"></a><span class="ss">-  </span><span class="in">`lc(integer 2)`</span>: échelle de gris du contour des densités (palette **gs**). Valeurs comprise entre 1 (noir) et 15 (blanc)</span>
+<span id="cb10-49"><a href="#cb10-49" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`lw(real .5)`</span>: épaisseur du contour des densités en valeur relative. Valeur minimum 0</span>
+<span id="cb10-50"><a href="#cb10-50" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span><span class="in">`gopts(string)`</span>: autres options des graphique de type <span class="in">`tw`</span>: titre, xlabel, plotr, graphr.... **Ne pas utiliser l'option `ylabel`** (option spécifique à venir).            </span>
+<span id="cb10-51"><a href="#cb10-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-52"><a href="#cb10-52" aria-hidden="true" tabindex="-1"></a>**Remarques**  </span>
 <span id="cb10-53"><a href="#cb10-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-54"><a href="#cb10-54" aria-hidden="true" tabindex="-1"></a>**Remarques**  </span>
-<span id="cb10-55"><a href="#cb10-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-56"><a href="#cb10-56" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Pour la variable de l'argument <span class="in">`over()`</span>, chaque valeur doivent avoir au moins 10 observations. Si ce n'est pas le cas, la commande n'exécutera pas le graphique mais affichera les valeurs dont le nombre d'observation est insuffisant.</span>
-<span id="cb10-57"><a href="#cb10-57" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Toujours pour la variable de l'argument <span class="in">`over()`</span>, j'ai pour l'instant limité le format de la variable à un format numérique, avec ou sans labels affectés aux valeurs.</span>
-<span id="cb10-58"><a href="#cb10-58" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Ce type de visualisation est également utilisée pour représenter comparer l'évolution dans le temps d'une variable quantitative, par exemple entre pays (très à la mode avec le COVID)<span class="co">[</span><span class="ot">exemple</span><span class="co">](https://www.ined.fr/fichier/rte/166/Page%20accueil/SDR_plot_all_countries_fr.jpg)</span>. Cela permet d'offrir un certain contrôle des effets dits "spaghetti", mais je préfère dans ce cadre les approches de type *small-multiple*. Par ailleurs, dans l'esprit des courbes de Ridge, l'axe Y est plutôt de type ordonné. Cette option est offerte dans la fonction <span class="in">`joyplot`</span> (A.Navqui).</span>
-<span id="cb10-59"><a href="#cb10-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-60"><a href="#cb10-60" aria-hidden="true" tabindex="-1"></a><span class="in">                                                                                             </span></span>
-<span id="cb10-61"><a href="#cb10-61" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exemple 1</span></span>
-<span id="cb10-62"><a href="#cb10-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-63"><a href="#cb10-63" aria-hidden="true" tabindex="-1"></a>***Ouverture de la base***</span>
-<span id="cb10-64"><a href="#cb10-64" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
-<span id="cb10-65"><a href="#cb10-65" aria-hidden="true" tabindex="-1"></a>webuse set  <span class="st">"https://raw.githubusercontent.com//mthevenin/stata_graphiques/master/ressources/gridge"</span></span>
-<span id="cb10-66"><a href="#cb10-66" aria-hidden="true" tabindex="-1"></a>webuse <span class="st">"probability.dta"</span>, clear</span>
-<span id="cb10-67"><a href="#cb10-67" aria-hidden="true" tabindex="-1"></a>webuse set</span>
-<span id="cb10-68"><a href="#cb10-68" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-69"><a href="#cb10-69" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb10-70"><a href="#cb10-70" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb10-71"><a href="#cb10-71" aria-hidden="true" tabindex="-1"></a>***Graphique***</span>
-<span id="cb10-72"><a href="#cb10-72" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
-<span id="cb10-73"><a href="#cb10-73" aria-hidden="true" tabindex="-1"></a><span class="co">#delimit;</span></span>
-<span id="cb10-74"><a href="#cb10-74" aria-hidden="true" tabindex="-1"></a>gridge p , <span class="fu">over</span>(proba) </span>
-<span id="cb10-75"><a href="#cb10-75" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(<span class="dv">0</span> <span class="dv">100</span>) <span class="fu">bw</span>(<span class="dv">2</span>) </span>
-<span id="cb10-76"><a href="#cb10-76" aria-hidden="true" tabindex="-1"></a><span class="fu">palette</span>(flare) <span class="fu">op</span>(<span class="dv">90</span>)</span>
-<span id="cb10-77"><a href="#cb10-77" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-78"><a href="#cb10-78" aria-hidden="true" tabindex="-1"></a><span class="fu">gopts</span>(<span class="fu">title</span>(<span class="st">"Probabilités assignées"</span>, <span class="fu">pos</span>(<span class="dv">11</span>))</span>
-<span id="cb10-79"><a href="#cb10-79" aria-hidden="true" tabindex="-1"></a><span class="fu">caption</span>(<span class="st">"Source: Reddit"</span>, <span class="fu">size</span>(<span class="sc">*</span>.<span class="dv">5</span>)) </span>
-<span id="cb10-80"><a href="#cb10-80" aria-hidden="true" tabindex="-1"></a><span class="fu">xtitle</span>(<span class="st">"probabilités (%)"</span>)) </span>
-<span id="cb10-81"><a href="#cb10-81" aria-hidden="true" tabindex="-1"></a>;</span>
-<span id="cb10-82"><a href="#cb10-82" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-54"><a href="#cb10-54" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Pour la variable de l'argument <span class="in">`over()`</span>, chaque valeur doivent avoir au moins 10 observations. Si ce n'est pas le cas, la commande n'exécutera pas le graphique mais affichera les valeurs dont le nombre d'observation est insuffisant.</span>
+<span id="cb10-55"><a href="#cb10-55" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Toujours pour la variable de l'argument <span class="in">`over()`</span>, j'ai pour l'instant limité le format de la variable à un format numérique, avec ou sans labels affectés aux valeurs.</span>
+<span id="cb10-56"><a href="#cb10-56" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Ce type de visualisation est également utilisée pour représenter comparer l'évolution dans le temps d'une variable quantitative, par exemple entre pays (très à la mode avec le COVID)<span class="co">[</span><span class="ot">exemple</span><span class="co">](https://www.ined.fr/fichier/rte/166/Page%20accueil/SDR_plot_all_countries_fr.jpg)</span>. Cela permet d'offrir un certain contrôle des effets dits "spaghetti", mais je préfère dans ce cadre les approches de type *small-multiple*. Par ailleurs, dans l'esprit des courbes de Ridge, l'axe Y est plutôt de type ordonné. Cette option est offerte dans la fonction <span class="in">`joyplot`</span> (A.Navqui).</span>
+<span id="cb10-57"><a href="#cb10-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-58"><a href="#cb10-58" aria-hidden="true" tabindex="-1"></a><span class="in">                                                                                             </span></span>
+<span id="cb10-59"><a href="#cb10-59" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exemple 1</span></span>
+<span id="cb10-60"><a href="#cb10-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-61"><a href="#cb10-61" aria-hidden="true" tabindex="-1"></a>***Ouverture de la base***</span>
+<span id="cb10-62"><a href="#cb10-62" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
+<span id="cb10-63"><a href="#cb10-63" aria-hidden="true" tabindex="-1"></a>webuse set  <span class="st">"https://raw.githubusercontent.com//mthevenin/stata_graphiques/master/ressources/gridge"</span></span>
+<span id="cb10-64"><a href="#cb10-64" aria-hidden="true" tabindex="-1"></a>webuse <span class="st">"probability.dta"</span>, clear</span>
+<span id="cb10-65"><a href="#cb10-65" aria-hidden="true" tabindex="-1"></a>webuse set</span>
+<span id="cb10-66"><a href="#cb10-66" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-67"><a href="#cb10-67" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb10-68"><a href="#cb10-68" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb10-69"><a href="#cb10-69" aria-hidden="true" tabindex="-1"></a>***Graphique***</span>
+<span id="cb10-70"><a href="#cb10-70" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
+<span id="cb10-71"><a href="#cb10-71" aria-hidden="true" tabindex="-1"></a><span class="co">#delimit;</span></span>
+<span id="cb10-72"><a href="#cb10-72" aria-hidden="true" tabindex="-1"></a>gridge p , <span class="fu">over</span>(proba) </span>
+<span id="cb10-73"><a href="#cb10-73" aria-hidden="true" tabindex="-1"></a><span class="fu">range</span>(<span class="dv">0</span> <span class="dv">100</span>) <span class="fu">bw</span>(<span class="dv">2</span>) </span>
+<span id="cb10-74"><a href="#cb10-74" aria-hidden="true" tabindex="-1"></a><span class="fu">palette</span>(flare) <span class="fu">op</span>(<span class="dv">90</span>)</span>
+<span id="cb10-75"><a href="#cb10-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-76"><a href="#cb10-76" aria-hidden="true" tabindex="-1"></a><span class="fu">gopts</span>(<span class="fu">title</span>(<span class="st">"Probabilités assignées"</span>, <span class="fu">pos</span>(<span class="dv">11</span>))</span>
+<span id="cb10-77"><a href="#cb10-77" aria-hidden="true" tabindex="-1"></a><span class="fu">caption</span>(<span class="st">"Source: Reddit"</span>, <span class="fu">size</span>(<span class="sc">*</span>.<span class="dv">5</span>)) </span>
+<span id="cb10-78"><a href="#cb10-78" aria-hidden="true" tabindex="-1"></a><span class="fu">xtitle</span>(<span class="st">"probabilités (%)"</span>)) </span>
+<span id="cb10-79"><a href="#cb10-79" aria-hidden="true" tabindex="-1"></a>;</span>
+<span id="cb10-80"><a href="#cb10-80" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-81"><a href="#cb10-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-82"><a href="#cb10-82" aria-hidden="true" tabindex="-1"></a><span class="al">![](g1.png)</span>{width=70%}</span>
 <span id="cb10-83"><a href="#cb10-83" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-84"><a href="#cb10-84" aria-hidden="true" tabindex="-1"></a><span class="al">![](g1.png)</span>{width=70%}</span>
+<span id="cb10-84"><a href="#cb10-84" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exemple 2</span></span>
 <span id="cb10-85"><a href="#cb10-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-86"><a href="#cb10-86" aria-hidden="true" tabindex="-1"></a><span class="fu"># Exemple 2</span></span>
+<span id="cb10-86"><a href="#cb10-86" aria-hidden="true" tabindex="-1"></a>Dans le premier exemple, les modalités de l'axe discret était ordonnée. Avec cet exemple, Le premier graphique représente la série de distributions suivant l'ordre des valeurs par défaut de la variable *zône*. Le second graphique avec l'option <span class="in">`sort(median)`</span> trie de manière croissante les secteurs selon la valeur médiane du prix de la location, enfin le troisième applique un tri décroissant avec l'option <span class="in">`sortrev(median)`</span>.  </span>
 <span id="cb10-87"><a href="#cb10-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-88"><a href="#cb10-88" aria-hidden="true" tabindex="-1"></a>Dans le premier exemple, les modalités de l'axe discret était ordonnée. Avec cet exemple, Le premier graphique représente la série de distributions suivant l'ordre des valeurs par défaut de la variable *zône*. Le second graphique avec l'option <span class="in">`sort(median)`</span> trie de manière croissante les secteurs selon la valeur médiane du prix de la location, enfin le troisième applique un tri décroissant avec l'option <span class="in">`sortrev(median)`</span>.  </span>
-<span id="cb10-89"><a href="#cb10-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-90"><a href="#cb10-90" aria-hidden="true" tabindex="-1"></a>***Ouverture de la base***</span>
-<span id="cb10-91"><a href="#cb10-91" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
-<span id="cb10-92"><a href="#cb10-92" aria-hidden="true" tabindex="-1"></a>webuse set https<span class="sc">:</span><span class="er">//</span>github.com<span class="sc">/</span>mthevenin<span class="sc">/</span>stata_graphiques<span class="sc">/</span>tree<span class="sc">/</span>main<span class="sc">/</span>bases</span>
-<span id="cb10-93"><a href="#cb10-93" aria-hidden="true" tabindex="-1"></a>use rbnb_paris, replace</span>
-<span id="cb10-94"><a href="#cb10-94" aria-hidden="true" tabindex="-1"></a>webuse set</span>
-<span id="cb10-95"><a href="#cb10-95" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-96"><a href="#cb10-96" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-97"><a href="#cb10-97" aria-hidden="true" tabindex="-1"></a>***Graphique 1***</span>
-<span id="cb10-98"><a href="#cb10-98" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
-<span id="cb10-99"><a href="#cb10-99" aria-hidden="true" tabindex="-1"></a>gridge price <span class="cf">if</span> price<span class="sc">&lt;=</span><span class="dv">300</span>, <span class="fu">over</span>(zone) <span class="fu">bw</span>(<span class="dv">4</span>) <span class="fu">gopts</span>(<span class="fu">title</span>(<span class="st">"Prix location Rbnb à Paris"</span>, <span class="fu">pos</span>(<span class="dv">11</span>))) <span class="fu">range</span>(<span class="dv">0</span> <span class="dv">300</span>)</span>
-<span id="cb10-100"><a href="#cb10-100" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb10-101"><a href="#cb10-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-102"><a href="#cb10-102" aria-hidden="true" tabindex="-1"></a>***Graphique 2***</span>
-<span id="cb10-103"><a href="#cb10-103" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
-<span id="cb10-104"><a href="#cb10-104" aria-hidden="true" tabindex="-1"></a><span class="co">#delimit ;</span></span>
-<span id="cb10-105"><a href="#cb10-105" aria-hidden="true" tabindex="-1"></a>gridge price, </span>
-<span id="cb10-106"><a href="#cb10-106" aria-hidden="true" tabindex="-1"></a><span class="fu">over</span>(zone)  <span class="fu">super</span>(<span class="dv">2</span>) <span class="fu">palette</span>(HCL heat2) <span class="fu">bw</span>(<span class="dv">4</span>) <span class="fu">lc</span>(<span class="dv">2</span>) <span class="fu">lw</span>(.<span class="dv">8</span>) <span class="fu">sort</span>(mean)</span>
-<span id="cb10-107"><a href="#cb10-107" aria-hidden="true" tabindex="-1"></a><span class="fu">gopts</span>(<span class="fu">title</span>(<span class="st">"Prix location Rbnb à Paris"</span>, <span class="fu">pos</span>(<span class="dv">11</span>))) <span class="fu">range</span>(<span class="dv">0</span> <span class="dv">300</span>) <span class="fu">op</span>(<span class="dv">100</span>)</span>
-<span id="cb10-108"><a href="#cb10-108" aria-hidden="true" tabindex="-1"></a>;</span>
-<span id="cb10-109"><a href="#cb10-109" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-88"><a href="#cb10-88" aria-hidden="true" tabindex="-1"></a>***Ouverture de la base***</span>
+<span id="cb10-89"><a href="#cb10-89" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
+<span id="cb10-90"><a href="#cb10-90" aria-hidden="true" tabindex="-1"></a>webuse set https<span class="sc">:</span><span class="er">//</span>github.com<span class="sc">/</span>mthevenin<span class="sc">/</span>stata_graphiques<span class="sc">/</span>tree<span class="sc">/</span>main<span class="sc">/</span>bases</span>
+<span id="cb10-91"><a href="#cb10-91" aria-hidden="true" tabindex="-1"></a>use rbnb_paris, replace</span>
+<span id="cb10-92"><a href="#cb10-92" aria-hidden="true" tabindex="-1"></a>webuse set</span>
+<span id="cb10-93"><a href="#cb10-93" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-94"><a href="#cb10-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-95"><a href="#cb10-95" aria-hidden="true" tabindex="-1"></a>***Graphique 1***</span>
+<span id="cb10-96"><a href="#cb10-96" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
+<span id="cb10-97"><a href="#cb10-97" aria-hidden="true" tabindex="-1"></a>gridge price <span class="cf">if</span> price<span class="sc">&lt;=</span><span class="dv">300</span>, <span class="fu">over</span>(zone) <span class="fu">bw</span>(<span class="dv">4</span>) <span class="fu">gopts</span>(<span class="fu">title</span>(<span class="st">"Prix location Rbnb à Paris"</span>, <span class="fu">pos</span>(<span class="dv">11</span>))) <span class="fu">range</span>(<span class="dv">0</span> <span class="dv">300</span>)</span>
+<span id="cb10-98"><a href="#cb10-98" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-99"><a href="#cb10-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-100"><a href="#cb10-100" aria-hidden="true" tabindex="-1"></a>***Graphique 2***</span>
+<span id="cb10-101"><a href="#cb10-101" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
+<span id="cb10-102"><a href="#cb10-102" aria-hidden="true" tabindex="-1"></a><span class="co">#delimit ;</span></span>
+<span id="cb10-103"><a href="#cb10-103" aria-hidden="true" tabindex="-1"></a>gridge price, </span>
+<span id="cb10-104"><a href="#cb10-104" aria-hidden="true" tabindex="-1"></a><span class="fu">over</span>(zone)  <span class="fu">super</span>(<span class="dv">2</span>) <span class="fu">palette</span>(HCL heat2) <span class="fu">bw</span>(<span class="dv">4</span>) <span class="fu">lc</span>(<span class="dv">2</span>) <span class="fu">lw</span>(.<span class="dv">8</span>) <span class="fu">sort</span>(mean)</span>
+<span id="cb10-105"><a href="#cb10-105" aria-hidden="true" tabindex="-1"></a><span class="fu">gopts</span>(<span class="fu">title</span>(<span class="st">"Prix location Rbnb à Paris"</span>, <span class="fu">pos</span>(<span class="dv">11</span>))) <span class="fu">range</span>(<span class="dv">0</span> <span class="dv">300</span>) <span class="fu">op</span>(<span class="dv">100</span>)</span>
+<span id="cb10-106"><a href="#cb10-106" aria-hidden="true" tabindex="-1"></a>;</span>
+<span id="cb10-107"><a href="#cb10-107" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-108"><a href="#cb10-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-109"><a href="#cb10-109" aria-hidden="true" tabindex="-1"></a><span class="al">![](g2.png)</span>{width=70%}</span>
 <span id="cb10-110"><a href="#cb10-110" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-111"><a href="#cb10-111" aria-hidden="true" tabindex="-1"></a><span class="al">![](g2.png)</span>{width=70%}</span>
-<span id="cb10-112"><a href="#cb10-112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-113"><a href="#cb10-113" aria-hidden="true" tabindex="-1"></a>***Graphique 3***</span>
-<span id="cb10-114"><a href="#cb10-114" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
-<span id="cb10-115"><a href="#cb10-115" aria-hidden="true" tabindex="-1"></a><span class="co">#delimit ;</span></span>
-<span id="cb10-116"><a href="#cb10-116" aria-hidden="true" tabindex="-1"></a>gridge price, </span>
-<span id="cb10-117"><a href="#cb10-117" aria-hidden="true" tabindex="-1"></a><span class="fu">over</span>(zone)  <span class="fu">super</span>(<span class="dv">2</span>) <span class="fu">palette</span>(HCL heat2) <span class="fu">bw</span>(<span class="dv">4</span>) <span class="fu">lc</span>(<span class="dv">2</span>) <span class="fu">lw</span>(.<span class="dv">8</span>) <span class="fu">sortrev</span>(mean) colrev</span>
-<span id="cb10-118"><a href="#cb10-118" aria-hidden="true" tabindex="-1"></a><span class="fu">gopts</span>(<span class="fu">title</span>(<span class="st">"Prix location Rbnb à Paris"</span>, <span class="fu">pos</span>(<span class="dv">11</span>)))</span>
-<span id="cb10-119"><a href="#cb10-119" aria-hidden="true" tabindex="-1"></a>;</span>
-<span id="cb10-120"><a href="#cb10-120" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-111"><a href="#cb10-111" aria-hidden="true" tabindex="-1"></a>***Graphique 3***</span>
+<span id="cb10-112"><a href="#cb10-112" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
+<span id="cb10-113"><a href="#cb10-113" aria-hidden="true" tabindex="-1"></a><span class="co">#delimit ;</span></span>
+<span id="cb10-114"><a href="#cb10-114" aria-hidden="true" tabindex="-1"></a>gridge price, </span>
+<span id="cb10-115"><a href="#cb10-115" aria-hidden="true" tabindex="-1"></a><span class="fu">over</span>(zone)  <span class="fu">super</span>(<span class="dv">2</span>) <span class="fu">palette</span>(HCL heat2) <span class="fu">bw</span>(<span class="dv">4</span>) <span class="fu">lc</span>(<span class="dv">2</span>) <span class="fu">lw</span>(.<span class="dv">8</span>) <span class="fu">sortrev</span>(mean) colrev</span>
+<span id="cb10-116"><a href="#cb10-116" aria-hidden="true" tabindex="-1"></a><span class="fu">gopts</span>(<span class="fu">title</span>(<span class="st">"Prix location Rbnb à Paris"</span>, <span class="fu">pos</span>(<span class="dv">11</span>)))</span>
+<span id="cb10-117"><a href="#cb10-117" aria-hidden="true" tabindex="-1"></a>;</span>
+<span id="cb10-118"><a href="#cb10-118" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb10-119"><a href="#cb10-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-120"><a href="#cb10-120" aria-hidden="true" tabindex="-1"></a><span class="al">![](g3.png)</span>{width=70%}</span>
 <span id="cb10-121"><a href="#cb10-121" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-122"><a href="#cb10-122" aria-hidden="true" tabindex="-1"></a><span class="al">![](g3.png)</span>{width=70%}</span>
+<span id="cb10-122"><a href="#cb10-122" aria-hidden="true" tabindex="-1"></a><span class="fu"># Nombre d'observations insuffisantes pour estimer les densités</span></span>
 <span id="cb10-123"><a href="#cb10-123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-124"><a href="#cb10-124" aria-hidden="true" tabindex="-1"></a><span class="fu"># Nombre d'observations insuffisantes pour estimer les densités</span></span>
+<span id="cb10-124"><a href="#cb10-124" aria-hidden="true" tabindex="-1"></a>Le seuil à été fixé à 10 observations. Si ce n'est pas le cas, le graphique n'est pas exécuté mais les informations sur les valeurs de y qui manquent d'informations sont indiquées</span>
 <span id="cb10-125"><a href="#cb10-125" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-126"><a href="#cb10-126" aria-hidden="true" tabindex="-1"></a>Le seuil à été fixé à 10 observations. Si ce n'est pas le cas, le graphique n'est pas exécuté mais les informations sur les valeurs de y qui manquent d'informations sont indiquées</span>
-<span id="cb10-127"><a href="#cb10-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-128"><a href="#cb10-128" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
-<span id="cb10-129"><a href="#cb10-129" aria-hidden="true" tabindex="-1"></a>webuse nhanes2, clear</span>
-<span id="cb10-130"><a href="#cb10-130" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-131"><a href="#cb10-131" aria-hidden="true" tabindex="-1"></a>gen bmi2 <span class="ot">=</span> <span class="fu">round</span>(bmi)</span>
-<span id="cb10-132"><a href="#cb10-132" aria-hidden="true" tabindex="-1"></a>gridge bpsystol, <span class="fu">over</span>(bmi2)</span>
-<span id="cb10-133"><a href="#cb10-133" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-134"><a href="#cb10-134" aria-hidden="true" tabindex="-1"></a><span class="sc">/</span><span class="er">*</span></span>
-<span id="cb10-135"><a href="#cb10-135" aria-hidden="true" tabindex="-1"></a>bmi2<span class="ot">=</span><span class="dv">12</span><span class="sc">:</span> nombre d<span class="st">'observations insuffisant pour estimer les densités</span></span>
-<span id="cb10-136"><a href="#cb10-136" aria-hidden="true" tabindex="-1"></a><span class="st">bmi2=14: nombre d'</span>observations insuffisant pour estimer les densités</span>
-<span id="cb10-137"><a href="#cb10-137" aria-hidden="true" tabindex="-1"></a>bmi2<span class="ot">=</span><span class="dv">15</span><span class="sc">:</span> nombre d<span class="st">'observations insuffisant pour estimer les densités</span></span>
-<span id="cb10-138"><a href="#cb10-138" aria-hidden="true" tabindex="-1"></a><span class="st">bmi2=46: nombre d'</span>observations insuffisant pour estimer les densités</span>
-<span id="cb10-139"><a href="#cb10-139" aria-hidden="true" tabindex="-1"></a>bmi2<span class="ot">=</span><span class="dv">47</span><span class="sc">:</span> nombre d<span class="st">'observations insuffisant pour estimer les densités</span></span>
-<span id="cb10-140"><a href="#cb10-140" aria-hidden="true" tabindex="-1"></a><span class="st">bmi2=48: nombre d'</span>observations insuffisant pour estimer les densités</span>
-<span id="cb10-141"><a href="#cb10-141" aria-hidden="true" tabindex="-1"></a>bmi2<span class="ot">=</span><span class="dv">49</span><span class="sc">:</span> nombre d<span class="st">'observations insuffisant pour estimer les densités</span></span>
-<span id="cb10-142"><a href="#cb10-142" aria-hidden="true" tabindex="-1"></a><span class="st">bmi2=51: nombre d'</span>observations insuffisant pour estimer les densités</span>
-<span id="cb10-143"><a href="#cb10-143" aria-hidden="true" tabindex="-1"></a>bmi2<span class="ot">=</span><span class="dv">52</span><span class="sc">:</span> nombre d<span class="st">'observations insuffisant pour estimer les densités</span></span>
-<span id="cb10-144"><a href="#cb10-144" aria-hidden="true" tabindex="-1"></a><span class="st">bmi2=53: nombre d'</span>observations insuffisant pour estimer les densités</span>
-<span id="cb10-145"><a href="#cb10-145" aria-hidden="true" tabindex="-1"></a>bmi2<span class="ot">=</span><span class="dv">54</span><span class="sc">:</span> nombre d<span class="st">'observations insuffisant pour estimer les densités</span></span>
-<span id="cb10-146"><a href="#cb10-146" aria-hidden="true" tabindex="-1"></a><span class="st">bmi2=55: nombre d'</span>observations insuffisant pour estimer les densités</span>
-<span id="cb10-147"><a href="#cb10-147" aria-hidden="true" tabindex="-1"></a>bmi2<span class="ot">=</span><span class="dv">57</span><span class="sc">:</span> nombre d<span class="st">'observations insuffisant pour estimer les densités</span></span>
-<span id="cb10-148"><a href="#cb10-148" aria-hidden="true" tabindex="-1"></a><span class="st">bmi2=61: nombre d'</span>observations insuffisant pour estimer les densités</span>
-<span id="cb10-149"><a href="#cb10-149" aria-hidden="true" tabindex="-1"></a> Exit<span class="sc">:</span> nombre d<span class="st">'observations minimum = 10</span></span>
-<span id="cb10-150"><a href="#cb10-150" aria-hidden="true" tabindex="-1"></a><span class="st"> */</span></span>
-<span id="cb10-151"><a href="#cb10-151" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span>
+<span id="cb10-126"><a href="#cb10-126" aria-hidden="true" tabindex="-1"></a><span class="in">```{r eval=FALSE}</span></span>
+<span id="cb10-127"><a href="#cb10-127" aria-hidden="true" tabindex="-1"></a>webuse nhanes2, clear</span>
+<span id="cb10-128"><a href="#cb10-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-129"><a href="#cb10-129" aria-hidden="true" tabindex="-1"></a>gen bmi2 <span class="ot">=</span> <span class="fu">round</span>(bmi)</span>
+<span id="cb10-130"><a href="#cb10-130" aria-hidden="true" tabindex="-1"></a>gridge bpsystol, <span class="fu">over</span>(bmi2)</span>
+<span id="cb10-131"><a href="#cb10-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-132"><a href="#cb10-132" aria-hidden="true" tabindex="-1"></a><span class="sc">/</span><span class="er">*</span></span>
+<span id="cb10-133"><a href="#cb10-133" aria-hidden="true" tabindex="-1"></a>bmi2<span class="ot">=</span><span class="dv">12</span><span class="sc">:</span> nombre d<span class="st">'observations insuffisant pour estimer les densités</span></span>
+<span id="cb10-134"><a href="#cb10-134" aria-hidden="true" tabindex="-1"></a><span class="st">bmi2=14: nombre d'</span>observations insuffisant pour estimer les densités</span>
+<span id="cb10-135"><a href="#cb10-135" aria-hidden="true" tabindex="-1"></a>bmi2<span class="ot">=</span><span class="dv">15</span><span class="sc">:</span> nombre d<span class="st">'observations insuffisant pour estimer les densités</span></span>
+<span id="cb10-136"><a href="#cb10-136" aria-hidden="true" tabindex="-1"></a><span class="st">bmi2=46: nombre d'</span>observations insuffisant pour estimer les densités</span>
+<span id="cb10-137"><a href="#cb10-137" aria-hidden="true" tabindex="-1"></a>bmi2<span class="ot">=</span><span class="dv">47</span><span class="sc">:</span> nombre d<span class="st">'observations insuffisant pour estimer les densités</span></span>
+<span id="cb10-138"><a href="#cb10-138" aria-hidden="true" tabindex="-1"></a><span class="st">bmi2=48: nombre d'</span>observations insuffisant pour estimer les densités</span>
+<span id="cb10-139"><a href="#cb10-139" aria-hidden="true" tabindex="-1"></a>bmi2<span class="ot">=</span><span class="dv">49</span><span class="sc">:</span> nombre d<span class="st">'observations insuffisant pour estimer les densités</span></span>
+<span id="cb10-140"><a href="#cb10-140" aria-hidden="true" tabindex="-1"></a><span class="st">bmi2=51: nombre d'</span>observations insuffisant pour estimer les densités</span>
+<span id="cb10-141"><a href="#cb10-141" aria-hidden="true" tabindex="-1"></a>bmi2<span class="ot">=</span><span class="dv">52</span><span class="sc">:</span> nombre d<span class="st">'observations insuffisant pour estimer les densités</span></span>
+<span id="cb10-142"><a href="#cb10-142" aria-hidden="true" tabindex="-1"></a><span class="st">bmi2=53: nombre d'</span>observations insuffisant pour estimer les densités</span>
+<span id="cb10-143"><a href="#cb10-143" aria-hidden="true" tabindex="-1"></a>bmi2<span class="ot">=</span><span class="dv">54</span><span class="sc">:</span> nombre d<span class="st">'observations insuffisant pour estimer les densités</span></span>
+<span id="cb10-144"><a href="#cb10-144" aria-hidden="true" tabindex="-1"></a><span class="st">bmi2=55: nombre d'</span>observations insuffisant pour estimer les densités</span>
+<span id="cb10-145"><a href="#cb10-145" aria-hidden="true" tabindex="-1"></a>bmi2<span class="ot">=</span><span class="dv">57</span><span class="sc">:</span> nombre d<span class="st">'observations insuffisant pour estimer les densités</span></span>
+<span id="cb10-146"><a href="#cb10-146" aria-hidden="true" tabindex="-1"></a><span class="st">bmi2=61: nombre d'</span>observations insuffisant pour estimer les densités</span>
+<span id="cb10-147"><a href="#cb10-147" aria-hidden="true" tabindex="-1"></a> Exit<span class="sc">:</span> nombre d<span class="st">'observations minimum = 10</span></span>
+<span id="cb10-148"><a href="#cb10-148" aria-hidden="true" tabindex="-1"></a><span class="st"> */</span></span>
+<span id="cb10-149"><a href="#cb10-149" aria-hidden="true" tabindex="-1"></a><span class="st">```</span></span>
+<span id="cb10-150"><a href="#cb10-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-151"><a href="#cb10-151" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-152"><a href="#cb10-152" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-153"><a href="#cb10-153" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-154"><a href="#cb10-154" aria-hidden="true" tabindex="-1"></a></span>
@@ -848,9 +939,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb10-156"><a href="#cb10-156" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-157"><a href="#cb10-157" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb10-158"><a href="#cb10-158" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-159"><a href="#cb10-159" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-160"><a href="#cb10-160" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-161"><a href="#cb10-161" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb10-159"><a href="#cb10-159" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
@@ -858,7 +947,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       <div class="nav-footer-center">Marc Thévenin / Ined-Sms / Août 2022-</div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","openEffect":"zoom","loop":true,"closeEffect":"zoom"});</script>
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":true,"closeEffect":"zoom"});</script>
 
 
 

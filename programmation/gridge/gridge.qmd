@@ -12,9 +12,7 @@ Depuis 2020, des programmes permettent de générer de type lignes de crête: `j
 ![](g1.png){width=50%}
 
 
-La première commande, malgré une maj récente, présente toujours des problèmes concernant le report des informations sur l'axe discret pour la version `joyplot y`.   
-A partir d'un programme écrit à l'automne 2020, et en restant au plus près de la fonction `ggridge` de R, j'ai également programmé une commande. Elle permet, entre autres, de paramétrer le tri les modalités de l'axe discret à partir d'une fonction autorisée avec `egen` (*mean*, *median*, *sd*....), de choisir librement un intervalle sur l'axe des abcisses pour éviter le report de valeurs sortant de borne acceptables (probabilité négatives ou supérieure à 1 par exemple). Comme  on estime des densités, le nombre d'observations minimales a été fixé à 10. Si ce critère n'est pas respecté, les valeurs de y qui ne respectent pas cette contrainte sont affichées.  
-Des améliorations restent néanmoins à prévoir.
+A partir d'un programme écrit à l'automne 2020, et en restant au plus près de la fonction `ggridge` de R, j'ai également (et modestement) programmé une commande. Elle permet, entre autres, de contrôler le tri les modalités de l'axe discret à partir d'une fonction autorisée avec `egen` (*mean*, *median*, *sd*....), de choisir librement un intervalle sur l'axe des abscisses pour éviter le report de valeurs sortant d'une borne acceptable (probabilité négatives ou supérieure à 1 dans l'exemple). Comme  on estime des densités, le nombre d'observations minimales a été fixé à 10. Si ce critère n'est pas respecté, les valeurs de y en cause  sont affichées.  Des améliorations restent néanmoins à prévoir.
 
 
 
