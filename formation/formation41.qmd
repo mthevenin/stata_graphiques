@@ -11,9 +11,9 @@ Par rapport à la première version (2020) et suite aux évolutions qu'a connu l
 - **`waffle_plot`** (2022) de F.Rios-Avila. On tient peut-être l'alternative au très décrié *camember* (*pie chart*) 
 
 
-Lien visualisation des données:  
+**Lien visualisation des données**:  
 
-- From Data to Viz (Y.Holtz): <https://www.data-to-viz.com/> dont il faut lire absolument la partie consacrée aux [mises en garde](https://www.data-to-viz.com/caveats.html)
+- L'incontournable ***From Data to Viz***: <https://www.data-to-viz.com/> dont il faut lire absolument la partie consacrée aux [mises en garde](https://www.data-to-viz.com/caveats.html)
 
 
 **Principaux contributeurs**
@@ -21,8 +21,9 @@ Lien visualisation des données:
 [**Nicola J.Cox**](https://www.durham.ac.uk/staff/n-j-cox/)      
 Très connu par la communauté des utilisateurs du logiciel, NJ.Cox est surement la personne qui le manipule mieux. 
 Il propose régulièrement des notes pédagogiques dans les fameux *stata tips* ou *speaking stata* du  *Stata Journal*. Ses commandes sont toujours très utiles, et plus particulièrement pour les graphiques 
-Certaines `catplot` , `tabplot` , `spineplot` , `fabplot`, `axis` seront présentées plus loin. Un peu en décalage avec les effets de mode dans le domaine de la visualisation, il privilégie le fond/ le sens plutôt que la forme / l'esthétique...et c'est très bien ainsi.  
-Sa dernière contribution **`fabplot`** est essentielle pour la gestion des effets dits *spaghetti*. Une partie de ce chapitre lui sera consacrée.
+Certaines `catplot` , `tabplot` , `spineplot` , `fabplot`, `axis` seront présentées plus loin. Un peu en décalage avec les effets de mode dans le domaine de la visualisation, il privilégie le fond/ le sens plutôt que la forme / l'esthétique...et c'est très bien ainsi.  Sa dernière contribution **`fabplot`** me semble essentielle  pour gérer les effets dits *spaghetti*. Egalement amateur de petites phrases un peu piquantes. Par exemple concernant la nécessité de mettre systématiquement un titre aux axes: "*A reader who doesn't understand what 2005 ... 2017 mean won't understand anything else in the presentation or paper*" (fil de discussion sur Statalist) .
+
+
 
 [**Ben Jann**](https://github.com/benjann?page=1&tab=repositories)
 Egalement une référence incontournable pour l'utilisation de Stata, ses contributions dans le domaine des graphiques sont majeures.  **`colorpalette`** (chapitre 3) est une commande incontournable pour la gestion des couleurs et, personnellement, je ne peux plus me passer de **`grstyle`**. Très recemment la commande **`violinplot`** donne une solution complètement aboutie pour la visualisation d'une distribution. Toujours dans les ***must have***, **`heatplot`**/**`hexplot`** reste un incontournable pour la visualisation des distributions jointes. B.Jann reste également particulièrement connu pour sa suite **`coefplot`**. 
@@ -73,6 +74,7 @@ De manière générale, ne pas hésiter à aller également sur le forum [statal
 
   
 [08-03-2023]  
+  
   
   A reader who doesn't understand what 2005 ... 2017 mean won't understand anything else in the presentation or paper
   
