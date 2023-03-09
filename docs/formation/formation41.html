@@ -323,13 +323,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Sections</h2>
-   
-  <ul>
-  <li><a href="#principaux-contributeurs" id="toc-principaux-contributeurs" class="nav-link active" data-scroll-target="#principaux-contributeurs"><span class="toc-section-number">1</span>  <strong>principaux contributeurs</strong></a></li>
-  </ul>
-</nav>
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -352,22 +346,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </header>
 
 <p>[Début mise à jour: 03-03-2023]</p>
-<p>Par rapport à la première version (2020) et suite aux évolutions qu’a connu le logiciel depuis, il me semble plus pertinent de se focaliser sur certaines points importants concernant la production de graphiques que de les reprendre quasiment un par un selon le types de variables introduites. L’aide de Stata est suffisamment qualitative pour donner les éléments de programmations utiles. On partira plutôt de questions, et voir les réponses les plus adaptés. Contrairement à la première version, on priviliera des solutions programmatives les plus simples, aidés par certaines contributions externes particulièrement séduisantes ces dernières années. Citons deux exemples:</p>
+<p>Par rapport à la première version (2020) et suite aux évolutions qu’a connu le logiciel depuis, il me semble plus pertinent de se focaliser sur certaines points importants concernant la production de graphiques que de les reprendre quasiment un par un selon le types de variables introduites. L’aide de Stata est suffisamment qualitative pour donner les éléments de programmations utiles. On partira plutôt de questions, et voir les réponses les plus adaptés. Contrairement à la première version, on priviliera des solutions programmatives les plus simples, aidés par certaines contributions externes mises à dispositions ces deux dernières années. Citons trois exemples:</p>
 <ul>
 <li><strong><code>violinplot</code></strong> (2022) de Ben Jann pour la visualisation des distributions de variables continues.</li>
 <li><strong><code>fabplot</code></strong> (2021) de Nicolas J.Cox pour la gestion des effets spaghetti.</li>
-<li><strong><code>waffle_plot</code></strong> (2022) de Fernando Rios-Avila. Enfin, on tient peut-être l’alternative au très décrié <em>camember</em> (<em>pie chart</em>)</li>
+<li><strong><code>waffle_plot</code></strong> (2022) de F.Rios-Avila. On tient peut-être l’alternative au très décrié <em>camember</em> (<em>pie chart</em>)</li>
 </ul>
 <p>Lien visualisation des données:</p>
 <ul>
 <li>From Data to Viz (Y.Holtz): <a href="https://www.data-to-viz.com/" class="uri">https://www.data-to-viz.com/</a> dont il faut lire absolument la partie consacrée aux <a href="https://www.data-to-viz.com/caveats.html">mises en garde</a></li>
 </ul>
-<section id="principaux-contributeurs" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> <strong>principaux contributeurs</strong></h1>
+<p><strong>Principaux contributeurs</strong></p>
 <p><a href="https://www.durham.ac.uk/staff/n-j-cox/"><strong>Nicola J.Cox</strong></a><br>
 Très connu par la communauté des utilisateurs du logiciel, NJ.Cox est surement la personne qui le manipule mieux. Il propose régulièrement des notes pédagogiques dans les fameux <em>stata tips</em> ou <em>speaking stata</em> du <em>Stata Journal</em>. Ses commandes sont toujours très utiles, et plus particulièrement pour les graphiques Certaines <code>catplot</code> , <code>tabplot</code> , <code>spineplot</code> , <code>fabplot</code>, <code>axis</code> seront présentées plus loin. Un peu en décalage avec les effets de mode dans le domaine de la visualisation, il privilégie le fond/ le sens plutôt que la forme / l’esthétique…et c’est très bien ainsi.<br>
 Sa dernière contribution <strong><code>fabplot</code></strong> est essentielle pour la gestion des effets dits <em>spaghetti</em>. Une partie de ce chapitre lui sera consacrée.</p>
 <p><a href="https://github.com/benjann?page=1&amp;tab=repositories"><strong>Ben Jann</strong></a> Egalement une référence incontournable pour l’utilisation de Stata, ses contributions dans le domaine des graphiques sont majeures. <strong><code>colorpalette</code></strong> (chapitre 3) est une commande incontournable pour la gestion des couleurs et, personnellement, je ne peux plus me passer de <strong><code>grstyle</code></strong>. Très recemment la commande <strong><code>violinplot</code></strong> donne une solution complètement aboutie pour la visualisation d’une distribution. Toujours dans les <strong><em>must have</em></strong>, <strong><code>heatplot</code></strong>/<strong><code>hexplot</code></strong> reste un incontournable pour la visualisation des distributions jointes. B.Jann reste également particulièrement connu pour sa suite <strong><code>coefplot</code></strong>.</p>
+<p><strong>Quelques visuels de graphiques obtenus avec les commandes de Ben Jann</strong></p>
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-figure quarto-figure-center" style="flex-basis: 33.3%;justify-content: center;">
+<figure class="figure">
+<p><a href="https://github.com/benjann/violinplot/raw/main/images/6.png" class="lightbox" title="Violinplot" data-gallery="quarto-lightbox-gallery-1"><img src="https://github.com/benjann/violinplot/raw/main/images/6.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption"><a href="https://github.com/benjann/violinplot/blob/main/README.md">Violinplot</a></figcaption><p></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center" style="flex-basis: 33.3%;justify-content: center;">
+<figure class="figure">
+<p><a href="imgp4/g1.png" class="lightbox" title="Hexplot" data-gallery="quarto-lightbox-gallery-2"><img src="imgp4/g1.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Hexplot</figcaption><p></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center" style="flex-basis: 33.3%;justify-content: center;">
+<figure class="figure">
+<p><a href="imgp4/g2.png" class="lightbox" title="Heatplot" data-gallery="quarto-lightbox-gallery-3"><img src="imgp4/g2.png" class="img-fluid figure-img"></a></p>
+<p></p><figcaption class="figure-caption">Heatplot</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
 <p><a href="https://github.com/asjadnaqvi"><strong>Asjad Naqvi</strong></a> A fait une entrée assez fracassante dans le domaine de la visualisation avec Stata en 2020. Il est l’auteur d’une douzaine de commandes sous l’angle de la fameuse <strong><em>dataviz</em></strong> moderne. Compte tenu du moteur vieillissant de Stata, le tour de force est particulièrement impressionnant. Néanmoins, de mon point de vue, une partie de ces visualisations prennent tout leur sens de manière intéractive, avec une diffusion type html. Cela demande alors de se reporter vers d’autres langage, comme <strong>python</strong>, maintenant directement exécutable dans l’interface principale de Stata. On est donc ici dans une approche plus moderne, mais également complexe de la visualisation.<br>
 Sur son site du réseau <a href="https://asjadnaqvi.medium.com/">medium</a>, les solutions graphiques proposées sont toujours précédées d’une partie très détaillée sur la mise en forme des données. Une petite remarque sur <em>medium</em>: sans inscription au site, le nombre d’accès fait l’objet d’un nombre de pages limité mensuellement. Cela est fort dommage. Penser donc à récupérer les programmes qui sont mis à disposition par l’auteur.</p>
 <p><strong>Quelques visuels des commandes d’A.Naqvi</strong></p>
@@ -375,55 +391,55 @@ Sur son site du réseau <a href="https://asjadnaqvi.medium.com/">medium</a>, les
 <div class="quarto-layout-row quarto-layout-valign-bottom">
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 33.3%;justify-content: center;">
 <figure class="figure">
-<p><a href="https://github.com/asjadnaqvi/stata-treemap/raw/main/figures/treemap25.png" class="lightbox" title="Tree map" data-gallery="quarto-lightbox-gallery-1"><img src="https://github.com/asjadnaqvi/stata-treemap/raw/main/figures/treemap25.png" class="img-fluid figure-img"></a></p>
+<p><a href="https://github.com/asjadnaqvi/stata-treemap/raw/main/figures/treemap25.png" class="lightbox" title="Tree map" data-gallery="quarto-lightbox-gallery-4"><img src="https://github.com/asjadnaqvi/stata-treemap/raw/main/figures/treemap25.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption"><a href="https://github.com/asjadnaqvi/stata-treemap">Tree map</a></figcaption><p></p>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 33.3%;justify-content: center;">
 <figure class="figure">
-<p><a href="https://github.com/asjadnaqvi/stata-arcplot/raw/main/figures/arcplot2.png" class="lightbox" title="Arc plot" data-gallery="quarto-lightbox-gallery-2"><img src="https://github.com/asjadnaqvi/stata-arcplot/raw/main/figures/arcplot2.png" class="img-fluid figure-img"></a></p>
+<p><a href="https://github.com/asjadnaqvi/stata-arcplot/raw/main/figures/arcplot2.png" class="lightbox" title="Arc plot" data-gallery="quarto-lightbox-gallery-5"><img src="https://github.com/asjadnaqvi/stata-arcplot/raw/main/figures/arcplot2.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption"><a href="https://github.com/asjadnaqvi/stata-arcplot">Arc plot</a></figcaption><p></p>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 33.3%;justify-content: center;">
 <figure class="figure">
-<p><a href="https://github.com/asjadnaqvi/stata-streamplot/raw/main/figures/streamplot5.png" class="lightbox" title="Stream plot" data-gallery="quarto-lightbox-gallery-3"><img src="https://github.com/asjadnaqvi/stata-streamplot/raw/main/figures/streamplot5.png" class="img-fluid figure-img"></a></p>
+<p><a href="https://github.com/asjadnaqvi/stata-streamplot/raw/main/figures/streamplot5.png" class="lightbox" title="Stream plot" data-gallery="quarto-lightbox-gallery-6"><img src="https://github.com/asjadnaqvi/stata-streamplot/raw/main/figures/streamplot5.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption"><a href="https://github.com/asjadnaqvi/stata-streamplot">Stream plot</a></figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
-<p><a href="https://graphworkflow.com"><strong>Demetris Christodoulou</strong></a> A ma connaissance il n’a pas programmé de commande, mais la démarche de son support, très orienté sémiologie graphique est très pertinente, ses choix graphiques faisant l’objet d’une justification. Les programmes sont mis à disposition, et sa conversion en Stata du célèbre graphique de <em>Charles Joseph Minard</em> (<a href="https://fr.m.wikipedia.org/wiki/Fichier:Minard.png">original</a>) sur la campagne de Russie des armées napoléonienne est vraiement bluffante. Dans les prévisions de publication de Stata, il serait en train de préparer un ouvrage pour 2024 (<em>Visual Data Analytics</em>)</p>
+<p><a href="https://graphworkflow.com"><strong>Demetris Christodoulou</strong></a> A ma connaissance il n’a pas programmé de commande, mais la démarche de son support, très orienté sémiologie graphique est très pertinente, ses choix graphiques faisant l’objet d’une justification. Les programmes sont mis à disposition, et sa conversion en Stata du célèbre graphique de <em>Charles Joseph Minard</em> (<a href="https://fr.m.wikipedia.org/wiki/Fichier:Minard.png">original</a>) sur la campagne de Russie des armées napoléonienne est vraiment bluffante. Dans les prévisions de publication de Stata, il serait en train de préparer un ouvrage pour 2024 (<em>Visual Data Analytics</em>)</p>
 <p><strong>Quelques graphiques de D.Christodoulou</strong></p>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-bottom">
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 33.3%;justify-content: center;">
 <figure class="figure">
-<p><a href="https://graphworkflow.files.wordpress.com/2017/01/minard.png" class="lightbox" title="Minard" data-gallery="quarto-lightbox-gallery-4"><img src="https://graphworkflow.files.wordpress.com/2017/01/minard.png" class="img-fluid figure-img"></a></p>
+<p><a href="https://graphworkflow.files.wordpress.com/2017/01/minard.png" class="lightbox" title="Minard" data-gallery="quarto-lightbox-gallery-7"><img src="https://graphworkflow.files.wordpress.com/2017/01/minard.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption"><a href="https://graphworkflow.com/2019/06/25/minard/">Minard</a></figcaption><p></p>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 33.3%;justify-content: center;">
 <figure class="figure">
-<p><a href="https://graphworkflow.files.wordpress.com/2018/09/taijicove2.png" class="lightbox" title="Massacre dauphins" data-gallery="quarto-lightbox-gallery-5"><img src="https://graphworkflow.files.wordpress.com/2018/09/taijicove2.png" class="img-fluid figure-img"></a></p>
+<p><a href="https://graphworkflow.files.wordpress.com/2018/09/taijicove2.png" class="lightbox" title="Massacre dauphins" data-gallery="quarto-lightbox-gallery-8"><img src="https://graphworkflow.files.wordpress.com/2018/09/taijicove2.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption"><a href="https://graphworkflow.com/2018/12/16/taiji-cove/">Massacre dauphins</a></figcaption><p></p>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 33.3%;justify-content: center;">
 <figure class="figure">
-<p><a href="https://graphworkflow.files.wordpress.com/2017/12/marriage_equality.png" class="lightbox" title="Mariage homo" data-gallery="quarto-lightbox-gallery-6"><img src="https://graphworkflow.files.wordpress.com/2017/12/marriage_equality.png" class="img-fluid figure-img"></a></p>
+<p><a href="https://graphworkflow.files.wordpress.com/2017/12/marriage_equality.png" class="lightbox" title="Mariage homo" data-gallery="quarto-lightbox-gallery-9"><img src="https://graphworkflow.files.wordpress.com/2017/12/marriage_equality.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption"><a href="https://graphworkflow.com/2020/01/17/marriage-equality/">Mariage homo</a></figcaption><p></p>
 </figure>
 </div>
 </div>
 </div>
-<p>De manière générale, ne pas hésiter à aller également sur le forum <a href="https://www.statalist.org/">statalist</a> où les questions concernant les graphiques sont relativement nombreuses.</p>
+<p>De manière générale, ne pas hésiter à aller également sur le forum <a href="https://www.statalist.org/">statalist</a> où les questions concernant les graphiques sont relativement nombreuses, et les réponses apportées rapides et pertinentes.</p>
 <p>[08-03-2023]</p>
+<p>A reader who doesn’t understand what 2005 … 2017 mean won’t understand anything else in the presentation or paper</p>
 
 
 <!-- -->
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -714,66 +730,78 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">Début mise à jour: 03-03-2023</span><span class="co">]</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>Par rapport à la première version (2020) et suite aux évolutions qu'a connu le logiciel depuis, il me semble plus pertinent de se focaliser sur certaines points importants concernant la production de graphiques que de les reprendre quasiment un par un selon le types de variables introduites. L'aide de Stata est suffisamment qualitative pour donner les éléments de programmations utiles. On partira plutôt de questions, et voir les réponses les plus adaptés. Contrairement à la première version, on priviliera des solutions programmatives les plus simples, aidés par certaines contributions externes particulièrement séduisantes ces dernières années. Citons deux exemples: </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>Par rapport à la première version (2020) et suite aux évolutions qu'a connu le logiciel depuis, il me semble plus pertinent de se focaliser sur certaines points importants concernant la production de graphiques que de les reprendre quasiment un par un selon le types de variables introduites. L'aide de Stata est suffisamment qualitative pour donner les éléments de programmations utiles. On partira plutôt de questions, et voir les réponses les plus adaptés. Contrairement à la première version, on priviliera des solutions programmatives les plus simples, aidés par certaines contributions externes mises à dispositions ces deux dernières années. Citons trois exemples: </span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**`violinplot`** (2022) de Ben Jann pour la visualisation des distributions de variables continues.</span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**`fabplot`** (2021) de Nicolas J.Cox pour la gestion des effets spaghetti.</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**`waffle_plot`** (2022) de Fernando Rios-Avila. Enfin, on tient peut-être l'alternative au très décrié *camember* (*pie chart*) </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**`waffle_plot`** (2022) de F.Rios-Avila. On tient peut-être l'alternative au très décrié *camember* (*pie chart*) </span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>Lien visualisation des données:  </span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>From Data to Viz (Y.Holtz): <span class="ot">&lt;https://www.data-to-viz.com/&gt;</span> dont il faut lire absolument la partie consacrée aux <span class="co">[</span><span class="ot">mises en garde</span><span class="co">](https://www.data-to-viz.com/caveats.html)</span></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="fu"># **principaux contributeurs**</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">**Nicola J.Cox**</span><span class="co">](https://www.durham.ac.uk/staff/n-j-cox/)</span>      </span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>Très connu par la communauté des utilisateurs du logiciel, NJ.Cox est surement la personne qui le manipule mieux. </span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>Il propose régulièrement des notes pédagogiques dans les fameux *stata tips* ou *speaking stata* du  *Stata Journal*. Ses commandes sont toujours très utiles, et plus particulièrement pour les graphiques </span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>Certaines <span class="in">`catplot`</span> , <span class="in">`tabplot`</span> , <span class="in">`spineplot`</span> , <span class="in">`fabplot`</span>, <span class="in">`axis`</span> seront présentées plus loin. Un peu en décalage avec les effets de mode dans le domaine de la visualisation, il privilégie le fond/ le sens plutôt que la forme / l'esthétique...et c'est très bien ainsi.  </span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>Sa dernière contribution **`fabplot`** est essentielle pour la gestion des effets dits *spaghetti*. Une partie de ce chapitre lui sera consacrée.</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">**Ben Jann**</span><span class="co">](https://github.com/benjann?page=1&amp;tab=repositories)</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>Egalement une référence incontournable pour l'utilisation de Stata, ses contributions dans le domaine des graphiques sont majeures.  **`colorpalette`** (chapitre 3) est une commande incontournable pour la gestion des couleurs et, personnellement, je ne peux plus me passer de **`grstyle`**. Très recemment la commande **`violinplot`** donne une solution complètement aboutie pour la visualisation d'une distribution. Toujours dans les ***must have***, **`heatplot`**/**`hexplot`** reste un incontournable pour la visualisation des distributions jointes. B.Jann reste également particulièrement connu pour sa suite **`coefplot`**. </span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>**Principaux contributeurs**</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">**Nicola J.Cox**</span><span class="co">](https://www.durham.ac.uk/staff/n-j-cox/)</span>      </span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>Très connu par la communauté des utilisateurs du logiciel, NJ.Cox est surement la personne qui le manipule mieux. </span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>Il propose régulièrement des notes pédagogiques dans les fameux *stata tips* ou *speaking stata* du  *Stata Journal*. Ses commandes sont toujours très utiles, et plus particulièrement pour les graphiques </span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>Certaines <span class="in">`catplot`</span> , <span class="in">`tabplot`</span> , <span class="in">`spineplot`</span> , <span class="in">`fabplot`</span>, <span class="in">`axis`</span> seront présentées plus loin. Un peu en décalage avec les effets de mode dans le domaine de la visualisation, il privilégie le fond/ le sens plutôt que la forme / l'esthétique...et c'est très bien ainsi.  </span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>Sa dernière contribution **`fabplot`** est essentielle pour la gestion des effets dits *spaghetti*. Une partie de ce chapitre lui sera consacrée.</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">**Ben Jann**</span><span class="co">](https://github.com/benjann?page=1&amp;tab=repositories)</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>Egalement une référence incontournable pour l'utilisation de Stata, ses contributions dans le domaine des graphiques sont majeures.  **`colorpalette`** (chapitre 3) est une commande incontournable pour la gestion des couleurs et, personnellement, je ne peux plus me passer de **`grstyle`**. Très recemment la commande **`violinplot`** donne une solution complètement aboutie pour la visualisation d'une distribution. Toujours dans les ***must have***, **`heatplot`**/**`hexplot`** reste un incontournable pour la visualisation des distributions jointes. B.Jann reste également particulièrement connu pour sa suite **`coefplot`**. </span>
 <span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">**Asjad Naqvi**</span><span class="co">](https://github.com/asjadnaqvi)</span></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>A fait une entrée assez fracassante dans le domaine de la visualisation avec Stata en 2020. Il est l'auteur d'une douzaine de commandes sous l'angle de la fameuse ***dataviz*** moderne. Compte tenu du moteur vieillissant de Stata, le tour de force est particulièrement impressionnant. Néanmoins, de mon point de vue, une partie de ces visualisations prennent tout leur sens de manière intéractive, avec une diffusion type html. Cela demande alors de se reporter vers d'autres langage, comme **python**,  maintenant directement exécutable dans l'interface principale de Stata. On est donc ici dans une approche plus moderne, mais également complexe de la visualisation.   </span>
-<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>Sur son site du réseau <span class="co">[</span><span class="ot">medium</span><span class="co">](https://asjadnaqvi.medium.com/)</span>, les solutions graphiques proposées sont toujours précédées d'une partie très détaillée sur la mise en forme des données. Une petite remarque sur *medium*: sans inscription au site, le nombre d'accès fait l'objet d'un nombre de pages limité mensuellement. Cela est fort dommage. Penser donc à récupérer les programmes qui sont mis à disposition par l'auteur.</span>
-<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>**Quelques visuels des commandes d'A.Naqvi**</span>
-<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>::: {layout-ncol=3 layout-valign="bottom"}</span>
-<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>![<span class="co">[</span><span class="ot">Tree map</span><span class="co">](https://github.com/asjadnaqvi/stata-treemap)</span>](https://github.com/asjadnaqvi/stata-treemap/raw/main/figures/treemap25.png)</span>
-<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>![<span class="co">[</span><span class="ot">Arc plot</span><span class="co">](https://github.com/asjadnaqvi/stata-arcplot)</span>](https://github.com/asjadnaqvi/stata-arcplot/raw/main/figures/arcplot2.png)</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>**Quelques visuels de graphiques obtenus avec les commandes de Ben Jann**</span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>::: {layout-ncol=3 layout-valign="bottom"}</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>![<span class="co">[</span><span class="ot">Violinplot</span><span class="co">](https://github.com/benjann/violinplot/blob/main/README.md)</span>](https://github.com/benjann/violinplot/raw/main/images/6.png)</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="al">![Hexplot](imgp4/g1.png)</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="al">![Heatplot](imgp4/g2.png)</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>![<span class="co">[</span><span class="ot">Stream plot</span><span class="co">](https://github.com/asjadnaqvi/stata-streamplot)</span>](https://github.com/asjadnaqvi/stata-streamplot/raw/main/figures/streamplot5.png)</span>
-<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">**Demetris Christodoulou**</span><span class="co">](https://graphworkflow.com)</span></span>
-<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>A ma connaissance il n'a pas programmé de commande, mais la démarche de son support, très orienté sémiologie graphique est très pertinente, ses choix graphiques faisant l'objet d'une justification. Les programmes sont mis à disposition, et sa conversion en Stata du célèbre graphique de *Charles Joseph Minard* ([original](https://fr.m.wikipedia.org/wiki/Fichier:Minard.png)) sur la campagne de Russie des armées napoléonienne est vraiement bluffante. Dans les prévisions de publication de Stata, il serait en train de préparer un ouvrage pour 2024 (*Visual Data Analytics*)</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">**Asjad Naqvi**</span><span class="co">](https://github.com/asjadnaqvi)</span></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a>A fait une entrée assez fracassante dans le domaine de la visualisation avec Stata en 2020. Il est l'auteur d'une douzaine de commandes sous l'angle de la fameuse ***dataviz*** moderne. Compte tenu du moteur vieillissant de Stata, le tour de force est particulièrement impressionnant. Néanmoins, de mon point de vue, une partie de ces visualisations prennent tout leur sens de manière intéractive, avec une diffusion type html. Cela demande alors de se reporter vers d'autres langage, comme **python**,  maintenant directement exécutable dans l'interface principale de Stata. On est donc ici dans une approche plus moderne, mais également complexe de la visualisation.   </span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a>Sur son site du réseau <span class="co">[</span><span class="ot">medium</span><span class="co">](https://asjadnaqvi.medium.com/)</span>, les solutions graphiques proposées sont toujours précédées d'une partie très détaillée sur la mise en forme des données. Une petite remarque sur *medium*: sans inscription au site, le nombre d'accès fait l'objet d'un nombre de pages limité mensuellement. Cela est fort dommage. Penser donc à récupérer les programmes qui sont mis à disposition par l'auteur.</span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a>**Quelques visuels des commandes d'A.Naqvi**</span>
 <span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>**Quelques graphiques de D.Christodoulou**</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a>::: {layout-ncol=3 layout-valign="bottom"}</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a>![<span class="co">[</span><span class="ot">Tree map</span><span class="co">](https://github.com/asjadnaqvi/stata-treemap)</span>](https://github.com/asjadnaqvi/stata-treemap/raw/main/figures/treemap25.png)</span>
 <span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>::: {layout-ncol=3 layout-valign="bottom"}</span>
-<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>![<span class="co">[</span><span class="ot">Minard</span><span class="co">](https://graphworkflow.com/2019/06/25/minard/)</span>](https://graphworkflow.files.wordpress.com/2017/01/minard.png)</span>
-<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>![<span class="co">[</span><span class="ot">Massacre dauphins</span><span class="co">](https://graphworkflow.com/2018/12/16/taiji-cove/)</span>](https://graphworkflow.files.wordpress.com/2018/09/taijicove2.png)</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>![<span class="co">[</span><span class="ot">Arc plot</span><span class="co">](https://github.com/asjadnaqvi/stata-arcplot)</span>](https://github.com/asjadnaqvi/stata-arcplot/raw/main/figures/arcplot2.png)</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>![<span class="co">[</span><span class="ot">Stream plot</span><span class="co">](https://github.com/asjadnaqvi/stata-streamplot)</span>](https://github.com/asjadnaqvi/stata-streamplot/raw/main/figures/streamplot5.png)</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>![<span class="co">[</span><span class="ot">Mariage homo</span><span class="co">](https://graphworkflow.com/2020/01/17/marriage-equality/)</span>](https://graphworkflow.files.wordpress.com/2017/12/marriage_equality.png)</span>
-<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">**Demetris Christodoulou**</span><span class="co">](https://graphworkflow.com)</span></span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>A ma connaissance il n'a pas programmé de commande, mais la démarche de son support, très orienté sémiologie graphique est très pertinente, ses choix graphiques faisant l'objet d'une justification. Les programmes sont mis à disposition, et sa conversion en Stata du célèbre graphique de *Charles Joseph Minard* ([original](https://fr.m.wikipedia.org/wiki/Fichier:Minard.png)) sur la campagne de Russie des armées napoléonienne est vraiment bluffante. Dans les prévisions de publication de Stata, il serait en train de préparer un ouvrage pour 2024 (*Visual Data Analytics*)</span>
 <span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>De manière générale, ne pas hésiter à aller également sur le forum <span class="co">[</span><span class="ot">statalist</span><span class="co">](https://www.statalist.org/)</span> où les questions concernant les graphiques sont relativement nombreuses. </span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">08-03-2023</span><span class="co">]</span>  </span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>**Quelques graphiques de D.Christodoulou**</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>::: {layout-ncol=3 layout-valign="bottom"}</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>![<span class="co">[</span><span class="ot">Minard</span><span class="co">](https://graphworkflow.com/2019/06/25/minard/)</span>](https://graphworkflow.files.wordpress.com/2017/01/minard.png)</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>![<span class="co">[</span><span class="ot">Massacre dauphins</span><span class="co">](https://graphworkflow.com/2018/12/16/taiji-cove/)</span>](https://graphworkflow.files.wordpress.com/2018/09/taijicove2.png)</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>![<span class="co">[</span><span class="ot">Mariage homo</span><span class="co">](https://graphworkflow.com/2020/01/17/marriage-equality/)</span>](https://graphworkflow.files.wordpress.com/2017/12/marriage_equality.png)</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>De manière générale, ne pas hésiter à aller également sur le forum <span class="co">[</span><span class="ot">statalist</span><span class="co">](https://www.statalist.org/)</span> où les questions concernant les graphiques sont relativement nombreuses, et les réponses apportées rapides et pertinentes. </span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">08-03-2023</span><span class="co">]</span>  </span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>  A reader who doesn't understand what 2005 ... 2017 mean won't understand anything else in the presentation or paper</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
@@ -781,7 +809,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       <div class="nav-footer-center">Marc Thévenin / Ined-Sms / Août 2022-</div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","loop":true,"descPosition":"bottom","selector":".lightbox"});</script>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom","loop":true});</script>
 
 
 
