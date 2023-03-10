@@ -24,9 +24,21 @@ Il propose régulièrement des notes pédagogiques dans les fameux *stata tips* 
 Certaines `catplot` , `tabplot` , `spineplot` , `fabplot`, `axis` seront présentées plus loin. Un peu en décalage avec les effets de mode dans le domaine de la visualisation, il privilégie le fond/ le sens plutôt que la forme / l'esthétique...et c'est très bien ainsi.  Sa dernière contribution **`fabplot`** me semble essentielle  pour gérer les effets dits *spaghetti*. Egalement amateur de petites phrases un peu piquantes. Par exemple concernant la nécessité de mettre systématiquement un titre aux axes: "*A reader who doesn't understand what 2005 ... 2017 mean won't understand anything else in the presentation or paper*" (fil de discussion sur Statalist) .
 
 
+**Quelques visuels de graphiques obtenus avec les commandes de NJ.Cox**
+
+::: {layout-ncol=3 layout-valign="bottom"}
+
+![Fabplot - line](imgp4/g3.png)
+
+![Fabplot - scatter](imgp4/g4.png)
+
+![Catplot](imgp4/g5.png)
+
+:::
+
 
 [**Ben Jann**](https://github.com/benjann?page=1&tab=repositories)
-Egalement une référence incontournable pour l'utilisation de Stata, ses contributions dans le domaine des graphiques sont majeures.  **`colorpalette`** (chapitre 3) est une commande incontournable pour la gestion des couleurs et, personnellement, je ne peux plus me passer de **`grstyle`**. Très recemment la commande **`violinplot`** donne une solution complètement aboutie pour la visualisation d'une distribution. Toujours dans les ***must have***, **`heatplot`**/**`hexplot`** reste un incontournable pour la visualisation des distributions jointes. B.Jann reste également particulièrement connu pour sa suite **`coefplot`**. 
+Egalement une référence pour les utilisateurs de Stata, sa contribution dans le domaine des graphiques est majeure.  **`colorpalette`** (chapitre 3) est une commande incontournable pour la gestion des couleurs et, personnellement, je ne peux plus me passer de **`grstyle`**. Très recemment la commande **`violinplot`** donne une solution complètement aboutie pour la visualisation d'une distribution. Toujours dans les ***must have***, **`heatplot`**/**`hexplot`** reste un incontournable pour la visualisation des distributions jointes. B.Jann reste également particulièrement connu pour sa suite **`coefplot`**. 
 
 **Quelques visuels de graphiques obtenus avec les commandes de Ben Jann**
 
