@@ -86,7 +86,7 @@ var1opts(gap(0)) var2opts(gap(*.2)) outergap(*.2) ysize(5) yla(0(25)100, glcolor
 
 ssc install heatplot
 
-* hexplot
+*** hexplot
 
 use "https://raw.githubusercontent.com//mthevenin/stata_graphiques/master/ressources/gjoint/logement.dta", clear
 
@@ -94,9 +94,51 @@ hexplot prix surface, ///
 color(flare, reverse) p(lcolor(black) lalign(center) lw(*.5)) ///
 legend(region(color(%0)) subtitle("%")) title("Hexplot de B.Jann", pos(11))
 
-* heatplot
 
 
+*** heatplot
+
+use "https://raw.githubusercontent.com//mthevenin/stata_graphiques/master/bases/day_temp.dta", clear
+
+* préparation des données
+gen year = substr(date,1,4)
+gen month = substr(date,6,2)
+gen day   = substr(date,9,2)
+
+bysort year: gen n=_n
+destring temp, replace force
+destring month, replace force
+destring year, replace force
+destring day, replace force
+keep if year==2004
+
+replace temp = temp[_n-1] if temp==.
+replace temp = temp[_n+1] if temp==.
+
+bysort month: gen x=1 if _n==1
+gen m= sum(x) if x==1
+
+
+* graphique 
+
+grstyle init
+grstyle set mesh
+
+local m "janvier février mars avril mai juin juillet août septembre octobre novembre décembre" 
+local i=1
+foreach mois of local m {
+local j=`i++'
+
+qui sum n if m==`j'	
+
+local xlab `xlab' `r(max)' "`mois'"  	
+
+}
+
+heatplot temp  hour n , color(plasma) fillin() ydiscrete  ylabel(0(4)20, angle(0) nogrid) xlab(`xlab', labs(*.6) alt nogrid) ///
+  p(lcolor(white) lalign(center) lw(*0))   ///
+legend(region(color(%0)) subtitle("Température", size(*.7))) cuts(-5 -2.5 0 2.5 5 7.5 10 12.5 15 17.5 20 22.5 25 27.5 30 32.5 35) ///
+ytitle("Jours") title("Heatplot de B.Jann", pos(11)) xtitle("")
 
 
 
