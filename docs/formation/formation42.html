@@ -371,14 +371,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><p>Graphique traditionnel</p></li>
 <li><p>Quantité utilisé sur Y facilement compréhensible: fréquence, pourcentage</p></li>
 <li><p>Modification des intervalles sur l’axe X</p></li>
-<li><p>Problèmes:</p>
+<li><p>Points de vigilance:</p>
 <ul>
-<li>Empilement de plusieurs histogramme peu convaincant.
+<li>Empilement de plusieurs histogrammes peu convaincant. Utiliser de préférences des graphiques combinés type <em>small multiple</em>
 <ul>
 <li>La définition des bornes peut différer d’un logiciel à l’autre, c’est le cas entre Stata R (<code>ggplot</code>)</li>
 </ul></li>
 </ul></li>
+<li><p>Commandes Stata:</p>
+<ul>
+<li><strong><code>histogram</code></strong></li>
+<li><strong><code>tw histogram</code></strong>. Avec l’option <code>by</code> permet de faire des graphiques de type <em>small multiple</em></li>
+</ul></li>
 </ul>
+<p>[10-03-2023]</p>
 
 
 <!-- -->
@@ -690,13 +696,19 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Quantité utilisé sur Y facilement compréhensible: fréquence, pourcentage</span>
 <span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Modification des intervalles sur l'axe X</span>
 <span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Problèmes:   </span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Empilement de plusieurs histogramme peu convaincant.</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Points de vigilance:   </span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="ss">  - </span>Empilement de plusieurs histogrammes peu convaincant. Utiliser de préférences des graphiques combinés type *small multiple*</span>
 <span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>La définition des bornes peut différer d’un logiciel à l’autre, c’est le cas entre Stata R (<span class="in">`ggplot`</span>)</span>
 <span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Commandes Stata:</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>**`histogram`**</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="ss">  * </span>**`tw histogram`**. Avec l'option <span class="in">`by`</span> permet de faire des graphiques de type *small multiple* </span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">10-03-2023</span><span class="co">]</span>  </span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">

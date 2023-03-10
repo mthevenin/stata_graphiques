@@ -32,7 +32,7 @@
     "href": "formation/formation.html",
     "title": "Introduction",
     "section": "",
-    "text": "todo\n\n\n\n\n\n\nProchaines mises à jour\n\n\n\n\nIntroduction/présentation - remerciements\nLiens externes principaux\nChapitre 4: visualisation des données avec Stata.Version précédente pas satisfaisante\nChapitre 5: principalement réservé à l’exécution de graphique avec Python sous Stata, principalement avec seaborn et plotnine, ainsi que quelques graphiques intéractifs avec plotly\n\n\n\nLes programmes des chapitres sont disponibles aux adresses suivantes:\n\nChapitre 1: Programme Partie 1\nChapitre 2: Programme Partie 2\n\n\nINTRODUCTION A LA SEMIOLOGIE GRAPHIQUE (Bénédicte Garnier - Ined-SMS)\nLien vers le document:"
+    "text": "todo\n\n\n\n\n\n\nProchaines mises à jour\n\n\n\n\nIntroduction/présentation - remerciements\nLiens externes principaux\nChapitre 4: visualisation des données avec Stata.Version précédente pas satisfaisante\nChapitre 5: principalement réservé à l’exécution de graphique avec Python sous Stata, principalement avec seaborn et plotnine, ainsi que quelques graphiques intéractifs avec plotly\n\n\n\nLes programmes des chapitres sont disponibles aux adresses suivantes:\n\nChapitre 1: Programme Partie 1\nChapitre 2: Programme Partie 2\nChapitre 4: Programme Partie 4\n\nIntroduction\n\n\n\nINTRODUCTION A LA SEMIOLOGIE GRAPHIQUE (Bénédicte Garnier - Ined-SMS)\nLien vers le document:"
   },
   {
     "objectID": "formation/formation11.html",
@@ -340,6 +340,6 @@
     "href": "formation/formation42.html",
     "title": "Les distributions",
     "section": "",
-    "text": "Principaux outils de visualisations:\n\nHistogrammes\nReport des densités sous forme de courbe ou d’aires\nBoxplot: résumé synthétique d’indicateurs de distributions (quantiles)\nviolinplot: visualisation unifiant boxplot et densités\n\n\n\n\nGraphique traditionnel\nQuantité utilisé sur Y facilement compréhensible: fréquence, pourcentage\nModification des intervalles sur l’axe X\nProblèmes:\n\nEmpilement de plusieurs histogramme peu convaincant.\n\nLa définition des bornes peut différer d’un logiciel à l’autre, c’est le cas entre Stata R (ggplot)"
+    "text": "Principaux outils de visualisations:\n\nHistogrammes\nReport des densités sous forme de courbe ou d’aires\nBoxplot: résumé synthétique d’indicateurs de distributions (quantiles)\nviolinplot: visualisation unifiant boxplot et densités\n\n\n\n\nGraphique traditionnel\nQuantité utilisé sur Y facilement compréhensible: fréquence, pourcentage\nModification des intervalles sur l’axe X\nPoints de vigilance:\n\nEmpilement de plusieurs histogrammes peu convaincant. Utiliser de préférences des graphiques combinés type small multiple\n\nLa définition des bornes peut différer d’un logiciel à l’autre, c’est le cas entre Stata R (ggplot)\n\n\nCommandes Stata:\n\nhistogram\ntw histogram. Avec l’option by permet de faire des graphiques de type small multiple\n\n\n[10-03-2023]"
   }
 ]
