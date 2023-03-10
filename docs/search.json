@@ -340,6 +340,6 @@
     "href": "formation/formation42.html",
     "title": "Les distributions",
     "section": "",
-    "text": "Principaux outils de visualisations:\n\nHistogrammes\nReport des densités sous forme de courbe ou d’aires\nBoxplot: résumé synthétique d’indicateurs de distributions (quantiles)\nviolinplot: visualisation unifiant boxplot et densités\n\n\n\n\nGraphique traditionnel\nQuantité utilisé sur Y facilement compréhensible: fréquence, pourcentage\nModification des intervalles sur l’axe X\nProblèmes:\n\nEmpilement de plusieurs histogramme peu convaincant.\n\n\nLa définition des bornes peut différer d’un logiciel à l’autre, c’est le cas entre Stata R (ggplot)"
+    "text": "Principaux outils de visualisations:\n\nHistogrammes\nReport des densités sous forme de courbe ou d’aires\nBoxplot: résumé synthétique d’indicateurs de distributions (quantiles)\nviolinplot: visualisation unifiant boxplot et densités\n\n\n\n\nGraphique traditionnel\nQuantité utilisé sur Y facilement compréhensible: fréquence, pourcentage\nModification des intervalles sur l’axe X\nProblèmes:\n\nEmpilement de plusieurs histogramme peu convaincant.\n\nLa définition des bornes peut différer d’un logiciel à l’autre, c’est le cas entre Stata R (ggplot)"
   }
 ]

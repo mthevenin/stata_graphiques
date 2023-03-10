@@ -21,7 +21,7 @@ Principaux outils de visualisations:
 
 * Problèmes:   
   - Empilement de plusieurs histogramme peu convaincant.
-*	- La définition des bornes peut différer d’un logiciel à l’autre, c’est le cas entre Stata R (`ggplot`)
+	- La définition des bornes peut différer d’un logiciel à l’autre, c’est le cas entre Stata R (`ggplot`)
 
 
 
