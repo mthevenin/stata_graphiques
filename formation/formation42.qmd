@@ -1,0 +1,29 @@
+---
+title: "Les distributions"
+---
+
+
+# Une variable 
+
+Principaux outils de visualisations: 
+
+- **Histogrammes**
+- Report des **densités** sous forme de courbe ou d'aires
+- **Boxplot**: résumé synthétique d'indicateurs de distributions (quantiles)
+- **violinplot**: visualisation unifiant boxplot et densités 
+  
+  
+## Histogramme  
+  
+* Graphique traditionnel 
+* Quantité utilisé sur Y facilement compréhensible: fréquence, pourcentage
+* Modification des intervalles sur l'axe X
+
+* Problèmes:   
+  - Empilement de plusieurs histogramme peu convaincant.
+*	- La définition des bornes peut différer d’un logiciel à l’autre, c’est le cas entre Stata R (`ggplot`)
+
+
+
+
+

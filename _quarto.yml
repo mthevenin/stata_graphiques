@@ -54,6 +54,7 @@ website:
           - section: "Chapitre 4: Eléments de visualisation"
             contents: 
             - formation/formation41.qmd
+            - formation/formation42.qmd            
       - section: "Programmation"
         contents:
           - Stata.qmd

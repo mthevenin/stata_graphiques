@@ -334,5 +334,12 @@
     "title": "Programmation avec Stata",
     "section": "",
     "text": "Vous trouverez ici de courts topics concernant la programmation de graphiques avec Stata, qui seront inclus au quatrième chapitre de la formation.\nLes articles sont filtrables par catégorie, comme dans un blog. Chaque article aura soit une catégorie programmation soit une catégorie ado:\n\nprogrammation: article orienté vers des astuces de programmation\nado: article présentant une commande externe\n\n\n\n\n\n\n  \n\n\n\n\nLollipop\n\n\n\n\n\n\n\nprogrammation\n\n\nbarre\n\n\n\n\n\n\n\n\n\n\n\nMarc Thévenin\n\n\n\n\n\n\n  \n\n\n\n\nfabplot (NJ.Cox)\n\n\n\n\n\n\n\nado\n\n\ncourbe\n\n\n\n\n\n\n\n\n\n\n\nMarc Thévenin\n\n\n\n\n\n\n  \n\n\n\n\ngjoint\n\n\n\n\n\n\n\nado\n\n\ndistribution\n\n\nhistogramme\n\n\n\n\n\n\n\n\n\n\n\nMarc Thévenin\n\n\n\n\n\n\n  \n\n\n\n\ngridge\n\n\n\n\n\n\n\nado\n\n\ndistribution\n\n\ndensité\n\n\n\n\n\n\n\n\n\n\n\nMarc Thévenin\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "formation/formation42.html",
+    "href": "formation/formation42.html",
+    "title": "Les distributions",
+    "section": "",
+    "text": "Principaux outils de visualisations:\n\nHistogrammes\nReport des densités sous forme de courbe ou d’aires\nBoxplot: résumé synthétique d’indicateurs de distributions (quantiles)\nviolinplot: visualisation unifiant boxplot et densités\n\n\n\n\nGraphique traditionnel\nQuantité utilisé sur Y facilement compréhensible: fréquence, pourcentage\nModification des intervalles sur l’axe X\nProblèmes:\n\nEmpilement de plusieurs histogramme peu convaincant.\n\n\nLa définition des bornes peut différer d’un logiciel à l’autre, c’est le cas entre Stata R (ggplot)"
   }
 ]
