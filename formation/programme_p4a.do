@@ -2,8 +2,13 @@
 
 ***** NJ COX *******
 
-***** fabplot
+* Seulement les trois graphiques qui utilisent les commandes de NJ.Cox, pour les 
+* autres contributeurs on trouvera les programmes dans leur supports (liens donnés)
+
 ssc install fabplot //commande d'origine
+
+
+* Exemple 1 : effet spaghetti
 
 net install fabplot2, ///
 from("https://raw.githubusercontent.com/mthevenin/stata_graphiques/master/ressources/fabplot2/") replace // ajout d'une option
@@ -47,8 +52,25 @@ frontopts(lc("209 74 97") lw(*2)) xlabel(1950(10)2022, alt labsize(*.7)) backopt
 xtitle("Year") ytitle("") ylabel(0(1)6)
 
 
+* Exemple 2: effet paella
+
+ssc install egermore // pour la commande axis (toujours NJ.Cox) pour l'ordre des sous graphiques, ici le salaire horaire moyen par profession.
+
+sysuse nlsw88, clear
+
+egen mwage = mean(-wage) if occupation!=., by(occupation)
+egen occup = axis(mwage), label(occupation)
+
+fabplot2 scatter wage ttl_exp, by(occup, title("Small multiple avec fabplot", pos(11)))   ///
+frontopts(msize(*.7) mc("238 84 63")  msymbol(O)   mlc(black)   mlw(*.2))     ///
+backopts(msize(*.7)  mc("gs15") msymbol(O) mlc(black) mlw(*.2))   
 
 
+***** catplot
+
+ssc install catplot
+
+use "https://raw.githubusercontent.com//mthevenin/stata_graphiques/master/bases/titanic.dta", clear
 
 
 
