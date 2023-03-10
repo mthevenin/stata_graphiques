@@ -23,12 +23,12 @@ Principaux outils de visualisations:
   - Empilement de plusieurs histogrammes peu convaincant. Utiliser de préférences des graphiques combinés type *small multiple*
 	- La définition des bornes peut différer d’un logiciel à l’autre, c’est le cas entre Stata R (`ggplot`)
 
-* Commandes Stata:
+* **Commandes Stata**:
   * **`histogram`**
-  * **`tw histogram`**. Avec l'option `by` permet de faire des graphiques de type *small multiple* 
-  
-  
-  
+  * **`tw histogram`**. Avec l'option `by` permet de faire des graphiques de type *small multiple*  lorsqu'on souhaite comparer une distribution entre différentes catégories.
+
+
+
 [10-03-2023]  
 
 

@@ -85,8 +85,3 @@ A ma connaissance il n'a pas programmé de commande, mais la démarche de son su
 De manière générale, ne pas hésiter à aller également sur le forum [statalist](https://www.statalist.org/) où les questions concernant les graphiques sont relativement nombreuses, et les réponses apportées rapides et pertinentes. 
 
   
-[08-03-2023]  
-  
-  
-  A reader who doesn't understand what 2005 ... 2017 mean won't understand anything else in the presentation or paper
-  
