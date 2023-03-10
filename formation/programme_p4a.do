@@ -2,7 +2,6 @@
 
 ***** NJ COX *******
 
-* Seulement les trois graphiques qui utilisent les commandes de NJ.Cox, pour les 
 * autres contributeurs on trouvera les programmes dans leur supports (liens donnés)
 
 ssc install fabplot //commande d'origine
@@ -71,6 +70,37 @@ backopts(msize(*.7)  mc("gs15") msymbol(O) mlc(black) mlw(*.2))
 ssc install catplot
 
 use "https://raw.githubusercontent.com//mthevenin/stata_graphiques/master/bases/titanic.dta", clear
+
+use titanic, clear
+collapse survived, by(age sex class)  // utiliser des frames si possible si stata v17
+
+catplot age sex [aw=100*survived],                                     ///
+by(class, title("Catplot de NJ.Cox", pos(11)) compact note("") col(1)) ///
+bar(1, blcolor(white) bfcolor(84 163 205) blw(*.2))                    /// 
+blabel(bar, format(%4.1f) pos(base))                                   ///
+subtitle(, pos(9) ring(1) bcolor(none) nobexpand place(e))             ///
+ytitle("% survived from Titanic", place(6))                            ///
+var1opts(gap(0)) var2opts(gap(*.2)) outergap(*.2) ysize(5) yla(0(25)100, glcolor(%0) glw(*0)) plotr(lc(%0))
+
+***** B JANN *******
+
+ssc install heatplot
+
+* hexplot
+
+use "https://raw.githubusercontent.com//mthevenin/stata_graphiques/master/ressources/gjoint/logement.dta", clear
+
+hexplot prix surface, ///
+color(flare, reverse) p(lcolor(black) lalign(center) lw(*.5)) ///
+legend(region(color(%0)) subtitle("%")) title("Hexplot de B.Jann", pos(11))
+
+* heatplot
+
+
+
+
+
+
 
 
 
