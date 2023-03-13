@@ -192,7 +192,6 @@ legend(order(1 "Not South" 2 "South") region(color(%0)))
 
 ![**`violinplot`**: comparaison mirroir overlay](imgp4/g16.png)
 
-
 :::
 
 Quelques précision sur les options de la commande violinplot
@@ -231,6 +230,8 @@ gridge wage, over(occupation) sortrev(mean) range(0 50) palette(tableau) bw(.5)
 ![**`axe discret avec violinplot`**](imgp4/g17.png)
 
 ![**`Lignes de ridge avec gridge`**](imgp4/g18.png)
+
+:::
 
 
 [13-03-2023]

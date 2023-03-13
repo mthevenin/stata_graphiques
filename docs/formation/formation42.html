@@ -636,18 +636,21 @@ Options <code>by</code>: à savoir
 <span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>gridge wage, <span class="bn">over</span>(occupation) sortrev(<span class="kw">mean</span>) <span class="kw">range</span>(0 50) <span class="kw">palette</span>(tableau) bw(.5)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
-<p>::: {layout-ncol=2 layout-valign=“bottom”}</p>
-<div class="quarto-figure quarto-figure-center">
+<div class="quarto-layout-panel">
+<div class="quarto-layout-row quarto-layout-valign-bottom">
+<div class="quarto-figure quarto-figure-center" style="flex-basis: 50.0%;justify-content: center;">
 <figure class="figure">
 <p><a href="imgp4/g17.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="axe discret avec violinplot"><img src="imgp4/g17.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption"><strong><code>axe discret avec violinplot</code></strong></figcaption><p></p>
 </figure>
 </div>
-<div class="quarto-figure quarto-figure-center">
+<div class="quarto-figure quarto-figure-center" style="flex-basis: 50.0%;justify-content: center;">
 <figure class="figure">
 <p><a href="imgp4/g18.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="Lignes de ridge avec gridge"><img src="imgp4/g18.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption"><strong><code>Lignes de ridge avec gridge</code></strong></figcaption><p></p>
 </figure>
+</div>
+</div>
 </div>
 <p>[13-03-2023]</p>
 
@@ -1134,54 +1137,55 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb8-192"><a href="#cb8-192" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-193"><a href="#cb8-193" aria-hidden="true" tabindex="-1"></a><span class="al">![**`violinplot`**: comparaison mirroir overlay](imgp4/g16.png)</span></span>
 <span id="cb8-194"><a href="#cb8-194" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-195"><a href="#cb8-195" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-196"><a href="#cb8-196" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb8-197"><a href="#cb8-197" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-198"><a href="#cb8-198" aria-hidden="true" tabindex="-1"></a>Quelques précision sur les options de la commande violinplot</span>
-<span id="cb8-199"><a href="#cb8-199" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-200"><a href="#cb8-200" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Comme l'objectif n'est que de reporter les densités, on a retiré les éléments figurants dans une *boxplot*  avec **`nomed`**, **`nob`** et **`now`** (syntaxe tronquée).</span>
-<span id="cb8-201"><a href="#cb8-201" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**`over()`** permet de représenter les densités avec les différentes modalités sur un axe discret. On peut empiler sur une même origine l'axe discret avec l'option **`overlay`**.</span>
-<span id="cb8-202"><a href="#cb8-202" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Les estimations de la densités peuvent sortir des bornes acceptables, ici par exemple un salaire horaire négatif. On peut renseigner les limites des bornes avec  **`ll(min)`**, **`ul(max)`** ou **`range(min max)`** comme arguments de l'option **`pdf()`**. Dans l'exemple: <span class="in">`ll(0)`</span> comme valeur minimal de x.</span>
-<span id="cb8-203"><a href="#cb8-203" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Par défaut les densités sont reportées en mirroir (principe de ce type de graphique). on peut retirer une des deux densités avec **`left`** ou **`right`**. </span>
-<span id="cb8-204"><a href="#cb8-204" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Remarque: pour les couleurs de remplissage, visiblement B.Jann a réduit l'intensité. Je ne suis pas arrivé à rétablir les couleurs d'origine de la palette choisie. </span>
+<span id="cb8-195"><a href="#cb8-195" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb8-196"><a href="#cb8-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-197"><a href="#cb8-197" aria-hidden="true" tabindex="-1"></a>Quelques précision sur les options de la commande violinplot</span>
+<span id="cb8-198"><a href="#cb8-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-199"><a href="#cb8-199" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Comme l'objectif n'est que de reporter les densités, on a retiré les éléments figurants dans une *boxplot*  avec **`nomed`**, **`nob`** et **`now`** (syntaxe tronquée).</span>
+<span id="cb8-200"><a href="#cb8-200" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>**`over()`** permet de représenter les densités avec les différentes modalités sur un axe discret. On peut empiler sur une même origine l'axe discret avec l'option **`overlay`**.</span>
+<span id="cb8-201"><a href="#cb8-201" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Les estimations de la densités peuvent sortir des bornes acceptables, ici par exemple un salaire horaire négatif. On peut renseigner les limites des bornes avec  **`ll(min)`**, **`ul(max)`** ou **`range(min max)`** comme arguments de l'option **`pdf()`**. Dans l'exemple: <span class="in">`ll(0)`</span> comme valeur minimal de x.</span>
+<span id="cb8-202"><a href="#cb8-202" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Par défaut les densités sont reportées en mirroir (principe de ce type de graphique). on peut retirer une des deux densités avec **`left`** ou **`right`**. </span>
+<span id="cb8-203"><a href="#cb8-203" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Remarque: pour les couleurs de remplissage, visiblement B.Jann a réduit l'intensité. Je ne suis pas arrivé à rétablir les couleurs d'origine de la palette choisie. </span>
+<span id="cb8-204"><a href="#cb8-204" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-205"><a href="#cb8-205" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-206"><a href="#cb8-206" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-207"><a href="#cb8-207" aria-hidden="true" tabindex="-1"></a>Si le nombre de modalité s'élève, il est préférable de ne pas activer l'option <span class="in">`overlay`</span>, ou d'utiliser un graphique type **ligne de ridge**. Pour cette dernière option j'ai pris ma solution [[**`gridge`**](https://mthevenin.github.io/stata_graphiques/programmation/gridge/gridge.html)] qui permet de contrôler l'ordre des variables reportées sur l'axe discret. On peut également et sans soucis se diriger vers la commanfe **`joyplot`** d'A.Naqvi</span>
-<span id="cb8-208"><a href="#cb8-208" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-209"><a href="#cb8-209" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata filename="Installation gridge", eval=FALSE}</span></span>
-<span id="cb8-210"><a href="#cb8-210" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-211"><a href="#cb8-211" aria-hidden="true" tabindex="-1"></a><span class="in">* Les dépendances sont installées si nécessaire</span></span>
-<span id="cb8-212"><a href="#cb8-212" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-213"><a href="#cb8-213" aria-hidden="true" tabindex="-1"></a><span class="in">net install gridge, from("https://raw.githubusercontent.com/mthevenin/stata_graphiques/master/ressources/gridge/") replace</span></span>
-<span id="cb8-214"><a href="#cb8-214" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-206"><a href="#cb8-206" aria-hidden="true" tabindex="-1"></a>Si le nombre de modalité s'élève, il est préférable de ne pas activer l'option <span class="in">`overlay`</span>, ou d'utiliser un graphique type **ligne de ridge**. Pour cette dernière option j'ai pris ma solution [[**`gridge`**](https://mthevenin.github.io/stata_graphiques/programmation/gridge/gridge.html)] qui permet de contrôler l'ordre des variables reportées sur l'axe discret. On peut également et sans soucis se diriger vers la commanfe **`joyplot`** d'A.Naqvi</span>
+<span id="cb8-207"><a href="#cb8-207" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-208"><a href="#cb8-208" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata filename="Installation gridge", eval=FALSE}</span></span>
+<span id="cb8-209"><a href="#cb8-209" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-210"><a href="#cb8-210" aria-hidden="true" tabindex="-1"></a><span class="in">* Les dépendances sont installées si nécessaire</span></span>
+<span id="cb8-211"><a href="#cb8-211" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-212"><a href="#cb8-212" aria-hidden="true" tabindex="-1"></a><span class="in">net install gridge, from("https://raw.githubusercontent.com/mthevenin/stata_graphiques/master/ressources/gridge/") replace</span></span>
+<span id="cb8-213"><a href="#cb8-213" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-214"><a href="#cb8-214" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-215"><a href="#cb8-215" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-216"><a href="#cb8-216" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-217"><a href="#cb8-217" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
-<span id="cb8-218"><a href="#cb8-218" aria-hidden="true" tabindex="-1"></a><span class="in">recode occupation (9 10 11 12 = 13 )</span></span>
-<span id="cb8-219"><a href="#cb8-219" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-220"><a href="#cb8-220" aria-hidden="true" tabindex="-1"></a><span class="in">* violinplot</span></span>
-<span id="cb8-221"><a href="#cb8-221" aria-hidden="true" tabindex="-1"></a><span class="in">violinplot wage,  over(occupation) nomed nobox nowhisker   ///</span></span>
-<span id="cb8-222"><a href="#cb8-222" aria-hidden="true" tabindex="-1"></a><span class="in">colors(tableau)  pdf(ll(0)) fill n(99)</span></span>
-<span id="cb8-223"><a href="#cb8-223" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-224"><a href="#cb8-224" aria-hidden="true" tabindex="-1"></a><span class="in">* gridge</span></span>
-<span id="cb8-225"><a href="#cb8-225" aria-hidden="true" tabindex="-1"></a><span class="in">gridge wage, over(occupation) sortrev(mean) range(0 50) palette(tableau) bw(.5)</span></span>
-<span id="cb8-226"><a href="#cb8-226" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-216"><a href="#cb8-216" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
+<span id="cb8-217"><a href="#cb8-217" aria-hidden="true" tabindex="-1"></a><span class="in">recode occupation (9 10 11 12 = 13 )</span></span>
+<span id="cb8-218"><a href="#cb8-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-219"><a href="#cb8-219" aria-hidden="true" tabindex="-1"></a><span class="in">* violinplot</span></span>
+<span id="cb8-220"><a href="#cb8-220" aria-hidden="true" tabindex="-1"></a><span class="in">violinplot wage,  over(occupation) nomed nobox nowhisker   ///</span></span>
+<span id="cb8-221"><a href="#cb8-221" aria-hidden="true" tabindex="-1"></a><span class="in">colors(tableau)  pdf(ll(0)) fill n(99)</span></span>
+<span id="cb8-222"><a href="#cb8-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-223"><a href="#cb8-223" aria-hidden="true" tabindex="-1"></a><span class="in">* gridge</span></span>
+<span id="cb8-224"><a href="#cb8-224" aria-hidden="true" tabindex="-1"></a><span class="in">gridge wage, over(occupation) sortrev(mean) range(0 50) palette(tableau) bw(.5)</span></span>
+<span id="cb8-225"><a href="#cb8-225" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-226"><a href="#cb8-226" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-227"><a href="#cb8-227" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-228"><a href="#cb8-228" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-229"><a href="#cb8-229" aria-hidden="true" tabindex="-1"></a>::: {layout-ncol=2 layout-valign="bottom"}</span>
-<span id="cb8-230"><a href="#cb8-230" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-231"><a href="#cb8-231" aria-hidden="true" tabindex="-1"></a><span class="al">![**`axe discret avec violinplot`**](imgp4/g17.png)</span></span>
-<span id="cb8-232"><a href="#cb8-232" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-233"><a href="#cb8-233" aria-hidden="true" tabindex="-1"></a><span class="al">![**`Lignes de ridge avec gridge`**](imgp4/g18.png)</span></span>
-<span id="cb8-234"><a href="#cb8-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-228"><a href="#cb8-228" aria-hidden="true" tabindex="-1"></a>::: {layout-ncol=2 layout-valign="bottom"}</span>
+<span id="cb8-229"><a href="#cb8-229" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-230"><a href="#cb8-230" aria-hidden="true" tabindex="-1"></a><span class="al">![**`axe discret avec violinplot`**](imgp4/g17.png)</span></span>
+<span id="cb8-231"><a href="#cb8-231" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-232"><a href="#cb8-232" aria-hidden="true" tabindex="-1"></a><span class="al">![**`Lignes de ridge avec gridge`**](imgp4/g18.png)</span></span>
+<span id="cb8-233"><a href="#cb8-233" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-234"><a href="#cb8-234" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb8-235"><a href="#cb8-235" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-236"><a href="#cb8-236" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">13-03-2023</span><span class="co">]</span></span>
-<span id="cb8-237"><a href="#cb8-237" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-236"><a href="#cb8-236" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-237"><a href="#cb8-237" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">13-03-2023</span><span class="co">]</span></span>
 <span id="cb8-238"><a href="#cb8-238" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb8-239"><a href="#cb8-239" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-240"><a href="#cb8-240" aria-hidden="true" tabindex="-1"></a> </span>
-<span id="cb8-241"><a href="#cb8-241" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-242"><a href="#cb8-242" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb8-240"><a href="#cb8-240" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-241"><a href="#cb8-241" aria-hidden="true" tabindex="-1"></a> </span>
+<span id="cb8-242"><a href="#cb8-242" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-243"><a href="#cb8-243" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
@@ -1189,7 +1193,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       <div class="nav-footer-center">Marc Thévenin / Ined-Sms / Août 2022-</div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","loop":true,"selector":".lightbox","closeEffect":"zoom","descPosition":"bottom"});</script>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","closeEffect":"zoom","loop":true,"openEffect":"zoom"});</script>
 
 
 
