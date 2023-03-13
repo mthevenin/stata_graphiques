@@ -1,5 +1,5 @@
 ---
-title: "**Options: axes, légende...**"
+title: "Options: axes, légende..."
 fig-cap-location: top
 ---
 

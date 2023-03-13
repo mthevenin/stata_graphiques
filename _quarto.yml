@@ -36,22 +36,22 @@ website:
       - section: "Formation"
         contents:
           - formation/formation.qmd
-          - section: "Chapitre 1: syntaxe"
+          - section: "**Syntaxe**"
             contents:
             - formation/formation11.qmd
             - formation/formation12.qmd
             - formation/formation13.qmd
             - formation/formation14.qmd
-          - section: "Chapitre 2: macros"
+          - section: "**Macros**"
             contents:
             - formation/formation21.qmd
             - formation/formation22.qmd
             - formation/formation23.qmd
-          - section: "Chapitre 3: palettes et styles"
+          - section: "**Palettes et styles**"
             contents:
             - formation/formation31.qmd
             - formation/formation32.qmd
-          - section: "Chapitre 4: Eléments de visualisation"
+          - section: "**Visualisations**"
             contents: 
             - formation/formation41.qmd
             - formation/formation42.qmd            

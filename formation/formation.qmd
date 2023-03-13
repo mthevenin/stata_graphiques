@@ -1,5 +1,5 @@
 ---
-title: "Introduction"
+title: "**Introduction**"
 ---
 
 
@@ -32,8 +32,8 @@ library(fontawesome)
 * **Chapitre 1**: [Programme Partie 1](programme_p1.do)
 * **Chapitre 2**: [Programme Partie 2](programme_p2.do)
 * **Chapitre 4**: Programme Partie 4
-  * [Introduction](programme_p4a.do)
-
+  * [Introduction] (programme_p4a.do)
+  * [Distributions](programme_p4b.do)
 <br>
 
 **INTRODUCTION A LA SEMIOLOGIE GRAPHIQUE (Bénédicte Garnier - Ined-SMS)**

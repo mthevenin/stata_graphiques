@@ -1,5 +1,9 @@
 ---
 title: "Les distributions"
+format:
+  html:
+    code-fold: true
+    code-summary: "Show the code"
 ---
 
 ```{r setup, include=FALSE}
@@ -16,7 +20,7 @@ knitr::opts_chunk$set(engine.path=list(stata=stataexe))
 Principaux outils de visualisations: 
 
 - **Histogrammes**
-- Report des **densités** sous forme de courbe ou d'aires
+- Report des **densités** sous forme de courbes ou d'aires
 - **Boxplot**: résumé synthétique d'indicateurs de distributions (quantiles)
 - **violinplot**: visualisation unifiant boxplot et densités 
   
@@ -55,7 +59,7 @@ tw histogram wage, fc("225 50 67%80") lc(black) lw(*.2) percent
 
 local opts  lc(black) lw(*.2) percent 
 tw histogram wage if !south, fc("247 208 181%80")   `opts'      ///
-|| histogram wage if  south, fc("225 50 67%80")  `opts'         ///
+|| histogram wage if  south, fc("225 50 67%80")     `opts'      ///
 || , legend(order(1 "Not South" 2 "South") region(color(%0)))
 
 
@@ -93,10 +97,140 @@ tw histogram wage , fc("225 50 67%80") lc(black) lw(*.2) percent  by(south, note
 :::
 
 
-
 ## Densités  
 
+* Graphique plébiscité actuellemeny en visualisation 
+* Basé sur des techniques de lissage, plus d'hypthèses que pour l'histogramme
+* Comparaison par empilement des densités sur un même graphique ne pose pas de problème si leur nombre n'est pas trop élevé. 
+* Variantes: 
+  - densité en mirroir
+  - Ajout d'une box plot (*violinplot* - voir plus loin)
 
+* Point de vigilance: 
+  - les valeurs sur l'axe des abscisses peuvent sortir des bornes acceptables, par exemple un âge négatif.
+  
+
+* **Comandes Stata** 
+  * pour le report d'une seule densité, la commande traditionnelle est **`kdensity`**. Ajouter l'option recast(area) si l'on souhaite reporter la densité sous forme d'aire.
+  * **`violinplot`** (B.Jann). Très récente, et très complète. 
+  * **`joyplot`** (A.Naqvi) ou **`gridge`** (MT). Si le nombre de comparaisons devient trop élevé, disons au moins 5-6, on peut utiliser ce type de visualisation, qui standardise les valeurs des densités, et qui permet par de jouer sur le niveau de superposition. 
+
+```{stata filename="Installation violinplot", eval=FALSE}
+
+* Penser à installer les dépendances, en particulier colorpalette
+* Version github
+
+net from https://raw.githubusercontent.com/benjann/violinplot/main/
+net install violinplot, replace
+```
+
+
+**Sans comparaison**
+
+```{stata, eval=FALSE}
+
+* une densité avec kdensity
+kdensity wage, note("")  recast(area) fc("225 50 67") lc(black) lw(*.5) title("")
+
+*  une densité avec violinplot
+violinplot wage, colors("225 50 67") fill p1(lc(black) lw(*.2)) pdf(ll(0))  ///
+left nomed nobox nowhisker
+
+* une densité en mirroir avec liolinplot
+violinplot wage, colors("225 50 67") fill p1(lc(black) lw(*.2))  ///
+nomed nobox nowhisker
+```
+
+
+::: {layout-ncol=3 layout-valign="bottom"}
+
+![Avec **`kdensity`**](imgp4/g10.png)
+
+![Avec **`violinplot`**](imgp4/g11.png)
+
+![**`violinplot`**: densité en mirroir](imgp4/g12.png)
+:::
+
+
+**Avec comparaison**
+
+```{stata, eval=FALSE}
+**** Comparaison
+* Overlay demi Remplissage
+violinplot wage,                                                                            ///
+over(south) overlay horizontal left nomed                                                   ///
+colors("247 208 181" "225 50 67",  opacity(80)) lcolors(black) fill p1(lw(*.2)) p2(lw(*.2)) ///
+legend(order(1 "Not South" 2 "South") region(color(%0)))
+
+* Overlay demi  sans remplissage
+violinplot wage,                                                                            ///
+over(south) overlay horizontal nomed left                                                   ///
+colors("247 208 181" "225 50 67",     opacity(80))                                          ///
+legend(order(1 "Not South" 2 "South") region(color(%0)))    
+
+* Split
+violinplot wage,  split(south) nomed nobox nowhisker   ///
+ colors("247 208 181" "225 50 67")                     ///
+ legend(order(1 "Not South" 2 "South") region(color(%0)))     
+ 
+* Overlay mirroir sans remplissage
+violinplot wage,                                               ///
+over(south) overlay  nomed                                     ///
+colors("247 208 181" "225 50 67")                              ///
+legend(order(1 "Not South" 2 "South") region(color(%0)))    
+
+```
+
+
+::: {layout-ncol=2 layout-valign="bottom"}
+
+![**`violinplot`**: comparaison aire](imgp4/g13.png)
+
+![**`violinplot`**: comparaison courbe](imgp4/g14.png)
+
+![**`violinplot`**: comparaison split](imgp4/g15.png)
+
+![**`violinplot`**: comparaison mirroir overlay](imgp4/g16.png)
+
+
+:::
+
+Quelques précision sur les options de la commande violinplot
+
+- Comme l'objectif n'est que de reporter les densités, on a retiré les éléments figurants dans une *boxplot*  avec **`nomed`**, **`nob`** et **`now`** (syntaxe tronquée).
+- **`over()`** permet de représenter les densités avec les différentes modalités sur un axe discret. On peut empiler sur une même origine l'axe discret avec l'option **`overlay`**.
+- Les estimations de la densités peuvent sortir des bornes acceptables, ici par exemple un salaire horaire négatif. On peut renseigner les limites des bornes avec  **`ll(min)`**, **`ul(max)`** ou **`range(min max)`** comme arguments de l'option **`pdf()`**. Dans l'exemple: `ll(0)` comme valeur minimal de x.
+- Par défaut les densités sont reportées en mirroir (principe de ce type de graphique). on peut retirer une des deux densités avec **`left`** ou **`right`**. 
+- Remarque: pour les couleurs de remplissage, visiblement B.Jann a réduit l'intensité. Je ne suis pas arrivé à rétablir les couleurs d'origine de la palette choisie. 
+
+
+Si le nombre de modalité s'élève, il est préférable de ne pas activer l'option `overlay`, ou d'utiliser un graphique type **ligne de ridge**. Pour cette dernière option j'ai pris ma solution [[**`gridge`**](https://mthevenin.github.io/stata_graphiques/programmation/gridge/gridge.html)] qui permet de contrôler l'ordre des variables reportées sur l'axe discret. On peut également et sans soucis se diriger vers la commanfe **`joyplot`** d'A.Naqvi
+
+```{stata filename="Installation gridge", eval=FALSE}
+
+* Les dépendances sont installées si nécessaire
+
+net install gridge, from("https://raw.githubusercontent.com/mthevenin/stata_graphiques/master/ressources/gridge/") replace
+```
+
+
+```{stata, eval=FALSE}
+recode occupation (9 10 11 12 = 13 )
+
+* violinplot
+violinplot wage,  over(occupation) nomed nobox nowhisker   ///
+colors(tableau)  pdf(ll(0)) fill n(99)
+
+* gridge
+gridge wage, over(occupation) sortrev(mean) range(0 50) palette(tableau) bw(.5)
+```
+
+
+::: {layout-ncol=2 layout-valign="bottom"}
+
+![**`axe discret avec violinplot`**](imgp4/g17.png)
+
+![**`Lignes de ridge avec gridge`**](imgp4/g18.png)
 
 
 [13-03-2023]
