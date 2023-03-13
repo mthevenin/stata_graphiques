@@ -2,6 +2,14 @@
 title: "Les distributions"
 ---
 
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+options(Encoding="UTF-8")
+library(Statamarkdown)
+stataexe <- "C:/Program Files/Stata17/StataSE-64.exe"
+knitr::opts_chunk$set(engine.path=list(stata=stataexe))
+```
+
 
 # Une variable 
 
@@ -25,11 +33,77 @@ Principaux outils de visualisations:
 
 * **Commandes Stata**:
   * **`histogram`**
-  * **`tw histogram`**. Avec l'option `by` permet de faire des graphiques de type *small multiple*  lorsqu'on souhaite comparer une distribution entre différentes catégories.
+  * **`tw histogram`** (de préférence). Avec l'option `by` permet de faire des graphiques de type *small multiple*  lorsqu'on souhaite comparer une distribution entre différentes catégories.  
+ 
+  
+**Exemples**
+
+```{stata, eval=FALSE}
+
+* style appliqué avec grstyle
+
+grstyle init
+grstyle set mesh, compact horizontal
+```
+
+
+```{stata, eval=FALSE}
+  
+tw histogram wage, fc("225 50 67%80") lc(black) lw(*.2) percent
+
+* Empilement histogramme: not good
+
+local opts  lc(black) lw(*.2) percent 
+tw histogram wage if !south, fc("247 208 181%80")   `opts'      ///
+|| histogram wage if  south, fc("225 50 67%80")  `opts'         ///
+|| , legend(order(1 "Not South" 2 "South") region(color(%0)))
+
+
+local opts  fc(%0) lw(*1) percent 
+tw histogram wage if !south, lc("247 208 181%80")    `opts'     ///
+|| histogram wage if  south, lc("225 50 67%80")      `opts'     ///
+|| , legend(order(1 "Not South" 2 "South") region(color(%0)))
+
+
+* Facettes histogrammes: good
+tw histogram wage , fc("225 50 67%80") lc(black) lw(*.2) percent  by(south, note(" ")) 
+```
 
 
 
-[10-03-2023]  
+::: {layout-ncol=2 layout-valign="bottom"}
+
+![Histogramme simple](imgp4/g6.png)
+
+![Empilement Histogrammes: not good ](imgp4/g7.png)
+
+![Empilement Histogrammes: not good ](imgp4/g8.png)
+
+![Facettes Histogrammes: good ](imgp4/g9.png)
+
+:::
+
+
+::: callout-important
+
+## Options `by`: à savoir
+
+* Avec l'option `by`, plusieurs options générales du graphiques: titres, notes... sont à mette en option de `by`. Ici pour supprimer la note: **`by(south, note(""))`** 
+* Il n'est pas possible d'affecter une couleur différente à chaque sous graphique. Si on souhaite modifier les couleurs, il convient alors de faire un graphique combiné, en générant tous les histogrammes individuels. Au final, une opération assez fastidieuse qui n'apporte pas d'information supplémentaire. 
+:::
+
+
+
+## Densités  
+
+
+
+
+[13-03-2023]
+
+
+
+ 
 
 
 
