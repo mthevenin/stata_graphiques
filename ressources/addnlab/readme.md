@@ -18,7 +18,16 @@ Une petite commande sans trop de prétention.
 
 **Exemple Graphique**  
 
+```{}
+sysuse nlsw88, clear
+recode occupation (9 10 11 12 = 13 )
 
+addnlab  occupation 
+gridge wage, over(occupation) sortrev(mean) range(0 50) palette(flare) bw(.5)
+addnlab  occupation, back
+```
+
+<img src="g1.png" width=50%>
 
 
 **Exemple Régression**  
