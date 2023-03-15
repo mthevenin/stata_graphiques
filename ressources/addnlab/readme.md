@@ -13,7 +13,7 @@ Une petite commande sans trop de prétention.
 
 `addnlab varlist  [if/in] , [back]`
 
-* On ne peux pas exécuter deux fois de suite si au moins une variable dans la liste à déjà les effectifs affecter au label. 
+* On ne peut pas exécuter deux fois de suite si au moins une variable dans la liste à déjà les effectifs affecter au label. 
 * On revient au label d'origine en ajoutant l'option **`back`**
 
 **Exemple Graphique**  
