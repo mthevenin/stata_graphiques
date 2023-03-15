@@ -16,7 +16,7 @@ Une petite commande sans trop de prétention.
 * On ne peut pas exécuter deux fois de suite si au moins une variable dans la liste à déjà les effectifs affecter au label. 
 * On revient au label d'origine en ajoutant l'option **`back`**
 
-**Exemple Graphique**  
+**Exemples graphiques**  
 
 ```{}
 sysuse nlsw88, clear
@@ -28,6 +28,26 @@ addnlab  occupation, back
 ```
 
 <img src="g1.png" width=50%>
+
+
+Si on oublie de revenir sur le label d'origine avec l'option `back` et qu'on réexécute de nouveau `addnlab occupation`, le message suivant apparaît.
+
+```}
+addnlab occupation
+
+One or more variables have already observations added to label
+First, execute: addnlab varlist, back
+varlist: previous variable(s) added to addnlab
+```
+
+```{stata, eval=F}
+tw histogram wage, by(occupation, note(" "))    fc("225 50 67%80") lc(black) lw(*.2) percent
+
+* penser à reaffecter le label d'origine
+addnlab  occupation, back
+```
+
+<img src="g2.png" width=50%>
 
 
 **Exemple Régression**  
