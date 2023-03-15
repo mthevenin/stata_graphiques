@@ -221,7 +221,7 @@ violinplot wage,  over(occupation) nomed nobox nowhisker   ///
 colors(tableau)  pdf(ll(0)) fill n(99)
 
 * gridge
-gridge wage, over(occupation) sortrev(mean) range(0 50) palette(tableau) bw(.5)
+gridge wage, over(occupation) sortrev(mean) range(0 50) palette(flare) bw(.5)
 ```
 
 
@@ -233,8 +233,11 @@ gridge wage, over(occupation) sortrev(mean) range(0 50) palette(tableau) bw(.5)
 
 :::
 
+## Graphique synthétique: boxplot et violinplot
 
-[13-03-2023]
+
+
+[14-03-2023]
 
 
 

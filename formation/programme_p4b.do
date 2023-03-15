@@ -46,13 +46,6 @@ left nomed nobox nowhisker
 violinplot wage, colors("225 50 67") fill p1(lc(black) lw(*.2)) ///
 nomed nobox nowhisker
 
-
-violinplot wage,                                                                            ///
-over(south)  horizontal left nomed nobox                                                    ///
-colors("247 208 181" "225 50 67",  opacity(80)) lcolors(black) fill p1(lw(*.2)) p2(lw(*.2)) ///
-legend(order(1 "Not South" 2 "South") region(color(%0)))
-
-
 **** Comparaison
 * Overlay demi Remplissage
 violinplot wage,                                                                            ///
@@ -78,23 +71,56 @@ colors("247 208 181" "225 50 67")                              ///
 legend(order(1 "Not South" 2 "South") region(color(%0)))    
 
 
-
-
-*** Facette
+*** Facette 2 modalités
 violinplot wage,                                                                            ///
 by(south) overlay horizontal left nomed                                                     ///
 colors("225 50 67") lcolors(black) fill                                                     ///
 legend(order(1 "Not South" 2 "South") region(color(%0))) p1(lw(*.5))
 
 
-*** Si trop de modalité sur l'axe discret: préferer l'option over() sans overlay
+*** Si trop de modalités sur l'axe discret: préferer l'option over() sans overlay
 
 recode occupation (9 10 11 12 = 13 )
+**# Bookmark #1
 
 violinplot wage,  over(occupation) nomed nobox nowhisker   ///
-colors(tableau)  pdf(ll(0))
+colors(tableau)  pdf(ll(0)) fill n(99)
 
-gridge wage, over(occupation) sortrev(median) range(0 40)
+gridge wage, over(occupation) sortrev(mean) range(0 50) palette(flare) bw(.5)
+
+
+******* BOXPLOT *******
+
+grstyle set color rocket, n(2) reverse 
+
+local box   "lw(*.5) lc(black)"
+local mark "mlc(black) mlw(*.2) "
+
+graph hbox wage, over(south) asyvars  ///
+ box(1, `box')  box(2, `box')         ///
+mark(1, `mark') mark(2, `mark')       ///
+legend(region(color(%0)))
+
+
+local p "lw(*.5) "
+violinplot wage, over(south) horizontal fill colors(flare, reverse opacity(80) )   ///
+median(msymbol(|) mcolor(black)) pdf(ll(0))                                        ///
+p1(`p') p2(`p') 
+
+local p "lw(*.5) "
+violinplot wage, over(south) horizontal  colors(flare, reverse opacity(80) )       ///
+median( mcolor(white) mlc(black) mlw(*.5)) pdf(ll(0))                              ///
+p1(`p') p2(`p') xlab(0(5)40) box(type(fill))
+
+local p "lw(*.5) "
+violinplot wage, over(south) horizontal fill colors(flare, reverse opacity(80) )   ///
+median(type(line)) pdf(ll(0))                                                      ///
+p1(`p') p2(`p') 
+
+
+
+violinplot wage, split(south) colors(flare, reverse opacity(80))  horizontal           ///
+median(type(line)) pdf(ll(0)) legend(region(color(%0))) 
 
 
 

@@ -13,11 +13,11 @@ website:
   navbar:
     collapse-below: lg
     left:
-      - href: https://mthevenin.github.io/stata_fr/
+      - href: https://mthevenin.github.io/stata_fr/index.html
         text: "Stata Ined"
-      - href: https://mthevenin.github.io/stata_graphiques/
+      - href: https://mthevenin.github.io/stata_graphiques/index.html
         text: "Graphiques"     
-      - href: https://mthevenin.github.io/stata_programmation
+      - href: https://mthevenin.github.io/stata_programmation/index.html
         text: "Programmation" 
         
     right:
