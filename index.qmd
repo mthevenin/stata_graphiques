@@ -9,6 +9,17 @@ library(fontawesome)
 
 
 ::: {.callout-note icon="false"}
+## Ajouter les effectifs sur un axe discret
+
+**`addnlab`**: Petite commande simple d'utilisation qui permet d'ajouter les effectifs sur un axe discret. Fonctionne également avec des graphiques type *small multiple* générés avec l'option `by`.  
+Avec une petite manipulation supplémentaire, on peut également l'utiliser avec des régression.  
+[Présentation](https://mthevenin.github.io/stata_graphiques/programmation/addnlab/addnlab.html)
+
+:::
+
+
+
+::: {.callout-note icon="false"}
 ## Violinplot de Ben Jann... must-have !
 
 Nouvelle commande programmée par Ben Jann pour la visualisation des distributions. Très complète et se hisse, il me semble, au niveau de R et Python (`plotly`) sans problème.  
