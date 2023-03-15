@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Marc Thévenin">
 
-<title>Programmation avec Stata</title>
+<title>addnlab</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -86,26 +87,25 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<link href="./programmation/python/python.html" rel="next">
-<link href="./formation/formation42.html" rel="prev">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -125,37 +125,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-submit-button-title": "Submit"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-topics .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-topics'] = new List('listing-topics', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
@@ -195,7 +165,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  <span class="menu-text"></span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./about.html" rel="" target="">
+    <a class="nav-link" href="../../about.html" rel="" target="">
  <span class="menu-text">A propos</span></a>
   </li>  
 </ul>
@@ -204,7 +174,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </nav>
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Programmation avec Stata</h1>
+      <h1 class="quarto-secondary-nav-title">addnlab</h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -232,7 +202,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./formation/formation.html" class="sidebar-item-text sidebar-link"><strong>Introduction</strong></a>
+  <a href="../../formation/formation.html" class="sidebar-item-text sidebar-link"><strong>Introduction</strong></a>
   </div>
 </li>
           <li class="sidebar-item sidebar-item-section">
@@ -245,22 +215,22 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./formation/formation11.html" class="sidebar-item-text sidebar-link">Types et syntaxe</a>
+  <a href="../../formation/formation11.html" class="sidebar-item-text sidebar-link">Types et syntaxe</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./formation/formation12.html" class="sidebar-item-text sidebar-link">Options: couleur, épaisseur</a>
+  <a href="../../formation/formation12.html" class="sidebar-item-text sidebar-link">Options: couleur, épaisseur</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./formation/formation13.html" class="sidebar-item-text sidebar-link">Options: axes, légende…</a>
+  <a href="../../formation/formation13.html" class="sidebar-item-text sidebar-link">Options: axes, légende…</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./formation/formation14.html" class="sidebar-item-text sidebar-link">Combiner des graphiques</a>
+  <a href="../../formation/formation14.html" class="sidebar-item-text sidebar-link">Combiner des graphiques</a>
   </div>
 </li>
       </ul>
@@ -275,17 +245,17 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./formation/formation21.html" class="sidebar-item-text sidebar-link">Rappels sur les macros</a>
+  <a href="../../formation/formation21.html" class="sidebar-item-text sidebar-link">Rappels sur les macros</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./formation/formation22.html" class="sidebar-item-text sidebar-link">Alleger la syntaxe</a>
+  <a href="../../formation/formation22.html" class="sidebar-item-text sidebar-link">Alleger la syntaxe</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./formation/formation23.html" class="sidebar-item-text sidebar-link">Automatiser la programmation</a>
+  <a href="../../formation/formation23.html" class="sidebar-item-text sidebar-link">Automatiser la programmation</a>
   </div>
 </li>
       </ul>
@@ -300,12 +270,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./formation/formation31.html" class="sidebar-item-text sidebar-link">Palettes de couleurs</a>
+  <a href="../../formation/formation31.html" class="sidebar-item-text sidebar-link">Palettes de couleurs</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./formation/formation32.html" class="sidebar-item-text sidebar-link">Styles-thèmes</a>
+  <a href="../../formation/formation32.html" class="sidebar-item-text sidebar-link">Styles-thèmes</a>
   </div>
 </li>
       </ul>
@@ -320,12 +290,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./formation/formation41.html" class="sidebar-item-text sidebar-link">Introduction</a>
+  <a href="../../formation/formation41.html" class="sidebar-item-text sidebar-link">Introduction</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./formation/formation42.html" class="sidebar-item-text sidebar-link">Les distributions</a>
+  <a href="../../formation/formation42.html" class="sidebar-item-text sidebar-link">Les distributions</a>
   </div>
 </li>
       </ul>
@@ -334,20 +304,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">Programmation</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">Programmation</a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./Stata.html" class="sidebar-item-text sidebar-link active">Programmation avec Stata</a>
+  <a href="../../Stata.html" class="sidebar-item-text sidebar-link">Programmation avec Stata</a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./programmation/python/python.html" class="sidebar-item-text sidebar-link">Programmation avec Python</a>
+  <a href="../../programmation/python/python.html" class="sidebar-item-text sidebar-link">Programmation avec Python</a>
   </div>
 </li>
       </ul>
@@ -358,19 +328,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(5)</span></div><div class="category" data-category="ado">ado <span class="quarto-category-count">(4)</span></div><div class="category" data-category="barre">barre <span class="quarto-category-count">(1)</span></div><div class="category" data-category="courbe">courbe <span class="quarto-category-count">(1)</span></div><div class="category" data-category="densité">densité <span class="quarto-category-count">(1)</span></div><div class="category" data-category="distribution">distribution <span class="quarto-category-count">(2)</span></div><div class="category" data-category="histogramme">histogramme <span class="quarto-category-count">(1)</span></div><div class="category" data-category="labels">labels <span class="quarto-category-count">(1)</span></div><div class="category" data-category="programmation">programmation <span class="quarto-category-count">(1)</span></div></div></div>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title d-none d-lg-block">Programmation avec Stata</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
-</div>
+<div class="quarto-title-block"><div><h1 class="title d-none d-lg-block">addnlab</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+  <div class="quarto-categories">
+    <div class="quarto-category">ado</div>
+    <div class="quarto-category">labels</div>
+  </div>
+  </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Marc Thévenin </p>
+          </div>
+  </div>
     
   
     
@@ -379,203 +359,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<p>Vous trouverez ici de courts topics concernant la programmation de graphiques avec Stata, qui seront inclus au quatrième chapitre de la formation.</p>
-<p>Les articles sont filtrables par catégorie, comme dans un blog. Chaque article aura soit une catégorie <strong>programmation</strong> soit une catégorie <strong>ado</strong>:</p>
+<p>Une petite commande sans grande prétention, mais peut-être utile.</p>
 <ul>
-<li>programmation: article orienté vers des astuces de programmation</li>
-<li>ado: article présentant une commande externe</li>
+<li>Permet d’ajouter sur l’axe discret d’un graphique, le nombre d’observations de chaque modalité</li>
+<li>On peut également l’utiliser, avec une manipulation supplémentaire, pour les modèles</li>
 </ul>
-<p><br><br></p>
-<div id="listing-topics" class="quarto-listing quarto-listing-container-default">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="programmation,barre" data-listing-file-modified-sort="1664540741167" data-listing-reading-time-sort="1.505">
-<div class="thumbnail">
-<p><a href="./programmation/lollipop/lollipop.html"> <img src="./programmation/lollipop/g1.png" class="thumnail-image"> </a></p>
+<p><strong>Installation</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>net install addnlab, from(<span class="st">"https://raw.githubusercontent.com/mthevenin/stata_graphiques/master/ressources/addnlab/"</span>) <span class="kw">replace</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="body">
-<a href="./programmation/lollipop/lollipop.html">
-<h3 class="no-anchor listing-title">
-Lollipop
-</h3>
-<div class="listing-subtitle">
-
+<p><strong>Syntaxe</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>addnlab <span class="kw">varlist</span>  [<span class="kw">if</span>/<span class="kw">in</span>] , [back]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('programmation'); return false;">
-programmation
+<ul>
+<li>On ne peut pas exécuter deux fois de suite si au moins une variable dans la liste à déjà les effectifs affecter au label.</li>
+<li>On revient au label d’origine en ajoutant l’option back</li>
+</ul>
+<p><strong>Exemple Graphique</strong></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">sysuse</span> nlsw88, <span class="kw">clear</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">recode</span> occupation (9 10 11 12 = 13 )</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>addnlab  occupation </span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>gridge wage, <span class="bn">over</span>(occupation) sortrev(<span class="kw">mean</span>) <span class="kw">range</span>(0 50) <span class="kw">palette</span>(flare) bw(.5)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>addnlab  occupation, back</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="listing-category" onclick="window.quartoListingCategory('barre'); return false;">
-barre
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><a href="g1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="g1.png" class="img-fluid figure-img" style="width:70.0%"></a></p>
+</figure>
 </div>
-</div>
-<a href="./programmation/lollipop/lollipop.html">
-<div class="listing-description">
-<strong>Lolliplot et haltère: pourquoi faire compliquer lorsque…..</strong><br>
-J’étais complétement passé à côte de la fonction <strong><code>axis</code></strong> du package <strong><code>egenmore</code></strong> de Nj.Cox. Elle permet de construire un axe discret ordonné en récupérant automatiquement les labels d’une variable. Les programmes de la…<strong></strong><strong></strong>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./programmation/lollipop/lollipop.html">
-<div class="listing-author">
-Marc Thévenin
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="ado,labels" data-listing-file-modified-sort="1678884040249" data-listing-reading-time-sort="0.56">
-<div class="thumbnail">
-<p><a href="./programmation/addnlab/addnlab.html"> <img src="./programmation/addnlab/g1.png" class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./programmation/addnlab/addnlab.html">
-<h3 class="no-anchor listing-title">
-addnlab
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('ado'); return false;">
-ado
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('labels'); return false;">
-labels
-</div>
-</div>
-<a href="./programmation/addnlab/addnlab.html">
-<div class="listing-description">
-Une petite commande sans grande prétention, mais peut-être utile.
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./programmation/addnlab/addnlab.html">
-<div class="listing-author">
-Marc Thévenin
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="ado,courbe" data-listing-file-modified-sort="1678800783186" data-listing-reading-time-sort="1.995">
-<div class="thumbnail">
-<p><a href="./programmation/fabplot/fabplot.html"> <img src="./programmation/fabplot/g1.png" class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./programmation/fabplot/fabplot.html">
-<h3 class="no-anchor listing-title">
-fabplot (NJ.Cox)
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('ado'); return false;">
-ado
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('courbe'); return false;">
-courbe
-</div>
-</div>
-<a href="./programmation/fabplot/fabplot.html">
-<div class="listing-description">
-La commande <strong><code>fabplot</code></strong> programmée en 2021 par Nj.Cox permet de contrôler efficacement les effets dits <em>spaghetti</em> (courbes) ou <em>paella</em> (nuages de points). J’ai ajouté une option pour modifier les courbes au second plan, NJ.Cox ayant toujours tendance à bloquer l’habillage de ces…<strong><code></code></strong>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./programmation/fabplot/fabplot.html">
-<div class="listing-author">
-Marc Thévenin
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="ado,distribution,histogramme" data-listing-file-modified-sort="1678878278063" data-listing-reading-time-sort="0.455">
-<div class="thumbnail">
-<p><a href="./programmation/gjoint/gjoint.html"> <img src="./programmation/gjoint/g1.png" class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./programmation/gjoint/gjoint.html">
-<h3 class="no-anchor listing-title">
-gjoint
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('ado'); return false;">
-ado
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('distribution'); return false;">
-distribution
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('histogramme'); return false;">
-histogramme
-</div>
-</div>
-<a href="./programmation/gjoint/gjoint.html">
-<div class="listing-description">
-Petite commande graphique en version alpha: <strong><code>gjoint</code></strong>. Permet de visualiser la distribution croisée de deux variables quantitatives avec la commande <strong><code>hexplot</code></strong> de Ben Jann, en reportant également les distributions marginales…<br>
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./programmation/gjoint/gjoint.html">
-<div class="listing-author">
-Marc Thévenin
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="ado,distribution,densité" data-listing-file-modified-sort="1678345595398" data-listing-reading-time-sort="5.375">
-<div class="thumbnail">
-<p><a href="./programmation/gridge/gridge.html"> <img src="./programmation/gridge/g1.png" class="thumnail-image"> </a></p>
-</div>
-<div class="body">
-<a href="./programmation/gridge/gridge.html">
-<h3 class="no-anchor listing-title">
-gridge
-</h3>
-<div class="listing-subtitle">
-
-</div>
-</a>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('ado'); return false;">
-ado
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('distribution'); return false;">
-distribution
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('densité'); return false;">
-densité
-</div>
-</div>
-<a href="./programmation/gridge/gridge.html">
-<div class="listing-description">
-Depuis 2020, des programmes permettent de générer de type lignes de crête: <code>joyplot</code> (A.Naqvi) et <code>joy_plot</code> (F.Rios-Avila).
-</div>
-</a>
-</div>
-<div class="metadata">
-<a href="./programmation/gridge/gridge.html">
-<div class="listing-author">
-Marc Thévenin
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div>
-
+<p><strong>Exemple régression</strong></p>
+<p>Voir exemple <a href="https://github.com/mthevenin/stata_graphiques/blob/main/ressources/addnlab/readme.md">ici</a></p>
 
 
 <!-- -->
@@ -851,50 +667,66 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
 });
-</script>
-<nav class="page-navigation">
-  <div class="nav-page nav-page-previous">
-      <a href="./formation/formation42.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Les distributions</span>
-      </a>          
-  </div>
-  <div class="nav-page nav-page-next">
-      <a href="./programmation/python/python.html" class="pagination-link">
-        <span class="nav-page-text">Programmation avec Python</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
-  </div>
-</nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Programmation avec Stata"</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">listing:</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co">  categories: true</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co">  id: topics</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co">  feed: true</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co">#  type: table</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">  table-striped: true</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">  table-hover: true</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">  contents:</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">    - "programmation/gjoint/gjoint.qmd"</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co">    - "programmation/gridge/gridge.qmd"</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co">    - "programmation/lollipop/lollipop.qmd" </span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">    - "programmation/fabplot/fabplot.qmd" </span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="co">    - "programmation/addnlab/addnlab.qmd"          </span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>Vous trouverez ici de courts topics concernant la programmation de graphiques avec Stata, qui seront inclus au quatrième chapitre de la formation.   </span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>Les articles sont filtrables par catégorie, comme dans un blog.  Chaque article aura soit une catégorie **programmation** soit une catégorie **ado**:   </span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>programmation: article orienté vers des astuces de programmation </span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>ado: article présentant une commande externe</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;br&gt;&lt;br&gt;</span></span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>::: {#topics}</span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb4" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "addnlab"</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="an">author:</span><span class="co"> "Marc Thévenin"</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">  - ado</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co">  - labels</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup, include=FALSE}</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">Encoding=</span><span class="st">"UTF-8"</span>)</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Statamarkdown)</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>stataexe <span class="ot">&lt;-</span> <span class="st">"C:/Program Files/Stata17/StataSE-64.exe"</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">engine.path=</span><span class="fu">list</span>(<span class="at">stata=</span>stataexe))</span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a>Une petite commande sans grande prétention, mais peut-être utile.</span>
+<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>Permet d'ajouter sur l'axe discret d'un graphique, le nombre d'observations de chaque modalité</span>
+<span id="cb4-21"><a href="#cb4-21" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>On peut également l'utiliser, avec une manipulation supplémentaire, pour les modèles</span>
+<span id="cb4-22"><a href="#cb4-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-23"><a href="#cb4-23" aria-hidden="true" tabindex="-1"></a>**Installation**</span>
+<span id="cb4-24"><a href="#cb4-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-25"><a href="#cb4-25" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=F}</span></span>
+<span id="cb4-26"><a href="#cb4-26" aria-hidden="true" tabindex="-1"></a><span class="in">net install addnlab, from("https://raw.githubusercontent.com/mthevenin/stata_graphiques/master/ressources/addnlab/") replace</span></span>
+<span id="cb4-27"><a href="#cb4-27" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-28"><a href="#cb4-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-29"><a href="#cb4-29" aria-hidden="true" tabindex="-1"></a>**Syntaxe**</span>
+<span id="cb4-30"><a href="#cb4-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-31"><a href="#cb4-31" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=F}</span></span>
+<span id="cb4-32"><a href="#cb4-32" aria-hidden="true" tabindex="-1"></a><span class="in">addnlab varlist  [if/in] , [back]</span></span>
+<span id="cb4-33"><a href="#cb4-33" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-34"><a href="#cb4-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-35"><a href="#cb4-35" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>On ne peut pas exécuter deux fois de suite si au moins une variable dans la liste à déjà les effectifs affecter au label.</span>
+<span id="cb4-36"><a href="#cb4-36" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>On revient au label d'origine en ajoutant l'option back</span>
+<span id="cb4-37"><a href="#cb4-37" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-38"><a href="#cb4-38" aria-hidden="true" tabindex="-1"></a>**Exemple Graphique**</span>
+<span id="cb4-39"><a href="#cb4-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-40"><a href="#cb4-40" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=F}</span></span>
+<span id="cb4-41"><a href="#cb4-41" aria-hidden="true" tabindex="-1"></a><span class="in">sysuse nlsw88, clear</span></span>
+<span id="cb4-42"><a href="#cb4-42" aria-hidden="true" tabindex="-1"></a><span class="in">recode occupation (9 10 11 12 = 13 )</span></span>
+<span id="cb4-43"><a href="#cb4-43" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-44"><a href="#cb4-44" aria-hidden="true" tabindex="-1"></a><span class="in">addnlab  occupation </span></span>
+<span id="cb4-45"><a href="#cb4-45" aria-hidden="true" tabindex="-1"></a><span class="in">gridge wage, over(occupation) sortrev(mean) range(0 50) palette(flare) bw(.5)</span></span>
+<span id="cb4-46"><a href="#cb4-46" aria-hidden="true" tabindex="-1"></a><span class="in">addnlab  occupation, back</span></span>
+<span id="cb4-47"><a href="#cb4-47" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb4-48"><a href="#cb4-48" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-49"><a href="#cb4-49" aria-hidden="true" tabindex="-1"></a><span class="al">![](g1.png)</span>{width=70%}</span>
+<span id="cb4-50"><a href="#cb4-50" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-51"><a href="#cb4-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-52"><a href="#cb4-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-53"><a href="#cb4-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-54"><a href="#cb4-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-55"><a href="#cb4-55" aria-hidden="true" tabindex="-1"></a>**Exemple régression**</span>
+<span id="cb4-56"><a href="#cb4-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-57"><a href="#cb4-57" aria-hidden="true" tabindex="-1"></a>Voir exemple <span class="co">[</span><span class="ot">ici</span><span class="co">](https://github.com/mthevenin/stata_graphiques/blob/main/ressources/addnlab/readme.md)</span></span>
+<span id="cb4-58"><a href="#cb4-58" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-59"><a href="#cb4-59" aria-hidden="true" tabindex="-1"></a></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
@@ -902,6 +734,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       <div class="nav-footer-center">Marc Thévenin - Ined-Sms - Mars 2023</div>
   </div>
 </footer>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","openEffect":"zoom","loop":true,"descPosition":"bottom"});</script>
 
 
 

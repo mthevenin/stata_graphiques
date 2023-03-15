@@ -11,7 +11,8 @@ listing:
     - "programmation/gjoint/gjoint.qmd"
     - "programmation/gridge/gridge.qmd"
     - "programmation/lollipop/lollipop.qmd" 
-    - "programmation/fabplot/fabplot.qmd"     
+    - "programmation/fabplot/fabplot.qmd" 
+    - "programmation/addnlab/addnlab.qmd"          
 ---
 
 Vous trouverez ici de courts topics concernant la programmation de graphiques avec Stata, qui seront inclus au quatrième chapitre de la formation.   
