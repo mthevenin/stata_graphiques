@@ -50,8 +50,6 @@ addnlab  occupation, back
 
 
 
-
-
 **Exemple régression**
 
 Voir exemple [ici](https://github.com/mthevenin/stata_graphiques/blob/main/ressources/addnlab/readme.md)
