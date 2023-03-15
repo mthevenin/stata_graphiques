@@ -1,8 +1,0 @@
-d 2023-03-15
-d commande      : addnlab
-d auteur        : Marc Thevenin
-d affiliation   : ined-sms
-d support       : marc.thevenin@ined.fr
-d               : https://mthevenin.github.io/stata_graphiques/
-
-p addnlab        : ajout des effectifs sur axe discret
