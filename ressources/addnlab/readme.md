@@ -24,7 +24,6 @@ recode occupation (9 10 11 12 = 13 )
 
 addnlab  occupation 
 gridge wage, over(occupation) sortrev(mean) range(0 50) palette(flare) bw(.5)
-addnlab  occupation, back
 ```
 
 <img src="g1.png" width=50%>
@@ -32,18 +31,16 @@ addnlab  occupation, back
 
 Si on oublie de revenir sur le label d'origine avec l'option `back` et qu'on réexécute de nouveau `addnlab occupation`, le message suivant apparaît.
 
-```}
+```{
 addnlab occupation
 
-One or more variables have already observations added to label
+One or more variables have already the number of observations added to label
 First, execute: addnlab varlist, back
 varlist: previous variable(s) added to addnlab
 ```
 
 ```{stata, eval=F}
 tw histogram wage, by(occupation, note(" "))    fc("225 50 67%80") lc(black) lw(*.2) percent
-
-* penser à reaffecter le label d'origine
 addnlab  occupation, back
 ```
 
@@ -52,8 +49,7 @@ addnlab  occupation, back
 
 **Exemple Régression**  
 
-La manipulation supplémentaire est particulièrement simple: On exécute le modèle une première pour récupérer **`e(sample)`**. Puis on l'affect à `addnlab` comme expression de sélection des observationss.  
-
+La manipulation supplémentaire est particulièrement simple: On exécute le modèle une première pour récupérer la sélection de l'échantillon avec **`e(sample)`**. 
 
 ```{}
 sysuse nlsw88, clear
@@ -92,12 +88,15 @@ Professional/Technical  |      0.000  (base)
 -----------------------------------------------------------------------------------------
 ```
 
+On affecte enfin `e(sample)` à `addnlab`.  
+
+
 ```{}
 addnlab married occupation south race if e(sample)
 
 regress wage  i.occupation i.south i.race ttl_exp if married==1
 
-addnlab married occupation south race, back  // ne pas oublier
+addnlab married occupation south race, back
 ```
 
 ```{}
