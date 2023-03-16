@@ -1,8 +1,8 @@
 
 Une petite commande sans trop de prétention.  
 
-* Permet d'ajouter sur l'axe discret d'un graphique, le nombre d'observations de chaque modalité
-* On peut également l'utiliser, avec une manipulation supplémentaire, pour les modèles
+* Permet d'ajouter sur l'axe discret d'un graphique, le nombre d'observations de chaque modalité.
+* On peut également l'utiliser, avec une manipulation supplémentaire, pour les modèles.
 
 **Installation**  
 
@@ -14,7 +14,7 @@ Une petite commande sans trop de prétention.
 `addnlab varlist  [if/in] , [back]`
 
 * On ne peut pas exécuter deux fois de suite si au moins une variable dans la liste à déjà les effectifs affecter au label. 
-* On revient au label d'origine en ajoutant l'option **`back`**
+* On revient au label d'origine en ajoutant l'option **`back`**.
 
 **Exemples graphiques**  
 
