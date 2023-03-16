@@ -18,7 +18,6 @@ Avec une petite manipulation supplémentaire, on peut également l'utiliser avec
 :::
 
 
-
 ::: {.callout-note icon="false"}
 ## Violinplot de Ben Jann... must-have !
 

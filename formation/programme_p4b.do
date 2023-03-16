@@ -80,7 +80,7 @@ legend(order(1 "Not South" 2 "South") region(color(%0))) p1(lw(*.5))
 
 *** Si trop de modalités sur l'axe discret: préferer l'option over() sans overlay
 
-recode occupation (9 10 11 12 = 13 )
+recode occupation (9 10 11 12 = 13)
 **# Bookmark #1
 
 violinplot wage,  over(occupation) nomed nobox nowhisker   ///
@@ -91,7 +91,9 @@ gridge wage, over(occupation) sortrev(mean) range(0 50) palette(flare) bw(.5)
 
 ******* BOXPLOT *******
 
-grstyle set color rocket, n(2) reverse 
+grstyle init
+grstyle set mesh
+grstyle set color crest , n(2) reverse 
 
 local box   "lw(*.5) lc(black)"
 local mark "mlc(black) mlw(*.2) "
@@ -103,23 +105,22 @@ legend(region(color(%0)))
 
 
 local p "lw(*.5) "
-violinplot wage, over(south) horizontal fill colors(flare, reverse opacity(80) )   ///
+violinplot wage, over(south) horizontal fill colors(crest, reverse opacity(80) )   ///
 median(msymbol(|) mcolor(black)) pdf(ll(0))                                        ///
 p1(`p') p2(`p') 
 
 local p "lw(*.5) "
-violinplot wage, over(south) horizontal  colors(flare, reverse opacity(80) )       ///
+violinplot wage, over(south) horizontal  colors(crest, reverse opacity(80) )       ///
 median( mcolor(white) mlc(black) mlw(*.5)) pdf(ll(0))                              ///
 p1(`p') p2(`p') xlab(0(5)40) box(type(fill))
 
 local p "lw(*.5) "
-violinplot wage, over(south) horizontal fill colors(flare, reverse opacity(80) )   ///
+violinplot wage, over(south) horizontal fill colors(crest, reverse opacity(80) )   ///
 median(type(line)) pdf(ll(0))                                                      ///
 p1(`p') p2(`p') 
 
 
-
-violinplot wage, split(south) colors(flare, reverse opacity(80))  horizontal           ///
+violinplot wage, split(south) colors(crest, reverse opacity(80))  horizontal       ///
 median(type(line)) pdf(ll(0)) legend(region(color(%0))) 
 
 

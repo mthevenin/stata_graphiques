@@ -15,7 +15,6 @@ library(memisc)
 library(fontawesome)
 ```
 
-
 **todo**   
 
 ::: {.callout-important}
@@ -25,7 +24,6 @@ library(fontawesome)
 * Chapitre 4: visualisation des données avec Stata.Version précédente pas satisfaisante
 * Chapitre 5: principalement réservé à l'exécution de graphique avec Python sous Stata, principalement avec **seaborn** et **plotnine**, ainsi que quelques graphiques intéractifs avec **plotly**
 :::
-
 
 **Les programmes des chapitres sont disponibles aux adresses suivantes**: 
 
@@ -41,5 +39,3 @@ library(fontawesome)
 Lien vers le document: [`r fa("file-pdf", fill = "steelblue", margin_right="1em")`](BGIntro_ppt.pdf)
 
 <iframe src="BGIntro_ppt.pdf" height="500" width="900" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay"></iframe>
-
-
