@@ -2,12 +2,6 @@
 .Rhistory
 .RData
 .Ruserdata
-*.md
-
-ressources/gridge/readme.md
-ressources/addnlab/readme.md
-ressources/fabplot2/readme.md
-ressources/gjoint/readme.md
 
 /.quarto/
 /_*.local

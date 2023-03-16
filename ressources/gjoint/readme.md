@@ -1,3 +1,4 @@
+
 Petite commande graphique en version alpha: **`gjoint`**. Permet de visualiser la distribution croisée de deux variables quantitatives avec la commande **`hexplot`** de Ben Jann, en reportant également les distributions marginales avec des d'histogrammes.  
 Pas de gros changement à prévoir, si ce n'est ajouter la possibilité de sélectionner des observations.  
 
