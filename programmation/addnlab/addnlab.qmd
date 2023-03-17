@@ -75,7 +75,7 @@ varlist: previous variable(s) added to addnlab
 
 **Exemple régression**
 
-Voir exemple [ici](https://github.com/mthevenin/stata_graphiques/blob/main/ressources/addnlab/readme.md)
+Voir exemple [ici](https://github.com/mthevenin/stata_graphiques/blob/main/ressources/addnlab/README.md)
 
 
 
