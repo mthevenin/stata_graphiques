@@ -10,6 +10,9 @@ categories:
   - ado
   - distribution
   - densité
+filters:
+   - lightbox
+lightbox: auto
 ---
 
 Depuis 2020, des programmes permettent de générer de type lignes de crête: `joyplot` (A.Naqvi) et `joy_plot` (F.Rios-Avila).

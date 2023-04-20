@@ -9,6 +9,9 @@ format:
 categories:
   - ado
   - courbe
+filters:
+   - lightbox
+lightbox: auto
 ---
 
 

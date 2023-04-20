@@ -1,6 +1,14 @@
 ---
 title: "Programmation avec Python"
 fig-cap-location: top
+format: 
+  html: default
+  docx:
+    toc: true
+    number-sections: true
+filters:
+   - lightbox
+lightbox: auto
 ---
 
 ```{r setup, include=FALSE}

@@ -9,8 +9,10 @@ format:
 categories:
   - programmation
   - barre
+filters:
+   - lightbox
+lightbox: auto
 ---
-
 
 **Lolliplot et haltère: pourquoi faire compliquer lorsque.....**        
 J'étais complétement passé à côte de la fonction **`axis`** du package **`egenmore`** de Nj.Cox. Elle permet de construire un axe discret ordonné en récupérant automatiquement les labels d'une variable. Les programmes de la version 2000 pour générer des graphiques de types **lollipop** ou **haltères**, qui étaient particulièrement complexes et long se retouvent, et pas qu'un peu, extrêmement simplifiés:  
