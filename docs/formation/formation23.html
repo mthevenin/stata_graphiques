@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.179">
+<meta name="generator" content="quarto-1.3.330">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,9 +17,10 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
 pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -46,43 +47,13 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -170,14 +141,21 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
  <span class="menu-text">A propos</span></a>
   </li>  
 </ul>
+            <div class="quarto-navbar-tools">
+</div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
     </nav>
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Automatiser la programmation</h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../formation/formation.html">Formation</a></li><li class="breadcrumb-item"><a href="../formation/formation21.html"><strong>Macros</strong></a></li><li class="breadcrumb-item"><a href="../formation/formation23.html">Automatiser la programmation</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav>
@@ -185,118 +163,135 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation docked overflow-auto">
-      <div class="mt-2 flex-shrink-0 align-items-center">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">Formation</a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Formation</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../formation/formation.html" class="sidebar-item-text sidebar-link"><strong>Introduction</strong></a>
+  <a href="../formation/formation.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><strong>Introduction</strong></span></a>
   </div>
 </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false"><strong>Syntaxe</strong></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+ <span class="menu-text"><strong>Syntaxe</strong></span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../formation/formation11.html" class="sidebar-item-text sidebar-link">Types et syntaxe</a>
+  <a href="../formation/formation11.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Types et syntaxe</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../formation/formation12.html" class="sidebar-item-text sidebar-link">Options: couleur, épaisseur</a>
+  <a href="../formation/formation12.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Options: couleur, épaisseur</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../formation/formation13.html" class="sidebar-item-text sidebar-link">Options: axes, légende…</a>
+  <a href="../formation/formation13.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Options: axes, légende…</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../formation/formation14.html" class="sidebar-item-text sidebar-link">Combiner des graphiques</a>
+  <a href="../formation/formation14.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Combiner des graphiques</span></a>
   </div>
 </li>
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true"><strong>Macros</strong></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
+ <span class="menu-text"><strong>Macros</strong></span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../formation/formation21.html" class="sidebar-item-text sidebar-link">Rappels sur les macros</a>
+  <a href="../formation/formation21.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Rappels sur les macros</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../formation/formation22.html" class="sidebar-item-text sidebar-link">Alleger la syntaxe</a>
+  <a href="../formation/formation22.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Alleger la syntaxe</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../formation/formation23.html" class="sidebar-item-text sidebar-link active">Automatiser la programmation</a>
+  <a href="../formation/formation23.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Automatiser la programmation</span></a>
   </div>
 </li>
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false"><strong>Palettes et styles</strong></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+ <span class="menu-text"><strong>Palettes et styles</strong></span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../formation/formation31.html" class="sidebar-item-text sidebar-link">Palettes de couleurs</a>
+  <a href="../formation/formation31.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Palettes de couleurs</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../formation/formation32.html" class="sidebar-item-text sidebar-link">Styles-thèmes</a>
+  <a href="../formation/formation32.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Styles-thèmes</span></a>
   </div>
 </li>
       </ul>
   </li>
           <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false"><strong>Visualisations</strong></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+ <span class="menu-text"><strong>Visualisations</strong></span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../formation/formation41.html" class="sidebar-item-text sidebar-link">Introduction</a>
+  <a href="../formation/formation41.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../formation/formation42.html" class="sidebar-item-text sidebar-link">Les distributions</a>
+  <a href="../formation/formation42.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Les distributions</span></a>
   </div>
 </li>
       </ul>
@@ -305,20 +300,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">Programmation</a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
+ <span class="menu-text">Programmation</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../Stata.html" class="sidebar-item-text sidebar-link">Programmation avec Stata</a>
+  <a href="../Stata.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programmation avec Stata</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../programmation/python/python.html" class="sidebar-item-text sidebar-link">Programmation avec Python</a>
+  <a href="../programmation/python/python.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Programmation avec Python</span></a>
   </div>
 </li>
       </ul>
@@ -326,29 +324,34 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Sections</h2>
    
   <ul>
-  <li><a href="#macros-empilées" id="toc-macros-empilées" class="nav-link active" data-scroll-target="#macros-empilées"><span class="toc-section-number">1</span>  <strong>Macros empilées</strong></a>
+  <li><a href="#macros-empilées" id="toc-macros-empilées" class="nav-link active" data-scroll-target="#macros-empilées"><span class="header-section-number">1</span> <strong>Macros empilées</strong></a>
   <ul class="collapse">
-  <li><a href="#syntaxe-type" id="toc-syntaxe-type" class="nav-link" data-scroll-target="#syntaxe-type"><span class="toc-section-number">1.1</span>  <strong>Syntaxe type</strong></a></li>
-  <li><a href="#automatiser-la-création-du-graphique" id="toc-automatiser-la-création-du-graphique" class="nav-link" data-scroll-target="#automatiser-la-création-du-graphique"><span class="toc-section-number">1.2</span>  <strong>Automatiser la création du graphique</strong></a></li>
-  <li><a href="#générer-une-légende" id="toc-générer-une-légende" class="nav-link" data-scroll-target="#générer-une-légende"><span class="toc-section-number">1.3</span>  <strong>Générer une légende</strong></a></li>
+  <li><a href="#syntaxe-type" id="toc-syntaxe-type" class="nav-link" data-scroll-target="#syntaxe-type"><span class="header-section-number">1.1</span> <strong>Syntaxe type</strong></a></li>
+  <li><a href="#automatiser-la-création-du-graphique" id="toc-automatiser-la-création-du-graphique" class="nav-link" data-scroll-target="#automatiser-la-création-du-graphique"><span class="header-section-number">1.2</span> <strong>Automatiser la création du graphique</strong></a></li>
+  <li><a href="#générer-une-légende" id="toc-générer-une-légende" class="nav-link" data-scroll-target="#générer-une-légende"><span class="header-section-number">1.3</span> <strong>Générer une légende</strong></a></li>
   </ul></li>
-  <li><a href="#routine-.ado" id="toc-routine-.ado" class="nav-link" data-scroll-target="#routine-.ado"><span class="toc-section-number">2</span>  <strong>Routine (.ado)</strong></a></li>
+  <li><a href="#routine-.ado" id="toc-routine-.ado" class="nav-link" data-scroll-target="#routine-.ado"><span class="header-section-number">2</span> <strong>Routine (.ado)</strong></a></li>
   </ul>
-</nav>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="formation23.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<div class="quarto-title-block"><div><h1 class="title d-none d-lg-block">Automatiser la programmation</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
-</div>
+<div class="quarto-title-block"><div><h1 class="title">Automatiser la programmation</h1><button type="button" class="btn code-tools-button" id="quarto-code-tools-source"><i class="bi"></i> Code</button></div></div>
+  <div class="quarto-categories">
+    <div class="quarto-category">ado</div>
+    <div class="quarto-category">labels</div>
+  </div>
+  </div>
 
 
 
@@ -362,13 +365,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<div class="callout callout-style-default callout-caution callout-captioned">
+<div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
-Danger
+<div class="callout-title-container flex-fill">
+Caution
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -709,9 +712,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -967,375 +984,392 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <div class="sourceCode" id="cb23" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Automatiser la programmation"</span></span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="an">fig-cap-location:</span><span class="co"> top</span></span>
-<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup, include=FALSE}</span></span>
-<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">Encoding=</span><span class="st">"UTF-8"</span>)</span>
-<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Statamarkdown)</span>
-<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a>stataexe <span class="ot">&lt;-</span> <span class="st">"C:/Program Files/Stata17/StataSE-64.exe"</span></span>
-<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">engine.path=</span><span class="fu">list</span>(<span class="at">stata=</span>stataexe))</span>
-<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a>::: callout-caution</span>
-<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a>Les informations qui vont suivre demande un minimum de pratique avec la manipulation des macros Stata.</span>
-<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a><span class="fu"># **Macros empilées**</span></span>
-<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a>Le principe est plutôt simple, il s'agit lors d'une expression en boucle de conserver et empiler les expressions générées à chaque itération, et les enregistrer dans une macro.</span>
-<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a><span class="fu">## **Syntaxe type**</span></span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a><span class="co">  html: default</span></span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a><span class="co">  docx:</span></span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a><span class="co">    toc: true</span></span>
+<span id="cb23-8"><a href="#cb23-8" aria-hidden="true" tabindex="-1"></a><span class="co">    number-sections: true</span></span>
+<span id="cb23-9"><a href="#cb23-9" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span></span>
+<span id="cb23-10"><a href="#cb23-10" aria-hidden="true" tabindex="-1"></a><span class="co">  - ado</span></span>
+<span id="cb23-11"><a href="#cb23-11" aria-hidden="true" tabindex="-1"></a><span class="co">  - labels</span></span>
+<span id="cb23-12"><a href="#cb23-12" aria-hidden="true" tabindex="-1"></a><span class="an">filters:</span></span>
+<span id="cb23-13"><a href="#cb23-13" aria-hidden="true" tabindex="-1"></a><span class="co">   - lightbox</span></span>
+<span id="cb23-14"><a href="#cb23-14" aria-hidden="true" tabindex="-1"></a><span class="an">lightbox:</span><span class="co"> auto</span></span>
+<span id="cb23-15"><a href="#cb23-15" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb23-16"><a href="#cb23-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-17"><a href="#cb23-17" aria-hidden="true" tabindex="-1"></a><span class="in">```{r setup, include=FALSE}</span></span>
+<span id="cb23-18"><a href="#cb23-18" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb23-19"><a href="#cb23-19" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">Encoding=</span><span class="st">"UTF-8"</span>)</span>
+<span id="cb23-20"><a href="#cb23-20" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(Statamarkdown)</span>
+<span id="cb23-21"><a href="#cb23-21" aria-hidden="true" tabindex="-1"></a>stataexe <span class="ot">&lt;-</span> <span class="st">"C:/Program Files/Stata17/StataSE-64.exe"</span></span>
+<span id="cb23-22"><a href="#cb23-22" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">engine.path=</span><span class="fu">list</span>(<span class="at">stata=</span>stataexe))</span>
+<span id="cb23-23"><a href="#cb23-23" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-24"><a href="#cb23-24" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-25"><a href="#cb23-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a>Exemple : On veut obtenir la chaîne de caractère «A B C » à partir des trois éléments distincts « A », « B » et « C ».</span>
-<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-28"><a href="#cb23-28" aria-hidden="true" tabindex="-1"></a>Avec une macro standard:</span>
+<span id="cb23-26"><a href="#cb23-26" aria-hidden="true" tabindex="-1"></a>::: callout-caution</span>
+<span id="cb23-27"><a href="#cb23-27" aria-hidden="true" tabindex="-1"></a>Les informations qui vont suivre demande un minimum de pratique avec la manipulation des macros Stata.</span>
+<span id="cb23-28"><a href="#cb23-28" aria-hidden="true" tabindex="-1"></a>:::</span>
 <span id="cb23-29"><a href="#cb23-29" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-30"><a href="#cb23-30" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
-<span id="cb23-31"><a href="#cb23-31" aria-hidden="true" tabindex="-1"></a><span class="in">local expression A B C </span></span>
-<span id="cb23-32"><a href="#cb23-32" aria-hidden="true" tabindex="-1"></a><span class="in">foreach e of local expression {</span></span>
-<span id="cb23-33"><a href="#cb23-33" aria-hidden="true" tabindex="-1"></a><span class="in">  mac list _ms</span></span>
-<span id="cb23-34"><a href="#cb23-34" aria-hidden="true" tabindex="-1"></a><span class="in">  }</span></span>
-<span id="cb23-35"><a href="#cb23-35" aria-hidden="true" tabindex="-1"></a><span class="in">/*  </span></span>
-<span id="cb23-36"><a href="#cb23-36" aria-hidden="true" tabindex="-1"></a><span class="in">_ms : A</span></span>
-<span id="cb23-37"><a href="#cb23-37" aria-hidden="true" tabindex="-1"></a><span class="in">_ms : B</span></span>
-<span id="cb23-38"><a href="#cb23-38" aria-hidden="true" tabindex="-1"></a><span class="in">_ms : C</span></span>
-<span id="cb23-39"><a href="#cb23-39" aria-hidden="true" tabindex="-1"></a><span class="in">*/</span></span>
+<span id="cb23-30"><a href="#cb23-30" aria-hidden="true" tabindex="-1"></a><span class="fu"># **Macros empilées**</span></span>
+<span id="cb23-31"><a href="#cb23-31" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-32"><a href="#cb23-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-33"><a href="#cb23-33" aria-hidden="true" tabindex="-1"></a>Le principe est plutôt simple, il s'agit lors d'une expression en boucle de conserver et empiler les expressions générées à chaque itération, et les enregistrer dans une macro.</span>
+<span id="cb23-34"><a href="#cb23-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-35"><a href="#cb23-35" aria-hidden="true" tabindex="-1"></a><span class="fu">## **Syntaxe type**</span></span>
+<span id="cb23-36"><a href="#cb23-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-37"><a href="#cb23-37" aria-hidden="true" tabindex="-1"></a>Exemple : On veut obtenir la chaîne de caractère «A B C » à partir des trois éléments distincts « A », « B » et « C ».</span>
+<span id="cb23-38"><a href="#cb23-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-39"><a href="#cb23-39" aria-hidden="true" tabindex="-1"></a>Avec une macro standard:</span>
 <span id="cb23-40"><a href="#cb23-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-41"><a href="#cb23-41" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-42"><a href="#cb23-42" aria-hidden="true" tabindex="-1"></a><span class="in">mac list _ms</span></span>
-<span id="cb23-43"><a href="#cb23-43" aria-hidden="true" tabindex="-1"></a><span class="in">* _ms: C</span></span>
-<span id="cb23-44"><a href="#cb23-44" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-45"><a href="#cb23-45" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-46"><a href="#cb23-46" aria-hidden="true" tabindex="-1"></a>Dans chaque itération, chaque expression a bien été enregistrée, mais elle est écrasée à l'itération suivante. On pourrait à chaque itération enregistrer chaque macro et les empiler à l'extérieur de la boucle, mais il est possible de le faire automatiquement avec une macro dite « empilée ».\</span>
-<span id="cb23-47"><a href="#cb23-47" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;br&gt;</span> La syntaxe est simple, on appelle la macro dans l'expression qui la génère, ce qui permet de la garder en mémoire à chaque boucle.</span>
-<span id="cb23-48"><a href="#cb23-48" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-49"><a href="#cb23-49" aria-hidden="true" tabindex="-1"></a>Syntaxe:</span>
-<span id="cb23-50"><a href="#cb23-50" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-51"><a href="#cb23-51" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
-<span id="cb23-52"><a href="#cb23-52" aria-hidden="true" tabindex="-1"></a><span class="in">local nom_macro  `nom_macro'    expression</span></span>
-<span id="cb23-53"><a href="#cb23-53" aria-hidden="true" tabindex="-1"></a><span class="in">global nom_macro  $nom_macro    expression </span></span>
-<span id="cb23-54"><a href="#cb23-54" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-55"><a href="#cb23-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-56"><a href="#cb23-56" aria-hidden="true" tabindex="-1"></a>Avec une macro empilée:</span>
-<span id="cb23-57"><a href="#cb23-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-58"><a href="#cb23-58" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
-<span id="cb23-59"><a href="#cb23-59" aria-hidden="true" tabindex="-1"></a><span class="in">local expression A B C </span></span>
-<span id="cb23-60"><a href="#cb23-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-61"><a href="#cb23-61" aria-hidden="true" tabindex="-1"></a><span class="in">foreach e of local expression {</span></span>
-<span id="cb23-62"><a href="#cb23-62" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-63"><a href="#cb23-63" aria-hidden="true" tabindex="-1"></a><span class="in">local me `me' `ms'</span></span>
-<span id="cb23-64"><a href="#cb23-64" aria-hidden="true" tabindex="-1"></a><span class="in">mac list _me</span></span>
-<span id="cb23-65"><a href="#cb23-65" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb23-41"><a href="#cb23-41" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
+<span id="cb23-42"><a href="#cb23-42" aria-hidden="true" tabindex="-1"></a><span class="in">local expression A B C </span></span>
+<span id="cb23-43"><a href="#cb23-43" aria-hidden="true" tabindex="-1"></a><span class="in">foreach e of local expression {</span></span>
+<span id="cb23-44"><a href="#cb23-44" aria-hidden="true" tabindex="-1"></a><span class="in">  mac list _ms</span></span>
+<span id="cb23-45"><a href="#cb23-45" aria-hidden="true" tabindex="-1"></a><span class="in">  }</span></span>
+<span id="cb23-46"><a href="#cb23-46" aria-hidden="true" tabindex="-1"></a><span class="in">/*  </span></span>
+<span id="cb23-47"><a href="#cb23-47" aria-hidden="true" tabindex="-1"></a><span class="in">_ms : A</span></span>
+<span id="cb23-48"><a href="#cb23-48" aria-hidden="true" tabindex="-1"></a><span class="in">_ms : B</span></span>
+<span id="cb23-49"><a href="#cb23-49" aria-hidden="true" tabindex="-1"></a><span class="in">_ms : C</span></span>
+<span id="cb23-50"><a href="#cb23-50" aria-hidden="true" tabindex="-1"></a><span class="in">*/</span></span>
+<span id="cb23-51"><a href="#cb23-51" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-52"><a href="#cb23-52" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-53"><a href="#cb23-53" aria-hidden="true" tabindex="-1"></a><span class="in">mac list _ms</span></span>
+<span id="cb23-54"><a href="#cb23-54" aria-hidden="true" tabindex="-1"></a><span class="in">* _ms: C</span></span>
+<span id="cb23-55"><a href="#cb23-55" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-56"><a href="#cb23-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-57"><a href="#cb23-57" aria-hidden="true" tabindex="-1"></a>Dans chaque itération, chaque expression a bien été enregistrée, mais elle est écrasée à l'itération suivante. On pourrait à chaque itération enregistrer chaque macro et les empiler à l'extérieur de la boucle, mais il est possible de le faire automatiquement avec une macro dite « empilée ».\</span>
+<span id="cb23-58"><a href="#cb23-58" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;br&gt;</span> La syntaxe est simple, on appelle la macro dans l'expression qui la génère, ce qui permet de la garder en mémoire à chaque boucle.</span>
+<span id="cb23-59"><a href="#cb23-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-60"><a href="#cb23-60" aria-hidden="true" tabindex="-1"></a>Syntaxe:</span>
+<span id="cb23-61"><a href="#cb23-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-62"><a href="#cb23-62" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
+<span id="cb23-63"><a href="#cb23-63" aria-hidden="true" tabindex="-1"></a><span class="in">local nom_macro  `nom_macro'    expression</span></span>
+<span id="cb23-64"><a href="#cb23-64" aria-hidden="true" tabindex="-1"></a><span class="in">global nom_macro  $nom_macro    expression </span></span>
+<span id="cb23-65"><a href="#cb23-65" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb23-66"><a href="#cb23-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-67"><a href="#cb23-67" aria-hidden="true" tabindex="-1"></a><span class="in">/*A chaque itération</span></span>
-<span id="cb23-68"><a href="#cb23-68" aria-hidden="true" tabindex="-1"></a><span class="in">_me:            A</span></span>
-<span id="cb23-69"><a href="#cb23-69" aria-hidden="true" tabindex="-1"></a><span class="in">_me:            A B</span></span>
-<span id="cb23-70"><a href="#cb23-70" aria-hidden="true" tabindex="-1"></a><span class="in">_me:            A B C</span></span>
-<span id="cb23-71"><a href="#cb23-71" aria-hidden="true" tabindex="-1"></a><span class="in">*/</span></span>
-<span id="cb23-72"><a href="#cb23-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-73"><a href="#cb23-73" aria-hidden="true" tabindex="-1"></a><span class="in">*Expression finale enregistrée </span></span>
-<span id="cb23-74"><a href="#cb23-74" aria-hidden="true" tabindex="-1"></a><span class="in">mac list _me</span></span>
-<span id="cb23-75"><a href="#cb23-75" aria-hidden="true" tabindex="-1"></a><span class="in">* _me:            A B C</span></span>
-<span id="cb23-76"><a href="#cb23-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-77"><a href="#cb23-77" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-78"><a href="#cb23-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-79"><a href="#cb23-79" aria-hidden="true" tabindex="-1"></a><span class="fu">## **Automatiser la création du graphique**</span></span>
-<span id="cb23-80"><a href="#cb23-80" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-81"><a href="#cb23-81" aria-hidden="true" tabindex="-1"></a>Pour un graphique, une application évidente est d'alléger et automatiser une syntaxe qui empile plusieurs objets graphiques de même nature. Si on reprend un type de nuage de points déjà exécuté de nombreuses fois dans ce document:</span>
-<span id="cb23-82"><a href="#cb23-82" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-83"><a href="#cb23-83" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
-<span id="cb23-84"><a href="#cb23-84" aria-hidden="true" tabindex="-1"></a><span class="in">tw scatter price mpg if rep78==1</span></span>
-<span id="cb23-85"><a href="#cb23-85" aria-hidden="true" tabindex="-1"></a><span class="in">|| scatter price mpg if rep78==2</span></span>
-<span id="cb23-86"><a href="#cb23-86" aria-hidden="true" tabindex="-1"></a><span class="in">|| scatter price mpg if rep78==3</span></span>
-<span id="cb23-87"><a href="#cb23-87" aria-hidden="true" tabindex="-1"></a><span class="in">|| scatter price mpg if rep78==4</span></span>
-<span id="cb23-88"><a href="#cb23-88" aria-hidden="true" tabindex="-1"></a><span class="in">|| scatter price mpg if rep78==5</span></span>
-<span id="cb23-89"><a href="#cb23-89" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-90"><a href="#cb23-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-91"><a href="#cb23-91" aria-hidden="true" tabindex="-1"></a>Avec une macro empilée:</span>
-<span id="cb23-92"><a href="#cb23-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-93"><a href="#cb23-93" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
-<span id="cb23-94"><a href="#cb23-94" aria-hidden="true" tabindex="-1"></a><span class="in">* On génère la syntaxe</span></span>
-<span id="cb23-95"><a href="#cb23-95" aria-hidden="true" tabindex="-1"></a><span class="in">levelsof rep78, local(l)</span></span>
-<span id="cb23-96"><a href="#cb23-96" aria-hidden="true" tabindex="-1"></a><span class="in">foreach v of local l {</span></span>
-<span id="cb23-97"><a href="#cb23-97" aria-hidden="true" tabindex="-1"></a><span class="in">local scat `scat' scatter price mpg if rep78==`v' ||</span></span>
-<span id="cb23-98"><a href="#cb23-98" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb23-99"><a href="#cb23-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-100"><a href="#cb23-100" aria-hidden="true" tabindex="-1"></a><span class="in">* Exécution du graphique</span></span>
-<span id="cb23-101"><a href="#cb23-101" aria-hidden="true" tabindex="-1"></a><span class="in">tw `scat' , legend(off)</span></span>
-<span id="cb23-102"><a href="#cb23-102" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-67"><a href="#cb23-67" aria-hidden="true" tabindex="-1"></a>Avec une macro empilée:</span>
+<span id="cb23-68"><a href="#cb23-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-69"><a href="#cb23-69" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
+<span id="cb23-70"><a href="#cb23-70" aria-hidden="true" tabindex="-1"></a><span class="in">local expression A B C </span></span>
+<span id="cb23-71"><a href="#cb23-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-72"><a href="#cb23-72" aria-hidden="true" tabindex="-1"></a><span class="in">foreach e of local expression {</span></span>
+<span id="cb23-73"><a href="#cb23-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-74"><a href="#cb23-74" aria-hidden="true" tabindex="-1"></a><span class="in">local me `me' `ms'</span></span>
+<span id="cb23-75"><a href="#cb23-75" aria-hidden="true" tabindex="-1"></a><span class="in">mac list _me</span></span>
+<span id="cb23-76"><a href="#cb23-76" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb23-77"><a href="#cb23-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-78"><a href="#cb23-78" aria-hidden="true" tabindex="-1"></a><span class="in">/*A chaque itération</span></span>
+<span id="cb23-79"><a href="#cb23-79" aria-hidden="true" tabindex="-1"></a><span class="in">_me:            A</span></span>
+<span id="cb23-80"><a href="#cb23-80" aria-hidden="true" tabindex="-1"></a><span class="in">_me:            A B</span></span>
+<span id="cb23-81"><a href="#cb23-81" aria-hidden="true" tabindex="-1"></a><span class="in">_me:            A B C</span></span>
+<span id="cb23-82"><a href="#cb23-82" aria-hidden="true" tabindex="-1"></a><span class="in">*/</span></span>
+<span id="cb23-83"><a href="#cb23-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-84"><a href="#cb23-84" aria-hidden="true" tabindex="-1"></a><span class="in">*Expression finale enregistrée </span></span>
+<span id="cb23-85"><a href="#cb23-85" aria-hidden="true" tabindex="-1"></a><span class="in">mac list _me</span></span>
+<span id="cb23-86"><a href="#cb23-86" aria-hidden="true" tabindex="-1"></a><span class="in">* _me:            A B C</span></span>
+<span id="cb23-87"><a href="#cb23-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-88"><a href="#cb23-88" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-89"><a href="#cb23-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-90"><a href="#cb23-90" aria-hidden="true" tabindex="-1"></a><span class="fu">## **Automatiser la création du graphique**</span></span>
+<span id="cb23-91"><a href="#cb23-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-92"><a href="#cb23-92" aria-hidden="true" tabindex="-1"></a>Pour un graphique, une application évidente est d'alléger et automatiser une syntaxe qui empile plusieurs objets graphiques de même nature. Si on reprend un type de nuage de points déjà exécuté de nombreuses fois dans ce document:</span>
+<span id="cb23-93"><a href="#cb23-93" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-94"><a href="#cb23-94" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
+<span id="cb23-95"><a href="#cb23-95" aria-hidden="true" tabindex="-1"></a><span class="in">tw scatter price mpg if rep78==1</span></span>
+<span id="cb23-96"><a href="#cb23-96" aria-hidden="true" tabindex="-1"></a><span class="in">|| scatter price mpg if rep78==2</span></span>
+<span id="cb23-97"><a href="#cb23-97" aria-hidden="true" tabindex="-1"></a><span class="in">|| scatter price mpg if rep78==3</span></span>
+<span id="cb23-98"><a href="#cb23-98" aria-hidden="true" tabindex="-1"></a><span class="in">|| scatter price mpg if rep78==4</span></span>
+<span id="cb23-99"><a href="#cb23-99" aria-hidden="true" tabindex="-1"></a><span class="in">|| scatter price mpg if rep78==5</span></span>
+<span id="cb23-100"><a href="#cb23-100" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-101"><a href="#cb23-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-102"><a href="#cb23-102" aria-hidden="true" tabindex="-1"></a>Avec une macro empilée:</span>
 <span id="cb23-103"><a href="#cb23-103" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-104"><a href="#cb23-104" aria-hidden="true" tabindex="-1"></a>Ce qui est généré par la macro à chaque itération :</span>
-<span id="cb23-105"><a href="#cb23-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-106"><a href="#cb23-106" aria-hidden="true" tabindex="-1"></a>Itération 1:</span>
-<span id="cb23-107"><a href="#cb23-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-108"><a href="#cb23-108" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
-<span id="cb23-109"><a href="#cb23-109" aria-hidden="true" tabindex="-1"></a><span class="in">scatter price mpg if rep78==1 ||</span></span>
-<span id="cb23-110"><a href="#cb23-110" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-111"><a href="#cb23-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-112"><a href="#cb23-112" aria-hidden="true" tabindex="-1"></a>Itération 2:</span>
-<span id="cb23-113"><a href="#cb23-113" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-114"><a href="#cb23-114" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
-<span id="cb23-115"><a href="#cb23-115" aria-hidden="true" tabindex="-1"></a><span class="in">scatter price mpg if rep78==1 || scatter price mpg if rep78==2 ||</span></span>
-<span id="cb23-116"><a href="#cb23-116" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-117"><a href="#cb23-117" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-118"><a href="#cb23-118" aria-hidden="true" tabindex="-1"></a>Itération 3:</span>
-<span id="cb23-119"><a href="#cb23-119" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-120"><a href="#cb23-120" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
-<span id="cb23-121"><a href="#cb23-121" aria-hidden="true" tabindex="-1"></a><span class="in">scatter price mpg if rep78==1 || scatter price mpg if rep78==2 || </span></span>
-<span id="cb23-122"><a href="#cb23-122" aria-hidden="true" tabindex="-1"></a><span class="in">scatter price mpg if rep78==3 ||</span></span>
-<span id="cb23-123"><a href="#cb23-123" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-104"><a href="#cb23-104" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
+<span id="cb23-105"><a href="#cb23-105" aria-hidden="true" tabindex="-1"></a><span class="in">* On génère la syntaxe</span></span>
+<span id="cb23-106"><a href="#cb23-106" aria-hidden="true" tabindex="-1"></a><span class="in">levelsof rep78, local(l)</span></span>
+<span id="cb23-107"><a href="#cb23-107" aria-hidden="true" tabindex="-1"></a><span class="in">foreach v of local l {</span></span>
+<span id="cb23-108"><a href="#cb23-108" aria-hidden="true" tabindex="-1"></a><span class="in">local scat `scat' scatter price mpg if rep78==`v' ||</span></span>
+<span id="cb23-109"><a href="#cb23-109" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb23-110"><a href="#cb23-110" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-111"><a href="#cb23-111" aria-hidden="true" tabindex="-1"></a><span class="in">* Exécution du graphique</span></span>
+<span id="cb23-112"><a href="#cb23-112" aria-hidden="true" tabindex="-1"></a><span class="in">tw `scat' , legend(off)</span></span>
+<span id="cb23-113"><a href="#cb23-113" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-114"><a href="#cb23-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-115"><a href="#cb23-115" aria-hidden="true" tabindex="-1"></a>Ce qui est généré par la macro à chaque itération :</span>
+<span id="cb23-116"><a href="#cb23-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-117"><a href="#cb23-117" aria-hidden="true" tabindex="-1"></a>Itération 1:</span>
+<span id="cb23-118"><a href="#cb23-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-119"><a href="#cb23-119" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
+<span id="cb23-120"><a href="#cb23-120" aria-hidden="true" tabindex="-1"></a><span class="in">scatter price mpg if rep78==1 ||</span></span>
+<span id="cb23-121"><a href="#cb23-121" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-122"><a href="#cb23-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-123"><a href="#cb23-123" aria-hidden="true" tabindex="-1"></a>Itération 2:</span>
 <span id="cb23-124"><a href="#cb23-124" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-125"><a href="#cb23-125" aria-hidden="true" tabindex="-1"></a>Itération 4</span>
-<span id="cb23-126"><a href="#cb23-126" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-127"><a href="#cb23-127" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
-<span id="cb23-128"><a href="#cb23-128" aria-hidden="true" tabindex="-1"></a><span class="in">scatter price mpg if rep78==1 || scatter price mpg if rep78==2 || </span></span>
-<span id="cb23-129"><a href="#cb23-129" aria-hidden="true" tabindex="-1"></a><span class="in">scatter price mpg if rep78==3 || scatter price mpg if rep78==4 ||</span></span>
-<span id="cb23-130"><a href="#cb23-130" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-131"><a href="#cb23-131" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-132"><a href="#cb23-132" aria-hidden="true" tabindex="-1"></a>Itération 5</span>
-<span id="cb23-133"><a href="#cb23-133" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-134"><a href="#cb23-134" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
-<span id="cb23-135"><a href="#cb23-135" aria-hidden="true" tabindex="-1"></a><span class="in">scatter price mpg if rep78==1 || scatter price mpg if rep78==2 || </span></span>
-<span id="cb23-136"><a href="#cb23-136" aria-hidden="true" tabindex="-1"></a><span class="in">scatter price mpg if rep78==3 || scatter price mpg if rep78==4 || </span></span>
-<span id="cb23-137"><a href="#cb23-137" aria-hidden="true" tabindex="-1"></a><span class="in">scatter price mpg if rep78==5 ||</span></span>
-<span id="cb23-138"><a href="#cb23-138" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-139"><a href="#cb23-139" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-140"><a href="#cb23-140" aria-hidden="true" tabindex="-1"></a>C'est la dernière qui est finalement enregistrée et il ne manque plus qu'à l'appeler après <span class="in">`tw`</span>. Au-delà de l'allègement de la syntaxe du grap recode rep78 (1=2) hique cette manière de procéder automatise des modifications faites en amont, par exemple ici un regroupement de modalités de la variable ***rep78***.</span>
-<span id="cb23-141"><a href="#cb23-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-142"><a href="#cb23-142" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
-<span id="cb23-143"><a href="#cb23-143" aria-hidden="true" tabindex="-1"></a><span class="in">*Il n’est pas nécessaire de modifier le graphique</span></span>
+<span id="cb23-125"><a href="#cb23-125" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
+<span id="cb23-126"><a href="#cb23-126" aria-hidden="true" tabindex="-1"></a><span class="in">scatter price mpg if rep78==1 || scatter price mpg if rep78==2 ||</span></span>
+<span id="cb23-127"><a href="#cb23-127" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-128"><a href="#cb23-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-129"><a href="#cb23-129" aria-hidden="true" tabindex="-1"></a>Itération 3:</span>
+<span id="cb23-130"><a href="#cb23-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-131"><a href="#cb23-131" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
+<span id="cb23-132"><a href="#cb23-132" aria-hidden="true" tabindex="-1"></a><span class="in">scatter price mpg if rep78==1 || scatter price mpg if rep78==2 || </span></span>
+<span id="cb23-133"><a href="#cb23-133" aria-hidden="true" tabindex="-1"></a><span class="in">scatter price mpg if rep78==3 ||</span></span>
+<span id="cb23-134"><a href="#cb23-134" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-135"><a href="#cb23-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-136"><a href="#cb23-136" aria-hidden="true" tabindex="-1"></a>Itération 4</span>
+<span id="cb23-137"><a href="#cb23-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-138"><a href="#cb23-138" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
+<span id="cb23-139"><a href="#cb23-139" aria-hidden="true" tabindex="-1"></a><span class="in">scatter price mpg if rep78==1 || scatter price mpg if rep78==2 || </span></span>
+<span id="cb23-140"><a href="#cb23-140" aria-hidden="true" tabindex="-1"></a><span class="in">scatter price mpg if rep78==3 || scatter price mpg if rep78==4 ||</span></span>
+<span id="cb23-141"><a href="#cb23-141" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-142"><a href="#cb23-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-143"><a href="#cb23-143" aria-hidden="true" tabindex="-1"></a>Itération 5</span>
 <span id="cb23-144"><a href="#cb23-144" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-145"><a href="#cb23-145" aria-hidden="true" tabindex="-1"></a><span class="in">levelsof rep78, local(l)</span></span>
-<span id="cb23-146"><a href="#cb23-146" aria-hidden="true" tabindex="-1"></a><span class="in">foreach v of local l {</span></span>
-<span id="cb23-147"><a href="#cb23-147" aria-hidden="true" tabindex="-1"></a><span class="in">local scat `scat' scatter price mpg if rep78==`v' ||</span></span>
-<span id="cb23-148"><a href="#cb23-148" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb23-149"><a href="#cb23-149" aria-hidden="true" tabindex="-1"></a><span class="in">tw `scat' , legend(off)</span></span>
-<span id="cb23-150"><a href="#cb23-150" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-151"><a href="#cb23-151" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-152"><a href="#cb23-152" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;br&gt;</span></span>
-<span id="cb23-153"><a href="#cb23-153" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-154"><a href="#cb23-154" aria-hidden="true" tabindex="-1"></a><span class="fu">## **Générer une légende**</span></span>
+<span id="cb23-145"><a href="#cb23-145" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
+<span id="cb23-146"><a href="#cb23-146" aria-hidden="true" tabindex="-1"></a><span class="in">scatter price mpg if rep78==1 || scatter price mpg if rep78==2 || </span></span>
+<span id="cb23-147"><a href="#cb23-147" aria-hidden="true" tabindex="-1"></a><span class="in">scatter price mpg if rep78==3 || scatter price mpg if rep78==4 || </span></span>
+<span id="cb23-148"><a href="#cb23-148" aria-hidden="true" tabindex="-1"></a><span class="in">scatter price mpg if rep78==5 ||</span></span>
+<span id="cb23-149"><a href="#cb23-149" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-150"><a href="#cb23-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-151"><a href="#cb23-151" aria-hidden="true" tabindex="-1"></a>C'est la dernière qui est finalement enregistrée et il ne manque plus qu'à l'appeler après <span class="in">`tw`</span>. Au-delà de l'allègement de la syntaxe du grap recode rep78 (1=2) hique cette manière de procéder automatise des modifications faites en amont, par exemple ici un regroupement de modalités de la variable ***rep78***.</span>
+<span id="cb23-152"><a href="#cb23-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-153"><a href="#cb23-153" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
+<span id="cb23-154"><a href="#cb23-154" aria-hidden="true" tabindex="-1"></a><span class="in">*Il n’est pas nécessaire de modifier le graphique</span></span>
 <span id="cb23-155"><a href="#cb23-155" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-156"><a href="#cb23-156" aria-hidden="true" tabindex="-1"></a>Sur le même principe, on peut générer automatiquement une légende. ***L'opération peut néanmoins s'avérer un peu plus délicate***, en raison du contrôle des doubles quotes pour les labels.\</span>
-<span id="cb23-157"><a href="#cb23-157" aria-hidden="true" tabindex="-1"></a>Dans un premier temps on ne va pas utiliser les fonctions macro qui permettent de récupérer automatiquement les noms et le contenu des labels.</span>
-<span id="cb23-158"><a href="#cb23-158" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-159"><a href="#cb23-159" aria-hidden="true" tabindex="-1"></a>**Sans les fonctions macro**:</span>
-<span id="cb23-160"><a href="#cb23-160" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-161"><a href="#cb23-161" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
-<span id="cb23-162"><a href="#cb23-162" aria-hidden="true" tabindex="-1"></a><span class="in">local l1 `""Domestic""'</span></span>
-<span id="cb23-163"><a href="#cb23-163" aria-hidden="true" tabindex="-1"></a><span class="in">local l2 `""Foreign""'</span></span>
-<span id="cb23-164"><a href="#cb23-164" aria-hidden="true" tabindex="-1"></a><span class="in">forvalue i=1/2 {</span></span>
-<span id="cb23-165"><a href="#cb23-165" aria-hidden="true" tabindex="-1"></a><span class="in">local ord `ord' `i' `l`i''</span></span>
-<span id="cb23-166"><a href="#cb23-166" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb23-167"><a href="#cb23-167" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-168"><a href="#cb23-168" aria-hidden="true" tabindex="-1"></a><span class="in">macro list _ord</span></span>
-<span id="cb23-169"><a href="#cb23-169" aria-hidden="true" tabindex="-1"></a><span class="in">* _ord: 1 "Domestic" 2 "Foreign"</span></span>
-<span id="cb23-170"><a href="#cb23-170" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-171"><a href="#cb23-171" aria-hidden="true" tabindex="-1"></a><span class="in">#delimit ; </span></span>
-<span id="cb23-172"><a href="#cb23-172" aria-hidden="true" tabindex="-1"></a><span class="in">tw scatter price mpg if !foreign</span></span>
-<span id="cb23-173"><a href="#cb23-173" aria-hidden="true" tabindex="-1"></a><span class="in">|| scatter price mpg if  foreign</span></span>
-<span id="cb23-174"><a href="#cb23-174" aria-hidden="true" tabindex="-1"></a><span class="in">||, legend(order(`ord'))</span></span>
-<span id="cb23-175"><a href="#cb23-175" aria-hidden="true" tabindex="-1"></a><span class="in">;</span></span>
-<span id="cb23-176"><a href="#cb23-176" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-177"><a href="#cb23-177" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-178"><a href="#cb23-178" aria-hidden="true" tabindex="-1"></a>***Rappel***: pour la légende on doit explicitement récupérer les doubles quotes pour les expressions qui seront affichées dans la légende: **local nom_macro \`""expression""'**</span>
-<span id="cb23-179"><a href="#cb23-179" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-180"><a href="#cb23-180" aria-hidden="true" tabindex="-1"></a>**Avec les fonctions macro**:\</span>
-<span id="cb23-181"><a href="#cb23-181" aria-hidden="true" tabindex="-1"></a>Les fonctions utilisées sont <span class="in">`value label`</span> pour récupérer le nom du label et <span class="in">`lab`</span> pour récupérer l'expression affectée à la modalité. Comme les expressions de la légende vont être récupérées via des macros on va accroître le nombre de quotes, ce qui peut s'avérer fastidieux pour lire le programme et éventuellement le modifier. Dans le programme qui suit on va générer automatiquement la syntaxe principale du graphique avec une macro empilée, comme expliqué précédemment. Les noms des variables seront également transformés en *token*. Pour anticiper un changement de variable de stratification, ici *foreign*, on va utiliser un compteur pour automatiser le nombre d'éléments contenu dans la légende.</span>
-<span id="cb23-182"><a href="#cb23-182" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-183"><a href="#cb23-183" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
-<span id="cb23-184"><a href="#cb23-184" aria-hidden="true" tabindex="-1"></a><span class="in">local varlist price weight foreign</span></span>
-<span id="cb23-185"><a href="#cb23-185" aria-hidden="true" tabindex="-1"></a><span class="in">tokenize `varlist'</span></span>
-<span id="cb23-186"><a href="#cb23-186" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-187"><a href="#cb23-187" aria-hidden="true" tabindex="-1"></a><span class="in">* Légende</span></span>
-<span id="cb23-188"><a href="#cb23-188" aria-hidden="true" tabindex="-1"></a><span class="in">local labn: value label `3' // on récupère le nom du label</span></span>
-<span id="cb23-189"><a href="#cb23-189" aria-hidden="true" tabindex="-1"></a><span class="in">levelsof `3', local(l)</span></span>
-<span id="cb23-190"><a href="#cb23-190" aria-hidden="true" tabindex="-1"></a><span class="in">local i=1</span></span>
-<span id="cb23-191"><a href="#cb23-191" aria-hidden="true" tabindex="-1"></a><span class="in">foreach l2 of local l {</span></span>
-<span id="cb23-192"><a href="#cb23-192" aria-hidden="true" tabindex="-1"></a><span class="in">local lab`l2': label `labn' `l2' // on récupère l’expressions pour chaque valeur</span></span>
-<span id="cb23-193"><a href="#cb23-193" aria-hidden="true" tabindex="-1"></a><span class="in">local lab`l2' `""`lab`l2''""'    // on transforme l’expressions en macro     </span></span>
-<span id="cb23-194"><a href="#cb23-194" aria-hidden="true" tabindex="-1"></a><span class="in">local ord `ord' `i++' `lab`l2''  // on génère la syntaxe de la légende</span></span>
-<span id="cb23-195"><a href="#cb23-195" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb23-196"><a href="#cb23-196" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-197"><a href="#cb23-197" aria-hidden="true" tabindex="-1"></a><span class="in">* Graphique</span></span>
-<span id="cb23-198"><a href="#cb23-198" aria-hidden="true" tabindex="-1"></a><span class="in">local ops mlc(black) mlw(vthin)</span></span>
-<span id="cb23-199"><a href="#cb23-199" aria-hidden="true" tabindex="-1"></a><span class="in">foreach i of local l {</span></span>
-<span id="cb23-200"><a href="#cb23-200" aria-hidden="true" tabindex="-1"></a><span class="in">local scat `scat' scatter `1' `2' if `3'==`i', `ops' ||</span></span>
-<span id="cb23-201"><a href="#cb23-201" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb23-202"><a href="#cb23-202" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-203"><a href="#cb23-203" aria-hidden="true" tabindex="-1"></a><span class="in">tw `scat', legend(order(`ord'))</span></span>
-<span id="cb23-204"><a href="#cb23-204" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-205"><a href="#cb23-205" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-206"><a href="#cb23-206" aria-hidden="true" tabindex="-1"></a><span class="fu"># **Routine (.ado)**</span></span>
+<span id="cb23-156"><a href="#cb23-156" aria-hidden="true" tabindex="-1"></a><span class="in">levelsof rep78, local(l)</span></span>
+<span id="cb23-157"><a href="#cb23-157" aria-hidden="true" tabindex="-1"></a><span class="in">foreach v of local l {</span></span>
+<span id="cb23-158"><a href="#cb23-158" aria-hidden="true" tabindex="-1"></a><span class="in">local scat `scat' scatter price mpg if rep78==`v' ||</span></span>
+<span id="cb23-159"><a href="#cb23-159" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb23-160"><a href="#cb23-160" aria-hidden="true" tabindex="-1"></a><span class="in">tw `scat' , legend(off)</span></span>
+<span id="cb23-161"><a href="#cb23-161" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-162"><a href="#cb23-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-163"><a href="#cb23-163" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;br&gt;</span></span>
+<span id="cb23-164"><a href="#cb23-164" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-165"><a href="#cb23-165" aria-hidden="true" tabindex="-1"></a><span class="fu">## **Générer une légende**</span></span>
+<span id="cb23-166"><a href="#cb23-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-167"><a href="#cb23-167" aria-hidden="true" tabindex="-1"></a>Sur le même principe, on peut générer automatiquement une légende. ***L'opération peut néanmoins s'avérer un peu plus délicate***, en raison du contrôle des doubles quotes pour les labels.\</span>
+<span id="cb23-168"><a href="#cb23-168" aria-hidden="true" tabindex="-1"></a>Dans un premier temps on ne va pas utiliser les fonctions macro qui permettent de récupérer automatiquement les noms et le contenu des labels.</span>
+<span id="cb23-169"><a href="#cb23-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-170"><a href="#cb23-170" aria-hidden="true" tabindex="-1"></a>**Sans les fonctions macro**:</span>
+<span id="cb23-171"><a href="#cb23-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-172"><a href="#cb23-172" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
+<span id="cb23-173"><a href="#cb23-173" aria-hidden="true" tabindex="-1"></a><span class="in">local l1 `""Domestic""'</span></span>
+<span id="cb23-174"><a href="#cb23-174" aria-hidden="true" tabindex="-1"></a><span class="in">local l2 `""Foreign""'</span></span>
+<span id="cb23-175"><a href="#cb23-175" aria-hidden="true" tabindex="-1"></a><span class="in">forvalue i=1/2 {</span></span>
+<span id="cb23-176"><a href="#cb23-176" aria-hidden="true" tabindex="-1"></a><span class="in">local ord `ord' `i' `l`i''</span></span>
+<span id="cb23-177"><a href="#cb23-177" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb23-178"><a href="#cb23-178" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-179"><a href="#cb23-179" aria-hidden="true" tabindex="-1"></a><span class="in">macro list _ord</span></span>
+<span id="cb23-180"><a href="#cb23-180" aria-hidden="true" tabindex="-1"></a><span class="in">* _ord: 1 "Domestic" 2 "Foreign"</span></span>
+<span id="cb23-181"><a href="#cb23-181" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-182"><a href="#cb23-182" aria-hidden="true" tabindex="-1"></a><span class="in">#delimit ; </span></span>
+<span id="cb23-183"><a href="#cb23-183" aria-hidden="true" tabindex="-1"></a><span class="in">tw scatter price mpg if !foreign</span></span>
+<span id="cb23-184"><a href="#cb23-184" aria-hidden="true" tabindex="-1"></a><span class="in">|| scatter price mpg if  foreign</span></span>
+<span id="cb23-185"><a href="#cb23-185" aria-hidden="true" tabindex="-1"></a><span class="in">||, legend(order(`ord'))</span></span>
+<span id="cb23-186"><a href="#cb23-186" aria-hidden="true" tabindex="-1"></a><span class="in">;</span></span>
+<span id="cb23-187"><a href="#cb23-187" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-188"><a href="#cb23-188" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-189"><a href="#cb23-189" aria-hidden="true" tabindex="-1"></a>***Rappel***: pour la légende on doit explicitement récupérer les doubles quotes pour les expressions qui seront affichées dans la légende: **local nom_macro \`""expression""'**</span>
+<span id="cb23-190"><a href="#cb23-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-191"><a href="#cb23-191" aria-hidden="true" tabindex="-1"></a>**Avec les fonctions macro**:\</span>
+<span id="cb23-192"><a href="#cb23-192" aria-hidden="true" tabindex="-1"></a>Les fonctions utilisées sont <span class="in">`value label`</span> pour récupérer le nom du label et <span class="in">`lab`</span> pour récupérer l'expression affectée à la modalité. Comme les expressions de la légende vont être récupérées via des macros on va accroître le nombre de quotes, ce qui peut s'avérer fastidieux pour lire le programme et éventuellement le modifier. Dans le programme qui suit on va générer automatiquement la syntaxe principale du graphique avec une macro empilée, comme expliqué précédemment. Les noms des variables seront également transformés en *token*. Pour anticiper un changement de variable de stratification, ici *foreign*, on va utiliser un compteur pour automatiser le nombre d'éléments contenu dans la légende.</span>
+<span id="cb23-193"><a href="#cb23-193" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-194"><a href="#cb23-194" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
+<span id="cb23-195"><a href="#cb23-195" aria-hidden="true" tabindex="-1"></a><span class="in">local varlist price weight foreign</span></span>
+<span id="cb23-196"><a href="#cb23-196" aria-hidden="true" tabindex="-1"></a><span class="in">tokenize `varlist'</span></span>
+<span id="cb23-197"><a href="#cb23-197" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-198"><a href="#cb23-198" aria-hidden="true" tabindex="-1"></a><span class="in">* Légende</span></span>
+<span id="cb23-199"><a href="#cb23-199" aria-hidden="true" tabindex="-1"></a><span class="in">local labn: value label `3' // on récupère le nom du label</span></span>
+<span id="cb23-200"><a href="#cb23-200" aria-hidden="true" tabindex="-1"></a><span class="in">levelsof `3', local(l)</span></span>
+<span id="cb23-201"><a href="#cb23-201" aria-hidden="true" tabindex="-1"></a><span class="in">local i=1</span></span>
+<span id="cb23-202"><a href="#cb23-202" aria-hidden="true" tabindex="-1"></a><span class="in">foreach l2 of local l {</span></span>
+<span id="cb23-203"><a href="#cb23-203" aria-hidden="true" tabindex="-1"></a><span class="in">local lab`l2': label `labn' `l2' // on récupère l’expressions pour chaque valeur</span></span>
+<span id="cb23-204"><a href="#cb23-204" aria-hidden="true" tabindex="-1"></a><span class="in">local lab`l2' `""`lab`l2''""'    // on transforme l’expressions en macro     </span></span>
+<span id="cb23-205"><a href="#cb23-205" aria-hidden="true" tabindex="-1"></a><span class="in">local ord `ord' `i++' `lab`l2''  // on génère la syntaxe de la légende</span></span>
+<span id="cb23-206"><a href="#cb23-206" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
 <span id="cb23-207"><a href="#cb23-207" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-208"><a href="#cb23-208" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Manuel d'aide Stata <span class="sc">\[</span>entrée syntax<span class="sc">\]</span> https://www.stata.com/manuals/p.pdf#ppProgramming</span>
-<span id="cb23-209"><a href="#cb23-209" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-210"><a href="#cb23-210" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Principe des programmes qui exécutent des commandes (.ado)</span>
-<span id="cb23-211"><a href="#cb23-211" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-212"><a href="#cb23-212" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>La routine/commande peut être programmée dans un programme principal (.do) ou sauvegardé comme .ado dans le répertoire où sont enregistrées les commandes externes (répertoire ado). Il est conseillé de sauvegarder ses propres commandes dans un sous répertoire personal, et de créer des sous répertoire par lettre de l'alphabet. Le nom du fichier .ado doit être identique au nom de la commande programmée.</span>
+<span id="cb23-208"><a href="#cb23-208" aria-hidden="true" tabindex="-1"></a><span class="in">* Graphique</span></span>
+<span id="cb23-209"><a href="#cb23-209" aria-hidden="true" tabindex="-1"></a><span class="in">local ops mlc(black) mlw(vthin)</span></span>
+<span id="cb23-210"><a href="#cb23-210" aria-hidden="true" tabindex="-1"></a><span class="in">foreach i of local l {</span></span>
+<span id="cb23-211"><a href="#cb23-211" aria-hidden="true" tabindex="-1"></a><span class="in">local scat `scat' scatter `1' `2' if `3'==`i', `ops' ||</span></span>
+<span id="cb23-212"><a href="#cb23-212" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
 <span id="cb23-213"><a href="#cb23-213" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-214"><a href="#cb23-214" aria-hidden="true" tabindex="-1"></a>Nous allons décrire seulement quelques principes qui utilisent les éléments vus dans ce chapitre. Il est difficilement envisageable de s'engager dans la programmation d'une commande sans utiliser le manuel d'aide officiel.</span>
-<span id="cb23-215"><a href="#cb23-215" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-216"><a href="#cb23-216" aria-hidden="true" tabindex="-1"></a>Syntaxe générique</span>
-<span id="cb23-217"><a href="#cb23-217" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-218"><a href="#cb23-218" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
-<span id="cb23-219"><a href="#cb23-219" aria-hidden="true" tabindex="-1"></a><span class="in">capture program drop nom_commande // jusqu’à la validation du programme</span></span>
-<span id="cb23-220"><a href="#cb23-220" aria-hidden="true" tabindex="-1"></a><span class="in">program define nom_routine [options]</span></span>
-<span id="cb23-221"><a href="#cb23-221" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-222"><a href="#cb23-222" aria-hidden="true" tabindex="-1"></a><span class="in">syntax [arguments] </span></span>
-<span id="cb23-223"><a href="#cb23-223" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-224"><a href="#cb23-224" aria-hidden="true" tabindex="-1"></a><span class="in">* ....programme de la routine... </span></span>
-<span id="cb23-225"><a href="#cb23-225" aria-hidden="true" tabindex="-1"></a><span class="in">end</span></span>
-<span id="cb23-226"><a href="#cb23-226" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-227"><a href="#cb23-227" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-228"><a href="#cb23-228" aria-hidden="true" tabindex="-1"></a>La première ligne est nécessaire tant que la commande est exécutée dans l'éditeur de programme. Elle peut être supprimée lorsque le programme est enregistré dans un sous répertoire du répertoire *personal*.</span>
-<span id="cb23-229"><a href="#cb23-229" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-230"><a href="#cb23-230" aria-hidden="true" tabindex="-1"></a>***Exemple: une simple division***</span>
-<span id="cb23-231"><a href="#cb23-231" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-232"><a href="#cb23-232" aria-hidden="true" tabindex="-1"></a>Programmation de la routine:</span>
-<span id="cb23-233"><a href="#cb23-233" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-234"><a href="#cb23-234" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
-<span id="cb23-235"><a href="#cb23-235" aria-hidden="true" tabindex="-1"></a><span class="in">capture program drop division</span></span>
-<span id="cb23-236"><a href="#cb23-236" aria-hidden="true" tabindex="-1"></a><span class="in">program define division</span></span>
-<span id="cb23-237"><a href="#cb23-237" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-238"><a href="#cb23-238" aria-hidden="true" tabindex="-1"></a><span class="in">syntax anything</span></span>
-<span id="cb23-239"><a href="#cb23-239" aria-hidden="true" tabindex="-1"></a><span class="in"> </span></span>
-<span id="cb23-240"><a href="#cb23-240" aria-hidden="true" tabindex="-1"></a><span class="in">tokenize `anything' </span></span>
-<span id="cb23-241"><a href="#cb23-241" aria-hidden="true" tabindex="-1"></a><span class="in">di ""</span></span>
-<span id="cb23-242"><a href="#cb23-242" aria-hidden="true" tabindex="-1"></a><span class="in">di as result "Le résultat de la division est: " `1' / `2' </span></span>
-<span id="cb23-243"><a href="#cb23-243" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-244"><a href="#cb23-244" aria-hidden="true" tabindex="-1"></a><span class="in">end </span></span>
-<span id="cb23-245"><a href="#cb23-245" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-246"><a href="#cb23-246" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-247"><a href="#cb23-247" aria-hidden="true" tabindex="-1"></a>Exécution et résultat:</span>
+<span id="cb23-214"><a href="#cb23-214" aria-hidden="true" tabindex="-1"></a><span class="in">tw `scat', legend(order(`ord'))</span></span>
+<span id="cb23-215"><a href="#cb23-215" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-216"><a href="#cb23-216" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-217"><a href="#cb23-217" aria-hidden="true" tabindex="-1"></a><span class="fu"># **Routine (.ado)**</span></span>
+<span id="cb23-218"><a href="#cb23-218" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-219"><a href="#cb23-219" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Manuel d'aide Stata <span class="sc">\[</span>entrée syntax<span class="sc">\]</span> https://www.stata.com/manuals/p.pdf#ppProgramming</span>
+<span id="cb23-220"><a href="#cb23-220" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-221"><a href="#cb23-221" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Principe des programmes qui exécutent des commandes (.ado)</span>
+<span id="cb23-222"><a href="#cb23-222" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-223"><a href="#cb23-223" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>La routine/commande peut être programmée dans un programme principal (.do) ou sauvegardé comme .ado dans le répertoire où sont enregistrées les commandes externes (répertoire ado). Il est conseillé de sauvegarder ses propres commandes dans un sous répertoire personal, et de créer des sous répertoire par lettre de l'alphabet. Le nom du fichier .ado doit être identique au nom de la commande programmée.</span>
+<span id="cb23-224"><a href="#cb23-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-225"><a href="#cb23-225" aria-hidden="true" tabindex="-1"></a>Nous allons décrire seulement quelques principes qui utilisent les éléments vus dans ce chapitre. Il est difficilement envisageable de s'engager dans la programmation d'une commande sans utiliser le manuel d'aide officiel.</span>
+<span id="cb23-226"><a href="#cb23-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-227"><a href="#cb23-227" aria-hidden="true" tabindex="-1"></a>Syntaxe générique</span>
+<span id="cb23-228"><a href="#cb23-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-229"><a href="#cb23-229" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
+<span id="cb23-230"><a href="#cb23-230" aria-hidden="true" tabindex="-1"></a><span class="in">capture program drop nom_commande // jusqu’à la validation du programme</span></span>
+<span id="cb23-231"><a href="#cb23-231" aria-hidden="true" tabindex="-1"></a><span class="in">program define nom_routine [options]</span></span>
+<span id="cb23-232"><a href="#cb23-232" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-233"><a href="#cb23-233" aria-hidden="true" tabindex="-1"></a><span class="in">syntax [arguments] </span></span>
+<span id="cb23-234"><a href="#cb23-234" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-235"><a href="#cb23-235" aria-hidden="true" tabindex="-1"></a><span class="in">* ....programme de la routine... </span></span>
+<span id="cb23-236"><a href="#cb23-236" aria-hidden="true" tabindex="-1"></a><span class="in">end</span></span>
+<span id="cb23-237"><a href="#cb23-237" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-238"><a href="#cb23-238" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-239"><a href="#cb23-239" aria-hidden="true" tabindex="-1"></a>La première ligne est nécessaire tant que la commande est exécutée dans l'éditeur de programme. Elle peut être supprimée lorsque le programme est enregistré dans un sous répertoire du répertoire *personal*.</span>
+<span id="cb23-240"><a href="#cb23-240" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-241"><a href="#cb23-241" aria-hidden="true" tabindex="-1"></a>***Exemple: une simple division***</span>
+<span id="cb23-242"><a href="#cb23-242" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-243"><a href="#cb23-243" aria-hidden="true" tabindex="-1"></a>Programmation de la routine:</span>
+<span id="cb23-244"><a href="#cb23-244" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-245"><a href="#cb23-245" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
+<span id="cb23-246"><a href="#cb23-246" aria-hidden="true" tabindex="-1"></a><span class="in">capture program drop division</span></span>
+<span id="cb23-247"><a href="#cb23-247" aria-hidden="true" tabindex="-1"></a><span class="in">program define division</span></span>
 <span id="cb23-248"><a href="#cb23-248" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-249"><a href="#cb23-249" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
-<span id="cb23-250"><a href="#cb23-250" aria-hidden="true" tabindex="-1"></a><span class="in">division 1245 722</span></span>
-<span id="cb23-251"><a href="#cb23-251" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-252"><a href="#cb23-252" aria-hidden="true" tabindex="-1"></a><span class="in">* Le résultat de la division est: 1.7243767</span></span>
-<span id="cb23-253"><a href="#cb23-253" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-249"><a href="#cb23-249" aria-hidden="true" tabindex="-1"></a><span class="in">syntax anything</span></span>
+<span id="cb23-250"><a href="#cb23-250" aria-hidden="true" tabindex="-1"></a><span class="in"> </span></span>
+<span id="cb23-251"><a href="#cb23-251" aria-hidden="true" tabindex="-1"></a><span class="in">tokenize `anything' </span></span>
+<span id="cb23-252"><a href="#cb23-252" aria-hidden="true" tabindex="-1"></a><span class="in">di ""</span></span>
+<span id="cb23-253"><a href="#cb23-253" aria-hidden="true" tabindex="-1"></a><span class="in">di as result "Le résultat de la division est: " `1' / `2' </span></span>
 <span id="cb23-254"><a href="#cb23-254" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-255"><a href="#cb23-255" aria-hidden="true" tabindex="-1"></a>**Application pour un graphique**\</span>
-<span id="cb23-256"><a href="#cb23-256" aria-hidden="true" tabindex="-1"></a>On va automatiser l'exécution du nuage de points avec une stratification, ici la variable *foreign*.</span>
+<span id="cb23-255"><a href="#cb23-255" aria-hidden="true" tabindex="-1"></a><span class="in">end </span></span>
+<span id="cb23-256"><a href="#cb23-256" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb23-257"><a href="#cb23-257" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-258"><a href="#cb23-258" aria-hidden="true" tabindex="-1"></a>***Programme***</span>
+<span id="cb23-258"><a href="#cb23-258" aria-hidden="true" tabindex="-1"></a>Exécution et résultat:</span>
 <span id="cb23-259"><a href="#cb23-259" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb23-260"><a href="#cb23-260" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
-<span id="cb23-261"><a href="#cb23-261" aria-hidden="true" tabindex="-1"></a><span class="in">capture program drop sgraph </span></span>
-<span id="cb23-262"><a href="#cb23-262" aria-hidden="true" tabindex="-1"></a><span class="in">program define sgraph</span></span>
-<span id="cb23-263"><a href="#cb23-263" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-264"><a href="#cb23-264" aria-hidden="true" tabindex="-1"></a><span class="in">syntax varlist(min=3 max=3),  [gops(string)]</span></span>
+<span id="cb23-261"><a href="#cb23-261" aria-hidden="true" tabindex="-1"></a><span class="in">division 1245 722</span></span>
+<span id="cb23-262"><a href="#cb23-262" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-263"><a href="#cb23-263" aria-hidden="true" tabindex="-1"></a><span class="in">* Le résultat de la division est: 1.7243767</span></span>
+<span id="cb23-264"><a href="#cb23-264" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb23-265"><a href="#cb23-265" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-266"><a href="#cb23-266" aria-hidden="true" tabindex="-1"></a><span class="in">tokenize `varlist'</span></span>
-<span id="cb23-267"><a href="#cb23-267" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-268"><a href="#cb23-268" aria-hidden="true" tabindex="-1"></a><span class="in">* Légende</span></span>
-<span id="cb23-269"><a href="#cb23-269" aria-hidden="true" tabindex="-1"></a><span class="in">qui levelsof `3', local(l)</span></span>
-<span id="cb23-270"><a href="#cb23-270" aria-hidden="true" tabindex="-1"></a><span class="in">local i=1</span></span>
-<span id="cb23-271"><a href="#cb23-271" aria-hidden="true" tabindex="-1"></a><span class="in">local labn: value label `3'</span></span>
-<span id="cb23-272"><a href="#cb23-272" aria-hidden="true" tabindex="-1"></a><span class="in">foreach l2 of local l {</span></span>
-<span id="cb23-273"><a href="#cb23-273" aria-hidden="true" tabindex="-1"></a><span class="in">local lab`l2': label `labn' `l2'</span></span>
-<span id="cb23-274"><a href="#cb23-274" aria-hidden="true" tabindex="-1"></a><span class="in">local lab`l2' `""`lab`l2''""' </span></span>
-<span id="cb23-275"><a href="#cb23-275" aria-hidden="true" tabindex="-1"></a><span class="in">local ord `ord' `i++' `lab`l2''</span></span>
-<span id="cb23-276"><a href="#cb23-276" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb23-277"><a href="#cb23-277" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-278"><a href="#cb23-278" aria-hidden="true" tabindex="-1"></a><span class="in">* Syntaxe graphique</span></span>
-<span id="cb23-279"><a href="#cb23-279" aria-hidden="true" tabindex="-1"></a><span class="in">foreach l2 of local l{</span></span>
-<span id="cb23-280"><a href="#cb23-280" aria-hidden="true" tabindex="-1"></a><span class="in">local ops "mlc(black) mlw(*.3) jitter(3) mc(%80) msiz(*1) mlc(`mlc')" </span></span>
-<span id="cb23-281"><a href="#cb23-281" aria-hidden="true" tabindex="-1"></a><span class="in">local scat `scat' scatter `1' `2' if `3'==`l2', `ops' ||</span></span>
-<span id="cb23-282"><a href="#cb23-282" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb23-283"><a href="#cb23-283" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-284"><a href="#cb23-284" aria-hidden="true" tabindex="-1"></a><span class="in">* Exécution du graphique</span></span>
-<span id="cb23-285"><a href="#cb23-285" aria-hidden="true" tabindex="-1"></a><span class="in">tw `scat', legend(order(`ord') rows(1) pos(6) region(color(%0))) `title' `gops'</span></span>
-<span id="cb23-286"><a href="#cb23-286" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-287"><a href="#cb23-287" aria-hidden="true" tabindex="-1"></a><span class="in">end</span></span>
-<span id="cb23-288"><a href="#cb23-288" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-289"><a href="#cb23-289" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-290"><a href="#cb23-290" aria-hidden="true" tabindex="-1"></a>***Exécution de la commande sgraph***</span>
-<span id="cb23-291"><a href="#cb23-291" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-292"><a href="#cb23-292" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
-<span id="cb23-293"><a href="#cb23-293" aria-hidden="true" tabindex="-1"></a><span class="in">sgraph price mpg foreign, gops(ylabel(,labs(*.6)) title("mpg") name(mpg, replace))</span></span>
-<span id="cb23-294"><a href="#cb23-294" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-295"><a href="#cb23-295" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-296"><a href="#cb23-296" aria-hidden="true" tabindex="-1"></a><span class="al">![](imgp2/g6a.png)</span>{width="70%"}</span>
+<span id="cb23-266"><a href="#cb23-266" aria-hidden="true" tabindex="-1"></a>**Application pour un graphique**\</span>
+<span id="cb23-267"><a href="#cb23-267" aria-hidden="true" tabindex="-1"></a>On va automatiser l'exécution du nuage de points avec une stratification, ici la variable *foreign*.</span>
+<span id="cb23-268"><a href="#cb23-268" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-269"><a href="#cb23-269" aria-hidden="true" tabindex="-1"></a>***Programme***</span>
+<span id="cb23-270"><a href="#cb23-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-271"><a href="#cb23-271" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
+<span id="cb23-272"><a href="#cb23-272" aria-hidden="true" tabindex="-1"></a><span class="in">capture program drop sgraph </span></span>
+<span id="cb23-273"><a href="#cb23-273" aria-hidden="true" tabindex="-1"></a><span class="in">program define sgraph</span></span>
+<span id="cb23-274"><a href="#cb23-274" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-275"><a href="#cb23-275" aria-hidden="true" tabindex="-1"></a><span class="in">syntax varlist(min=3 max=3),  [gops(string)]</span></span>
+<span id="cb23-276"><a href="#cb23-276" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-277"><a href="#cb23-277" aria-hidden="true" tabindex="-1"></a><span class="in">tokenize `varlist'</span></span>
+<span id="cb23-278"><a href="#cb23-278" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-279"><a href="#cb23-279" aria-hidden="true" tabindex="-1"></a><span class="in">* Légende</span></span>
+<span id="cb23-280"><a href="#cb23-280" aria-hidden="true" tabindex="-1"></a><span class="in">qui levelsof `3', local(l)</span></span>
+<span id="cb23-281"><a href="#cb23-281" aria-hidden="true" tabindex="-1"></a><span class="in">local i=1</span></span>
+<span id="cb23-282"><a href="#cb23-282" aria-hidden="true" tabindex="-1"></a><span class="in">local labn: value label `3'</span></span>
+<span id="cb23-283"><a href="#cb23-283" aria-hidden="true" tabindex="-1"></a><span class="in">foreach l2 of local l {</span></span>
+<span id="cb23-284"><a href="#cb23-284" aria-hidden="true" tabindex="-1"></a><span class="in">local lab`l2': label `labn' `l2'</span></span>
+<span id="cb23-285"><a href="#cb23-285" aria-hidden="true" tabindex="-1"></a><span class="in">local lab`l2' `""`lab`l2''""' </span></span>
+<span id="cb23-286"><a href="#cb23-286" aria-hidden="true" tabindex="-1"></a><span class="in">local ord `ord' `i++' `lab`l2''</span></span>
+<span id="cb23-287"><a href="#cb23-287" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb23-288"><a href="#cb23-288" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-289"><a href="#cb23-289" aria-hidden="true" tabindex="-1"></a><span class="in">* Syntaxe graphique</span></span>
+<span id="cb23-290"><a href="#cb23-290" aria-hidden="true" tabindex="-1"></a><span class="in">foreach l2 of local l{</span></span>
+<span id="cb23-291"><a href="#cb23-291" aria-hidden="true" tabindex="-1"></a><span class="in">local ops "mlc(black) mlw(*.3) jitter(3) mc(%80) msiz(*1) mlc(`mlc')" </span></span>
+<span id="cb23-292"><a href="#cb23-292" aria-hidden="true" tabindex="-1"></a><span class="in">local scat `scat' scatter `1' `2' if `3'==`l2', `ops' ||</span></span>
+<span id="cb23-293"><a href="#cb23-293" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb23-294"><a href="#cb23-294" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-295"><a href="#cb23-295" aria-hidden="true" tabindex="-1"></a><span class="in">* Exécution du graphique</span></span>
+<span id="cb23-296"><a href="#cb23-296" aria-hidden="true" tabindex="-1"></a><span class="in">tw `scat', legend(order(`ord') rows(1) pos(6) region(color(%0))) `title' `gops'</span></span>
 <span id="cb23-297"><a href="#cb23-297" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-298"><a href="#cb23-298" aria-hidden="true" tabindex="-1"></a>***Programme pas à pas***</span>
-<span id="cb23-299"><a href="#cb23-299" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-300"><a href="#cb23-300" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
-<span id="cb23-301"><a href="#cb23-301" aria-hidden="true" tabindex="-1"></a><span class="in">capture program drop sgraph </span></span>
-<span id="cb23-302"><a href="#cb23-302" aria-hidden="true" tabindex="-1"></a><span class="in">program define sgraph</span></span>
-<span id="cb23-303"><a href="#cb23-303" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-304"><a href="#cb23-304" aria-hidden="true" tabindex="-1"></a><span class="in">syntax varlist(min=3 max=3),  [gops(string)]</span></span>
-<span id="cb23-305"><a href="#cb23-305" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-306"><a href="#cb23-306" aria-hidden="true" tabindex="-1"></a><span class="in">tokenize `varlist'</span></span>
-<span id="cb23-307"><a href="#cb23-307" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-298"><a href="#cb23-298" aria-hidden="true" tabindex="-1"></a><span class="in">end</span></span>
+<span id="cb23-299"><a href="#cb23-299" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-300"><a href="#cb23-300" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-301"><a href="#cb23-301" aria-hidden="true" tabindex="-1"></a>***Exécution de la commande sgraph***</span>
+<span id="cb23-302"><a href="#cb23-302" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-303"><a href="#cb23-303" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
+<span id="cb23-304"><a href="#cb23-304" aria-hidden="true" tabindex="-1"></a><span class="in">sgraph price mpg foreign, gops(ylabel(,labs(*.6)) title("mpg") name(mpg, replace))</span></span>
+<span id="cb23-305"><a href="#cb23-305" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-306"><a href="#cb23-306" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-307"><a href="#cb23-307" aria-hidden="true" tabindex="-1"></a><span class="al">![](imgp2/g6a.png)</span>{width="70%"}</span>
 <span id="cb23-308"><a href="#cb23-308" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-309"><a href="#cb23-309" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>La commande s'appelle <span class="in">`sgraph`</span>.</span>
-<span id="cb23-310"><a href="#cb23-310" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Pour être exécutée, elle demande 3 arguments de type *variable*. On fixe un nombre obligatoire de variable égale à 3 : axe Y, axe X et la variable de stratification.</span>
-<span id="cb23-311"><a href="#cb23-311" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>La commande a un argument optionnel . Comme pour les fichiers d'aide, le caractère optionnel est indiqué par <span class="sc">\[</span>nom_option<span class="sc">\]</span>.</span>
-<span id="cb23-312"><a href="#cb23-312" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Le nom de l'option est précisé: elle permet de passer des options générales d'un graphique (<span class="in">`gops()`</span>). On indique son format attendu, ici une chaîne de caractères.</span>
-<span id="cb23-313"><a href="#cb23-313" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-314"><a href="#cb23-314" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
-<span id="cb23-315"><a href="#cb23-315" aria-hidden="true" tabindex="-1"></a><span class="in">* Légende</span></span>
-<span id="cb23-316"><a href="#cb23-316" aria-hidden="true" tabindex="-1"></a><span class="in">qui levelsof `3', local(l)</span></span>
-<span id="cb23-317"><a href="#cb23-317" aria-hidden="true" tabindex="-1"></a><span class="in">local i=1</span></span>
-<span id="cb23-318"><a href="#cb23-318" aria-hidden="true" tabindex="-1"></a><span class="in">local labn: value label `3'</span></span>
-<span id="cb23-319"><a href="#cb23-319" aria-hidden="true" tabindex="-1"></a><span class="in">foreach l2 of local l {</span></span>
-<span id="cb23-320"><a href="#cb23-320" aria-hidden="true" tabindex="-1"></a><span class="in">local lab`l2': label `labn' `l2'</span></span>
-<span id="cb23-321"><a href="#cb23-321" aria-hidden="true" tabindex="-1"></a><span class="in">local lab`l2' `""`lab`l2''""' </span></span>
-<span id="cb23-322"><a href="#cb23-322" aria-hidden="true" tabindex="-1"></a><span class="in">local ord `ord' `i++' `lab`l2''</span></span>
-<span id="cb23-323"><a href="#cb23-323" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb23-309"><a href="#cb23-309" aria-hidden="true" tabindex="-1"></a>***Programme pas à pas***</span>
+<span id="cb23-310"><a href="#cb23-310" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-311"><a href="#cb23-311" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
+<span id="cb23-312"><a href="#cb23-312" aria-hidden="true" tabindex="-1"></a><span class="in">capture program drop sgraph </span></span>
+<span id="cb23-313"><a href="#cb23-313" aria-hidden="true" tabindex="-1"></a><span class="in">program define sgraph</span></span>
+<span id="cb23-314"><a href="#cb23-314" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-315"><a href="#cb23-315" aria-hidden="true" tabindex="-1"></a><span class="in">syntax varlist(min=3 max=3),  [gops(string)]</span></span>
+<span id="cb23-316"><a href="#cb23-316" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-317"><a href="#cb23-317" aria-hidden="true" tabindex="-1"></a><span class="in">tokenize `varlist'</span></span>
+<span id="cb23-318"><a href="#cb23-318" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-319"><a href="#cb23-319" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-320"><a href="#cb23-320" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>La commande s'appelle <span class="in">`sgraph`</span>.</span>
+<span id="cb23-321"><a href="#cb23-321" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Pour être exécutée, elle demande 3 arguments de type *variable*. On fixe un nombre obligatoire de variable égale à 3 : axe Y, axe X et la variable de stratification.</span>
+<span id="cb23-322"><a href="#cb23-322" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>La commande a un argument optionnel . Comme pour les fichiers d'aide, le caractère optionnel est indiqué par <span class="sc">\[</span>nom_option<span class="sc">\]</span>.</span>
+<span id="cb23-323"><a href="#cb23-323" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Le nom de l'option est précisé: elle permet de passer des options générales d'un graphique (<span class="in">`gops()`</span>). On indique son format attendu, ici une chaîne de caractères.</span>
 <span id="cb23-324"><a href="#cb23-324" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-325"><a href="#cb23-325" aria-hidden="true" tabindex="-1"></a><span class="in">* Syntaxe graphique</span></span>
-<span id="cb23-326"><a href="#cb23-326" aria-hidden="true" tabindex="-1"></a><span class="in">foreach l2 of local l{</span></span>
-<span id="cb23-327"><a href="#cb23-327" aria-hidden="true" tabindex="-1"></a><span class="in">local ops "mlc(black) mlw(*.3) jitter(3) mc(%80) msiz(*1) mlc(`mlc')" </span></span>
-<span id="cb23-328"><a href="#cb23-328" aria-hidden="true" tabindex="-1"></a><span class="in">local scat `scat' scatter `1' `2' if `3'==`l2', `ops' ||</span></span>
-<span id="cb23-329"><a href="#cb23-329" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb23-330"><a href="#cb23-330" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-331"><a href="#cb23-331" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-332"><a href="#cb23-332" aria-hidden="true" tabindex="-1"></a>La légende et la syntaxe du graphique combiné sont générés avec une macro empilée</span>
-<span id="cb23-333"><a href="#cb23-333" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-334"><a href="#cb23-334" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
-<span id="cb23-335"><a href="#cb23-335" aria-hidden="true" tabindex="-1"></a><span class="in">* Exécution du graphique</span></span>
-<span id="cb23-336"><a href="#cb23-336" aria-hidden="true" tabindex="-1"></a><span class="in">tw `scat', legend(order(`ord') pos(6) region(color(%0))) `title' `gops'</span></span>
-<span id="cb23-337"><a href="#cb23-337" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-338"><a href="#cb23-338" aria-hidden="true" tabindex="-1"></a><span class="in">end</span></span>
-<span id="cb23-339"><a href="#cb23-339" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-340"><a href="#cb23-340" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-341"><a href="#cb23-341" aria-hidden="true" tabindex="-1"></a>Le graphique est exécuté, l'option qui a été définie est entrées sous forme de macro.\</span>
-<span id="cb23-342"><a href="#cb23-342" aria-hidden="true" tabindex="-1"></a>Le programme du graphique indique déjà des éléments optionnels liés à la légende, comme la position et l'absence de contour. Il est possible d'écraser ces arguments « par défaut » dans l'option <span class="in">`gopts`</span>.</span>
-<span id="cb23-343"><a href="#cb23-343" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-344"><a href="#cb23-344" aria-hidden="true" tabindex="-1"></a>***Exemple : générer rapidement un graphique qui combine le prix à plusieurs variables avec la commande `sgraph`***</span>
-<span id="cb23-345"><a href="#cb23-345" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-346"><a href="#cb23-346" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
-<span id="cb23-347"><a href="#cb23-347" aria-hidden="true" tabindex="-1"></a><span class="in">foreach X of varlist mpg trunk weight length {</span></span>
+<span id="cb23-325"><a href="#cb23-325" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
+<span id="cb23-326"><a href="#cb23-326" aria-hidden="true" tabindex="-1"></a><span class="in">* Légende</span></span>
+<span id="cb23-327"><a href="#cb23-327" aria-hidden="true" tabindex="-1"></a><span class="in">qui levelsof `3', local(l)</span></span>
+<span id="cb23-328"><a href="#cb23-328" aria-hidden="true" tabindex="-1"></a><span class="in">local i=1</span></span>
+<span id="cb23-329"><a href="#cb23-329" aria-hidden="true" tabindex="-1"></a><span class="in">local labn: value label `3'</span></span>
+<span id="cb23-330"><a href="#cb23-330" aria-hidden="true" tabindex="-1"></a><span class="in">foreach l2 of local l {</span></span>
+<span id="cb23-331"><a href="#cb23-331" aria-hidden="true" tabindex="-1"></a><span class="in">local lab`l2': label `labn' `l2'</span></span>
+<span id="cb23-332"><a href="#cb23-332" aria-hidden="true" tabindex="-1"></a><span class="in">local lab`l2' `""`lab`l2''""' </span></span>
+<span id="cb23-333"><a href="#cb23-333" aria-hidden="true" tabindex="-1"></a><span class="in">local ord `ord' `i++' `lab`l2''</span></span>
+<span id="cb23-334"><a href="#cb23-334" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb23-335"><a href="#cb23-335" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-336"><a href="#cb23-336" aria-hidden="true" tabindex="-1"></a><span class="in">* Syntaxe graphique</span></span>
+<span id="cb23-337"><a href="#cb23-337" aria-hidden="true" tabindex="-1"></a><span class="in">foreach l2 of local l{</span></span>
+<span id="cb23-338"><a href="#cb23-338" aria-hidden="true" tabindex="-1"></a><span class="in">local ops "mlc(black) mlw(*.3) jitter(3) mc(%80) msiz(*1) mlc(`mlc')" </span></span>
+<span id="cb23-339"><a href="#cb23-339" aria-hidden="true" tabindex="-1"></a><span class="in">local scat `scat' scatter `1' `2' if `3'==`l2', `ops' ||</span></span>
+<span id="cb23-340"><a href="#cb23-340" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb23-341"><a href="#cb23-341" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-342"><a href="#cb23-342" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-343"><a href="#cb23-343" aria-hidden="true" tabindex="-1"></a>La légende et la syntaxe du graphique combiné sont générés avec une macro empilée</span>
+<span id="cb23-344"><a href="#cb23-344" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-345"><a href="#cb23-345" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
+<span id="cb23-346"><a href="#cb23-346" aria-hidden="true" tabindex="-1"></a><span class="in">* Exécution du graphique</span></span>
+<span id="cb23-347"><a href="#cb23-347" aria-hidden="true" tabindex="-1"></a><span class="in">tw `scat', legend(order(`ord') pos(6) region(color(%0))) `title' `gops'</span></span>
 <span id="cb23-348"><a href="#cb23-348" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-349"><a href="#cb23-349" aria-hidden="true" tabindex="-1"></a><span class="in">#delimit ;</span></span>
-<span id="cb23-350"><a href="#cb23-350" aria-hidden="true" tabindex="-1"></a><span class="in">sgraph price `X' foreign,</span></span>
-<span id="cb23-351"><a href="#cb23-351" aria-hidden="true" tabindex="-1"></a><span class="in">       gops(  title("`X'")</span></span>
-<span id="cb23-352"><a href="#cb23-352" aria-hidden="true" tabindex="-1"></a><span class="in">              ylabel(, labs(*.6))  </span></span>
-<span id="cb23-353"><a href="#cb23-353" aria-hidden="true" tabindex="-1"></a><span class="in">              name(`X', replace)) nodraw</span></span>
-<span id="cb23-354"><a href="#cb23-354" aria-hidden="true" tabindex="-1"></a><span class="in">;</span></span>
-<span id="cb23-355"><a href="#cb23-355" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-356"><a href="#cb23-356" aria-hidden="true" tabindex="-1"></a><span class="in">#delimit cr</span></span>
-<span id="cb23-357"><a href="#cb23-357" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-358"><a href="#cb23-358" aria-hidden="true" tabindex="-1"></a><span class="in">local g `g' `X' //macro empilée pour lister les graphiques combinés</span></span>
-<span id="cb23-359"><a href="#cb23-359" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
-<span id="cb23-360"><a href="#cb23-360" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-361"><a href="#cb23-361" aria-hidden="true" tabindex="-1"></a><span class="in">grc1leg `g', legendfrom(mpg) pos(11) title("Variables combinées avec" "la variable price")</span></span>
-<span id="cb23-362"><a href="#cb23-362" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb23-363"><a href="#cb23-363" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb23-364"><a href="#cb23-364" aria-hidden="true" tabindex="-1"></a><span class="al">![](imgp2/g6b.png)</span>{width="70%"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-349"><a href="#cb23-349" aria-hidden="true" tabindex="-1"></a><span class="in">end</span></span>
+<span id="cb23-350"><a href="#cb23-350" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-351"><a href="#cb23-351" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-352"><a href="#cb23-352" aria-hidden="true" tabindex="-1"></a>Le graphique est exécuté, l'option qui a été définie est entrées sous forme de macro.\</span>
+<span id="cb23-353"><a href="#cb23-353" aria-hidden="true" tabindex="-1"></a>Le programme du graphique indique déjà des éléments optionnels liés à la légende, comme la position et l'absence de contour. Il est possible d'écraser ces arguments « par défaut » dans l'option <span class="in">`gopts`</span>.</span>
+<span id="cb23-354"><a href="#cb23-354" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-355"><a href="#cb23-355" aria-hidden="true" tabindex="-1"></a>***Exemple : générer rapidement un graphique qui combine le prix à plusieurs variables avec la commande `sgraph`***</span>
+<span id="cb23-356"><a href="#cb23-356" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-357"><a href="#cb23-357" aria-hidden="true" tabindex="-1"></a><span class="in">```{stata, eval=FALSE}</span></span>
+<span id="cb23-358"><a href="#cb23-358" aria-hidden="true" tabindex="-1"></a><span class="in">foreach X of varlist mpg trunk weight length {</span></span>
+<span id="cb23-359"><a href="#cb23-359" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-360"><a href="#cb23-360" aria-hidden="true" tabindex="-1"></a><span class="in">#delimit ;</span></span>
+<span id="cb23-361"><a href="#cb23-361" aria-hidden="true" tabindex="-1"></a><span class="in">sgraph price `X' foreign,</span></span>
+<span id="cb23-362"><a href="#cb23-362" aria-hidden="true" tabindex="-1"></a><span class="in">       gops(  title("`X'")</span></span>
+<span id="cb23-363"><a href="#cb23-363" aria-hidden="true" tabindex="-1"></a><span class="in">              ylabel(, labs(*.6))  </span></span>
+<span id="cb23-364"><a href="#cb23-364" aria-hidden="true" tabindex="-1"></a><span class="in">              name(`X', replace)) nodraw</span></span>
+<span id="cb23-365"><a href="#cb23-365" aria-hidden="true" tabindex="-1"></a><span class="in">;</span></span>
+<span id="cb23-366"><a href="#cb23-366" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-367"><a href="#cb23-367" aria-hidden="true" tabindex="-1"></a><span class="in">#delimit cr</span></span>
+<span id="cb23-368"><a href="#cb23-368" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-369"><a href="#cb23-369" aria-hidden="true" tabindex="-1"></a><span class="in">local g `g' `X' //macro empilée pour lister les graphiques combinés</span></span>
+<span id="cb23-370"><a href="#cb23-370" aria-hidden="true" tabindex="-1"></a><span class="in">}</span></span>
+<span id="cb23-371"><a href="#cb23-371" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-372"><a href="#cb23-372" aria-hidden="true" tabindex="-1"></a><span class="in">grc1leg `g', legendfrom(mpg) pos(11) title("Variables combinées avec" "la variable price")</span></span>
+<span id="cb23-373"><a href="#cb23-373" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb23-374"><a href="#cb23-374" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb23-375"><a href="#cb23-375" aria-hidden="true" tabindex="-1"></a><span class="al">![](imgp2/g6b.png)</span>{width="70%"}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 <footer class="footer">
   <div class="nav-footer">
-      <div class="nav-footer-center">Marc Thévenin - Ined-Sms - Mars 2023</div>
+    <div class="nav-footer-left">
+      &nbsp;
+    </div>   
+    <div class="nav-footer-center">Marc Thévenin - Ined-Sms - Mars 2023</div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","loop":true,"descPosition":"bottom","closeEffect":"zoom"});</script>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom","loop":true});</script>
 
 
 
