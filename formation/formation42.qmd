@@ -4,6 +4,15 @@ format:
   html:
     code-fold: true
     code-summary: "Show the code"
+  docx:
+    toc: true
+    number-sections: true
+categories:
+  - ado
+  - labels
+filters:
+   - lightbox
+lightbox: auto    
 ---
 
 ```{r setup, include=FALSE}

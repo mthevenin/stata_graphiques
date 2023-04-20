@@ -131,9 +131,6 @@ On peut retirer facilement le contour de la légende (on allège ainsi les optio
 :::
 
 
-
-
-
 **Couleurs**  
 
 Même syntaxe que `colorpalette`, ici on associe le choix de la palette de couleurs à **`grstyle set color`**
