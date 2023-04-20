@@ -1,6 +1,11 @@
 ---
 title: "gridge"
 author: "Marc Thévenin"
+format: 
+  html: default
+  docx:
+    toc: true
+    number-sections: true
 categories:
   - ado
   - distribution

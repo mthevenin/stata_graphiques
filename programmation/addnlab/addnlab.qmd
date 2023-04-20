@@ -1,6 +1,11 @@
 ---
 title: "addnlab"
 author: "Marc Thévenin"
+format: 
+  html: default
+  docx:
+    toc: true
+    number-sections: true
 categories:
   - ado
   - labels
@@ -73,7 +78,7 @@ varlist: previous variable(s) added to addnlab
 
 
 
-**Exemple régression**
+**Exemple régression (ne pas utiliser avec des intéractions)**
 
 Voir exemple [ici](https://github.com/mthevenin/stata_graphiques/blob/main/ressources/addnlab/README.md)
 
