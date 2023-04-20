@@ -7,6 +7,13 @@ options(Encoding="UTF-8")
 library(fontawesome)
 ```
 
+::: {.callout-tip icon="false"}
+
+## Téléchargement des pages  
+
+Les pages sont téléchargeables en format docx.  A droites de celles-ci cliquer sur l'icône en dessous de *other formats*.
+
+:::
 
 ::: {.callout-note icon="false"}
 ## Ajouter les effectifs sur un axe discret
