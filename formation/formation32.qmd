@@ -122,9 +122,12 @@ On peut retirer facilement le contour de la légende (on allège ainsi les optio
 
 ::: {layout-ncol=3}
 ![grstyle (a)](imgp3/g12a.png){fig-align="left"}
-![](imgp3/g12b.png)
 
-![grstyle (b)](imgp3/g12c.png){fig-align="left"}
+
+![grstyle (b)](imgp3/g12b.png){fig-align="left"}
+
+![grstyle (c)](imgp3/g12c.png){fig-align="left"}
+
 :::
 
 
