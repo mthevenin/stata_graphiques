@@ -1,6 +1,16 @@
 ---
 title: "Styles-thèmes"
-fig-cap-location: top
+format: 
+  html: default
+  docx:
+    toc: true
+    number-sections: true
+categories:
+  - ado
+  - labels
+filters:
+   - lightbox
+lightbox: auto
 ---
 
 ```{r setup, include=FALSE}
