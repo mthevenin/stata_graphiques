@@ -18,16 +18,20 @@ website:
         text: "Graphiques"
       - href: https://mthevenin.github.io/stata_programmation/
         text: "Programmation"       
-    right:
+
+  sidebar:
+    pinned: true
+    align: center
+    tools: 
+      - href: about.qmd
       - icon: github
-        href: https://github.com/mthevenin 
+        href: https://github.com/mthevenin
       - icon: envelope
         href: mailto:marc.thevenin@ined.fr 
-      - href: about.qmd 
-        text: "A propos"
-  sidebar:
+      - icon: file-person
+        href: about.qmd  
+        
     style: "docked"
-    align: left
     collapse-level: 1    
     contents:
       - section: "Formation"
@@ -60,7 +64,8 @@ website:
 format:
   html:
     theme: 
-      light:  [yeti, theme-light.scss]          
+      light:  [yeti, theme-light.scss] 
+    css: styles.css
     code-background: true
     code-copy: true
     toc: true

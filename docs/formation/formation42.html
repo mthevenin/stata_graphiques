@@ -58,7 +58,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
@@ -99,6 +98,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -125,23 +125,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Programmation</span></a>
   </li>  
 </ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/mthevenin" rel="" target=""><i class="bi bi-github" role="img">
-</i> 
- <span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="mailto:marc.thevenin@ined.fr" rel="" target=""><i class="bi bi-envelope" role="img">
-</i> 
- <span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../about.html" rel="" target="">
- <span class="menu-text">A propos</span></a>
-  </li>  
-</ul>
-            <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools ms-auto">
 </div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
@@ -169,6 +153,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <div id="quarto-search" class="" title="Search"></div>
         </div>
         </div>
+        <div class="sidebar-tools-collapse tools-wide">
+    <a href="../about.html" title="Marc Thévenin" class="quarto-navigation-tool px-1" aria-label="Marc Thévenin"><i class="bi bi-"></i></a>
+    <a href="https://github.com/mthevenin" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+    <a href="mailto:marc.thevenin@ined.fr" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-envelope"></i></a>
+    <a href="../about.html" title="Marc Thévenin" class="quarto-navigation-tool px-1" aria-label="Marc Thévenin"><i class="bi bi-file-person"></i></a>
+</div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
@@ -431,13 +421,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-layout-row quarto-layout-valign-bottom">
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 50.0%;justify-content: center;">
 <figure class="figure">
-<p><a href="imgp4/g6.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Histogramme simple"><img src="imgp4/g6.png" class="img-fluid figure-img"></a></p>
+<p><a href="imgp4/g6.png" class="lightbox" title="Histogramme simple" data-gallery="quarto-lightbox-gallery-1"><img src="imgp4/g6.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Histogramme simple</figcaption><p></p>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 50.0%;justify-content: center;">
 <figure class="figure">
-<p><a href="imgp4/g7.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Empilement Histogrammes: not good"><img src="imgp4/g7.png" class="img-fluid figure-img"></a></p>
+<p><a href="imgp4/g7.png" class="lightbox" title="Empilement Histogrammes: not good" data-gallery="quarto-lightbox-gallery-2"><img src="imgp4/g7.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Empilement Histogrammes: not good</figcaption><p></p>
 </figure>
 </div>
@@ -445,13 +435,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-layout-row quarto-layout-valign-bottom">
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 50.0%;justify-content: center;">
 <figure class="figure">
-<p><a href="imgp4/g8.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Empilement Histogrammes: not good"><img src="imgp4/g8.png" class="img-fluid figure-img"></a></p>
+<p><a href="imgp4/g8.png" class="lightbox" title="Empilement Histogrammes: not good" data-gallery="quarto-lightbox-gallery-3"><img src="imgp4/g8.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Empilement Histogrammes: not good</figcaption><p></p>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 50.0%;justify-content: center;">
 <figure class="figure">
-<p><a href="imgp4/g9.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Facettes Histogrammes: good"><img src="imgp4/g9.png" class="img-fluid figure-img"></a></p>
+<p><a href="imgp4/g9.png" class="lightbox" title="Facettes Histogrammes: good" data-gallery="quarto-lightbox-gallery-4"><img src="imgp4/g9.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Facettes Histogrammes: good</figcaption><p></p>
 </figure>
 </div>
@@ -530,19 +520,19 @@ Options <code>by</code>: à savoir
 <div class="quarto-layout-row quarto-layout-valign-bottom">
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 33.3%;justify-content: center;">
 <figure class="figure">
-<p><a href="imgp4/g10.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Avec kdensity"><img src="imgp4/g10.png" class="img-fluid figure-img"></a></p>
+<p><a href="imgp4/g10.png" class="lightbox" title="Avec kdensity" data-gallery="quarto-lightbox-gallery-5"><img src="imgp4/g10.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Avec <strong><code>kdensity</code></strong></figcaption><p></p>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 33.3%;justify-content: center;">
 <figure class="figure">
-<p><a href="imgp4/g11.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Avec violinplot"><img src="imgp4/g11.png" class="img-fluid figure-img"></a></p>
+<p><a href="imgp4/g11.png" class="lightbox" title="Avec violinplot" data-gallery="quarto-lightbox-gallery-6"><img src="imgp4/g11.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Avec <strong><code>violinplot</code></strong></figcaption><p></p>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 33.3%;justify-content: center;">
 <figure class="figure">
-<p><a href="imgp4/g12.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="violinplot: densité en mirroir"><img src="imgp4/g12.png" class="img-fluid figure-img"></a></p>
+<p><a href="imgp4/g12.png" class="lightbox" title="violinplot: densité en mirroir" data-gallery="quarto-lightbox-gallery-7"><img src="imgp4/g12.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption"><strong><code>violinplot</code></strong>: densité en mirroir</figcaption><p></p>
 </figure>
 </div>
@@ -581,13 +571,13 @@ Options <code>by</code>: à savoir
 <div class="quarto-layout-row quarto-layout-valign-bottom">
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 50.0%;justify-content: center;">
 <figure class="figure">
-<p><a href="imgp4/g13.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="violinplot: comparaison aire"><img src="imgp4/g13.png" class="img-fluid figure-img"></a></p>
+<p><a href="imgp4/g13.png" class="lightbox" title="violinplot: comparaison aire" data-gallery="quarto-lightbox-gallery-8"><img src="imgp4/g13.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption"><strong><code>violinplot</code></strong>: comparaison aire</figcaption><p></p>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 50.0%;justify-content: center;">
 <figure class="figure">
-<p><a href="imgp4/g14.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="violinplot: comparaison courbe"><img src="imgp4/g14.png" class="img-fluid figure-img"></a></p>
+<p><a href="imgp4/g14.png" class="lightbox" title="violinplot: comparaison courbe" data-gallery="quarto-lightbox-gallery-9"><img src="imgp4/g14.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption"><strong><code>violinplot</code></strong>: comparaison courbe</figcaption><p></p>
 </figure>
 </div>
@@ -595,13 +585,13 @@ Options <code>by</code>: à savoir
 <div class="quarto-layout-row quarto-layout-valign-bottom">
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 50.0%;justify-content: center;">
 <figure class="figure">
-<p><a href="imgp4/g15.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="violinplot: comparaison split"><img src="imgp4/g15.png" class="img-fluid figure-img"></a></p>
+<p><a href="imgp4/g15.png" class="lightbox" title="violinplot: comparaison split" data-gallery="quarto-lightbox-gallery-10"><img src="imgp4/g15.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption"><strong><code>violinplot</code></strong>: comparaison split</figcaption><p></p>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 50.0%;justify-content: center;">
 <figure class="figure">
-<p><a href="imgp4/g16.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="violinplot: comparaison mirroir overlay"><img src="imgp4/g16.png" class="img-fluid figure-img"></a></p>
+<p><a href="imgp4/g16.png" class="lightbox" title="violinplot: comparaison mirroir overlay" data-gallery="quarto-lightbox-gallery-11"><img src="imgp4/g16.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption"><strong><code>violinplot</code></strong>: comparaison mirroir overlay</figcaption><p></p>
 </figure>
 </div>
@@ -644,13 +634,13 @@ Options <code>by</code>: à savoir
 <div class="quarto-layout-row quarto-layout-valign-bottom">
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 50.0%;justify-content: center;">
 <figure class="figure">
-<p><a href="imgp4/g17.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="axe discret avec violinplot"><img src="imgp4/g17.png" class="img-fluid figure-img"></a></p>
+<p><a href="imgp4/g17.png" class="lightbox" title="axe discret avec violinplot" data-gallery="quarto-lightbox-gallery-12"><img src="imgp4/g17.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption"><strong><code>axe discret avec violinplot</code></strong></figcaption><p></p>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 50.0%;justify-content: center;">
 <figure class="figure">
-<p><a href="imgp4/g18.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="Lignes de ridge avec gridge"><img src="imgp4/g18.png" class="img-fluid figure-img"></a></p>
+<p><a href="imgp4/g18.png" class="lightbox" title="Lignes de ridge avec gridge" data-gallery="quarto-lightbox-gallery-13"><img src="imgp4/g18.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption"><strong><code>Lignes de ridge avec gridge</code></strong></figcaption><p></p>
 </figure>
 </div>
@@ -1232,7 +1222,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":true,"selector":".lightbox","descPosition":"bottom","openEffect":"zoom"});</script>
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","closeEffect":"zoom","loop":true,"openEffect":"zoom"});</script>
 
 
 

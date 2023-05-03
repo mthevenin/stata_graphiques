@@ -58,7 +58,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
@@ -98,6 +97,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -124,23 +124,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Programmation</span></a>
   </li>  
 </ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/mthevenin" rel="" target=""><i class="bi bi-github" role="img">
-</i> 
- <span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="mailto:marc.thevenin@ined.fr" rel="" target=""><i class="bi bi-envelope" role="img">
-</i> 
- <span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../../about.html" rel="" target="">
- <span class="menu-text">A propos</span></a>
-  </li>  
-</ul>
-            <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools ms-auto">
 </div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
@@ -168,6 +152,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <div id="quarto-search" class="" title="Search"></div>
         </div>
         </div>
+        <div class="sidebar-tools-collapse tools-wide">
+    <a href="../../about.html" title="Marc Thévenin" class="quarto-navigation-tool px-1" aria-label="Marc Thévenin"><i class="bi bi-"></i></a>
+    <a href="https://github.com/mthevenin" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+    <a href="mailto:marc.thevenin@ined.fr" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-envelope"></i></a>
+    <a href="../../about.html" title="Marc Thévenin" class="quarto-navigation-tool px-1" aria-label="Marc Thévenin"><i class="bi bi-file-person"></i></a>
+</div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
@@ -418,7 +408,7 @@ Installation de Python
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
 <p></p><figcaption class="figure-caption"><strong><em>Variable environnement</em></strong></figcaption><p></p>
-<p><a href="img/graph0a.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Variable environnement"><img src="img/graph0a.png" class="img-fluid figure-img"></a></p>
+<p><a href="img/graph0a.png" class="lightbox" title="Variable environnement" data-gallery="quarto-lightbox-gallery-2"><img src="img/graph0a.png" class="img-fluid figure-img"></a></p>
 </figure>
 </div>
 <ul>
@@ -427,7 +417,7 @@ Installation de Python
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
 <p></p><figcaption class="figure-caption"><strong><em>Installation de pip</em></strong>*</figcaption><p></p>
-<p><a href="img/graph0b.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Installation de pip*"><img src="img/graph0b.png" class="img-fluid figure-img"></a></p>
+<p><a href="img/graph0b.png" class="lightbox" title="Installation de pip*" data-gallery="quarto-lightbox-gallery-3"><img src="img/graph0b.png" class="img-fluid figure-img"></a></p>
 </figure>
 </div>
 </div>
@@ -565,7 +555,7 @@ Salut
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p></p><figcaption class="figure-caption">seaborn: fonction <code>pairplot</code></figcaption><p></p>
-<p><a href="img/graph1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="seaborn: fonction pairplot"><img src="img/graph1.png" class="img-fluid figure-img" style="width:80.0%"></a></p>
+<p><a href="img/graph1.png" class="lightbox" title="seaborn: fonction pairplot" data-gallery="quarto-lightbox-gallery-1"><img src="img/graph1.png" class="img-fluid figure-img" style="width:80.0%"></a></p>
 </figure>
 </div>
 </section>
@@ -1230,7 +1220,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","openEffect":"zoom","descPosition":"bottom","loop":true,"closeEffect":"zoom"});</script>
+<script>var lightboxQuarto = GLightbox({"loop":true,"descPosition":"bottom","selector":".lightbox","closeEffect":"zoom","openEffect":"zoom"});</script>
 
 
 

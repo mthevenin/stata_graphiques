@@ -58,7 +58,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
@@ -99,6 +98,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -125,23 +125,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Programmation</span></a>
   </li>  
 </ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/mthevenin" rel="" target=""><i class="bi bi-github" role="img">
-</i> 
- <span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="mailto:marc.thevenin@ined.fr" rel="" target=""><i class="bi bi-envelope" role="img">
-</i> 
- <span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../about.html" rel="" target="">
- <span class="menu-text">A propos</span></a>
-  </li>  
-</ul>
-            <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools ms-auto">
 </div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
@@ -169,6 +153,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <div id="quarto-search" class="" title="Search"></div>
         </div>
         </div>
+        <div class="sidebar-tools-collapse tools-wide">
+    <a href="../about.html" title="Marc Thévenin" class="quarto-navigation-tool px-1" aria-label="Marc Thévenin"><i class="bi bi-"></i></a>
+    <a href="https://github.com/mthevenin" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+    <a href="mailto:marc.thevenin@ined.fr" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-envelope"></i></a>
+    <a href="../about.html" title="Marc Thévenin" class="quarto-navigation-tool px-1" aria-label="Marc Thévenin"><i class="bi bi-file-person"></i></a>
+</div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
@@ -384,7 +374,7 @@ Avec l’argument <code>total</code> en option de <code>by()</code>, on peut ajo
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p></p><figcaption class="figure-caption">Small multiple avec l’option by</figcaption><p></p>
-<p><a href="imgp1/g16.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Small multiple avec l’option by"><img src="imgp1/g16.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<p><a href="imgp1/g16.png" class="lightbox" title="Small multiple avec l’option by" data-gallery="quarto-lightbox-gallery-1"><img src="imgp1/g16.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
 </figure>
 </div>
 </section>
@@ -427,7 +417,7 @@ Avec l’argument <code>total</code> en option de <code>by()</code>, on peut ajo
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p></p><figcaption class="figure-caption">Graphique vide</figcaption><p></p>
-<p><a href="imgp1/g17.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Graphique vide"><img src="imgp1/g17.png" class="img-fluid figure-img" style="width:80.0%"></a></p>
+<p><a href="imgp1/g17.png" class="lightbox" title="Graphique vide" data-gallery="quarto-lightbox-gallery-2"><img src="imgp1/g17.png" class="img-fluid figure-img" style="width:80.0%"></a></p>
 </figure>
 </div>
 </section>
@@ -478,7 +468,7 @@ Au niveau des options je n’ai pas reporté les altérations du style par défa
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p></p><figcaption class="figure-caption">Combinaison libre (a)</figcaption><p></p>
-<p><a href="imgp1/g18a.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Combinaison libre (a)"><img src="imgp1/g18a.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<p><a href="imgp1/g18a.png" class="lightbox" title="Combinaison libre (a)" data-gallery="quarto-lightbox-gallery-3"><img src="imgp1/g18a.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
 </figure>
 </div>
 <p>On ajoute un graphique vide dans lequel on indiquera le titre du graphique, et on positionne l’histogramme de la variable price à l’horizontal (option <code>horizontal</code>) :</p>
@@ -507,7 +497,7 @@ Au niveau des options je n’ai pas reporté les altérations du style par défa
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p></p><figcaption class="figure-caption">Combinaison libre (b)</figcaption><p></p>
-<p><a href="imgp1/g18b.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Combinaison libre (b)"><img src="imgp1/g18b.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<p><a href="imgp1/g18b.png" class="lightbox" title="Combinaison libre (b)" data-gallery="quarto-lightbox-gallery-4"><img src="imgp1/g18b.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
 </figure>
 </div>
 <p>Pour la version suivante, on va réduire la taille des abscisses pour g1 (<em>price</em>) et le graphique vide, la taille des ordonnées pour g2 (<em>mpg</em>) et le graphique vide avec <code>fxsize(#)</code> et <code>fysize(#)</code>. On va également cacher plusieurs titres et labels d’axes et réduire les distances d’espacement entre les sous graphiques avec l’option <code>imargin(#1 #2 #3 #4)</code> de <code>graph combine</code>. La distance d’espacement avec le bord du graphique combiné sera par contre augmentée pour compenser. Titres et labels d’axes seront cachés et non pas supprimés. Si on les enlève, on modifie le ratio d’affichage du graphique et les axes reportés ne seront pas correctement ajustés entre le nuage et les histogrammes. Visuellement cela augmente la distance de séparation entre les graphiques, d’où sa réduction avec <code>imargin()</code>.</p>
@@ -559,7 +549,7 @@ Au niveau des options je n’ai pas reporté les altérations du style par défa
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p></p><figcaption class="figure-caption">Combinaison libre (c)</figcaption><p></p>
-<p><a href="imgp1/g18c.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Combinaison libre (c)"><img src="imgp1/g18c.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<p><a href="imgp1/g18c.png" class="lightbox" title="Combinaison libre (c)" data-gallery="quarto-lightbox-gallery-5"><img src="imgp1/g18c.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
 </figure>
 </div>
 <p>Le positionnement du titre, à droite, n’apparait pas optimal. En inversant le sens de l’axe x pour l’histogramme de <em>price</em>, en cachant le titre de l’axe de price pour le nuage, et en combinant différemment les graphiques, on obtient un meilleur résultat.</p>
@@ -567,7 +557,7 @@ Au niveau des options je n’ai pas reporté les altérations du style par défa
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p></p><figcaption class="figure-caption">Combinaison libre (d)</figcaption><p></p>
-<p><a href="imgp1/g18d.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Combinaison libre (d)"><img src="imgp1/g18d.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
+<p><a href="imgp1/g18d.png" class="lightbox" title="Combinaison libre (d)" data-gallery="quarto-lightbox-gallery-6"><img src="imgp1/g18d.png" class="img-fluid figure-img" style="width:100.0%"></a></p>
 </figure>
 </div>
 
@@ -1132,7 +1122,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","closeEffect":"zoom","loop":true,"selector":".lightbox","descPosition":"bottom"});</script>
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","loop":true,"descPosition":"bottom","closeEffect":"zoom"});</script>
 
 
 

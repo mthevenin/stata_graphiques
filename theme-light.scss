@@ -2,6 +2,10 @@
 // Base document colors
 //$body-bg: white ;
 //$body-color: #0f2537;
+@import url('https://fonts.googleapis.com/css2?family=Oswald');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css2?family=Roboto');
+
 $link-color: #4c9be8;
 
 //navbar
@@ -16,3 +20,27 @@ $link-color: #4c9be8;
 
 // Code color-rendering
 $code-color: #2A6392;
+
+// output
+
+$code-block-stdoutcolor: #37424a;
+$code-block-stdoutcolor-light: rgba($code-block-stdoutcolor, 0.5);
+$code-block-stdoutcolor-lighter: rgba($code-block-stdoutcolor, 0.1);
+
+.cell-output-display pre, .cell-output-stdout pre {
+    background-color: $code-block-stdoutcolor-lighter !important;
+    border: 1.5px solid $code-block-stdoutcolor-light;
+    border-radius: .25rem;
+    border-left: 4px;
+    border-left-style: solid;
+    border-left-color: $code-block-stdoutcolor;
+    padding: .4em;
+    color: #37424a
+}
+
+
+.cell-output pre code {
+    background-color: transparent;
+}
+
+

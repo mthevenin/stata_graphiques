@@ -58,7 +58,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <script src="../site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="../site_libs/quarto-nav/headroom.min.js"></script>
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
@@ -99,6 +98,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 }</script>
 
 
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-sidebar docked nav-fixed">
@@ -125,23 +125,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Programmation</span></a>
   </li>  
 </ul>
-            <ul class="navbar-nav navbar-nav-scroll ms-auto">
-  <li class="nav-item compact">
-    <a class="nav-link" href="https://github.com/mthevenin" rel="" target=""><i class="bi bi-github" role="img">
-</i> 
- <span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item compact">
-    <a class="nav-link" href="mailto:marc.thevenin@ined.fr" rel="" target=""><i class="bi bi-envelope" role="img">
-</i> 
- <span class="menu-text"></span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="../about.html" rel="" target="">
- <span class="menu-text">A propos</span></a>
-  </li>  
-</ul>
-            <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools ms-auto">
 </div>
           </div> <!-- /navcollapse -->
       </div> <!-- /container-fluid -->
@@ -169,6 +153,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <div id="quarto-search" class="" title="Search"></div>
         </div>
         </div>
+        <div class="sidebar-tools-collapse tools-wide">
+    <a href="../about.html" title="Marc Thévenin" class="quarto-navigation-tool px-1" aria-label="Marc Thévenin"><i class="bi bi-"></i></a>
+    <a href="https://github.com/mthevenin" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
+    <a href="mailto:marc.thevenin@ined.fr" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-envelope"></i></a>
+    <a href="../about.html" title="Marc Thévenin" class="quarto-navigation-tool px-1" aria-label="Marc Thévenin"><i class="bi bi-file-person"></i></a>
+</div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
@@ -395,27 +385,27 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Les palettes associées aux thèmes Stata sont de type qualitative. L’ordre d’utilisation des couleurs dans un graphique composé de plusieurs objets est pensé de tel sorte que des couleurs même type, par exemple le bleu, ne se succède pas.</p>
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><a href="imgp3/g1.png" class="lightbox" title="Palette Stata" data-gallery="quarto-lightbox-gallery-1"><img src="imgp3/g1.png" class="img-fluid figure-img"></a></p>
+<p><a href="imgp3/g1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Palette Stata"><img src="imgp3/g1.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Palette Stata</figcaption><p></p>
 </figure>
 </div>
 <p>Les numéros sur l’abscisse correspondent à l’ordre par défaut d’utilisation des couleurs.Les couleurs usines ont un nom, auquel correspond un code RGB.</p>
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><a href="imgp3/g2.png" class="lightbox" title="Palette s2" data-gallery="quarto-lightbox-gallery-2"><img src="imgp3/g2.png" class="img-fluid figure-img"></a></p>
+<p><a href="imgp3/g2.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Palette s2"><img src="imgp3/g2.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Palette s2</figcaption><p></p>
 </figure>
 </div>
 <p>La palette <strong>mono</strong> d’avère très utile pour modifier les couleurs des titres, labels, grids ou du background. Elle est ambivalente, l’ordre par défaut de la palette est plutôt qualitatif, mais le nom des couleurs correspond à une palette séquentielle appelé « grey scale » (gs# avec # allant de 0 – noir – à 16 – blanc).</p>
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><a href="imgp3/g3.png" class="lightbox" title="Palette mono" data-gallery="quarto-lightbox-gallery-3"><img src="imgp3/g3.png" class="img-fluid figure-img"></a></p>
+<p><a href="imgp3/g3.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Palette mono"><img src="imgp3/g3.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Palette mono</figcaption><p></p>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><a href="imgp3/g4.png" class="lightbox" title="Palette mono rgb" data-gallery="quarto-lightbox-gallery-4"><img src="imgp3/g4.png" class="img-fluid figure-img"></a></p>
+<p><a href="imgp3/g4.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Palette mono rgb"><img src="imgp3/g4.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Palette mono rgb</figcaption><p></p>
 </figure>
 </div>
@@ -464,7 +454,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><a href="imgp3/g5a.png" class="lightbox" title="Palette plasma" data-gallery="quarto-lightbox-gallery-5"><img src="imgp3/g5a.png" class="img-fluid figure-img"></a></p>
+<p><a href="imgp3/g5a.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Palette plasma"><img src="imgp3/g5a.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Palette plasma</figcaption><p></p>
 </figure>
 </div>
@@ -491,7 +481,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><a href="imgp3/g5b.png" class="lightbox" title="Palette plasma 5 couleurs" data-gallery="quarto-lightbox-gallery-6"><img src="imgp3/g5b.png" class="img-fluid figure-img"></a></p>
+<p><a href="imgp3/g5b.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Palette plasma 5 couleurs"><img src="imgp3/g5b.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Palette plasma 5 couleurs</figcaption><p></p>
 </figure>
 </div>
@@ -501,7 +491,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><a href="imgp3/g5g.png" class="lightbox" title="Palette plasma 2 cycles" data-gallery="quarto-lightbox-gallery-7"><img src="imgp3/g5g.png" class="img-fluid figure-img"></a></p>
+<p><a href="imgp3/g5g.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="Palette plasma 2 cycles"><img src="imgp3/g5g.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Palette plasma 2 cycles</figcaption><p></p>
 </figure>
 </div>
@@ -512,7 +502,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><a href="imgp3/g5c.png" class="lightbox" title="Palette séquentielle (a)" data-gallery="quarto-lightbox-gallery-8"><img src="imgp3/g5c.png" class="img-fluid figure-img"></a></p>
+<p><a href="imgp3/g5c.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="Palette séquentielle (a)"><img src="imgp3/g5c.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Palette séquentielle (a)</figcaption><p></p>
 </figure>
 </div>
@@ -523,7 +513,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><a href="imgp3/g5d.png" class="lightbox" title="Palette séquentielle (b)" data-gallery="quarto-lightbox-gallery-9"><img src="imgp3/g5d.png" class="img-fluid figure-img"></a></p>
+<p><a href="imgp3/g5d.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="Palette séquentielle (b)"><img src="imgp3/g5d.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Palette séquentielle (b)</figcaption><p></p>
 </figure>
 </div>
@@ -533,7 +523,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><a href="imgp3/g5e.png" class="lightbox" title="Palette séquentielle (c)" data-gallery="quarto-lightbox-gallery-10"><img src="imgp3/g5e.png" class="img-fluid figure-img"></a></p>
+<p><a href="imgp3/g5e.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="Palette séquentielle (c)"><img src="imgp3/g5e.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Palette séquentielle (c)</figcaption><p></p>
 </figure>
 </div>
@@ -543,7 +533,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><a href="imgp3/g5f.png" class="lightbox" title="Palette divergente" data-gallery="quarto-lightbox-gallery-11"><img src="imgp3/g5f.png" class="img-fluid figure-img"></a></p>
+<p><a href="imgp3/g5f.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="Palette divergente"><img src="imgp3/g5f.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Palette divergente</figcaption><p></p>
 </figure>
 </div>
@@ -636,7 +626,7 @@ On va afficher un graphique avec 4 densités sous forme d’aires générées al
 </div>
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><a href="imgp3/g6a.png" class="lightbox" title="Test palette plasma" data-gallery="quarto-lightbox-gallery-12"><img src="imgp3/g6a.png" class="img-fluid figure-img"></a></p>
+<p><a href="imgp3/g6a.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="Test palette plasma"><img src="imgp3/g6a.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Test palette plasma</figcaption><p></p>
 </figure>
 </div>
@@ -660,7 +650,7 @@ On va afficher un graphique avec 4 densités sous forme d’aires générées al
 <p><em>Remarque : en utilisant les macros dans la légende, on a affiché les codes couleurs</em></p>
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><a href="imgp3/g6b.png" class="lightbox" title="Palette winter (matplotli)" data-gallery="quarto-lightbox-gallery-13"><img src="imgp3/g6b.png" class="img-fluid figure-img"></a></p>
+<p><a href="imgp3/g6b.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="Palette winter (matplotli)"><img src="imgp3/g6b.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">Palette winter (matplotli)</figcaption><p></p>
 </figure>
 </div>
@@ -691,7 +681,7 @@ On va afficher un graphique avec 4 densités sous forme d’aires générées al
 </div>
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><a href="imgp3/g7a.png" class="lightbox" title="testpal - Tableau (a)" data-gallery="quarto-lightbox-gallery-14"><img src="imgp3/g7a.png" class="img-fluid figure-img"></a></p>
+<p><a href="imgp3/g7a.png" class="lightbox" data-gallery="quarto-lightbox-gallery-14" title="testpal - Tableau (a)"><img src="imgp3/g7a.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">testpal - Tableau (a)</figcaption><p></p>
 </figure>
 </div>
@@ -703,7 +693,7 @@ On va afficher un graphique avec 4 densités sous forme d’aires générées al
 <p><strong>https://www.tableau.com/about/blog/2016/7/colors-upgrade-tableau-10-56782</strong></p>
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><a href="imgp3/g7b.png" class="lightbox" title="testpal - tableau (b)" data-gallery="quarto-lightbox-gallery-15"><img src="imgp3/g7b.png" class="img-fluid figure-img"></a></p>
+<p><a href="imgp3/g7b.png" class="lightbox" data-gallery="quarto-lightbox-gallery-15" title="testpal - tableau (b)"><img src="imgp3/g7b.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">testpal - tableau (b)</figcaption><p></p>
 </figure>
 </div>
@@ -714,7 +704,7 @@ On va afficher un graphique avec 4 densités sous forme d’aires générées al
 </ul>
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><a href="imgp3/g7c.png" class="lightbox" title="testpal - hue" data-gallery="quarto-lightbox-gallery-16"><img src="imgp3/g7c.png" class="img-fluid figure-img"></a></p>
+<p><a href="imgp3/g7c.png" class="lightbox" data-gallery="quarto-lightbox-gallery-16" title="testpal - hue"><img src="imgp3/g7c.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">testpal - hue</figcaption><p></p>
 </figure>
 </div>
@@ -743,13 +733,13 @@ On va afficher un graphique avec 4 densités sous forme d’aires générées al
 </ul>
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><a href="imgp3/g7d.png" class="lightbox" title="testpal - viridis" data-gallery="quarto-lightbox-gallery-17"><img src="imgp3/g7d.png" class="img-fluid figure-img"></a></p>
+<p><a href="imgp3/g7d.png" class="lightbox" data-gallery="quarto-lightbox-gallery-17" title="testpal - viridis"><img src="imgp3/g7d.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">testpal - viridis</figcaption><p></p>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><a href="imgp3/g7e.png" class="lightbox" title="testpal - plasma" data-gallery="quarto-lightbox-gallery-18"><img src="imgp3/g7e.png" class="img-fluid figure-img"></a></p>
+<p><a href="imgp3/g7e.png" class="lightbox" data-gallery="quarto-lightbox-gallery-18" title="testpal - plasma"><img src="imgp3/g7e.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">testpal - plasma</figcaption><p></p>
 </figure>
 </div>
@@ -757,12 +747,12 @@ On va afficher un graphique avec 4 densités sous forme d’aires générées al
 <p>Très populaire en cartographie: <strong>https://colorbrewer2.org/#type=sequential&amp;scheme=BuGn&amp;n=3</strong></p>
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><a href="imgp3/g7f.png" class="lightbox" title="testpal YlOrBr" data-gallery="quarto-lightbox-gallery-19"><img src="imgp3/g7f.png" class="img-fluid figure-img"></a></p>
+<p><a href="imgp3/g7f.png" class="lightbox" data-gallery="quarto-lightbox-gallery-19" title="testpal YlOrBr"><img src="imgp3/g7f.png" class="img-fluid figure-img"></a></p>
 <p></p><figcaption class="figure-caption">testpal YlOrBr</figcaption><p></p>
 </figure>
 </div>
 <p>On présentera enfin une seule palette de type divergente, issue de cette collection, la palette <em>spectral</em>.</p>
-<p><a href="imgp3/g7g.png" class="lightbox" title="tespal - spectral" data-gallery="quarto-lightbox-gallery-20"><img src="imgp3/g7g.png" class="img-fluid" data-fig-align="left" alt="tespal - spectral"></a><br>
+<p><a href="imgp3/g7g.png" class="lightbox" data-gallery="quarto-lightbox-gallery-20" title="tespal - spectral"><img src="imgp3/g7g.png" class="img-fluid" data-fig-align="left" alt="tespal - spectral"></a><br>
 <br></p>
 
 
@@ -1533,7 +1523,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":true,"openEffect":"zoom"});</script>
+<script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","closeEffect":"zoom","loop":true,"openEffect":"zoom"});</script>
 
 
 
