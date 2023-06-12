@@ -77,9 +77,9 @@ Depuis la version 16 de Stata on peut programmer de manière intéractive en Pyt
 :::
 
 
+-    Support réalisé avec [Posit-Rstudio](https://posit.co/) - [Quarto](https://quarto.org).
+-    Version Stata: [17-SE](https://www.stata.com/)
 
-*   `r fa("r-project", fill = "steelblue")` Support réalisé avec [Rstudio](href:https://www.rstudio.com) - [Quarto](https://quarto.org).
-*   `r fa("code", fill = "steelblue")` Version Stata: [17-SE](https://www.stata.com/)
 
 
 
