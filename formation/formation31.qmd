@@ -5,9 +5,6 @@ format:
   docx:
     toc: true
     number-sections: true
-categories:
-  - ado
-  - labels
 filters:
    - lightbox
 lightbox: auto
@@ -366,7 +363,7 @@ Sur le même principe que les deux graphiques précédents mais avec 6 élément
 ***Installation***
 
 ```{stata, eval=FALSE}
-net install testpal, from("https://mthevenin.github.io/stata_fr/ado/testpal/") replace
+ net install testpal, from("https://raw.githubusercontent.com/mthevenin/stata_fr/master/ado/testpal/") replace
 ```
 
 
