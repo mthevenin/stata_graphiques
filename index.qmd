@@ -1,86 +1,51 @@
 ---
-title: "Graphiques"
+title: ""
 ---
 
+
 ```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
 options(Encoding="UTF-8")
-library(fontawesome)
 ```
 
-::: {.callout-tip icon="false"}
+::: {.callout-important}
 
-## Téléchargement des pages  
 
-Les pages sont téléchargeables en format docx.  A droites de celles-ci cliquer sur l'icône en dessous de *other formats*.
-
-:::
-
-::: {.callout-note icon="false"}
-## Ajouter les effectifs sur un axe discret
-
-**`addnlab`**: Petite commande simple d'utilisation qui permet d'ajouter les effectifs sur un axe discret. Fonctionne également avec des graphiques type *small multiple* générés avec l'option `by`.  
-Avec une petite manipulation supplémentaire, on peut également l'utiliser avec des régression.  
-[Présentation](https://mthevenin.github.io/stata_graphiques/programmation/addnlab/addnlab.html)
+Les courts articles se trouve maintenant dans le support d'accueil, construit sous forme de blog. Tous les éléments relatifs aux sont tagués tout naturellement avec le mot **graphique**: [lien](https://mthevenin.github.io/stata_fr/articles/)
 
 :::
 
+::: {.callout-important}
+## Prochaines mises à jour
 
-::: {.callout-note icon="false"}
-## Violinplot de Ben Jann... must-have !
+Introduction des nouveautés de Stata 18
 
-Nouvelle commande programmée par Ben Jann pour la visualisation des distributions. Très complète et se hisse, il me semble, au niveau de R et Python (`plotly`) sans problème.  
-Je vais essayer d'en faire une présentation assez rapidement, la documentation disponible sur Github est néanmoins déjà très complète. Beaucoup d'exemples à exécuter directement dans le fichier d'aide de la commande
-
-<https://github.com/benjann/violinplot/blob/main/README.md>
-
-::: {layout-ncol=2}
-
-![](https://github.com/benjann/violinplot/raw/main/images/6.png)
-
-![](https://github.com/benjann/violinplot/raw/main/images/8.png)
-
-![](https://github.com/benjann/violinplot/raw/main/images/5.png)
-
-![](https://github.com/benjann/violinplot/raw/main/images/10.png)
+- Modification de la syntaxe avec l'option `colorvar` [<https://www.stata.com/new-in-stata/graph-colors-by-variable/>]. Cela va modifier beaucoup de chaose
+- Nouveau thème par défaut. Enfin!!!! 
+- Vu le caractère récent de ces implémentations, le support ne sera pas modifié sous l'hypothèse que toutes les personnes bénéficient de ces ajouts.
 
 
-Violinplot (Ben Jann)
-:::
+- Je suis toujours à la traine  pour la partie visualisation (chapitre 4 )
 
 :::
 
+**Les programmes des chapitres sont disponibles aux adresses suivantes**: 
 
-::: {.callout-note icon="false"}
-## Graphiques programmés en Python
+* **Chapitre 1**: [Programme Partie 1](programme_p1.do)
+* **Chapitre 2**: [Programme Partie 2](programme_p2.do)
+* **Chapitre 4**: Programme Partie 4
+  * [Introduction] (programme_p4a.do)
+  * [Distributions](programme_p4b.do)
+<br>
 
-Depuis la version 16 de Stata on peut programmer de manière intéractive en Python.  Dans un premier temps, une courte présentation de Python sous Stata (installation, exécution sous Stata), avec deux exemples de graphiques exécuté avec des fonctions des librairies `seaborn` et `plotly` [[Lien](programmation/python/python.html)]
+**INTRODUCTION A LA SEMIOLOGIE GRAPHIQUE (Bénédicte Garnier - Ined-SMS)**
 
-:::
+Lien vers le document: [Lien](BGIntro_ppt.pdf)
 
+<iframe src="BGIntro_ppt.pdf" height="500" width="900" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay"></iframe>
 
-::: {.callout-note icon="false"}
-## Mise à jour de la formation
-
-* **Chapitres 1 à 3 en ligne**. 
-* Lien vers le nouveau support de formation en format pdf [chapitre 1 à 3]:  [`r fa("link", fill = "steelblue", height = "1em", margin_right="1em")`](v2_2022_chap123.pdf)
-* Chapitre 4: la structure de ce chapitre de la première version ne me convient pas. On retrouve déjà un certain nombre d'éléments dans la partie ressources graphiques. 
-
-:::
-
-
-::: {.callout-note icon="false"}
-## Ressources graphiques
-
-* Topics sur la programmation de graphiques avec le langage Stata
-* Présentation de la programmation de graphiques  avec Python sous Stata [A ajouter rapidement] 
-
-:::
 
 
 -    Support réalisé avec [Posit-Rstudio](https://posit.co/) - [Quarto](https://quarto.org).
 -    Version Stata: [17-SE](https://www.stata.com/)
-
-
-
-
 

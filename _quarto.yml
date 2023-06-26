@@ -34,32 +34,25 @@ website:
     style: "docked"
     collapse-level: 1    
     contents:
-      - section: "Formation"
+      - section: "**Syntaxe**"
         contents:
-          - formation/formation.qmd
-          - section: "**Syntaxe**"
-            contents:
-            - formation/formation11.qmd
-            - formation/formation12.qmd
-            - formation/formation13.qmd
-            - formation/formation14.qmd
-          - section: "**Macros**"
-            contents:
-            - formation/formation21.qmd
-            - formation/formation22.qmd
-            - formation/formation23.qmd
-          - section: "**Palettes et styles**"
-            contents:
-            - formation/formation31.qmd
-            - formation/formation32.qmd
-          - section: "**Visualisations**"
-            contents: 
-            - formation/formation41.qmd
-            - formation/formation42.qmd            
-      - section: "Programmation"
+        - formation/formation11.qmd
+        - formation/formation12.qmd
+        - formation/formation13.qmd
+        - formation/formation14.qmd
+      - section: "**Macros**"
         contents:
-          - Stata.qmd
-          - programmation/python/python.qmd
+        - formation/formation21.qmd
+        - formation/formation22.qmd
+        - formation/formation23.qmd
+      - section: "**Palettes et styles**"
+        contents:
+        - formation/formation31.qmd
+        - formation/formation32.qmd
+      - section: "**Visualisations**"
+        contents: 
+        - formation/formation41.qmd
+        - formation/formation42.qmd            
 
 format:
   html:
@@ -71,7 +64,7 @@ format:
     toc: true
     toc-depth: 3
     toc-title: Sections
-    highlight-style: zenburn
+    highlight-style: dracula
     code-tools:
       source: true
 number-sections: true
