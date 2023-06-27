@@ -10,14 +10,17 @@ website:
     center: "Marc Thévenin - Ined-Sms - Mars 2023" 
     background: dark
   navbar:
-    collapse-below: lg
-    left:
-      - href: https://mthevenin.github.io/stata_fr/
-        text: "Stata Ined"  
-      - href: https://mthevenin.github.io/stata_graphiques/
-        text: "Graphiques"
-      - href: https://mthevenin.github.io/stata_programmation/
-        text: "Programmation"       
+    left: 
+      - href: index.qmd
+        text: "Stata Ined"
+      - href: articles/index.qmd
+        text: "Articles"
+      - text: Formations
+        menu: 
+          - text: "Formation initiale"
+            href: https://mthevenin.github.io/stata_programmation/
+          - text: "Graphiques"
+            href: https://mthevenin.github.io/stata_graphiques/      
 
   sidebar:
     pinned: true

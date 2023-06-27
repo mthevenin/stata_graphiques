@@ -46,6 +46,8 @@ Lien vers le document: [Lien](BGIntro_ppt.pdf)
 
 <iframe src="BGIntro_ppt.pdf" height="500" width="900" style="border: 1px solid #464646;" allowfullscreen="" allow="autoplay"></iframe>
 
+`fonction()`  `prout`
+
 
 
 -    Support réalisé avec [Posit-Rstudio](https://posit.co/) - [Quarto](https://quarto.org).
