@@ -10,8 +10,9 @@ options(Encoding="UTF-8")
 
 ::: {.callout-important}
 
+## Déplacement des articles dans le support d'accueil
 
-Les courts articles se trouve maintenant dans le support d'accueil, construit sous forme de blog. Tous les éléments relatifs aux sont tagués tout naturellement avec le mot **graphique**: [lien](https://mthevenin.github.io/stata_fr/articles/)
+Les courts articles se trouvent maintenant dans le support d'accueil, construit sous forme de blog. Tous les éléments relatifs aux graphiques sont tagués tout naturellement avec le mot **graphique**: [lien](https://mthevenin.github.io/stata_fr/articles/)
 
 :::
 
@@ -31,11 +32,12 @@ Introduction des nouveautés de Stata 18
 
 **Les programmes des chapitres sont disponibles aux adresses suivantes**: 
 
-* **Chapitre 1**: [Programme Partie 1](programme_p1.do)
-* **Chapitre 2**: [Programme Partie 2](programme_p2.do)
+* **Chapitre 1**: [Programme Partie 1](formation/programme_p1.do)
+* **Chapitre 2**: [Programme Partie 2](formation/programme_p2.do)
 * **Chapitre 4**: Programme Partie 4
-  * [Introduction] (programme_p4a.do)
-  * [Distributions](programme_p4b.do)
+  *  [Introduction](formation/programme_p4a.do)
+  * [Distributions](formation/programme_p4b.do)
+
 <br>
 
 **INTRODUCTION A LA SEMIOLOGIE GRAPHIQUE (Bénédicte Garnier - Ined-SMS)**
