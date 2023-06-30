@@ -11,17 +11,16 @@ website:
     background: dark
   navbar:
     left: 
-      - href: index.qmd
+      - href: https://mthevenin.github.io/stata_fr/index.html
         text: "Stata Ined"
-      - href: articles/index.qmd
+      - href: https://mthevenin.github.io/stata_fr/articles/
         text: "Articles"
       - text: Formations
         menu: 
           - text: "Formation initiale"
             href: https://mthevenin.github.io/stata_programmation/
           - text: "Graphiques"
-            href: https://mthevenin.github.io/stata_graphiques/      
-
+            href: https://mthevenin.github.io/stata_graphiques/           
   sidebar:
     pinned: true
     align: center

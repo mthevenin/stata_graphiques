@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.330">
+<meta name="generator" content="quarto-1.3.361">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -93,7 +93,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -113,17 +114,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://mthevenin.github.io/stata_fr/" rel="" target="">
+    <a class="nav-link" href="https://mthevenin.github.io/stata_fr/index.html" rel="" target="">
  <span class="menu-text">Stata Ined</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://mthevenin.github.io/stata_graphiques/" rel="" target="">
- <span class="menu-text">Graphiques</span></a>
+    <a class="nav-link" href="https://mthevenin.github.io/stata_fr/articles/" rel="" target="">
+ <span class="menu-text">Articles</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="https://mthevenin.github.io/stata_programmation/" rel="" target="">
- <span class="menu-text">Programmation</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-formations" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Formations</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-formations">    
+        <li>
+    <a class="dropdown-item" href="https://mthevenin.github.io/stata_programmation/" rel="" target="">
+ <span class="dropdown-text">Formation initiale</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="https://mthevenin.github.io/stata_graphiques/" rel="" target="">
+ <span class="dropdown-text">Graphiques</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
             <div class="quarto-navbar-tools ms-auto">
 </div>
@@ -135,10 +147,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../formation/formation.html">Formation</a></li><li class="breadcrumb-item"><a href="../formation/formation41.html"><strong>Visualisations</strong></a></li><li class="breadcrumb-item"><a href="../formation/formation41.html">Introduction</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../formation/formation41.html"><strong>Visualisations</strong></a></li><li class="breadcrumb-item"><a href="../formation/formation41.html">Introduction</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -163,28 +175,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Formation</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../formation/formation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Introduction</strong></span></a>
-  </div>
-</li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
  <span class="menu-text"><strong>Syntaxe</strong></span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../formation/formation11.html" class="sidebar-item-text sidebar-link">
@@ -211,15 +208,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
-          <li class="sidebar-item sidebar-item-section">
+        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
  <span class="menu-text"><strong>Macros</strong></span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../formation/formation21.html" class="sidebar-item-text sidebar-link">
@@ -240,15 +237,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
-          <li class="sidebar-item sidebar-item-section">
+        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
  <span class="menu-text"><strong>Palettes et styles</strong></span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../formation/formation31.html" class="sidebar-item-text sidebar-link">
@@ -263,15 +260,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
-          <li class="sidebar-item sidebar-item-section">
+        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
  <span class="menu-text"><strong>Visualisations</strong></span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../formation/formation41.html" class="sidebar-item-text sidebar-link active">
@@ -282,31 +279,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../formation/formation42.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Les distributions</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
- <span class="menu-text">Programmation</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../Stata.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Programmation avec Stata</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../programmation/python/python.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Programmation avec Python</span></a>
   </div>
 </li>
       </ul>
@@ -363,19 +335,19 @@ Très connu par la communauté des utilisateurs du logiciel, NJ.Cox est surement
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 33.3%;justify-content: center;">
 <figure class="figure">
 <p><a href="imgp4/g3.png" class="lightbox" title="Fabplot - line" data-gallery="quarto-lightbox-gallery-1"><img src="imgp4/g3.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Fabplot - line</figcaption><p></p>
+<figcaption class="figure-caption">Fabplot - line</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 33.3%;justify-content: center;">
 <figure class="figure">
 <p><a href="imgp4/g4.png" class="lightbox" title="Fabplot - scatter" data-gallery="quarto-lightbox-gallery-2"><img src="imgp4/g4.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Fabplot - scatter</figcaption><p></p>
+<figcaption class="figure-caption">Fabplot - scatter</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 33.3%;justify-content: center;">
 <figure class="figure">
 <p><a href="imgp4/g5.png" class="lightbox" title="Catplot" data-gallery="quarto-lightbox-gallery-3"><img src="imgp4/g5.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Catplot</figcaption><p></p>
+<figcaption class="figure-caption">Catplot</figcaption>
 </figure>
 </div>
 </div>
@@ -387,19 +359,19 @@ Très connu par la communauté des utilisateurs du logiciel, NJ.Cox est surement
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 33.3%;justify-content: center;">
 <figure class="figure">
 <p><a href="https://github.com/benjann/violinplot/raw/main/images/6.png" class="lightbox" title="Violinplot" data-gallery="quarto-lightbox-gallery-4"><img src="https://github.com/benjann/violinplot/raw/main/images/6.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption"><a href="https://github.com/benjann/violinplot/blob/main/README.md">Violinplot</a></figcaption><p></p>
+<figcaption class="figure-caption"><a href="https://github.com/benjann/violinplot/blob/main/README.md">Violinplot</a></figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 33.3%;justify-content: center;">
 <figure class="figure">
 <p><a href="imgp4/g1.png" class="lightbox" title="Hexplot" data-gallery="quarto-lightbox-gallery-5"><img src="imgp4/g1.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Hexplot</figcaption><p></p>
+<figcaption class="figure-caption">Hexplot</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 33.3%;justify-content: center;">
 <figure class="figure">
 <p><a href="imgp4/g2.png" class="lightbox" title="Heatplot" data-gallery="quarto-lightbox-gallery-6"><img src="imgp4/g2.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Heatplot</figcaption><p></p>
+<figcaption class="figure-caption">Heatplot</figcaption>
 </figure>
 </div>
 </div>
@@ -412,19 +384,19 @@ Sur son site du réseau <a href="https://asjadnaqvi.medium.com/">medium</a>, les
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 33.3%;justify-content: center;">
 <figure class="figure">
 <p><a href="https://github.com/asjadnaqvi/stata-treemap/raw/main/figures/treemap25.png" class="lightbox" title="Tree map" data-gallery="quarto-lightbox-gallery-7"><img src="https://github.com/asjadnaqvi/stata-treemap/raw/main/figures/treemap25.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption"><a href="https://github.com/asjadnaqvi/stata-treemap">Tree map</a></figcaption><p></p>
+<figcaption class="figure-caption"><a href="https://github.com/asjadnaqvi/stata-treemap">Tree map</a></figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 33.3%;justify-content: center;">
 <figure class="figure">
 <p><a href="https://github.com/asjadnaqvi/stata-arcplot/raw/main/figures/arcplot2.png" class="lightbox" title="Arc plot" data-gallery="quarto-lightbox-gallery-8"><img src="https://github.com/asjadnaqvi/stata-arcplot/raw/main/figures/arcplot2.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption"><a href="https://github.com/asjadnaqvi/stata-arcplot">Arc plot</a></figcaption><p></p>
+<figcaption class="figure-caption"><a href="https://github.com/asjadnaqvi/stata-arcplot">Arc plot</a></figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 33.3%;justify-content: center;">
 <figure class="figure">
 <p><a href="https://github.com/asjadnaqvi/stata-streamplot/raw/main/figures/streamplot5.png" class="lightbox" title="Stream plot" data-gallery="quarto-lightbox-gallery-9"><img src="https://github.com/asjadnaqvi/stata-streamplot/raw/main/figures/streamplot5.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption"><a href="https://github.com/asjadnaqvi/stata-streamplot">Stream plot</a></figcaption><p></p>
+<figcaption class="figure-caption"><a href="https://github.com/asjadnaqvi/stata-streamplot">Stream plot</a></figcaption>
 </figure>
 </div>
 </div>
@@ -436,19 +408,19 @@ Sur son site du réseau <a href="https://asjadnaqvi.medium.com/">medium</a>, les
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 33.3%;justify-content: center;">
 <figure class="figure">
 <p><a href="https://graphworkflow.files.wordpress.com/2017/01/minard.png" class="lightbox" title="Minard" data-gallery="quarto-lightbox-gallery-10"><img src="https://graphworkflow.files.wordpress.com/2017/01/minard.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption"><a href="https://graphworkflow.com/2019/06/25/minard/">Minard</a></figcaption><p></p>
+<figcaption class="figure-caption"><a href="https://graphworkflow.com/2019/06/25/minard/">Minard</a></figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 33.3%;justify-content: center;">
 <figure class="figure">
 <p><a href="https://graphworkflow.files.wordpress.com/2018/09/taijicove2.png" class="lightbox" title="Massacre dauphins" data-gallery="quarto-lightbox-gallery-11"><img src="https://graphworkflow.files.wordpress.com/2018/09/taijicove2.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption"><a href="https://graphworkflow.com/2018/12/16/taiji-cove/">Massacre dauphins</a></figcaption><p></p>
+<figcaption class="figure-caption"><a href="https://graphworkflow.com/2018/12/16/taiji-cove/">Massacre dauphins</a></figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 33.3%;justify-content: center;">
 <figure class="figure">
 <p><a href="https://graphworkflow.files.wordpress.com/2017/12/marriage_equality.png" class="lightbox" title="Mariage homo" data-gallery="quarto-lightbox-gallery-12"><img src="https://graphworkflow.files.wordpress.com/2017/12/marriage_equality.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption"><a href="https://graphworkflow.com/2020/01/17/marriage-equality/">Mariage homo</a></figcaption><p></p>
+<figcaption class="figure-caption"><a href="https://graphworkflow.com/2020/01/17/marriage-equality/">Mariage homo</a></figcaption>
 </figure>
 </div>
 </div>
@@ -867,7 +839,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","closeEffect":"zoom","loop":true,"descPosition":"bottom"});</script>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","loop":true,"openEffect":"zoom","descPosition":"bottom"});</script>
 
 
 

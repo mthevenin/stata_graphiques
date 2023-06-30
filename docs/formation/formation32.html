@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.330">
+<meta name="generator" content="quarto-1.3.361">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -93,7 +93,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -113,17 +114,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://mthevenin.github.io/stata_fr/" rel="" target="">
+    <a class="nav-link" href="https://mthevenin.github.io/stata_fr/index.html" rel="" target="">
  <span class="menu-text">Stata Ined</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://mthevenin.github.io/stata_graphiques/" rel="" target="">
- <span class="menu-text">Graphiques</span></a>
+    <a class="nav-link" href="https://mthevenin.github.io/stata_fr/articles/" rel="" target="">
+ <span class="menu-text">Articles</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="https://mthevenin.github.io/stata_programmation/" rel="" target="">
- <span class="menu-text">Programmation</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-formations" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Formations</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-formations">    
+        <li>
+    <a class="dropdown-item" href="https://mthevenin.github.io/stata_programmation/" rel="" target="">
+ <span class="dropdown-text">Formation initiale</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="https://mthevenin.github.io/stata_graphiques/" rel="" target="">
+ <span class="dropdown-text">Graphiques</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
             <div class="quarto-navbar-tools ms-auto">
 </div>
@@ -135,10 +147,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../formation/formation.html">Formation</a></li><li class="breadcrumb-item"><a href="../formation/formation31.html"><strong>Palettes et styles</strong></a></li><li class="breadcrumb-item"><a href="../formation/formation32.html">Styles-thèmes</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../formation/formation31.html"><strong>Palettes et styles</strong></a></li><li class="breadcrumb-item"><a href="../formation/formation32.html">Styles-thèmes</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -163,28 +175,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Formation</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../formation/formation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Introduction</strong></span></a>
-  </div>
-</li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
  <span class="menu-text"><strong>Syntaxe</strong></span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../formation/formation11.html" class="sidebar-item-text sidebar-link">
@@ -211,15 +208,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
-          <li class="sidebar-item sidebar-item-section">
+        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
  <span class="menu-text"><strong>Macros</strong></span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../formation/formation21.html" class="sidebar-item-text sidebar-link">
@@ -240,15 +237,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
-          <li class="sidebar-item sidebar-item-section">
+        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true">
  <span class="menu-text"><strong>Palettes et styles</strong></span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../formation/formation31.html" class="sidebar-item-text sidebar-link">
@@ -263,15 +260,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
-          <li class="sidebar-item sidebar-item-section">
+        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
  <span class="menu-text"><strong>Visualisations</strong></span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../formation/formation41.html" class="sidebar-item-text sidebar-link">
@@ -282,31 +279,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../formation/formation42.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Les distributions</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
- <span class="menu-text">Programmation</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../Stata.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Programmation avec Stata</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../programmation/python/python.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Programmation avec Python</span></a>
   </div>
 </li>
       </ul>
@@ -375,8 +347,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong><em>Exemple de mise en page interne avec 4 de ces 11 thèmes</em></strong></p>
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><a href="imgp3/g8.png" class="lightbox" title="Thèmes usines" data-gallery="quarto-lightbox-gallery-1"><img src="imgp3/g8.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Thèmes usines</figcaption><p></p>
+<p><a href="imgp3/g8.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Thèmes usines"><img src="imgp3/g8.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Thèmes usines</figcaption>
 </figure>
 </div>
 <p><strong>Styles externes</strong></p>
@@ -388,7 +360,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>help schemepack </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Attention seulement une palette est de type qualitative (tableau), les autres séquentielles. L’utilisation des thèmes associés aux palettes séquentielles peuvent donner un rendu peu satisfaisant lorsque le nombre d’objets graphique réduit (par exemple 2 courbes). Il conviendra alors d’utiliser en amont colorpalette. Egalement, la position par défaut de la légende a été fixée à 3 heures ce qui n’est peut-être pas le plus judicieux.</p>
-<p><strong><em>Exemple avec les thèmes white_tableau et white_viridis</em></strong> <a href="imgp3/g9a.png" class="lightbox" title="Schemepack (a)" data-gallery="quarto-lightbox-gallery-2"><img src="imgp3/g9a.png" class="img-fluid" data-fig-align="left" alt="Schemepack (a)"></a></p>
+<p><strong><em>Exemple avec les thèmes white_tableau et white_viridis</em></strong> <a href="imgp3/g9a.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Schemepack (a)"><img src="imgp3/g9a.png" class="img-fluid" data-fig-align="left" alt="Schemepack (a)"></a></p>
 <p>Les deux couleurs se distinguent difficilement avec la palette viridis. On peut corriger rapidement ce problème avec colorpalette.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> uslifeexp, <span class="kw">clear</span></span>
@@ -398,8 +370,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="quarto-figure quarto-figure-left">
 <figure class="figure">
-<p><a href="imgp3/g9b.png" class="lightbox" title="Schemepack (b)" data-gallery="quarto-lightbox-gallery-3"><img src="imgp3/g9b.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Schemepack (b)</figcaption><p></p>
+<p><a href="imgp3/g9b.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Schemepack (b)"><img src="imgp3/g9b.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Schemepack (b)</figcaption>
 </figure>
 </div>
 <p><br></p>
@@ -434,20 +406,20 @@ On peut retirer facilement le contour de la légende (on allège ainsi les optio
 <div class="quarto-layout-row quarto-layout-valign-top">
 <div class="quarto-figure quarto-figure-left" style="flex-basis: 33.3%;justify-content: center;">
 <figure class="figure">
-<p><a href="imgp3/g12a.png" class="lightbox" title="grstyle (a)" data-gallery="quarto-lightbox-gallery-4"><img src="imgp3/g12a.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">grstyle (a)</figcaption><p></p>
+<p><a href="imgp3/g12a.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="grstyle (a)"><img src="imgp3/g12a.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">grstyle (a)</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-left" style="flex-basis: 33.3%;justify-content: center;">
 <figure class="figure">
-<p><a href="imgp3/g12b.png" class="lightbox" title="grstyle (b)" data-gallery="quarto-lightbox-gallery-5"><img src="imgp3/g12b.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">grstyle (b)</figcaption><p></p>
+<p><a href="imgp3/g12b.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="grstyle (b)"><img src="imgp3/g12b.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">grstyle (b)</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-left" style="flex-basis: 33.3%;justify-content: center;">
 <figure class="figure">
-<p><a href="imgp3/g12c.png" class="lightbox" title="grstyle (c)" data-gallery="quarto-lightbox-gallery-6"><img src="imgp3/g12c.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">grstyle (c)</figcaption><p></p>
+<p><a href="imgp3/g12c.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="grstyle (c)"><img src="imgp3/g12c.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">grstyle (c)</figcaption>
 </figure>
 </div>
 </div>
@@ -458,7 +430,7 @@ On peut retirer facilement le contour de la légende (on allège ainsi les optio
 <li><strong><code>grstyle set color viridis, select(1 11)</code></strong></li>
 </ul>
 <p><strong><em>Exemple avec le fond de type mesh, la légende à 11 heures sans contour et une sélection de deux couleurs de la palette viridis</em></strong></p>
-<p><a href="imgp3/g11.png" class="lightbox" title="grstyle (c)" data-gallery="quarto-lightbox-gallery-7"><img src="imgp3/g11.png" class="img-fluid" style="width:60.0%" alt="grstyle (c)"></a>{fig-align=“left”}</p>
+<p><a href="imgp3/g11.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="grstyle (c)"><img src="imgp3/g11.png" class="img-fluid" style="width:60.0%" alt="grstyle (c)"></a>{fig-align=“left”}</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">webuse</span> <span class="kw">set</span> https:<span class="co">//github.com/mthevenin/stata_graphiques/tree/main/bases</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">use</span> pingouin, <span class="kw">replace</span></span>
@@ -983,7 +955,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"loop":true,"selector":".lightbox","openEffect":"zoom","closeEffect":"zoom","descPosition":"bottom"});</script>
+<script>var lightboxQuarto = GLightbox({"openEffect":"zoom","selector":".lightbox","loop":true,"descPosition":"bottom","closeEffect":"zoom"});</script>
 
 
 

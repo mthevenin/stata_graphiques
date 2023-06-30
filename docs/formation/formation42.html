@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.330">
+<meta name="generator" content="quarto-1.3.361">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -63,7 +63,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
-<link href="../Stata.html" rel="next">
 <link href="../formation/formation41.html" rel="prev">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -93,7 +92,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 
@@ -113,17 +113,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://mthevenin.github.io/stata_fr/" rel="" target="">
+    <a class="nav-link" href="https://mthevenin.github.io/stata_fr/index.html" rel="" target="">
  <span class="menu-text">Stata Ined</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://mthevenin.github.io/stata_graphiques/" rel="" target="">
- <span class="menu-text">Graphiques</span></a>
+    <a class="nav-link" href="https://mthevenin.github.io/stata_fr/articles/" rel="" target="">
+ <span class="menu-text">Articles</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="https://mthevenin.github.io/stata_programmation/" rel="" target="">
- <span class="menu-text">Programmation</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-formations" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Formations</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-formations">    
+        <li>
+    <a class="dropdown-item" href="https://mthevenin.github.io/stata_programmation/" rel="" target="">
+ <span class="dropdown-text">Formation initiale</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="https://mthevenin.github.io/stata_graphiques/" rel="" target="">
+ <span class="dropdown-text">Graphiques</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
             <div class="quarto-navbar-tools ms-auto">
 </div>
@@ -135,10 +146,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../formation/formation.html">Formation</a></li><li class="breadcrumb-item"><a href="../formation/formation41.html"><strong>Visualisations</strong></a></li><li class="breadcrumb-item"><a href="../formation/formation42.html">Les distributions</a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../formation/formation41.html"><strong>Visualisations</strong></a></li><li class="breadcrumb-item"><a href="../formation/formation42.html">Les distributions</a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -163,28 +174,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
- <span class="menu-text">Formation</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../formation/formation.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><strong>Introduction</strong></span></a>
-  </div>
-</li>
-          <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false">
  <span class="menu-text"><strong>Syntaxe</strong></span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../formation/formation11.html" class="sidebar-item-text sidebar-link">
@@ -211,15 +207,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
-          <li class="sidebar-item sidebar-item-section">
+        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false">
  <span class="menu-text"><strong>Macros</strong></span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../formation/formation21.html" class="sidebar-item-text sidebar-link">
@@ -240,15 +236,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
-          <li class="sidebar-item sidebar-item-section">
+        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false">
  <span class="menu-text"><strong>Palettes et styles</strong></span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth2 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../formation/formation31.html" class="sidebar-item-text sidebar-link">
@@ -263,15 +259,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
       </ul>
   </li>
-          <li class="sidebar-item sidebar-item-section">
+        <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true">
  <span class="menu-text"><strong>Visualisations</strong></span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth2 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../formation/formation41.html" class="sidebar-item-text sidebar-link">
@@ -282,31 +278,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <div class="sidebar-item-container"> 
   <a href="../formation/formation42.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Les distributions</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false">
- <span class="menu-text">Programmation</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../Stata.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Programmation avec Stata</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="../programmation/python/python.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Programmation avec Python</span></a>
   </div>
 </li>
       </ul>
@@ -385,7 +356,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Exemples</strong></p>
 <div class="cell">
 <details>
-<summary>Show the code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>* style appliqué avec grstyle</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -395,7 +366,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 <div class="cell">
 <details>
-<summary>Show the code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>  </span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">tw</span> <span class="kw">histogram</span> wage, fc(<span class="st">"225 50 67%80"</span>) lc(<span class="bn">black</span>) lw(*.2) <span class="kw">percent</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -421,28 +392,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-layout-row quarto-layout-valign-bottom">
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 50.0%;justify-content: center;">
 <figure class="figure">
-<p><a href="imgp4/g6.png" class="lightbox" title="Histogramme simple" data-gallery="quarto-lightbox-gallery-1"><img src="imgp4/g6.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Histogramme simple</figcaption><p></p>
+<p><a href="imgp4/g6.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Histogramme simple"><img src="imgp4/g6.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Histogramme simple</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 50.0%;justify-content: center;">
 <figure class="figure">
-<p><a href="imgp4/g7.png" class="lightbox" title="Empilement Histogrammes: not good" data-gallery="quarto-lightbox-gallery-2"><img src="imgp4/g7.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Empilement Histogrammes: not good</figcaption><p></p>
+<p><a href="imgp4/g7.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Empilement Histogrammes: not good"><img src="imgp4/g7.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Empilement Histogrammes: not good</figcaption>
 </figure>
 </div>
 </div>
 <div class="quarto-layout-row quarto-layout-valign-bottom">
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 50.0%;justify-content: center;">
 <figure class="figure">
-<p><a href="imgp4/g8.png" class="lightbox" title="Empilement Histogrammes: not good" data-gallery="quarto-lightbox-gallery-3"><img src="imgp4/g8.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Empilement Histogrammes: not good</figcaption><p></p>
+<p><a href="imgp4/g8.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Empilement Histogrammes: not good"><img src="imgp4/g8.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Empilement Histogrammes: not good</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 50.0%;justify-content: center;">
 <figure class="figure">
-<p><a href="imgp4/g9.png" class="lightbox" title="Facettes Histogrammes: good" data-gallery="quarto-lightbox-gallery-4"><img src="imgp4/g9.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Facettes Histogrammes: good</figcaption><p></p>
+<p><a href="imgp4/g9.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Facettes Histogrammes: good"><img src="imgp4/g9.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Facettes Histogrammes: good</figcaption>
 </figure>
 </div>
 </div>
@@ -502,7 +473,7 @@ Options <code>by</code>: à savoir
 <p><strong>Sans comparaison</strong></p>
 <div class="cell">
 <details>
-<summary>Show the code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>* une densité avec <span class="kw">kdensity</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">kdensity</span> wage, <span class="kw">note</span>(<span class="st">""</span>)  <span class="kw">recast</span>(area) fc(<span class="st">"225 50 67"</span>) lc(<span class="bn">black</span>) lw(*.5) <span class="bn">title</span>(<span class="st">""</span>)</span>
@@ -520,20 +491,20 @@ Options <code>by</code>: à savoir
 <div class="quarto-layout-row quarto-layout-valign-bottom">
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 33.3%;justify-content: center;">
 <figure class="figure">
-<p><a href="imgp4/g10.png" class="lightbox" title="Avec kdensity" data-gallery="quarto-lightbox-gallery-5"><img src="imgp4/g10.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Avec <strong><code>kdensity</code></strong></figcaption><p></p>
+<p><a href="imgp4/g10.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5" title="Avec kdensity"><img src="imgp4/g10.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Avec <strong><code>kdensity</code></strong></figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 33.3%;justify-content: center;">
 <figure class="figure">
-<p><a href="imgp4/g11.png" class="lightbox" title="Avec violinplot" data-gallery="quarto-lightbox-gallery-6"><img src="imgp4/g11.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption">Avec <strong><code>violinplot</code></strong></figcaption><p></p>
+<p><a href="imgp4/g11.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6" title="Avec violinplot"><img src="imgp4/g11.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption">Avec <strong><code>violinplot</code></strong></figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 33.3%;justify-content: center;">
 <figure class="figure">
-<p><a href="imgp4/g12.png" class="lightbox" title="violinplot: densité en mirroir" data-gallery="quarto-lightbox-gallery-7"><img src="imgp4/g12.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption"><strong><code>violinplot</code></strong>: densité en mirroir</figcaption><p></p>
+<p><a href="imgp4/g12.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7" title="violinplot: densité en mirroir"><img src="imgp4/g12.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption"><strong><code>violinplot</code></strong>: densité en mirroir</figcaption>
 </figure>
 </div>
 </div>
@@ -541,7 +512,7 @@ Options <code>by</code>: à savoir
 <p><strong>Avec comparaison</strong></p>
 <div class="cell">
 <details>
-<summary>Show the code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>**** Comparaison</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>* Overlay demi Remplissage</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>violinplot wage,                                                                            <span class="co">///</span></span>
@@ -571,28 +542,28 @@ Options <code>by</code>: à savoir
 <div class="quarto-layout-row quarto-layout-valign-bottom">
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 50.0%;justify-content: center;">
 <figure class="figure">
-<p><a href="imgp4/g13.png" class="lightbox" title="violinplot: comparaison aire" data-gallery="quarto-lightbox-gallery-8"><img src="imgp4/g13.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption"><strong><code>violinplot</code></strong>: comparaison aire</figcaption><p></p>
+<p><a href="imgp4/g13.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8" title="violinplot: comparaison aire"><img src="imgp4/g13.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption"><strong><code>violinplot</code></strong>: comparaison aire</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 50.0%;justify-content: center;">
 <figure class="figure">
-<p><a href="imgp4/g14.png" class="lightbox" title="violinplot: comparaison courbe" data-gallery="quarto-lightbox-gallery-9"><img src="imgp4/g14.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption"><strong><code>violinplot</code></strong>: comparaison courbe</figcaption><p></p>
+<p><a href="imgp4/g14.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9" title="violinplot: comparaison courbe"><img src="imgp4/g14.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption"><strong><code>violinplot</code></strong>: comparaison courbe</figcaption>
 </figure>
 </div>
 </div>
 <div class="quarto-layout-row quarto-layout-valign-bottom">
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 50.0%;justify-content: center;">
 <figure class="figure">
-<p><a href="imgp4/g15.png" class="lightbox" title="violinplot: comparaison split" data-gallery="quarto-lightbox-gallery-10"><img src="imgp4/g15.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption"><strong><code>violinplot</code></strong>: comparaison split</figcaption><p></p>
+<p><a href="imgp4/g15.png" class="lightbox" data-gallery="quarto-lightbox-gallery-10" title="violinplot: comparaison split"><img src="imgp4/g15.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption"><strong><code>violinplot</code></strong>: comparaison split</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 50.0%;justify-content: center;">
 <figure class="figure">
-<p><a href="imgp4/g16.png" class="lightbox" title="violinplot: comparaison mirroir overlay" data-gallery="quarto-lightbox-gallery-11"><img src="imgp4/g16.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption"><strong><code>violinplot</code></strong>: comparaison mirroir overlay</figcaption><p></p>
+<p><a href="imgp4/g16.png" class="lightbox" data-gallery="quarto-lightbox-gallery-11" title="violinplot: comparaison mirroir overlay"><img src="imgp4/g16.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption"><strong><code>violinplot</code></strong>: comparaison mirroir overlay</figcaption>
 </figure>
 </div>
 </div>
@@ -619,7 +590,7 @@ Options <code>by</code>: à savoir
 </div>
 <div class="cell">
 <details>
-<summary>Show the code</summary>
+<summary>Code</summary>
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode stata code-with-copy"><code class="sourceCode stata"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">recode</span> occupation (9 10 11 12 = 13 )</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>* violinplot</span>
@@ -634,14 +605,14 @@ Options <code>by</code>: à savoir
 <div class="quarto-layout-row quarto-layout-valign-bottom">
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 50.0%;justify-content: center;">
 <figure class="figure">
-<p><a href="imgp4/g17.png" class="lightbox" title="axe discret avec violinplot" data-gallery="quarto-lightbox-gallery-12"><img src="imgp4/g17.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption"><strong><code>axe discret avec violinplot</code></strong></figcaption><p></p>
+<p><a href="imgp4/g17.png" class="lightbox" data-gallery="quarto-lightbox-gallery-12" title="axe discret avec violinplot"><img src="imgp4/g17.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption"><strong><code>axe discret avec violinplot</code></strong></figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 50.0%;justify-content: center;">
 <figure class="figure">
-<p><a href="imgp4/g18.png" class="lightbox" title="Lignes de ridge avec gridge" data-gallery="quarto-lightbox-gallery-13"><img src="imgp4/g18.png" class="img-fluid figure-img"></a></p>
-<p></p><figcaption class="figure-caption"><strong><code>Lignes de ridge avec gridge</code></strong></figcaption><p></p>
+<p><a href="imgp4/g18.png" class="lightbox" data-gallery="quarto-lightbox-gallery-13" title="Lignes de ridge avec gridge"><img src="imgp4/g18.png" class="img-fluid figure-img"></a></p>
+<figcaption class="figure-caption"><strong><code>Lignes de ridge avec gridge</code></strong></figcaption>
 </figure>
 </div>
 </div>
@@ -949,9 +920,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../Stata.html" class="pagination-link">
-        <span class="nav-page-text">Programmation avec Stata</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
 <div class="sourceCode" id="cb8" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
@@ -1222,7 +1190,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","closeEffect":"zoom","loop":true,"openEffect":"zoom"});</script>
+<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom","selector":".lightbox","loop":true});</script>
 
 
 

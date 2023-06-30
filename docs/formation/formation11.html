@@ -113,17 +113,28 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="https://mthevenin.github.io/stata_fr/" rel="" target="">
+    <a class="nav-link" href="https://mthevenin.github.io/stata_fr/index.html" rel="" target="">
  <span class="menu-text">Stata Ined</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="https://mthevenin.github.io/stata_graphiques/" rel="" target="">
- <span class="menu-text">Graphiques</span></a>
+    <a class="nav-link" href="https://mthevenin.github.io/stata_fr/articles/" rel="" target="">
+ <span class="menu-text">Articles</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="https://mthevenin.github.io/stata_programmation/" rel="" target="">
- <span class="menu-text">Programmation</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-formations" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Formations</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-formations">    
+        <li>
+    <a class="dropdown-item" href="https://mthevenin.github.io/stata_programmation/" rel="" target="">
+ <span class="dropdown-text">Formation initiale</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="https://mthevenin.github.io/stata_graphiques/" rel="" target="">
+ <span class="dropdown-text">Graphiques</span></a>
+  </li>  
+    </ul>
+  </li>
 </ul>
             <div class="quarto-navbar-tools ms-auto">
 </div>
@@ -370,13 +381,13 @@ En première approche, la syntaxe d’un graphique avec Stata est particulièrem
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 50.0%;justify-content: center;">
 <figure class="figure">
 <figcaption class="figure-caption">Sans options</figcaption>
-<p><a href="imgp1/g1a.png" class="lightbox" title="Sans options" data-gallery="quarto-lightbox-gallery-1"><img src="imgp1/g1a.png" class="img-fluid figure-img"></a></p>
+<p><a href="imgp1/g1a.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1" title="Sans options"><img src="imgp1/g1a.png" class="img-fluid figure-img"></a></p>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 50.0%;justify-content: center;">
 <figure class="figure">
 <figcaption class="figure-caption">Avec options</figcaption>
-<p><a href="imgp1/g1b.png" class="lightbox" title="Avec options" data-gallery="quarto-lightbox-gallery-2"><img src="imgp1/g1b.png" class="img-fluid figure-img"></a></p>
+<p><a href="imgp1/g1b.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2" title="Avec options"><img src="imgp1/g1b.png" class="img-fluid figure-img"></a></p>
 </figure>
 </div>
 </div>
@@ -478,13 +489,13 @@ Chaque sous graphique a son propre jeu d’options et ont doit bien indiquer leu
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 50.0%;justify-content: center;">
 <figure class="figure">
 <figcaption class="figure-caption">Sans options</figcaption>
-<p><a href="imgp1/g2a.png" class="lightbox" title="Sans options" data-gallery="quarto-lightbox-gallery-3"><img src="imgp1/g2a.png" class="img-fluid figure-img"></a></p>
+<p><a href="imgp1/g2a.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" title="Sans options"><img src="imgp1/g2a.png" class="img-fluid figure-img"></a></p>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center" style="flex-basis: 50.0%;justify-content: center;">
 <figure class="figure">
 <figcaption class="figure-caption">Avec options</figcaption>
-<p><a href="imgp1/g2b.png" class="lightbox" title="Avec options" data-gallery="quarto-lightbox-gallery-4"><img src="imgp1/g2b.png" class="img-fluid figure-img"></a></p>
+<p><a href="imgp1/g2b.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" title="Avec options"><img src="imgp1/g2b.png" class="img-fluid figure-img"></a></p>
 </figure>
 </div>
 </div>
@@ -1127,7 +1138,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     </div>
   </div>
 </footer>
-<script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","selector":".lightbox","loop":true,"descPosition":"bottom","openEffect":"zoom"});</script>
+<script>var lightboxQuarto = GLightbox({"loop":true,"closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom","selector":".lightbox"});</script>
 
 
 
