@@ -102,7 +102,7 @@ Relatives:
 
 Reproduire les deux graphiques ci-dessous avec la base auto: `sysuse auto.dta`.  
 
-Solution : <https://github.com/mthevenin/stata_fr/blob/master/exercices/exo1>
+[Solution](exo_p1.do)
 
 <div class="alert alert-info">
 **Graphique(s) 1**  
