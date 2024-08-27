@@ -6,9 +6,6 @@ format:
   docx:
     toc: true
     number-sections: true
-categories:
-  - ado
-  - labels
 filters:
    - lightbox
 lightbox: auto
@@ -21,6 +18,74 @@ library(Statamarkdown)
 stataexe <- "C:/Program Files/Stata17/StataSE-64.exe"
 knitr::opts_chunk$set(engine.path=list(stata=stataexe))
 ```
+
+
+# Axes
+
+<u>Remarque</u> : on se limitera aux axes classiques (x,y). Dans les cas particuliers des dates et des graphiques admettant un 3ème axe (graphique type contour), les options sont précédées du préfixe `t` ou `z`.  
+
+Il y a 3 types options pour modifier les axes x/y x : **`x/ylabel()`**,  **`x/ytitle()`**, **`x/yscale()`**.
+Une autre option permet de définir le choix de l’axe si un graphique comporte plusieurs définitions d’axes pour les abscisses et/ou pour les ordonnées : **`x/yaxis(#)`** avec `#` le numéro de l’axe, qui sera par la suite reporté dans les autres options relatives aux axes.  
+
+## **Titres des axes**
+
+```{}
+xtitle() ytitle():  xtitle(["titres"] [, options])
+```
+
+Principales options:  
+
+-	Taille avec `size(...)`, couleur avec `color(...)`. Si on ajoute l’option `box(...)`, on peut modifier l’apparence de la zone qui l’entoure.
+-	Titres sur plusieurs lignes: **`xtitle("ligne1" ligne2"....[, options])`**
+-	On peut modifier la position des titres des axes avec `place(top/right/bottom/left)` pour indiquer la position le long de l’axe (par exemple `right` pour x et `top` pour y) et contrôler leur éloignement de l’axe avec `width(#)` pour y et `height(#)` pour x. Le graphique suivant modifie les positions par défaut des titres :  
+
+```{}
+xtitle(", place(right) height(5)) 
+ytitle(", orient(horizontal) place(top) width(5))
+```
+
+![](imgp1/g12.png){width=50%}
+
+### **Coordonnées, labels, grid**
+
+```{}
+xlabel() ylabel(): xlabel([coordonnées] [,options])
+```
+
+***Modification des valeurs reportées sur les axes***:  
+
+*	Avec **valeur_min(delta)valeur_max**: `xlabel(0(10)100)` => de 0 à 100 avec un incrément de 10.
+*	En indiquant le nombre de valeurs à reporter sur l’axe : `xlabel(#)`.
+*	Manuellement: `xlabel( #1 #2 "label" "label2"…)`  ou   `xlabel( #1 "label1" #2 "label2"...)`.  
+*	On peut mélanger les approches : `xlabel(0 .5 1(1)10 15 20 "Vingt" )`.
+
+
+***Principales options***:  
+
+*	Taille et couleur du texte avec **`labs(...)`** et **`labc(...)`**.
+*	Alterner les positions pour éviter les chevauchements avec `alt`.
+*	Modifier l’angle de report des labels : `angle(#)` avec # valeur de l’angle [0 (horizontal), 45, 90 (vertical) …].
+*	Modification du grid et des coches (tick) : la couleur avec `glc(...)` et `tlc(...)` et l’épaisseur avec `glw(...)` et `tlw(...)`.
+
+### **Echelles**
+
+```{}
+xscale() yscale() 
+```
+
+*	Utilisation d’une échelle logarithmique : *`log`*. Seule l’échelle est modifiée, les valeurs d’origines sont reportées sur l’axe, ce qui est plutôt bien vu.
+*	Echelle en ordre décroissant : `reverse`. Pas conseillé, mais on peut trouver une certaine utilité aux graphiques combinés reportant des distributions croisées et marginales (voir la section dédiée aux graphiques combinés).
+*	Supprimer l’affichage des axes : `off`.
+*	Ne pas tracer la ligne parcourant l’axe : `noline`.
+*	Modifier les limites de l’axe : `range(min max)`. Plutôt utile pour l'ajout d'éléments de type texte proche des axes.   
+
+Les graphiques suivant donnent quelques exemples de modification des options des axes. Les données sont issues de la base d’exemple *lifeexp* [`sysuse lifeexp, clear`] et les graphiques reportent sous forme de nuage les espérances de vie à la naissance (y) et le revenu par habitant (x).
+
+![](imgp1/g13.png){width=90%}
+
+::: callout-warning
+ La zône en bas à droite étant un graphique « vide » avec seulement une note, pour la dernière option reportée le label doit-être indiqué par des doubles quotes "label" et non par ‘label’: xlabel(1000 "1k" 5000 "5k" 10000 "10k" 20000 "20k" 30000 "30k" 40000 "40k") et non xlabel(1000 ‘1k’……). Il m’a fallu composer avec la syntaxe permise pour les éléments de type texte.
+:::
 
 
 # Options pour la légende
